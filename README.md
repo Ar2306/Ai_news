@@ -16,7 +16,7 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
   - ✈️ **Telegram** via bot (compact HTML message)
 - **LLM curation** with Claude Haiku 4.5 — one call per item returns relevance, tags, and a what/why/who summary (falls back to extractive summaries + keyword tags on any failure)
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
-- **Modern, responsive web UI** with dark/light theme toggle
+- **Minimal web UI** branded **AR** — one flat list, filterable by tag, with a matching archive page
 - **Static site** — no backend needed, auto-deployed to [Vercel](https://ainl.vercel.app) on every push
 
 ## Project Structure
