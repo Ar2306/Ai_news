@@ -49,6 +49,13 @@ jobs:
               assert isinstance(s, dict), f'{where}: summary must be an object'
               for k in ('what', 'why', 'who'):
                   assert isinstance(s.get(k), str), f'{where}: summary.{k} must be a string'
+              # Newer fields are optional so older archive days stay valid
+              if 'importance' in a:
+                  assert isinstance(a['importance'], int) and 1 <= a['importance'] <= 5, f'{where}: importance must be 1-5'
+              assert isinstance(a.get('links', {}), dict), f'{where}: links must be an object'
+              assert isinstance(a.get('discussions', []), list), f'{where}: discussions must be a list'
+              for k in ('content', 'signal', 'external_url', 'discussion'):
+                  assert k not in a, f'{where}: internal field {k!r} leaked into JSON'
 
           p = 'data/newsletter.json'
           assert os.path.exists(p), f'{p} is missing'
@@ -121,6 +128,62 @@ jobs:
           assert 'content' not in a.to_dict(), 'raw content must not be serialized'
 
           print('Curation checks OK')
+          EOF
+
+      - name: Source pipeline checks (dedup, discussions, balance, importance, feed)
+        run: |
+          python3 - <<'EOF'
+          import importlib.util, json, tempfile, xml.dom.minidom
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('fetch_news', 'scripts/fetch-news.py')
+          fn = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(fn)
+          A = fn.Article
+
+          # 1. importance is parsed, clamped, and defaults to 3
+          base = '{"relevant": true, "tags": ["llm"], "summary": {"what": "w", "why": "y", "who": "z"}%s}'
+          assert fn.parse_curation(base % ', "importance": 5')['importance'] == 5
+          assert fn.parse_curation(base % ', "importance": 9')['importance'] == 5
+          assert fn.parse_curation(base % ', "importance": "x"')['importance'] == 3
+          assert fn.parse_curation(base % '')['importance'] == 3
+
+          # 2. dedupe: paper kept once; the HN thread about it becomes a discussion link
+          f = object.__new__(fn.NewsFetcher)
+          f.seen_urls, f.seen_titles, f.run_urls, f.run_titles = {'https://old.example.com/x'}, set(), {}, {}
+          items = [
+              A(title='Great New Paper', url='https://arxiv.org/abs/2609.00001', source='arXiv cs.LG', group='arxiv'),
+              A(title='Great new paper (HN)', url='https://arxiv.org/abs/2609.00001', source='Hacker News', group='community',
+                external_url='https://arxiv.org/abs/2609.00001', signal=500,
+                discussion={'source': 'Hacker News', 'url': 'https://news.ycombinator.com/item?id=1', 'points': 500}),
+              A(title='Great New Paper', url='https://huggingface.co/papers/2609.00001', source='Hugging Face Papers', group='papers', signal=80),
+              A(title='Covered yesterday', url='https://old.example.com/x', source='Blog', group='blogs'),
+          ]
+          kept = f.dedupe(items)
+          assert len(kept) == 1 and kept[0].group == 'papers', [k.source for k in kept]
+          assert [d['source'] for d in kept[0].discussions] == ['Hacker News'], kept[0].discussions
+
+          # 3. select_candidates respects group and per-source caps
+          many = [A(title=f'arxiv {i}', url=f'https://arxiv.org/abs/{i}', source=f'arXiv {i % 2}', group='arxiv') for i in range(40)]
+          many += [A(title=f'lab {i}', url=f'https://lab/{i}', source='Lab', group='labs') for i in range(10)]
+          picked = f.select_candidates(many)
+          assert sum(a.group == 'arxiv' for a in picked) == 2 * fn.PER_SOURCE_CAP, 'per-source cap'
+          assert sum(a.group == 'labs' for a in picked) == fn.PER_SOURCE_CAP
+          assert picked[0].group != picked[1].group, 'round-robin across groups'
+
+          # 4. community signals raise importance
+          a = A(title='t', url='u', source='HF', group='papers', signal=120)
+          f.providers = []
+          f.llm_stats = {}
+          assert f.curate(a).importance >= 4
+
+          # 5. links + RSS feed
+          assert fn.paper_links('https://arxiv.org/abs/2609.12345v2', 'Code: https://github.com/org/repo.')['code'] == 'https://github.com/org/repo'
+          out = Path(tempfile.mkdtemp()) / 'feed.xml'
+          evil = A(title='<b>x</b> & y', url='javascript:alert(1)', source='S', tags=['llm'], summary={'what': '<script>', 'why': '', 'who': ''})
+          fn.write_feed(out, [evil], '2026-01-01T00:00:00+00:00')
+          xml.dom.minidom.parseString(out.read_bytes())
+          assert 'javascript:' not in out.read_text(), 'unsafe link in feed'
+          print('Source pipeline checks OK')
           EOF
 
       - name: Digest link safety check

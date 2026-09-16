@@ -56,7 +56,7 @@ jobs:
           
           # Check if data file changed
           if ! git diff --quiet data/newsletter.json; then
-            git add data/newsletter.json data/archive.json
+            git add data/newsletter.json data/archive.json data/feed.xml data/status.json
             git commit -m "🤖 Daily AI news update $(date '+%Y-%m-%d')"
             # Rebase + push with retries so concurrent runs (e.g. a manual dispatch
             # overlapping the cron) can't race us out. -X theirs keeps THIS run's

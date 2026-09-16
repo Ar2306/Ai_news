@@ -32,6 +32,7 @@ DATA_FILE = ROOT / "data" / "newsletter.json"
 EMAIL_TOTAL = 15     # stories in the email
 TELEGRAM_TOTAL = 6   # stories in the Telegram message
 SITE_NAME = "AR"
+SITE_URL = os.environ.get("SITE_URL", "https://ai-news-blush.vercel.app")
 
 
 def load_digest():
@@ -45,8 +46,12 @@ def load_digest():
 
 
 def build_stories(data, total=EMAIL_TOTAL):
-    """Newest stories first from the flat all_articles list."""
-    articles = sorted(data.get("all_articles", []), key=lambda a: a.get("published_at", ""), reverse=True)
+    """Most important stories first (newest first within the same importance)."""
+    articles = sorted(
+        data.get("all_articles", []),
+        key=lambda a: (a.get("importance", 3), a.get("published_at", "")),
+        reverse=True,
+    )
     return articles[:total]
 
 
@@ -110,7 +115,7 @@ def build_html(stories, data):
     <div style="font-size:14px;color:#6b6b6b;margin-top:4px;">{date_str} · {data.get('article_count', 0)} items</div>
     {''.join(cards)}
     <p style="font-size:12px;color:#6b6b6b;margin-top:24px;">
-      <a href="https://github.com/Ar2306/Ai_news" style="color:#6b6b6b;">View the full digest</a>
+      <a href="{SITE_URL}" style="color:#6b6b6b;">View the full digest</a>
     </p>
   </div>
 </body>
@@ -128,7 +133,7 @@ def build_text(stories, data):
             lines.append(f"   {label}: {text}")
         lines.append(f"   {a.get('source', '')} — {safe_url(a.get('url'))}")
     lines.append("")
-    lines.append("Full digest: https://github.com/Ar2306/Ai_news")
+    lines.append(f"Full digest: {SITE_URL}")
     return "\n".join(lines)
 
 
@@ -148,7 +153,7 @@ def build_telegram(data, total=TELEGRAM_TOTAL):
             lines.append(html.escape(what))
         lines.append(f"<i>{html.escape(fmt_tags(a))} · {html.escape(a.get('source', ''))}</i>")
         lines.append("")
-    lines.append("<a href=\"https://github.com/Ar2306/Ai_news\">Full digest →</a>")
+    lines.append(f"<a href=\"{SITE_URL}\">Full digest →</a>")
     return "\n".join(lines)
 
 

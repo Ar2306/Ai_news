@@ -65,57 +65,93 @@ LLM_MAX_RETRIES = 3          # retries on 429 / 5xx / network errors, honouring 
 LLM_MAX_BACKOFF = 60.0       # never wait longer than this for a single retry
 LLM_DISABLE_AFTER = 3        # consecutive failures before a provider is skipped for the run
 
-# RSS Feeds
-RSS_FEEDS = {
-    "arXiv AI/ML": "https://export.arxiv.org/rss/cs.AI",
-    "arXiv ML": "https://export.arxiv.org/rss/cs.LG",
-    "arXiv CV": "https://export.arxiv.org/rss/cs.CV",
-    "arXiv CL": "https://export.arxiv.org/rss/cs.CL",
-    "Hugging Face Blog": "https://huggingface.co/blog/feed.xml",
-    "OpenAI Blog": "https://openai.com/blog/rss.xml",
-    "Anthropic Blog": "https://www.anthropic.com/blog/rss.xml",
-    "Google AI Blog": "https://ai.googleblog.com/feeds/posts/default",
-    "Microsoft Research Blog": "https://www.microsoft.com/en-us/research/blog/feed/",
-    "Meta AI Blog": "https://ai.meta.com/blog/rss/",
-    "NVIDIA Blog": "https://blogs.nvidia.com/feed/",
-    "Google DeepMind Blog": "https://deepmind.google/blog/rss.xml",
-    "Cohere Blog": "https://cohere.com/blog/rss.xml",
-    "LangChain Blog": "https://blog.langchain.dev/rss/",
-    "Weights & Biases Blog": "https://wandb.ai/site/feed.xml",
-    "AssemblyAI Blog": "https://www.assemblyai.com/blog/rss.xml",
-    "Replicate Blog": "https://replicate.com/blog/rss.xml",
-    "Together AI Blog": "https://www.together.ai/blog/rss.xml",
-}
+SITE_URL = os.environ.get("SITE_URL", "https://ai-news-blush.vercel.app")
+STATUS_FILE = DATA_DIR / "status.json"
+FEED_FILE = DATA_DIR / "feed.xml"
+USER_AGENT = "Mozilla/5.0 (compatible; AR-digest/1.0; +https://ai-news-blush.vercel.app)"
 
-# Reddit feeds (using RSS)
-REDDIT_FEEDS = {
-    "r/MachineLearning": "https://www.reddit.com/r/MachineLearning/.rss",
-    "r/ArtificialIntelligence": "https://www.reddit.com/r/ArtificialIntelligence/.rss",
-    "r/LocalLLaMA": "https://www.reddit.com/r/LocalLLaMA/.rss",
-    "r/MLQuestions": "https://www.reddit.com/r/MLQuestions/.rss",
-    "r/Computervision": "https://www.reddit.com/r/ComputerVision/.rss",
-    "r/NLP": "https://www.reddit.com/r/LanguageTechnology/.rss",
+# Source groups keep the digest balanced: candidates are picked round-robin across
+# groups (each capped), so one prolific feed like arXiv can't crowd out the rest.
+# Order here is also dedup priority: when the same story appears twice, the earlier
+# group's copy is kept and later copies (e.g. a Reddit/HN thread) become discussion links.
+GROUPS = {
+    #  group        candidate cap   recency (days)
+    "papers":    {"cap": 14, "days": 3},   # Hugging Face daily papers (upvotes, code links)
+    "labs":      {"cap": 18, "days": 4},   # AI lab & company blogs
+    "arxiv":     {"cap": 14, "days": 2},
+    "blogs":     {"cap": 10, "days": 5},   # researchers & newsletters
+    "news":      {"cap": 12, "days": 2},
+    "medium":    {"cap": 12, "days": 2},
+    "community": {"cap": 10, "days": 2},   # Hacker News
+    "reddit":    {"cap": 12, "days": 2},
 }
+PER_SOURCE_CAP = 4  # max candidates from any single feed
 
-# Hacker News (using Algolia API for AI/ML tagged stories)
+# RSS/Atom feeds, verified working 2026-09-16. Broken ones (Anthropic, Meta AI, Cohere,
+# LangChain, W&B, Replicate, AssemblyAI, old Google AI blog, Nitter/Twitter) were removed.
+RSS_SOURCES = [
+    # arXiv
+    ("arXiv cs.AI", "arxiv", "https://export.arxiv.org/rss/cs.AI"),
+    ("arXiv cs.LG", "arxiv", "https://export.arxiv.org/rss/cs.LG"),
+    ("arXiv cs.CL", "arxiv", "https://export.arxiv.org/rss/cs.CL"),
+    ("arXiv cs.CV", "arxiv", "https://export.arxiv.org/rss/cs.CV"),
+    ("arXiv cs.RO", "arxiv", "https://export.arxiv.org/rss/cs.RO"),
+    # AI labs & companies
+    ("OpenAI", "labs", "https://openai.com/news/rss.xml"),
+    ("Google DeepMind", "labs", "https://deepmind.google/blog/rss.xml"),
+    ("Google Research", "labs", "https://research.google/blog/rss/"),
+    ("Google AI", "labs", "https://blog.google/technology/ai/rss/"),
+    ("Microsoft Research", "labs", "https://www.microsoft.com/en-us/research/blog/feed/"),
+    ("NVIDIA Blog", "labs", "https://blogs.nvidia.com/feed/"),
+    ("NVIDIA Technical Blog", "labs", "https://developer.nvidia.com/blog/feed"),
+    ("Apple ML Research", "labs", "https://machinelearning.apple.com/rss.xml"),
+    ("AWS Machine Learning", "labs", "https://aws.amazon.com/blogs/machine-learning/feed/"),
+    ("Hugging Face Blog", "labs", "https://huggingface.co/blog/feed.xml"),
+    ("Mistral AI", "labs", "https://mistral.ai/rss.xml"),
+    ("Allen AI", "labs", "https://allenai.org/rss.xml"),
+    ("Together AI", "labs", "https://www.together.ai/blog/rss.xml"),
+    ("Meta Engineering (ML)", "labs", "https://engineering.fb.com/category/ml-applications/feed/"),
+    ("MIT News (AI)", "labs", "https://news.mit.edu/rss/topic/artificial-intelligence2"),
+    ("Stanford AI Lab", "labs", "https://ai.stanford.edu/blog/feed.xml"),
+    # researchers & newsletters
+    ("Simon Willison", "blogs", "https://simonwillison.net/atom/everything/"),
+    ("Latent Space", "blogs", "https://www.latent.space/feed"),
+    ("Interconnects", "blogs", "https://www.interconnects.ai/feed"),
+    ("Import AI", "blogs", "https://importai.substack.com/feed"),
+    ("Sebastian Raschka", "blogs", "https://magazine.sebastianraschka.com/feed"),
+    ("Lil'Log", "blogs", "https://lilianweng.github.io/index.xml"),
+    ("Chip Huyen", "blogs", "https://huyenchip.com/feed.xml"),
+    ("Eugene Yan", "blogs", "https://eugeneyan.com/rss/"),
+    ("Hamel Husain", "blogs", "https://hamel.dev/index.xml"),
+    ("Andrej Karpathy", "blogs", "https://karpathy.bearblog.dev/feed/"),
+    ("The Gradient", "blogs", "https://thegradient.pub/rss/"),
+    # tech news
+    ("TechCrunch AI", "news", "https://techcrunch.com/category/artificial-intelligence/feed/"),
+    ("The Verge AI", "news", "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
+    ("Ars Technica AI", "news", "https://arstechnica.com/ai/feed/"),
+    ("MIT Technology Review AI", "news", "https://www.technologyreview.com/topic/artificial-intelligence/feed"),
+    # Medium
+    ("Medium · AI", "medium", "https://medium.com/feed/tag/artificial-intelligence"),
+    ("Medium · Machine Learning", "medium", "https://medium.com/feed/tag/machine-learning"),
+    ("Medium · LLM", "medium", "https://medium.com/feed/tag/llm"),
+    ("Medium · Deep Learning", "medium", "https://medium.com/feed/tag/deep-learning"),
+    ("Medium · Generative AI", "medium", "https://medium.com/feed/tag/generative-ai"),
+    ("Medium · Reinforcement Learning", "medium", "https://medium.com/feed/tag/reinforcement-learning"),
+    ("Towards Data Science", "medium", "https://towardsdatascience.com/feed"),
+    ("Data Science Collective", "medium", "https://medium.com/feed/data-science-collective"),
+]
+
+# Fetched together in a single request (top posts of the day).
+REDDIT_SUBS = [
+    "MachineLearning", "LocalLLaMA", "artificial", "singularity", "OpenAI",
+    "reinforcementlearning", "deeplearning", "StableDiffusion", "robotics", "computervision",
+]
+
 HN_API = "https://hn.algolia.com/api/v1/search_by_date"
+HN_QUERIES = ["AI", "LLM", "GPT", "machine learning", "OpenAI", "Anthropic", "Gemini", "neural network", "model"]
+HN_MIN_POINTS = 40
 
-# Nitter instances for Twitter/X (RSS bridges)
-NITTER_INSTANCES = [
-    "https://nitter.net",
-    "https://nitter.poast.org",
-    "https://nitter.unixfox.eu",
-    "https://nitter.himiko.cloud",
-]
-
-# Twitter accounts to follow via Nitter RSS
-TWITTER_ACCOUNTS = [
-    "OpenAI", "AnthropicAI", "GoogleAI", "MicrosoftResearch",
-    "MetaAI", "DeepMind", "NVIDIAResearch", "HuggingFace",
-    "LangChainAI", "WandB", "SimonsInstitute", "Karpathy",
-    "ylecun", "AndrewYNg", "fchollet", "goodfellow_ian",
-    "sama", "greg_brockman", "demishassabis", "hardmaru",
-]
+HF_PAPERS_API = "https://huggingface.co/api/daily_papers"
 
 # Closed tag vocabulary. Articles are multi-label (1-3 tags) and the LLM is
 # never allowed to invent a tag outside this list.
@@ -140,12 +176,11 @@ FALLBACK_TAG_KEYWORDS = {
 }
 
 MAX_ARTICLES = 50  # items kept in newsletter.json
-MAX_PER_SOURCE = 10  # candidate cap per source, keeps the digest varied
 MAX_LLM_ITEMS = int(os.environ.get("MAX_LLM_ITEMS", "100"))  # candidates enriched per run
 
 CURATOR_PROMPT = """You are a technical curator for a personal AI/ML research digest called "AR."
 
-Given the title and abstract/content of one item, do three things:
+Given the title and abstract/content of one item, do four things:
 
 1. RELEVANCE: Decide if this item is genuinely about AI/ML — not just
    mentioning "AI" in passing (marketing fluff, AI-adjacent business news,
@@ -169,11 +204,19 @@ Rules:
   claimed, not how exciting it sounds.
 - Keep total summary under 60 words.
 
+4. IMPORTANCE: Rate 1-5 how much a busy AI/ML researcher should care:
+   5 = major release or landmark result (new frontier model, field-changing paper)
+   4 = significant, widely relevant work from a credible source
+   3 = solid, useful but incremental
+   2 = niche or minor
+   1 = low-signal (beginner tutorial, opinion without substance)
+
 Return ONLY valid JSON, no markdown fences, no preamble:
 {
   "relevant": true,
   "tags": ["llm", "training-infra"],
-  "summary": {"what": "...", "why": "...", "who": "..."}
+  "summary": {"what": "...", "why": "...", "who": "..."},
+  "importance": 3
 }
 
 TITLE: {title}
@@ -197,6 +240,31 @@ def short_authors(author: str) -> str:
     """'A, B, C, D' -> 'A, B, C et al.' so long arXiv author lists stay one line."""
     names = [n.strip() for n in re.split(r",|;| and ", author) if n.strip()]
     return ", ".join(names[:3]) + (" et al." if len(names) > 3 else "") if names else "Unknown"
+
+
+ARXIV_ID = re.compile(r"arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5})")
+GITHUB_REPO = re.compile(r"https?://github\.com/([\w.-]+/[\w.-]+)")
+
+
+def paper_links(url: str, content: str = "") -> dict:
+    """PDF link for arXiv papers and the first GitHub repo mentioned in the abstract."""
+    links = {}
+    m = ARXIV_ID.search(url or "")
+    if m:
+        links["pdf"] = f"https://arxiv.org/pdf/{m.group(1)}"
+    g = GITHUB_REPO.search(content or "")
+    if g:
+        links["code"] = "https://github.com/" + g.group(1).rstrip(".")
+    return links
+
+
+def signal_importance(article: "Article") -> int:
+    """Importance floor from community signals (upvotes, points)."""
+    if article.group == "papers" and article.signal >= 50 or article.group == "community" and article.signal >= 300:
+        return 4
+    if article.group == "papers" and article.signal >= 15 or article.group == "community" and article.signal >= 120:
+        return 3
+    return 1
 
 
 def parse_curation(raw: str) -> dict:
@@ -224,7 +292,11 @@ def parse_curation(raw: str) -> dict:
     if not clean["what"]:
         raise ValueError("summary.what is empty")
     clean["who"] = clean["who"] or "Unknown"
-    return {"relevant": True, "tags": tags, "summary": clean}
+    try:
+        importance = min(5, max(1, int(round(float(data.get("importance", 3))))))
+    except (TypeError, ValueError):
+        importance = 3
+    return {"relevant": True, "tags": tags, "summary": clean, "importance": importance}
 
 
 class LLMError(RuntimeError):
@@ -463,11 +535,22 @@ class Article:
     fetched_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     author: str = ""
     tags: list[str] = field(default_factory=list)
-    content: str = ""  # raw excerpt fed to the LLM; never written to JSON
+    importance: int = 3
+    group: str = ""
+    links: dict = field(default_factory=dict)          # {"pdf", "code", "hf"}
+    discussions: list = field(default_factory=list)    # [{"source", "url", "points"}]
+    # internal only (never written to JSON)
+    content: str = ""                                  # raw excerpt fed to the LLM
+    signal: int = 0                                    # upvotes / points, for ranking
+    external_url: str = ""                             # link target of a Reddit/HN post
+    discussion: dict = field(default_factory=dict)     # this item's own thread, if it is one
+
+    INTERNAL = ("content", "signal", "external_url", "discussion")
 
     def to_dict(self):
         d = asdict(self)
-        d.pop("content")
+        for k in self.INTERNAL:
+            d.pop(k)
         return d
 
     def to_db_tuple(self):
@@ -481,6 +564,10 @@ class Article:
             self.fetched_at,
             self.author,
             json.dumps(self.tags),
+            self.importance,
+            self.group,
+            json.dumps(self.links),
+            json.dumps(self.discussions),
         )
 
 
@@ -488,12 +575,16 @@ class NewsFetcher:
     def __init__(self):
         self.client = httpx.AsyncClient(
             timeout=httpx.Timeout(30.0, connect=10.0),
-            headers={"User-Agent": "AI-Newsletter-Bot/1.0 (+https://github.com/ai-newsletter)"},
+            headers={"User-Agent": USER_AGENT},
             follow_redirects=True,
         )
         self.articles: list[Article] = []
         self.seen_urls: set[str] = set()
         self.seen_titles: set[str] = set()
+        self.run_urls: dict[str, Article] = {}     # this run's kept articles, for attaching discussions
+        self.run_titles: dict[str, Article] = {}
+        self.source_status: dict[str, dict] = {}
+        self.llm_stats: dict[str, int] = {}
         self.http = httpx.Client(timeout=LLM_TIMEOUT)
         self.providers = build_providers(self.http)
         if self.providers:
@@ -537,16 +628,24 @@ class NewsFetcher:
         t = re.sub(r"\s+", " ", t).strip()
         return t[:120]
 
+    def _match_title(self, key: str) -> Optional[str]:
+        """Return the already-seen title key that `key` duplicates, if any."""
+        if key in self.seen_titles:
+            return key
+        for k in self.seen_titles:
+            sm = SequenceMatcher(None, key, k)
+            # Cheap upper bounds first; the full ratio() only runs for plausible matches
+            if sm.real_quick_ratio() > 0.88 and sm.quick_ratio() > 0.88 and sm.ratio() > 0.88:
+                return k
+        return None
+
     def _is_title_duplicate(self, title: str) -> bool:
         """Cross-source near-duplicate detection by fuzzy title similarity."""
         key = self._normalize_title(title)
         if not key:
             return True  # too noisy to be useful
-        if key in self.seen_titles:
+        if self._match_title(key):
             return True
-        for k in self.seen_titles:
-            if SequenceMatcher(None, key, k).ratio() > 0.88:
-                return True
         self.seen_titles.add(key)
         return False
 
@@ -599,6 +698,7 @@ class NewsFetcher:
             "relevant": True,  # can't judge relevance without the LLM; sources are AI-focused
             "tags": fallback_tags(article.title, content),
             "summary": {"what": what, "why": why, "who": article.author or "Unknown"},
+            "importance": 2,
         }
 
     def curate(self, article: Article) -> Optional[Article]:
@@ -616,6 +716,9 @@ class NewsFetcher:
             try:
                 result = parse_curation(provider.generate(prompt))
                 provider.failures = 0
+                stats = getattr(self, "llm_stats", {})
+                label = f"{provider.name} ({provider.model})"
+                stats[label] = stats.get(label, 0) + 1
                 break
             except Exception as e:
                 provider.failures += 1
@@ -625,325 +728,271 @@ class NewsFetcher:
                     print(f"    ⛔ {provider.name} disabled for the rest of this run", file=sys.stderr)
         if result is None:
             result = self._fallback_curation(article)
+            stats = getattr(self, "llm_stats", None)
+            if stats is not None:
+                stats["extractive fallback"] = stats.get("extractive fallback", 0) + 1
 
         if not result["relevant"]:
             return None
         article.tags = result["tags"]
         article.summary = result["summary"]
+        article.importance = max(result.get("importance", 2), signal_importance(article))
         if article.summary.get("who", "Unknown") == "Unknown" and article.author:
             article.summary["who"] = short_authors(article.author)
         return article
 
-    async def fetch_rss_feed(self, name: str, url: str) -> list[Article]:
-        """Fetch and parse an RSS feed."""
+    def _status(self, name: str, group: str, items: int = 0, error: str = ""):
+        self.source_status[name] = {"group": group, "ok": not error, "items": items, "error": error[:120]}
+
+    def _entry_content(self, entry) -> str:
+        for key in ["summary", "description", "content", "contentSnippet"]:
+            if key in entry:
+                val = entry[key]
+                if isinstance(val, list) and val:
+                    val = val[0].get("value", "")
+                text = self._clean_html(str(val))
+                if text:
+                    return text
+        return ""
+
+    async def fetch_rss_feed(self, name: str, url: str, group: str = "labs") -> list[Article]:
+        """Fetch and parse an RSS/Atom feed. Dedup happens later, across all sources."""
         articles = []
+        days = GROUPS.get(group, {}).get("days", 3)
         try:
-            print(f"  📡 Fetching RSS: {name}...")
             response = await self.client.get(url)
             response.raise_for_status()
-
             feed = feedparser.parse(response.content)
-            if feed.bozo and feed.bozo_exception:
-                print(f"  ⚠ Feed parse warning: {feed.bozo_exception}")
-
-            for entry in feed.entries[:30]:  # Limit per feed
-                # Get URL
+            for entry in feed.entries[:60]:
                 link = entry.get("link", "")
-                if not link or self._is_duplicate(link):
+                title = re.sub(r"\s+", " ", entry.get("title", "")).strip()
+                if not link or not title:
                     continue
-
-                # Get title
-                title = entry.get("title", "").strip()
-                if not title:
-                    continue
-
-                # Get date
-                published = ""
-                for key in ["published", "updated", "created", "pubDate"]:
-                    if key in entry:
-                        published = entry[key]
-                        break
+                published = next((entry[k] for k in ["published", "updated", "created", "pubDate"] if k in entry), "")
                 published_iso = self._parse_date(published)
-
-                # Skip old articles (older than 3 days for RSS)
-                if not self._is_recent(published_iso, days=3):
+                if not self._is_recent(published_iso, days=days):
                     continue
-
-                # Skip duplicates AFTER the recency check, so a stale copy of a
-                # story can't claim the title and suppress the fresh one.
-                if self._is_title_duplicate(title):
-                    continue
-
-                # Get summary/content
-                content = ""
-                for key in ["summary", "description", "content", "contentSnippet"]:
-                    if key in entry:
-                        val = entry[key]
-                        if isinstance(val, list) and val:
-                            val = val[0].get("value", "")
-                        content = self._clean_html(str(val))
-                        if content:
-                            break
-
-                # Get author
+                content = self._entry_content(entry)
                 author = entry.get("author", "") or (entry.get("authors", [{}])[0].get("name", "") if entry.get("authors") else "")
-
-                article = Article(
-                    title=title,
-                    url=link,
-                    source=name,
-                    content=content,
-                    published_at=published_iso,
-                    author=author,
-                )
-                articles.append(article)
-
-            print(f"    ✅ Got {len(articles)} articles from {name}")
-
+                articles.append(Article(
+                    title=title, url=link, source=name, group=group, content=content,
+                    published_at=published_iso, author=author, links=paper_links(link, content),
+                ))
+            self._status(name, group, len(articles))
+            print(f"  ✅ {name}: {len(articles)}")
         except Exception as e:
-            print(f"  ❌ Error fetching {name}: {e}")
-
+            self._status(name, group, error=f"{type(e).__name__}: {e}")
+            print(f"  ❌ {name}: {type(e).__name__}: {str(e)[:100]}")
         return articles
 
-    async def fetch_reddit(self, name: str, url: str) -> list[Article]:
-        """Fetch Reddit RSS feed."""
+    async def fetch_reddit(self) -> list[Article]:
+        """Top posts of the day across all subreddits in ONE request (r/A+B+C), since
+        Reddit rate-limits anonymous clients that make several requests in a row."""
+        name = "Reddit"
+        url = f"https://www.reddit.com/r/{'+'.join(REDDIT_SUBS)}/top/.rss?t=day&limit=100"
         articles = []
         try:
-            print(f"  📡 Fetching Reddit: {name}...")
             response = await self.client.get(url)
+            if response.status_code == 429:
+                await asyncio.sleep(min(float(response.headers.get("retry-after", 15) or 15), 30))
+                response = await self.client.get(url)
             response.raise_for_status()
-
             feed = feedparser.parse(response.content)
-
-            for entry in feed.entries[:20]:
-                link = entry.get("link", "")
-                if not link or self._is_duplicate(link):
-                    continue
-
+            for entry in feed.entries:
+                permalink = entry.get("link", "")
                 title = entry.get("title", "").strip()
-                if not title:
+                if not permalink or not title:
                     continue
-
-                # Reddit RSS includes selftext in summary
-                content = self._clean_html(entry.get("summary", "") or entry.get("description", ""))
-
-                published = entry.get("published", "") or entry.get("updated", "")
-                published_iso = self._parse_date(published)
-
-                if not self._is_recent(published_iso, days=2):
+                published_iso = self._parse_date(entry.get("published", "") or entry.get("updated", ""))
+                if not self._is_recent(published_iso, days=GROUPS["reddit"]["days"]):
                     continue
-
-                # Extract subreddit from title if present
-                subreddit_match = re.match(r"\[(r/[\w]+)\]", title)
-                if subreddit_match:
-                    title = title[subreddit_match.end():].strip()
-
-                if self._is_title_duplicate(title):
-                    continue
-
-                article = Article(
-                    title=title,
-                    url=link,
-                    source=name,
-                    content=content,
-                    published_at=published_iso,
-                    author=entry.get("author", ""),
-                )
-                articles.append(article)
-
-            print(f"    ✅ Got {len(articles)} articles from {name}")
-
+                sub = ((entry.get("tags") or [{}])[0].get("term") or "").strip()
+                source = f"r/{sub}" if sub else name
+                raw = entry.get("summary", "") or entry.get("description", "")
+                # Link posts carry the external URL as the "[link]" anchor
+                external = ""
+                for a_tag in BeautifulSoup(raw, "html.parser").find_all("a", href=True):
+                    href = a_tag["href"]
+                    if a_tag.get_text(strip=True) == "[link]" and "reddit.com" not in href and "redd.it" not in href:
+                        external = href
+                        break
+                content = re.sub(r"submitted by\s+/u/\S+|\[link\]|\[comments\]", " ", self._clean_html(raw))
+                articles.append(Article(
+                    title=title, url=external or permalink, source=source, group="reddit",
+                    content=content.strip(), published_at=published_iso,
+                    author=(entry.get("author", "") or "").replace("/u/", ""),
+                    external_url=external, links=paper_links(external, content),
+                    discussion={"source": source, "url": permalink},
+                ))
+            self._status(name, "reddit", len(articles))
+            print(f"  ✅ {name} ({len(REDDIT_SUBS)} subreddits): {len(articles)}")
         except Exception as e:
-            print(f"  ❌ Error fetching {name}: {e}")
-
+            self._status(name, "reddit", error=f"{type(e).__name__}: {e}")
+            print(f"  ❌ {name}: {type(e).__name__}: {str(e)[:100]}")
         return articles
 
     async def fetch_hacker_news(self) -> list[Article]:
-        """Fetch AI/ML stories from Hacker News via Algolia API."""
+        """AI/ML stories with real traction from Hacker News (Algolia search)."""
+        name = "Hacker News"
+        articles, seen_ids = [], set()
+        cutoff = int((datetime.now(timezone.utc) - timedelta(days=GROUPS["community"]["days"])).timestamp())
+        try:
+            for q in HN_QUERIES:
+                response = await self.client.get(HN_API, params={
+                    "query": q, "tags": "story", "hitsPerPage": 50,
+                    "numericFilters": f"created_at_i>{cutoff},points>{HN_MIN_POINTS}",
+                })
+                response.raise_for_status()
+                for hit in response.json().get("hits", []):
+                    obj_id = hit.get("objectID")
+                    title = (hit.get("title") or "").strip()
+                    if not title or obj_id in seen_ids:
+                        continue
+                    seen_ids.add(obj_id)
+                    thread = f"https://news.ycombinator.com/item?id={obj_id}"
+                    external = hit.get("url") or ""
+                    points = int(hit.get("points") or 0)
+                    articles.append(Article(
+                        title=title, url=external or thread, source=name, group="community",
+                        content=self._clean_html(hit.get("story_text") or "") or title,
+                        published_at=datetime.fromtimestamp(hit.get("created_at_i", 0), tz=timezone.utc).isoformat(),
+                        author=hit.get("author", ""), signal=points, external_url=external,
+                        links=paper_links(external), discussion={"source": name, "url": thread, "points": points},
+                    ))
+            # Pull page text for the most-upvoted link stories so the LLM has something to summarize
+            top = sorted([a for a in articles if a.external_url], key=lambda a: -a.signal)[:12]
+            async def enrich(a):
+                try:
+                    resp = await self.client.get(a.external_url, timeout=10.0)
+                    if resp.status_code == 200 and "html" in resp.headers.get("content-type", ""):
+                        a.content = self._clean_html(resp.text[:400_000])[:3000] or a.content
+                except Exception:
+                    pass
+            await asyncio.gather(*(enrich(a) for a in top))
+            self._status(name, "community", len(articles))
+            print(f"  ✅ {name}: {len(articles)}")
+        except Exception as e:
+            self._status(name, "community", error=f"{type(e).__name__}: {e}")
+            print(f"  ❌ {name}: {type(e).__name__}: {str(e)[:100]}")
+        return articles
+
+    async def fetch_hf_papers(self) -> list[Article]:
+        """Hugging Face daily papers: community-upvoted arXiv papers with code links."""
+        name = "Hugging Face Papers"
         articles = []
         try:
-            print("  📡 Fetching Hacker News (AI/ML)...")
-
-            # Search for AI/ML related stories from last 48 hours
-            tags = ["machine-learning", "artificial-intelligence", "llm", "gpt", "ai"]
-            cutoff = int((datetime.now(timezone.utc) - timedelta(days=2)).timestamp())
-
-            all_hits = []
-            for tag in tags:
-                params = {
-                    "tags": tag,
-                    "numericFilters": f"created_at_i>={cutoff}",
-                    "hitsPerPage": 20,
-                }
-                response = await self.client.get(HN_API, params=params)
-                response.raise_for_status()
-                data = response.json()
-                all_hits.extend(data.get("hits", []))
-
-            # Deduplicate by objectID
-            seen_ids = set()
-            for hit in all_hits:
-                obj_id = hit.get("objectID")
-                if obj_id in seen_ids:
+            response = await self.client.get(HF_PAPERS_API, params={"limit": 100})
+            response.raise_for_status()
+            for item in response.json():
+                paper = item.get("paper") or {}
+                arxiv_id = paper.get("id") or ""
+                title = re.sub(r"\s+", " ", paper.get("title") or item.get("title") or "").strip()
+                if not arxiv_id or not title:
                     continue
-                seen_ids.add(obj_id)
-
-                url = hit.get("url") or f"https://news.ycombinator.com/item?id={obj_id}"
-                if not url or self._is_duplicate(url):
+                published_iso = self._parse_date(paper.get("submittedOnDailyAt") or item.get("publishedAt") or "")
+                if not self._is_recent(published_iso, days=GROUPS["papers"]["days"]):
                     continue
-
-                title = hit.get("title", "").strip()
-                if not title:
-                    continue
-
-                # Get content from HN comment or story text
-                content = hit.get("story_text", "") or ""
-                if not content and hit.get("url"):
-                    # Try to fetch article content
-                    try:
-                        resp = await self.client.get(hit["url"], timeout=10.0)
-                        content = self._clean_html(resp.text)[:2000]
-                    except Exception:
-                        pass
-
-                published_iso = datetime.fromtimestamp(hit.get("created_at_i", 0), tz=timezone.utc).isoformat()
-
-                if not self._is_recent(published_iso, days=2):
-                    continue
-
-                # Skip duplicates AFTER the recency check, so a stale copy can't
-                # claim the title and suppress the fresh one.
-                if self._is_title_duplicate(title):
-                    continue
-
-                article = Article(
-                    title=title,
-                    url=url,
-                    source="Hacker News",
-                    content=content,
-                    published_at=published_iso,
-                    author=hit.get("author", ""),
-                )
-                articles.append(article)
-
-            print(f"    ✅ Got {len(articles)} articles from Hacker News")
-
+                links = {"pdf": f"https://arxiv.org/pdf/{arxiv_id}", "hf": f"https://huggingface.co/papers/{arxiv_id}"}
+                if paper.get("githubRepo"):
+                    links["code"] = paper["githubRepo"]
+                authors = ", ".join(a.get("name", "") for a in paper.get("authors", []) if a.get("name"))
+                articles.append(Article(
+                    title=title, url=f"https://arxiv.org/abs/{arxiv_id}", source=name, group="papers",
+                    content=paper.get("summary") or item.get("summary") or "", published_at=published_iso,
+                    author=authors, signal=int(paper.get("upvotes") or 0), links=links,
+                ))
+            self._status(name, "papers", len(articles))
+            print(f"  ✅ {name}: {len(articles)}")
         except Exception as e:
-            print(f"  ❌ Error fetching Hacker News: {e}")
-
+            self._status(name, "papers", error=f"{type(e).__name__}: {e}")
+            print(f"  ❌ {name}: {type(e).__name__}: {str(e)[:100]}")
         return articles
 
-    async def fetch_nitter(self, username: str) -> list[Article]:
-        """Fetch tweets from a user via Nitter RSS."""
-        articles = []
-        for instance in NITTER_INSTANCES:
-            try:
-                url = f"{instance}/{username}/rss"
-                print(f"  🐦 Fetching @{username} via {instance}...")
-                response = await self.client.get(url, timeout=15.0)
-                if response.status_code != 200:
-                    continue
-
-                feed = feedparser.parse(response.content)
-                for entry in feed.entries[:10]:
-                    link = entry.get("link", "")
-                    if not link or self._is_duplicate(link):
-                        continue
-
-                    title = entry.get("title", "").strip()
-                    if not title:
-                        continue
-
-                    # Skip retweets and quote-RTs (the biggest source of duplicate noise)
-                    if re.match(r"^(RT by @|RT @|R to @)", title):
-                        continue
-
-                    content = self._clean_html(entry.get("summary", "") or entry.get("description", ""))
-
-                    published = entry.get("published", "") or entry.get("updated", "")
-                    published_iso = self._parse_date(published)
-
-                    if not self._is_recent(published_iso, days=1):
-                        continue
-
-                    # Skip replies unless they carry substantial content
-                    if title.startswith("@") and len(content) < 100:
-                        continue
-
-                    if self._is_title_duplicate(title):
-                        continue
-
-                    article = Article(
-                        title=title[:200],
-                        url=link,
-                        source=f"Twitter/@{username}",
-                        content=content,
-                        published_at=published_iso,
-                        author=username,
-                    )
-                    articles.append(article)
-
-                if articles:
-                    break  # Success, don't try other instances
-
-            except Exception as e:
-                print(f"    ⚠ Nitter instance {instance} failed: {e}")
+    def dedupe(self, items: list[Article]) -> list[Article]:
+        """Cross-source dedup. Earlier groups win; a later copy that is a Reddit/HN
+        thread about an already-kept story is attached to it as a discussion link."""
+        order = {g: i for i, g in enumerate(GROUPS)}
+        items = sorted(items, key=lambda a: (order.get(a.group, 99), -a.signal, a.published_at), reverse=False)
+        kept = []
+        for a in items:
+            url_keys = [self._normalize_url(u) for u in {a.url, a.external_url} if u]
+            title_key = self._normalize_title(a.title)
+            existing = next((self.run_urls[k] for k in url_keys if k in self.run_urls), None)
+            if existing is None and title_key:
+                match = self._match_title(title_key)
+                existing = self.run_titles.get(match) if match else None
+            if existing is not None:
+                if a.discussion and existing.source != a.source and \
+                        all(d["url"] != a.discussion["url"] for d in existing.discussions):
+                    existing.discussions.append(a.discussion)
+                    existing.signal = max(existing.signal, a.signal)
                 continue
+            # Covered on a previous day (seeded from archive.json)
+            if any(k in self.seen_urls for k in url_keys) or not title_key or self._match_title(title_key):
+                continue
+            for k in url_keys:
+                self.seen_urls.add(k)
+                self.run_urls[k] = a
+            self.seen_titles.add(title_key)
+            self.run_titles[title_key] = a
+            if a.discussion:
+                a.discussions.append(a.discussion)
+            kept.append(a)
+        return kept
 
-        return articles
+    def select_candidates(self, items: list[Article]) -> list[Article]:
+        """Round-robin across groups (strongest signal, then newest, first) with group
+        and per-source caps, so the LLM sees a balanced mix."""
+        queues = {}
+        for group, cfg in GROUPS.items():
+            pool = sorted((a for a in items if a.group == group), key=lambda a: (a.signal, a.published_at), reverse=True)
+            per_source, queue = {}, []
+            for a in pool:
+                if per_source.get(a.source, 0) >= PER_SOURCE_CAP or len(queue) >= cfg["cap"]:
+                    continue
+                per_source[a.source] = per_source.get(a.source, 0) + 1
+                queue.append(a)
+            queues[group] = queue
+        picked = []
+        while len(picked) < MAX_LLM_ITEMS and any(queues.values()):
+            for group in GROUPS:
+                if queues[group] and len(picked) < MAX_LLM_ITEMS:
+                    picked.append(queues[group].pop(0))
+        return picked
 
     async def fetch_all(self) -> list[Article]:
-        """Fetch from all sources."""
-        all_articles = []
+        """Fetch every source, dedupe, pick a balanced candidate set, and curate it."""
+        print(f"\n📡 Fetching {len(RSS_SOURCES)} feeds + Reddit + Hacker News + Hugging Face Papers...")
+        sem = asyncio.Semaphore(8)
+        fetch_started = time.time()
 
-        # RSS Feeds
-        print("\n📡 Fetching RSS feeds...")
-        for name, url in RSS_FEEDS.items():
-            articles = await self.fetch_rss_feed(name, url)
-            all_articles.extend(articles)
-            await asyncio.sleep(0.5)  # Rate limiting
+        async def rss(name, group, url):
+            async with sem:
+                return await self.fetch_rss_feed(name, url, group)
 
-        # Reddit
-        print("\n📡 Fetching Reddit...")
-        for name, url in REDDIT_FEEDS.items():
-            articles = await self.fetch_reddit(name, url)
-            all_articles.extend(articles)
-            await asyncio.sleep(0.5)
-
-        # Hacker News
-        print("\n📡 Fetching Hacker News...")
-        articles = await self.fetch_hacker_news()
-        all_articles.extend(articles)
-
-        # Twitter/X via Nitter (limited to avoid rate limits)
-        print("\n🐦 Fetching Twitter/X (top accounts)...")
-        top_accounts = TWITTER_ACCOUNTS[:8]  # Limit to avoid rate limits
-        for username in top_accounts:
-            articles = await self.fetch_nitter(username)
-            all_articles.extend(articles)
-            await asyncio.sleep(1.0)  # Be nice to Nitter instances
-
-        # Sort by date (newest first), then pick candidates with a per-source cap
-        # so one prolific feed (e.g. arXiv) can't crowd out everything else.
-        all_articles.sort(key=lambda a: a.published_at, reverse=True)
-        per_source: dict[str, int] = {}
-        candidates = []
-        for a in all_articles:
-            if per_source.get(a.source, 0) >= MAX_PER_SOURCE:
-                continue
-            per_source[a.source] = per_source.get(a.source, 0) + 1
-            candidates.append(a)
-        candidates = candidates[:MAX_LLM_ITEMS]
+        results = await asyncio.gather(
+            *(rss(n, g, u) for n, g, u in RSS_SOURCES),
+            self.fetch_reddit(), self.fetch_hacker_news(), self.fetch_hf_papers(),
+        )
+        raw = [a for batch in results for a in batch]
+        print(f"⏱ fetched in {time.time() - fetch_started:.0f}s")
+        unique = self.dedupe(raw)
+        candidates = self.select_candidates(unique)
+        mix = {g: sum(1 for a in candidates if a.group == g) for g in GROUPS}
+        print(f"\n🔎 {len(raw)} fetched → {len(unique)} unique → {len(candidates)} candidates {mix}")
 
         final_articles = self.curate_all(candidates)
+        # Most important first, newest first within the same importance
+        final_articles.sort(key=lambda a: (a.importance, a.published_at), reverse=True)
 
-        print(f"\n✅ Total articles kept: {len(final_articles)} (of {len(all_articles)} fetched)")
+        print(f"\n✅ Total articles kept: {len(final_articles)} (of {len(raw)} fetched)")
         for tag in TOPIC_TAGS:
             count = sum(1 for a in final_articles if tag in a.tags)
             if count:
                 print(f"   {tag}: {count}")
 
         self.articles = final_articles
+        self.stats = {"fetched": len(raw), "unique": len(unique), "candidates": len(candidates), "kept": len(final_articles)}
         return final_articles
 
     def curate_all(self, candidates: list[Article]) -> list[Article]:
@@ -953,7 +1002,7 @@ class NewsFetcher:
         for article in candidates:
             if len(kept) >= MAX_ARTICLES:
                 break
-            print(f"    📝 {article.title[:70]}")
+            print(f"    📝 [{article.group}] {article.title[:70]}")
             if self.curate(article) is None:
                 print("       ↳ dropped (not AI/ML relevant)")
                 continue
@@ -961,13 +1010,17 @@ class NewsFetcher:
         return kept
 
 
+DB_COLUMNS = ("title", "url", "source", "summary", "published_at", "fetched_at", "author",
+              "tags", "importance", "grp", "links", "discussions")
+
+
 def init_database(db_path: Path):
     """Initialize SQLite database with schema."""
     conn = sqlite3.connect(db_path)
     # The DB is a disposable per-run cache (archive.json is the durable history),
-    # so a table from the old category-based schema is simply rebuilt.
+    # so a table from an older schema is simply rebuilt.
     cols = {row[1] for row in conn.execute("PRAGMA table_info(articles)")}
-    if "category" in cols:
+    if cols and not set(DB_COLUMNS) <= cols:
         conn.execute("DROP TABLE articles")
     conn.execute("""
         CREATE TABLE IF NOT EXISTS articles (
@@ -975,11 +1028,15 @@ def init_database(db_path: Path):
             title TEXT NOT NULL,
             url TEXT NOT NULL UNIQUE,
             source TEXT NOT NULL,
-            summary TEXT,  -- JSON object {what, why, who}
+            summary TEXT,        -- JSON object {what, why, who}
             published_at TEXT NOT NULL,
             fetched_at TEXT NOT NULL,
             author TEXT,
-            tags TEXT,  -- JSON array of TOPIC_TAGS
+            tags TEXT,           -- JSON array of TOPIC_TAGS
+            importance INTEGER NOT NULL DEFAULT 3,
+            grp TEXT,            -- source group (papers, labs, arxiv, ...)
+            links TEXT,          -- JSON object {pdf, code, hf}
+            discussions TEXT,    -- JSON array [{source, url, points}]
             date_key TEXT NOT NULL,  -- YYYY-MM-DD for date-based queries
             created_at TEXT NOT NULL DEFAULT (datetime('now'))
         )
@@ -995,13 +1052,13 @@ def save_to_database(conn: sqlite3.Connection, articles: list[Article], date_key
     """Save articles to SQLite database."""
     cursor = conn.cursor()
     saved = 0
+    placeholders = ", ".join("?" for _ in DB_COLUMNS)
     for article in articles:
         try:
-            cursor.execute("""
-                INSERT OR IGNORE INTO articles
-                (title, url, source, summary, published_at, fetched_at, author, tags, date_key)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, article.to_db_tuple() + (date_key,))
+            cursor.execute(
+                f"INSERT OR IGNORE INTO articles ({', '.join(DB_COLUMNS)}, date_key) VALUES ({placeholders}, ?)",
+                article.to_db_tuple() + (date_key,),
+            )
             if cursor.rowcount > 0:
                 saved += 1
         except Exception as e:
@@ -1060,12 +1117,12 @@ def build_archive_index(conn: sqlite3.Connection, output_path: Path):
     for date_key in date_keys:
         cursor.execute("SELECT COUNT(*) FROM articles WHERE date_key = ?", (date_key,))
         total = cursor.fetchone()[0]
+        # Every item of the day, most important first
         cursor.execute("""
-            SELECT title, url, source, summary, published_at, author, tags
+            SELECT title, url, source, summary, published_at, author, tags, importance, grp, links, discussions
             FROM articles
             WHERE date_key = ?
-            ORDER BY published_at DESC
-            LIMIT 20
+            ORDER BY importance DESC, published_at DESC
         """, (date_key,))
         articles = [
             {
@@ -1076,6 +1133,10 @@ def build_archive_index(conn: sqlite3.Connection, output_path: Path):
                 "published_at": a[4],
                 "author": a[5],
                 "tags": json.loads(a[6]) if a[6] else [],
+                "importance": a[7] or 3,
+                "group": a[8] or "",
+                "links": json.loads(a[9]) if a[9] else {},
+                "discussions": json.loads(a[10]) if a[10] else [],
             }
             for a in cursor.fetchall()
         ]
@@ -1113,10 +1174,63 @@ def build_archive_index(conn: sqlite3.Connection, output_path: Path):
     print(f"📚 Archive index built: {len(merged)} days, saved to {output_path}")
 
 
+def write_status(path: Path, fetcher: "NewsFetcher", started: float):
+    """Public health report: per-source results and which LLM summarized what."""
+    sources = [{"name": n, **v} for n, v in sorted(fetcher.source_status.items(), key=lambda kv: (kv[1]["group"], kv[0]))]
+    status = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "duration_seconds": round(time.time() - started, 1),
+        "counts": getattr(fetcher, "stats", {}),
+        "summarized_by": fetcher.llm_stats,
+        "sources_ok": sum(1 for x in sources if x["ok"]),
+        "sources_failed": sum(1 for x in sources if not x["ok"]),
+        "sources": sources,
+    }
+    path.write_text(json.dumps(status, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def write_feed(path: Path, articles: list[Article], generated_at: str):
+    """RSS 2.0 feed of today's digest so AR can be read in any feed reader."""
+    from email.utils import format_datetime
+    from xml.sax.saxutils import escape
+
+    def rfc822(iso):
+        try:
+            return format_datetime(datetime.fromisoformat(iso))
+        except Exception:
+            return format_datetime(datetime.now(timezone.utc))
+
+    items = []
+    for a in articles:
+        s = a.summary or {}
+        lines = [f"<p><b>{label}:</b> {escape(s.get(key, ''))}</p>" for key, label in (("what", "What"), ("why", "Why"), ("who", "Who")) if s.get(key)]
+        lines.append(f"<p>{escape(a.source)} · importance {a.importance}/5 · {escape(', '.join(a.tags))}</p>")
+        link = a.url if urlparse(a.url).scheme in ("http", "https") else SITE_URL
+        items.append(
+            "    <item>\n"
+            f"      <title>{escape(a.title)}</title>\n"
+            f"      <link>{escape(link)}</link>\n"
+            f"      <guid isPermaLink=\"false\">{escape(link)}</guid>\n"
+            f"      <pubDate>{rfc822(a.published_at)}</pubDate>\n"
+            + "".join(f"      <category>{escape(t)}</category>\n" for t in a.tags)
+            + f"      <description>{escape(''.join(lines))}</description>\n"
+            "    </item>"
+        )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n'
+        "    <title>AR — daily AI/ML digest</title>\n"
+        f"    <link>{escape(SITE_URL)}</link>\n"
+        "    <description>Curated AI/ML research and releases with what/why/who summaries.</description>\n"
+        f"    <lastBuildDate>{rfc822(generated_at)}</lastBuildDate>\n"
+        + "\n".join(items) + "\n  </channel>\n</rss>\n"
+    )
+    path.write_text(xml, encoding="utf-8")
+
+
 async def main():
     """Main entry point."""
     print("=" * 60)
-    print("🤖 AI Newsletter Fetcher (with SQLite Archive)")
+    print("🤖 AR fetcher")
     print("=" * 60)
 
     start_time = time.time()
@@ -1149,11 +1263,15 @@ async def main():
         build_archive_index(conn, ARCHIVE_FILE)
 
         # Convert to dict for JSON serialization (current day only)
+        generated_at = datetime.now(timezone.utc).isoformat()
         data = {
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generated_at": generated_at,
             "article_count": len(articles),
             "all_articles": [a.to_dict() for a in articles],
         }
+        write_feed(FEED_FILE, articles, generated_at)
+        write_status(STATUS_FILE, fetcher, start_time)
+        print(f"💾 Wrote {FEED_FILE.name} and {STATUS_FILE.name}")
 
         # Write current day's newsletter.json
         with open(OUTPUT_FILE, "w") as f:
