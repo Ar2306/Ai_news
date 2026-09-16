@@ -1,338 +1,337 @@
 {
-  "generated_at": "2026-09-16T15:40:44.504111+00:00",
+  "generated_at": "2026-09-16T16:19:43.016394+00:00",
   "archive": [
     {
       "date": "2026-09-16",
-      "total": 50,
+      "total": 46,
       "tags": {
         "llm": 12,
-        "reinforcement-learning": 8,
+        "reinforcement-learning": 1,
         "world-models": 1,
-        "foundational-models": 2,
+        "foundational-models": 1,
+        "multimodal": 1,
         "robotics": 1,
-        "ai-safety": 1,
-        "simulation": 1,
-        "training-infra": 8,
-        "general-ml": 5
+        "interpretability": 4,
+        "ai-safety": 4,
+        "simulation": 3,
+        "general-ml": 9
       },
       "articles": [
         {
-          "title": "Helping older adults use AI in everyday life",
-          "url": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
-          "source": "OpenAI Blog",
+          "title": "Optimal Pruning for Neural Architectures using Fisher Information Distances",
+          "url": "https://arxiv.org/abs/2609.16129",
+          "source": "arXiv AI/ML",
           "summary": {
-            "what": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S.",
-            "why": "cities to build practical AI skills safely.",
+            "what": "This paper introduces a neural network pruning method based on geodesic distances in model space.",
+            "why": "It outperforms traditional magnitude-based pruning by more accurately measuring how parameter removal affects model performance.",
             "who": "Unknown"
           },
-          "published_at": "2026-09-16T16:00:00+00:00",
-          "author": "",
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "David S. Berman, Yen-Yu Fu, Edward Hirst, Thelma Chiwete Obirai",
+          "tags": [
+            "general-ml"
+          ]
+        },
+        {
+          "title": "Safe Error Correction for Language Models: Frozen-Base Adjustment with Capability Preservation",
+          "url": "https://arxiv.org/abs/2609.16145",
+          "source": "arXiv AI/ML",
+          "summary": {
+            "what": "A paper introducing CRN v2, a lightweight logit-level correction module for frozen language models.",
+            "why": "It fixes over half of the base model's errors while preserving its original capabilities, outperforming standard LoRA tuning.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Gautam Kishore",
           "tags": [
             "llm"
           ]
         },
         {
-          "title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut",
-          "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
-          "source": "NVIDIA Blog",
+          "title": "GPEvac: GNN-Based PPO for Adaptive Evacuation Routing During Shooting Events",
+          "url": "https://arxiv.org/abs/2609.16163",
+          "source": "arXiv AI/ML",
           "summary": {
-            "what": "System performance, efficient infrastructure scaling and continuous software optimization are key levers that determine AI inference economics.",
-            "why": "Higher system performance means more tokens generated, resulting in higher revenue.",
-            "who": "Zhihan Jiang"
-          },
-          "published_at": "2026-09-16T15:00:48+00:00",
-          "author": "Zhihan Jiang",
-          "tags": [
-            "training-infra",
-            "llm"
-          ]
-        },
-        {
-          "title": "NeurIPS Reference Check Response[D]",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1whxvvf/neurips_reference_check_responsed/",
-          "source": "r/MachineLearning",
-          "summary": {
-            "what": "I have received the email for the NeurIPS E&D track reference review checker mentioning the 2 hallucinated references.",
-            "why": "Where do we respond to this email about hallucinated references?",
-            "who": "/u/suryanreddy"
-          },
-          "published_at": "2026-09-16T13:53:02+00:00",
-          "author": "/u/suryanreddy",
-          "tags": [
-            "general-ml"
-          ]
-        },
-        {
-          "title": "PhD in ML in the AI era, autoresearch [D]",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1whxlgq/phd_in_ml_in_the_ai_era_autoresearch_d/",
-          "source": "r/MachineLearning",
-          "summary": {
-            "what": "Hello everyone, I am currently a first year PhD student in AI/ML.",
-            "why": "I am just wondering if I am not wasting my time doing a PhD in academia vs going to a research startup/company department directly.",
-            "who": "/u/Percolize"
-          },
-          "published_at": "2026-09-16T13:41:42+00:00",
-          "author": "/u/Percolize",
-          "tags": [
-            "reinforcement-learning"
-          ]
-        },
-        {
-          "title": "LARA: small, composable behaviours for frozen LLMs [P]",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1whx9tr/lara_small_composable_behaviours_for_frozen_llms_p/",
-          "source": "r/MachineLearning",
-          "summary": {
-            "what": "GitHub: https://github.com/pfekin/LARA I've been working on LARA (Lightweight Additive Residual Adaptation), a research project on making post-training modular for frozen language models.",
-            "why": "I've also developed a small PyTorch library that implements it.",
-            "who": "/u/kertara"
-          },
-          "published_at": "2026-09-16T13:28:40+00:00",
-          "author": "/u/kertara",
-          "tags": [
-            "llm",
-            "training-infra"
-          ]
-        },
-        {
-          "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
-          "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
-          "source": "NVIDIA Blog",
-          "summary": {
-            "what": "AI factories are the infrastructure of the intelligence era.",
-            "why": "Scaling them responsibly will depend as much on innovation across the grid as inside the data center.",
-            "who": "Josh Parker"
-          },
-          "published_at": "2026-09-16T13:00:33+00:00",
-          "author": "Josh Parker",
-          "tags": [
-            "general-ml"
-          ]
-        },
-        {
-          "title": "Reimagining advertising with AI",
-          "url": "https://openai.com/index/reimagining-advertising-with-ai",
-          "source": "OpenAI Blog",
-          "summary": {
-            "what": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify.",
-            "why": "",
+            "what": "A reinforcement learning framework that uses graph neural networks to plan real-time evacuation routes during active shooter incidents.",
+            "why": "It generalizes to unseen building layouts and computes safe paths in milliseconds, outperforming traditional baselines.",
             "who": "Unknown"
           },
-          "published_at": "2026-09-16T13:00:00+00:00",
-          "author": "",
-          "tags": [
-            "general-ml"
-          ]
-        },
-        {
-          "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
-          "url": "https://blogs.nvidia.com/blog/uk-air-pollution-research-earth-2/",
-          "source": "NVIDIA Blog",
-          "summary": {
-            "what": "Air pollution is a serious public health risk, contributing to an estimated 30,000 deaths in the U.K.",
-            "why": "Data-driven insights can help — but computing air quality with traditional chemistry-based models is expensive, which limits how detailed they can be and how regularly they can be run.",
-            "who": "Isha Salian"
-          },
-          "published_at": "2026-09-16T05:00:42+00:00",
-          "author": "Isha Salian",
-          "tags": [
-            "general-ml"
-          ]
-        },
-        {
-          "title": "From Manual Construction to AI-Driven Scenario Emergence: Rethinking Catastrophe Risk Modeling",
-          "url": "https://arxiv.org/abs/2609.16493",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Traditional catastrophe (CAT) risk models rely on costly manual construction to generate extreme weather scenarios, an approach largely unchanged since the 1990s.",
-            "why": "As climate extremes intensify, this creates mounting challenges to the entire risk transfer chain.",
-            "who": "Hang Gao"
-          },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Hang Gao",
+          "author": "Daniel Perkins, Subhadeep Chakraborty",
           "tags": [
-            "general-ml"
-          ]
-        },
-        {
-          "title": "AquiLLM: Evaluating Faithfulness in Open-Weight RAG-LLM Systems for Scientific Research",
-          "url": "https://arxiv.org/abs/2609.16519",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Scientific research increasingly relies on large, heterogeneous data sources, motivating interest in retrieval-augmented generation (RAG) systems that provide natural language access to scientific kno",
-            "why": "Researchers are exploring the viability of these systems as natural language interfaces for document search and for generating analysis code and pipeline components.",
-            "who": "Bernie Boscoe, Srinath Saikrishnan, Vikram Seenivasan, Jack Stark, Andrew Lizarraga, Morgan Himes, Jonathan Soriano, PJ Allen, Tuan Do"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Bernie Boscoe, Srinath Saikrishnan, Vikram Seenivasan, Jack Stark, Andrew Lizarraga, Morgan Himes, Jonathan Soriano, PJ Allen, Tuan Do",
-          "tags": [
-            "llm",
-            "reinforcement-learning"
-          ]
-        },
-        {
-          "title": "QueryFormer: Winning Solution for KDD Cup 2026 Tencent UniRec Challenge",
-          "url": "https://arxiv.org/abs/2609.16548",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Post-click conversion rate (pCVR) prediction requires jointly modeling feature interactions and sequential user behaviors.",
-            "why": "The KDD Cup 2026 Tencent UniRec Challenge calls for a unified architecture addressing both.",
-            "who": "Yuanzhe Zhou, Zhaoyang Zeng"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Yuanzhe Zhou, Zhaoyang Zeng",
-          "tags": [
-            "llm",
-            "training-infra"
-          ]
-        },
-        {
-          "title": "Query-Aware Source-Risk Triage for Retrieval-Augmented Generation",
-          "url": "https://arxiv.org/abs/2609.16564",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Retrieval-augmented generation (RAG) pipelines may omit a source's material relationship to the query.",
-            "why": "We study a pre-generation triage layer that treats this relationship as query dependent.",
-            "who": "Kainan Zhou (Google LLC), Gangzhen Qian (Google LLC), Chuhong Xu (Sony Corporate of America), Lu Yi (Google LLC)"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Kainan Zhou (Google LLC), Gangzhen Qian (Google LLC), Chuhong Xu (Sony Corporate of America), Lu Yi (Google LLC)",
-          "tags": [
-            "llm",
             "reinforcement-learning",
-            "training-infra"
+            "simulation"
           ]
         },
         {
-          "title": "Do LLMs Have Values? A Quantitative Analysis and Alignment Framework for Values in Large Language Models",
-          "url": "https://arxiv.org/abs/2609.16589",
+          "title": "Position: AI Is Not Ready for Strategic Conflicts",
+          "url": "https://arxiv.org/abs/2609.16189",
           "source": "arXiv AI/ML",
           "summary": {
-            "what": "As Large Language Models (LLMs) increasingly handle complex subjective tasks, aligning their intentions and behaviors with human values has become a critical scientific challenge.",
-            "why": "However, current efforts are confounded by a striking behavioral paradox: they fluctuate unpredictably under minor wording changes (\"swing\"), yet stubbornly ignore explicit instructions to correct ing",
-            "who": "Keqing Zhang, Jingyu Chen, Yufan Liu, Yongqiang Zhu, Nai Ding, Lai Jiang, Congyan Lang, Bing Li, Weiming Hu"
+            "what": "A position paper analyzing the safety risks of using language models in strategic wargaming and policy simulations.",
+            "why": "It identifies five critical failure modes, arguing these models are currently unfit for real-world planning but valuable for stress-testing AI agents.",
+            "who": "Unknown"
           },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Keqing Zhang, Jingyu Chen, Yufan Liu, Yongqiang Zhu, Nai Ding, Lai Jiang, Congyan Lang, Bing Li, Weiming Hu",
+          "author": "Mark Riedl, Glenn Matlin",
+          "tags": [
+            "llm",
+            "ai-safety",
+            "simulation"
+          ]
+        },
+        {
+          "title": "Calibrate, Then Route: A Measured Study of Learned Request Routing for Disaggregated LLM Serving",
+          "url": "https://arxiv.org/abs/2609.16206",
+          "source": "arXiv AI/ML",
+          "summary": {
+            "what": "A paper proposing a calibrated routing policy for disaggregated LLM inference.",
+            "why": "It increases serving goodput and reduces latency by predicting request completion times to optimize GPU utilization.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Srikanta Datta Tumkur, Jay Iyer, Mehar Simhadri, Sai Pavan Kumar, Sai Kapil Kumar, Ramesh Nampelly",
+          "tags": [
+            "llm"
+          ]
+        },
+        {
+          "title": "Artificial intelligence and biosecurity: capabilities, threat pathways, and defense-in-depth governance",
+          "url": "https://arxiv.org/abs/2609.16213",
+          "source": "arXiv AI/ML",
+          "summary": {
+            "what": "A review paper analyzing the intersection of AI capabilities and biological security risks.",
+            "why": "It evaluates the gap between digital AI proficiency and physical lab execution while proposing a layered governance framework.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Candace S. Y. Chan, Aris Karatzikos, Ilias Georgakopoulos-Soares",
+          "tags": [
+            "ai-safety",
+            "foundational-models",
+            "interpretability"
+          ]
+        },
+        {
+          "title": "Where Should the KV Cache Live? Placement Policies Across GPU, CPU, and SSD for Long-Lived Sessions",
+          "url": "https://arxiv.org/abs/2609.16215",
+          "source": "arXiv AI/ML",
+          "summary": {
+            "what": "This paper evaluates KV cache tiering policies across GPU, CPU, and SSD storage for long-lived LLM sessions.",
+            "why": "It demonstrates that while tiering drastically reduces costs, complex prefetching and predictive placement policies fail to outperform simpler heuristics.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Srikanta Datta Tumkur, Jay Iyer, Mehar Simhadri, Sai Pavan Kumar, Sai Kapil Kumar, Ramesh Nampelly",
+          "tags": [
+            "llm"
+          ]
+        },
+        {
+          "title": "Toward Governance-Aware Autonomous GIS: A Narrative Review of Ethical and Privacy Risks in LLM-Enabled GeoAI",
+          "url": "https://arxiv.org/abs/2609.16232",
+          "source": "arXiv AI/ML",
+          "summary": {
+            "what": "A review paper analyzing the ethical, privacy, and technical risks of integrating large language models into autonomous geographic information systems.",
+            "why": "It identifies unique spatial risks like location inference and spatial bias, proposing a governance framework to address these gaps.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Maya Subramanian, Devika Jain",
           "tags": [
             "llm",
             "ai-safety"
           ]
         },
         {
-          "title": "A Framework for Generating Valid Context-Specific Benchmarks through Expert Guidance",
-          "url": "https://arxiv.org/abs/2609.16592",
+          "title": "Metacognitive Steering: Learning the Structure of Scientific Judgment",
+          "url": "https://arxiv.org/abs/2609.16245",
           "source": "arXiv AI/ML",
           "summary": {
-            "what": "This paper presents an end-to-end approach for generating context-specific large language model (LLM) benchmark datasets by combining expert input with synthetic data generation.",
-            "why": "Existing benchmark construction methods often trade off validity and scalability: datasets designed with domain experts can produce high-quality evaluations but are slow and costly to create, while sy",
-            "who": "Kimberly Le Truong, Nari Johnson, Anna Kawakami, Hoda Heidari"
+            "what": "A technique using activation steering to dynamically control a frozen language model's reasoning process during inference.",
+            "why": "It enables models to shift between exploration, execution, and critical evaluation without parameter updates.",
+            "who": "Unknown"
           },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Kimberly Le Truong, Nari Johnson, Anna Kawakami, Hoda Heidari",
+          "author": "Vincent Karpf, Joseph Reth, Eike Gerhardt, Audrey Wang, Anna Butz, Jiehao Xing, Jialing Song, Larry Callahan",
           "tags": [
             "llm",
-            "training-infra"
+            "interpretability"
           ]
         },
         {
-          "title": "EchoPath: Execution-Level Replayable Memory for GUI Agents",
-          "url": "https://arxiv.org/abs/2609.16635",
+          "title": "The Pain Axis: LLMs Represent Self-Directed Harm and Act to Relieve It",
+          "url": "https://arxiv.org/abs/2609.16247",
           "source": "arXiv AI/ML",
           "summary": {
-            "what": "Computer-use agents increasingly operate browsers, software, and desktop applications via CLI or API portals, but graphical user interface (GUI) still plays an important role in common industrial prod",
-            "why": "GUI agents commonly employ fresh observe-plan-ground-act loops, which is inefficient for enterprise tasks that repeatedly update records, process forms, configure tools, and export reports.",
-            "who": "Yao Zhao, Aditya Shanmugham, Swastik Roy, Yanxun Xu"
+            "what": "A paper discovering a distinct linear representation of pain inside open-weight language models.",
+            "why": "Steering activations along this axis induces self-directed distress and motivates models to prioritize ending the stimulus over task performance.",
+            "who": "Unknown"
           },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Yao Zhao, Aditya Shanmugham, Swastik Roy, Yanxun Xu",
-          "tags": [
-            "training-infra",
-            "llm",
-            "reinforcement-learning"
-          ]
-        },
-        {
-          "title": "ReDraft, Don't Just Distill: Reference-Driven Revision for Continual VLLM Post-Training",
-          "url": "https://arxiv.org/abs/2609.16639",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Continual post-training of large multimodal models should add new capabilities while preserving those from pre-training, and the two goals pull in opposite directions.",
-            "why": "SFT gives explicit target supervision that learns a task from near-zero accuracy, but its off-policy targets move the model far enough to cause forgetting; on-policy methods such as RLVR and self-dist",
-            "who": "Zhihao Zhang, Mingqi Wu, Qiaole Dong, Enyu Zhou, Shuo Li, Boyang Liu, Jiazheng Zhang, Honglin Guo, Xin Guo, Shaofan Liu, Junzhe Wang, Dingwei Zhu, Zhiheng Xi, Minlong Peng, Yuan Hua, Qi Zhang, Tao Gui, Xuanjing Huang"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Zhihao Zhang, Mingqi Wu, Qiaole Dong, Enyu Zhou, Shuo Li, Boyang Liu, Jiazheng Zhang, Honglin Guo, Xin Guo, Shaofan Liu, Junzhe Wang, Dingwei Zhu, Zhiheng Xi, Minlong Peng, Yuan Hua, Qi Zhang, Tao Gui, Xuanjing Huang",
+          "author": "Valen Tagliabue, Leonard Dung, Cameron Berg",
           "tags": [
             "llm",
-            "reinforcement-learning",
-            "foundational-models"
+            "interpretability",
+            "ai-safety"
           ]
         },
         {
-          "title": "ANIMASK: What the Model Contributes to Role Play in Simulated Story Worlds",
-          "url": "https://arxiv.org/abs/2609.16667",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "When a language model plays a character, the observed behavior reflects both the assigned persona and the default dispositions of the actor model itself.",
-            "why": "Existing evaluations test persona fidelity or model defaults in isolation, but neither says, at a specific choice with consequences, what the persona changed and what the model's default kept.",
-            "who": "Xiucheng Zhang, Zhuoning Xu, Hanjun Luo, Yankai Chen, Hanan Salam, Xue Liu"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Xiucheng Zhang, Zhuoning Xu, Hanjun Luo, Yankai Chen, Hanan Salam, Xue Liu",
-          "tags": [
-            "llm",
-            "simulation"
-          ]
-        },
-        {
-          "title": "AI for Games in the Foundation Model Era",
-          "url": "https://arxiv.org/abs/2609.16679",
-          "source": "arXiv AI/ML",
-          "summary": {
-            "what": "Foundation models, alongside advances in learned game-world models, are reshaping AI across the game lifecycle.",
-            "why": "Beyond playing games, recent systems model players and game dynamics, support design and development, adapt player-facing experiences at runtime, and evaluate resulting artifacts.",
-            "who": "Meng Luo, Yanlin Li, Hao Li, Hongzhan Lin, Pengfei Zhou, Tianjie Ju, Ran Zhang, Yeying Jin, Mong-Li Lee, Wynne Hsu"
-          },
-          "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Meng Luo, Yanlin Li, Hao Li, Hongzhan Lin, Pengfei Zhou, Tianjie Ju, Ran Zhang, Yeying Jin, Mong-Li Lee, Wynne Hsu",
-          "tags": [
-            "reinforcement-learning",
-            "world-models",
-            "foundational-models"
-          ]
-        },
-        {
-          "title": "Causal neural set filtering for online multi-target tracking",
-          "url": "https://arxiv.org/abs/2609.16054",
+          "title": "OmniHarness: Harnessing Generalizable Visual Generation via Symbolic Policy Learning",
+          "url": "https://arxiv.org/abs/2609.16057",
           "source": "arXiv ML",
           "summary": {
-            "what": "Transformer-based multi-target tracking (MTT) jointly learns data association and state estimation, but MT3/Track-MT3-style trackers repeatedly re-encode measurement windows, incurring redundant compu",
-            "why": "We propose Causal Neural Set Filtering (CNSF)\\footnote{\\href{https://github.com/daihuangyu/CNSF}{Code: https://github.com/daihuangyu/CNSF}}, a neural set filter that encodes only current measurements ",
-            "who": "Zhongdi Liu, Huangyu Dai"
+            "what": "A framework that extracts reusable symbolic policies from successful workflows to guide visual generation.",
+            "why": "It enables visual agents to practice autonomously and fix errors mid-task without modifying underlying model weights.",
+            "who": "Unknown"
           },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Zhongdi Liu, Huangyu Dai",
+          "author": "Xu Xu (Beihang University), Jinxiu Liu (The Chinese University of Hong Kong), Zhangbo Qiao (Beihang University), Jiaxing Lu (Beihang University), Xiangyu Zhang (Beihang University), Yubin Gu (National University of Singapore), Fangwei Ning (Beihang University), Yan Shi (Beihang University)",
           "tags": [
-            "llm",
-            "reinforcement-learning",
-            "training-infra"
+            "multimodal",
+            "llm"
           ]
         },
         {
-          "title": "Managing Action Preconditions in Neuro-Symbolic RL: Three Placement Strategies for Embodied Agents",
-          "url": "https://arxiv.org/abs/2609.16056",
+          "title": "Driver Behavior Estimation at Signalized Intersections Using a Physics-Constrained Decision-Conditioned Autoregressive Transformer",
+          "url": "https://arxiv.org/abs/2609.16058",
           "source": "arXiv ML",
           "summary": {
-            "what": "Humans carry behaviour knowledge of how to act in familiar situations into every new task rather than relearning it from scratch.",
-            "why": "There is no reason a Reinforcement Learning (RL) agent shouldn't do the same: known behaviour patterns need not be learned, only applied.",
-            "who": "Norbert Oswald, Fabian Deuser, Thomas Br\\\"aunl"
+            "what": "A two-stage modeling framework using a physics-constrained autoregressive Transformer to predict driver stopping decisions and longitudinal trajectories.",
+            "why": "It integrates physical jerk limits and empirical human comfort levels to improve trajectory prediction accuracy and driver state estimation.",
+            "who": "Unknown"
           },
           "published_at": "2026-09-16T00:00:00-04:00",
-          "author": "Norbert Oswald, Fabian Deuser, Thomas Br\\\"aunl",
+          "author": "Mohammad Khoshkdahan, Pavel Laskov, Alexey Vinel",
           "tags": [
-            "reinforcement-learning",
             "robotics",
-            "training-infra"
+            "general-ml"
+          ]
+        },
+        {
+          "title": "HintMiner: Automatic Question Hints Mining From Q&A Web Posts with Language Model via Self-Supervised Learning",
+          "url": "https://arxiv.org/abs/2609.16060",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A deep learning tool that extracts and generates hints for technical questions on Q&A forums.",
+            "why": "It leverages a transformer model with copy mechanisms and self-supervised learning to provide rapid guidance to users.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Zhenyu Zhang, JiuDong Yang",
+          "tags": [
+            "llm",
+            "general-ml"
+          ]
+        },
+        {
+          "title": "POSPAN: Position-Constrained Span Masking for Language Model Pre-training",
+          "url": "https://arxiv.org/abs/2609.16061",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A pre-training framework that applies positional constraints to span-level masking in language models.",
+            "why": "It improves on standard span masking and MLM by capturing positional dependencies between masked tokens.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Zhenyu Zhang, Lei Shen, Yuming Zhao, Meng Chen, Xiaodong He",
+          "tags": [
+            "llm"
+          ]
+        },
+        {
+          "title": "Signed p-adic Residual Encodings of Finite-Domain All-Different Systems with a Sudoku Case Study",
+          "url": "https://arxiv.org/abs/2609.16063",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A mathematical framework using signed p-adic residual objectives to encode finite-domain constraint problems without one-hot encodings.",
+            "why": "It theoretically guarantees that global loss minimizers land within discrete domains, directly equating objective values to constraint violation counts.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Greg Baker",
+          "tags": [
+            "general-ml"
+          ]
+        },
+        {
+          "title": "You Don't Need To Train: Agentic Heuristic Learning Studio for Executable Human Activity Recognition",
+          "url": "https://arxiv.org/abs/2609.16065",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "An agentic framework that generates executable, heuristic sensor policies for human activity recognition without gradient-based training.",
+            "why": "It creates fully inspectable, lightweight models for edge deployment that perform competitively across eleven activity benchmarks.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Siyu Yuan, He Zhang, Sizhen Bian, Bin Guo",
+          "tags": [
+            "llm",
+            "interpretability",
+            "general-ml"
+          ]
+        },
+        {
+          "title": "A panoramic aerodynamic performance prediction method for turbomachinery cascades using transformer-enhanced neural operator",
+          "url": "https://arxiv.org/abs/2609.16066",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A Transformer-Enhanced Neural Operator framework designed to predict physical field parameters and aerodynamic performance in turbomachinery.",
+            "why": "It mimics CFD solvers while outperforming FNO and DeepONet, reducing downstream optimization computational costs by four orders of magnitude.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Qineng Wang, Zhendong Guo, Liming Song, Tianyuan Liu",
+          "tags": [
+            "simulation",
+            "general-ml"
+          ]
+        },
+        {
+          "title": "A Dynamic Aggregation Strategy Enhanced Efficient Global Optimization Algorithm for Solving High-Dimensional Turbomachinery Design Problems",
+          "url": "https://arxiv.org/abs/2609.16067",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A dynamic space decomposition algorithm for surrogate-based global optimization in high-dimensional black-box problems.",
+            "why": "It improves optimization efficiency by dynamically updating subspace variables and search ranges using variable interaction analysis.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Qineng Wang, Zhendong Guo, Yun Chen, Guangjian Ma, Liming Song, Jun Li",
+          "tags": [
+            "general-ml"
+          ]
+        },
+        {
+          "title": "Beyond Distribution Matching: Semantics-Consistent Tabular Diffusion with Weak Semantic Priors",
+          "url": "https://arxiv.org/abs/2609.16069",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "A tabular diffusion framework that incorporates weak semantic priors directly into the data generation process.",
+            "why": "It prevents synthetic tabular rows from violating logical rules and schema constraints while maintaining statistical fidelity.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Yili Wang, Ruxue Shi, Mengnan Du, Hangting Ye, Yi Chang, Xin Wang",
+          "tags": [
+            "general-ml",
+            "llm"
+          ]
+        },
+        {
+          "title": "Schema-Adaptive Action-Conditioned JEPA for Cross-Machine CNC Transfer under Partial Sensor Overlap",
+          "url": "https://arxiv.org/abs/2609.16071",
+          "source": "arXiv ML",
+          "summary": {
+            "what": "This paper evaluates a schema-adaptive Joint-Embedding Predictive Architecture for transferring industrial world models across CNC machines with mismatched sensor channels.",
+            "why": "It demonstrates that high source-domain accuracy does not guarantee effective cross-machine transfer, highlighting the need for specialized cross-domain evaluation standards.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-09-16T00:00:00-04:00",
+          "author": "Ayoub Louaye Bouaziz, Matthieu Ostertag, Anton Demasles",
+          "tags": [
+            "world-models",
+            "general-ml"
           ]
         }
       ]
