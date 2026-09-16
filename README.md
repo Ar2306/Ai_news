@@ -22,22 +22,25 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
 ## Project Structure
 
 ```
-ai-newsletter/
-├── index.html              # Main newsletter page
+AI-News-Update/
+├── index.html              # AR: today's digest, filterable by tag
+├── archive.html            # AR: past days, filterable by tag
+├── assets/
+│   ├── site.css            # Shared minimal styles
+│   └── site.js             # Shared rendering + tag filtering
 ├── data/
-│   ├── newsletter.json     # Generated newsletter data
-│   ├── archive.json        # Daily archive index
-│   └── newsletter.db       # SQLite history (gitignored)
+│   ├── newsletter.json     # Today's items (committed by the daily run)
+│   ├── archive.json        # Daily archive (committed by the daily run)
+│   └── newsletter.db       # SQLite cache (gitignored)
 ├── scripts/
-│   ├── fetch-news.py       # Main fetch & summarization script
+│   ├── fetch-news.py       # Fetch, dedup, curate with Claude, write JSON
 │   ├── send_digest.py      # Morning digest sender (email + Telegram)
-│   └── run-fetch.sh        # Cron wrapper script
+│   └── run-fetch.sh        # Wrapper used by the workflow (logs to logs/)
 ├── .github/workflows/
 │   ├── daily-fetch.yml     # 6 AM fetch + commit + send digest
-│   └── tests.yml           # CI: compile, data validation, dedup checks
-├── logs/                   # Fetch logs (gitignored)
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
+│   └── tests.yml           # CI: compile, schema validation, curation + dedup checks
+├── package.json / vercel.json  # Static Vercel deployment
+└── requirements.txt        # Python dependencies
 ```
 
 ## Installation
@@ -73,7 +76,7 @@ python3 scripts/fetch-news.py
 - **Locally:** open `index.html` in a browser, or serve it:
 ```bash
 python3 -m http.server 8080
-# Then open http://localhost:8080
+# Then open http://localhost:8080  (or: npm run dev)
 ```
 
 ## Daily digest delivery
