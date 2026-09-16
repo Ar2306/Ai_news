@@ -34,6 +34,17 @@ def redact(text, key):
     return re.sub(r"\*{2,}\S{1,8}", "***", text)
 
 
+def gemini_models(http, key):
+    try:
+        resp = http.get(f"{fetch_news.GEMINI_BASE}/models", headers={"x-goog-api-key": key}, params={"pageSize": 200})
+        if resp.status_code != 200:
+            return f"list failed (HTTP {resp.status_code})"
+        names = [m["name"].removeprefix("models/") for m in resp.json().get("models", [])]
+        return ", ".join(n for n in names if "2.5-flash" in n) or "none"
+    except Exception as e:
+        return f"list failed ({type(e).__name__})"
+
+
 def main():
     rows = []
     with httpx.Client(timeout=fetch_news.LLM_TIMEOUT) as http:
@@ -52,6 +63,8 @@ def main():
             except Exception as e:
                 status, level = "❌ failed", "error"
                 detail = f"model {provider.model} · {type(e).__name__}: {e}"
+                if name == "Gemini":
+                    detail += f" · 2.5 models visible to this key: {gemini_models(http, key)}"
             detail = redact(detail, key)
             rows.append((name, env, status, detail))
             print(f"::{level} title={name}::{status} — {detail}")

@@ -45,12 +45,13 @@ ARCHIVE_RETENTION_DAYS = int(os.environ.get("ARCHIVE_RETENTION_DAYS", "180"))
 #   3. extractive summary + keyword tags (always works, no key needed)
 # A provider without a key is skipped; one that keeps failing is switched off for the run.
 GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# Gemini 2.5 only (free tier). Tried in order; the next is used if one is unavailable or out of quota.
+GEMINI_MODELS = [m.strip() for m in os.environ.get("GEMINI_MODELS", "gemini-2.5-flash,gemini-2.5-flash-lite").split(",") if m.strip()]
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
 GEMINI_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5"))  # free tier ≈ 10 requests/min
 
 OLLAMA_API_KEY_ENV = "OLLAMA_API_KEY"
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "gpt-oss:120b")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3.5:397b")  # free open-weight Qwen on Ollama Cloud
 OLLAMA_BASE = "https://ollama.com/api"
 OLLAMA_MIN_INTERVAL = float(os.environ.get("OLLAMA_MIN_INTERVAL", "1.0"))
 
@@ -219,9 +220,10 @@ class LLMError(RuntimeError):
     """fatal=True means retrying this provider is pointless for the rest of the run
     (bad key, no access, daily quota used up)."""
 
-    def __init__(self, message: str, fatal: bool = False):
+    def __init__(self, message: str, fatal: bool = False, status: int = 0):
         super().__init__(message)
         self.fatal = fatal
+        self.status = status
 
 
 def check_response(resp: httpx.Response) -> None:
@@ -234,7 +236,7 @@ def check_response(resp: httpx.Response) -> None:
         or "api key not valid" in msg.lower()
         or (resp.status_code == 429 and re.search(r"per ?day|daily", resp.text, re.I) is not None)
     )
-    raise LLMError(f"HTTP {resp.status_code}: {msg}", fatal=fatal)
+    raise LLMError(f"HTTP {resp.status_code}: {msg}", fatal=fatal, status=resp.status_code)
 
 
 class LLMProvider:
@@ -278,27 +280,54 @@ class LLMProvider:
                 time.sleep(min(retry_after_seconds(resp, default=2 ** (attempt + 1)), LLM_MAX_BACKOFF))
                 continue
             return resp
-        raise LLMError(f"HTTP {resp.status_code} after {LLM_MAX_RETRIES} retries: {error_message(resp)}")
+        raise LLMError(f"HTTP {resp.status_code} after {LLM_MAX_RETRIES} retries: {error_message(resp)}", status=resp.status_code)
 
 
 class GeminiProvider(LLMProvider):
     name = "Gemini"
     min_interval = GEMINI_MIN_INTERVAL
 
-    def __init__(self, http, api_key, model=GEMINI_MODEL):
+    def __init__(self, http, api_key, models=None):
         super().__init__(http, api_key)
-        self.model = model
+        self.models = list(models or GEMINI_MODELS)
+        self.model_index = 0
+
+    @property
+    def model(self) -> str:
+        return self.models[self.model_index]
 
     def _request(self, prompt: str) -> str:
-        resp = self._call(prompt)
-        if resp.status_code == 404:
-            # Configured model retired/renamed: switch to the best available Flash model once
-            replacement = self._discover_model()
-            if replacement and replacement != self.model:
-                print(f"    ↻ Gemini model {self.model} not found, using {replacement}")
-                self.model = replacement
+        while True:
+            try:
                 resp = self._call(prompt)
-        check_response(resp)
+                check_response(resp)
+                return self._text(resp)
+            except LLMError as e:
+                # Model missing (404) or no quota left for it: move to the next 2.5 model.
+                # A bad key (401/403/invalid) is the same for every model, so don't switch.
+                switchable = e.status == 404 or (e.status == 429 and e.fatal)
+                if switchable and self.model_index + 1 < len(self.models):
+                    print(f"    ↻ Gemini {self.model} unavailable ({str(e)[:120]}); trying {self.models[self.model_index + 1]}")
+                    self.model_index += 1
+                    continue
+                raise
+
+    def _call(self, prompt: str) -> httpx.Response:
+        return self._post(
+            f"{GEMINI_BASE}/models/{self.model}:generateContent",
+            headers={"x-goog-api-key": self.api_key},
+            json={
+                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "temperature": 0.2,
+                    "maxOutputTokens": 2048,  # headroom: 2.5 models think before answering
+                    "responseMimeType": "application/json",
+                },
+            },
+        )
+
+    @staticmethod
+    def _text(resp: httpx.Response) -> str:
         data = resp.json()
         candidates = data.get("candidates") or []
         if not candidates:
@@ -309,32 +338,6 @@ class GeminiProvider(LLMProvider):
         if not text.strip():
             raise LLMError(f"empty text (finishReason={candidates[0].get('finishReason')})")
         return text
-
-    def _call(self, prompt: str) -> httpx.Response:
-        return self._post(
-            f"{GEMINI_BASE}/models/{self.model}:generateContent",
-            headers={"x-goog-api-key": self.api_key},
-            json={
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {
-                    "temperature": 0.2,
-                    "maxOutputTokens": 2048,  # headroom for models that think before answering
-                    "responseMimeType": "application/json",
-                },
-            },
-        )
-
-    def _discover_model(self) -> Optional[str]:
-        try:
-            resp = self.http.get(f"{GEMINI_BASE}/models", headers={"x-goog-api-key": self.api_key}, params={"pageSize": 200})
-            names = [
-                m["name"].removeprefix("models/") for m in resp.json().get("models", [])
-                if "generateContent" in m.get("supportedGenerationMethods", [])
-            ]
-        except Exception:
-            return None
-        flash = [n for n in names if "flash" in n and not re.search(r"lite|image|tts|live|audio|exp|preview", n)]
-        return sorted(flash)[-1] if flash else None
 
 
 class OllamaProvider(LLMProvider):
@@ -379,7 +382,11 @@ class OllamaProvider(LLMProvider):
         except Exception:
             return None
         names = [n for n in names if n]
-        preferred = [n for n in names if n.startswith("gpt-oss")] or names
+        preferred = (
+            [n for n in names if n.startswith("qwen3.5")]
+            or [n for n in names if n.startswith("qwen")]
+            or names
+        )
         return preferred[0] if preferred else None
 
 
