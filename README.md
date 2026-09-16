@@ -16,7 +16,15 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
   - ✈️ **Telegram** via bot (compact HTML message)
 - **LLM curation** with **Gemini**, falling back to **Ollama Cloud** — one call per item returns relevance, tags, and a what/why/who summary; if both fail, an extractive summary + keyword tags are used so a run never breaks
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
-- **AR web UI** — search with highlighting, topic and source filters, save-for-later, "new since your last visit", keyboard shortcuts (`/` `j` `k` `o` `s`), shareable filter URLs, automatic light/dark theme, and a searchable archive grouped by day
+- **AR web UI** (matte black & white):
+  - **Top picks** — each item gets an importance score (1-5); the day's most important items lead the page
+  - **Your interests** — follow topics, keywords or sources ("For you" view, "Following" badges) and mute what you never read
+  - **Read tracking** — opened items are dimmed, "Hide read", "Mark all as read"
+  - **Read later**, **Week** view (the week's top items), searchable **Archive** grouped by day
+  - **Paper extras** — PDF, code and Hugging Face links, plus "also discussed on" Hacker News / Reddit threads
+  - **Sync devices** — copy a code to move Read later, interests and read history to another browser
+  - **Stale-data banner** if the daily refresh fails, source health in the footer, **RSS feed** at `/data/feed.xml`
+  - Search with highlighting, shareable filter URLs, keyboard shortcuts (`/` `j` `k` `o` `l` `m`)
 - **Locked-down static site** — strict Content-Security-Policy (no inline or third-party scripts), security headers, and a deploy allowlist so only the site files are ever public
 - **Static site** — no backend needed, auto-deployed to Vercel on every push
 
@@ -156,17 +164,20 @@ To deploy your own copy, import this repo in [Vercel](https://vercel.com/new) �
 
 ## Data Sources
 
-### RSS Feeds
-arXiv (AI/ML/CV/CL), Hugging Face, OpenAI, Anthropic, Google AI, Microsoft Research, Meta AI, NVIDIA, Google DeepMind, Cohere, LangChain, Weights & Biases, AssemblyAI, Replicate, Together AI blogs.
+About 47 sources in 8 groups. Candidates are picked round-robin across groups (each with a cap, max 4 per feed), so no single source dominates. When the same story shows up in several places, the best copy is kept and Reddit/HN threads become "discussed on" links.
 
-### Reddit
-r/MachineLearning, r/ArtificialIntelligence, r/LocalLLaMA, r/MLQuestions, r/ComputerVision, r/LanguageTechnology.
+| Group | Sources |
+|---|---|
+| Papers | Hugging Face daily papers (upvotes + code links) |
+| arXiv | cs.AI, cs.LG, cs.CL, cs.CV, cs.RO |
+| Labs | OpenAI, Google DeepMind, Google Research, Google AI, Microsoft Research, NVIDIA (blog + technical), Apple ML, AWS ML, Hugging Face, Mistral, Allen AI, Together AI, Meta Engineering, MIT News, Stanford AI Lab |
+| Blogs | Simon Willison, Latent Space, Interconnects, Import AI, Sebastian Raschka, Lil'Log, Chip Huyen, Eugene Yan, Hamel Husain, Andrej Karpathy, The Gradient |
+| News | TechCrunch AI, The Verge AI, Ars Technica AI, MIT Technology Review |
+| Medium | tags AI, Machine Learning, LLM, Deep Learning, Generative AI, Reinforcement Learning; Towards Data Science; Data Science Collective |
+| Reddit | r/MachineLearning, LocalLLaMA, artificial, singularity, OpenAI, reinforcementlearning, deeplearning, StableDiffusion, robotics, computervision (one combined request) |
+| Community | Hacker News stories with 40+ points |
 
-### Hacker News
-AI/ML tagged stories via Algolia API.
-
-### Twitter/X (via Nitter)
-Top AI researchers and companies.
+Edit `RSS_SOURCES`, `REDDIT_SUBS` or `GROUPS` in `scripts/fetch-news.py` to change them. `data/status.json` lists which sources worked on the last run.
 
 ## Output Format
 
@@ -184,7 +195,11 @@ The script generates `data/newsletter.json` with:
       "summary": {"what": "...", "why": "...", "who": "..."},
       "published_at": "2026-07-26T04:00:00Z",
       "fetched_at": "2026-07-26T06:01:12Z",
-      "author": "..."
+      "author": "...",
+      "importance": 4,
+      "group": "papers",
+      "links": {"pdf": "https://arxiv.org/pdf/...", "code": "https://github.com/...", "hf": "https://huggingface.co/papers/..."},
+      "discussions": [{"source": "Hacker News", "url": "https://news.ycombinator.com/item?id=...", "points": 312}]
     }
   ]
 }
@@ -194,7 +209,11 @@ The script generates `data/newsletter.json` with:
 - `summary` — three short lines: **what** it is, **why** it matters, **who** is behind it
 - Items the LLM judges not genuinely about AI/ML are dropped before anything is written
 
-`data/archive.json` holds one entry per day (`date`, `total`, per-tag `tags` counts, `articles` in the same shape).
+- `importance` — 1-5 from the LLM (raised by strong community signals like HF upvotes or HN points); items are ordered most important first
+
+The run also writes `data/feed.xml` (RSS of the day's digest) and `data/status.json` (per-source health and which model summarized the items).
+
+`data/archive.json` holds one entry per day (every item, not just the top 20) (`date`, `total`, per-tag `tags` counts, `articles` in the same shape).
 
 ## Troubleshooting
 

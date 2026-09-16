@@ -12,6 +12,7 @@
     <meta property="og:title" content="AR — archive">
     <meta property="og:description" content="AR archive: past AI/ML digests, searchable and filterable by topic.">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%230b0b0b'/%3E%3Ctext x='32' y='42' font-family='Menlo,monospace' font-size='26' font-weight='800' fill='%23ececec' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E">
+    <link rel="alternate" type="application/rss+xml" title="AR — daily AI/ML digest" href="data/feed.xml">
     <link rel="stylesheet" href="assets/site.css">
     <script src="assets/app.js" defer></script>
 </head>
@@ -22,12 +23,15 @@
         <div class="container topbar-inner">
             <a class="brand" href="/" aria-label="AR home"><span class="mark" aria-hidden="true">AR</span><span class="brand-sub">AI/ML research digest</span></a>
             <nav class="nav" aria-label="Pages">
-                <a href="/">Latest</a>
-                <a href="archive.html" aria-current="page">Archive</a>
-                <a href="/?view=later" class="nav-later">Read later <span class="later-count" hidden>0</span></a>
+                <a href="/" data-nav="latest" data-page="latest" data-view="all">Latest</a>
+                <a href="archive.html?view=week" data-nav="week" data-page="archive" data-view="week">Week</a>
+                <a href="archive.html" data-nav="archive" data-page="archive" data-view="all">Archive</a>
+                <a href="/?view=later" data-nav="later" data-page="latest" data-view="later">Later <span class="later-count" hidden>0</span></a>
             </nav>
         </div>
     </header>
+
+    <div class="banner" id="banner" role="status" hidden></div>
 
     <div class="container">
         <section class="hero" id="hero" aria-live="polite">
@@ -50,11 +54,13 @@
                 <label class="sort">
                     <span class="sr-only">Sort</span>
                     <select id="sort">
+                        <option value="important">Most important</option>
                         <option value="newest">Newest first</option>
                         <option value="oldest">Oldest first</option>
                         <option value="source">By source</option>
                     </select>
                 </label>
+                <button type="button" class="toggle-btn" id="hide-read" data-action="toggle-hide-read" aria-pressed="false" title="Hide items you have opened or marked read">Hide read</button>
             </div>
             <div class="filters" id="tag-filters" role="group" aria-label="Filter by topic"></div>
         </div>
@@ -76,9 +82,32 @@
                 <h2 class="panel-title">Days</h2>
                 <ul class="day-list" id="days"></ul>
             </section>
+            <section class="panel interests">
+                <h2 class="panel-title">Your interests</h2>
+                <div class="interest-add">
+                    <label class="sr-only" for="interest-input">Topic, keyword or source</label>
+                    <input id="interest-input" type="text" placeholder="topic, keyword or source" maxlength="60" autocomplete="off" spellcheck="false">
+                    <button type="button" class="mini-btn" data-action="follow-add">Follow</button>
+                    <button type="button" class="mini-btn" data-action="mute-add">Mute</button>
+                </div>
+                <p class="interest-label">Following</p>
+                <div class="term-list" id="follow-list"></div>
+                <p class="interest-label">Muted</p>
+                <div class="term-list" id="mute-list"></div>
+                <p class="interest-label">Quick follow</p>
+                <div class="term-list" id="topic-suggest"></div>
+            </section>
             <section class="panel">
                 <h2 class="panel-title">Top sources</h2>
                 <ul class="source-list" id="sources"></ul>
+            </section>
+            <section class="panel sync">
+                <h2 class="panel-title">Sync devices</h2>
+                <p class="muted small">Copy a code here and paste it on your other device to bring over Read later, interests and read history.</p>
+                <div class="sync-btns">
+                    <button type="button" class="mini-btn" data-action="sync-export">Copy sync code</button>
+                    <button type="button" class="mini-btn" data-action="sync-import">Paste code</button>
+                </div>
             </section>
             <section class="panel shortcuts">
                 <h2 class="panel-title">Keyboard</h2>
@@ -87,6 +116,7 @@
                     <div><dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Next / previous item</dd></div>
                     <div><dt><kbd>o</kbd></dt><dd>Open item</dd></div>
                     <div><dt><kbd>l</kbd></dt><dd>Read later / done</dd></div>
+                    <div><dt><kbd>m</kbd></dt><dd>Mark read / unread</dd></div>
                     <div><dt><kbd>esc</kbd></dt><dd>Clear search</dd></div>
                 </dl>
             </section>
@@ -95,10 +125,12 @@
 
     <footer class="footer">
         <div class="container footer-inner">
-            <span><strong>AR</strong> · AI summaries, sources linked on every item</span>
+            <span><strong>AR</strong> · <span id="status-line">AI summaries, sources linked on every item</span></span>
             <nav aria-label="Footer">
                 <a href="/">Latest</a>
                 <a href="archive.html">Archive</a>
+                <a href="data/feed.xml">RSS</a>
+                <a href="data/status.json">Status</a>
                 <a href="data/archive.json">JSON</a>
                 <a href="https://github.com/Ar2306/Ai_news" target="_blank" rel="noopener noreferrer">GitHub</a>
             </nav>
