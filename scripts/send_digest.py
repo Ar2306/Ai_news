@@ -22,6 +22,7 @@ import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 import httpx
 
@@ -64,6 +65,12 @@ def summary_lines(a, limit=220):
     return lines
 
 
+def safe_url(url):
+    """Only http(s) links reach email/Telegram; anything else (javascript:, data:) becomes '#'."""
+    url = (url or "").strip()
+    return url if urlparse(url).scheme in ("http", "https") else "#"
+
+
 def fmt_tags(a):
     return " · ".join(a.get("tags") or [])
 
@@ -81,7 +88,7 @@ def build_html(stories, data):
     cards = []
     for a in stories:
         title = html.escape(a.get("title", ""))
-        url = html.escape(a.get("url", "#"))
+        url = html.escape(safe_url(a.get("url")))
         meta = html.escape(" · ".join(filter(None, [a.get("source", ""), fmt_date(a.get("published_at", ""), "%b %d")])))
         lines = "".join(
             f'<p style="margin:4px 0;font-size:14px;line-height:1.55;color:#1a1a1a;"><strong>{label}</strong> {html.escape(text)}</p>'
@@ -119,7 +126,7 @@ def build_text(stories, data):
         lines.append(f"[{fmt_tags(a)}] {a.get('title', '')}")
         for label, text in summary_lines(a):
             lines.append(f"   {label}: {text}")
-        lines.append(f"   {a.get('source', '')} — {a.get('url', '')}")
+        lines.append(f"   {a.get('source', '')} — {safe_url(a.get('url'))}")
     lines.append("")
     lines.append("Full digest: https://github.com/Ar2306/Ai_news")
     return "\n".join(lines)
@@ -134,7 +141,7 @@ def build_telegram(data, total=TELEGRAM_TOTAL):
         # Truncate BEFORE escaping so an HTML entity is never split mid-way
         # (Telegram's HTML parser rejects a truncated entity with HTTP 400).
         title = html.escape(a.get("title", "")[:170])
-        url = html.escape(a.get("url", "#"))
+        url = html.escape(safe_url(a.get("url")))
         lines.append(f"• <a href=\"{url}\">{title}</a>")
         what = dict(summary_lines(a, limit=160)).get("What")
         if what:

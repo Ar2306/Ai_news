@@ -5,6 +5,10 @@ on:
     branches: [master]
   pull_request:
 
+# CI only reads the repo; never give PR code a write token
+permissions:
+  contents: read
+
 jobs:
   checks:
     runs-on: ubuntu-latest
@@ -20,6 +24,9 @@ jobs:
 
       - name: Compile all Python sources
         run: python3 -m compileall -q scripts
+
+      - name: Front-end syntax check
+        run: node --check assets/app.js
 
       - name: Import smoke test
         run: python3 -c "import anthropic, feedparser, httpx, bs4, lxml, dateutil; print('dependencies OK')"
@@ -104,6 +111,24 @@ jobs:
           assert 'content' not in a.to_dict(), 'raw content must not be serialized'
 
           print('Curation checks OK')
+          EOF
+
+      - name: Digest link safety check
+        run: |
+          python3 - <<'EOF'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location('send_digest', 'scripts/send_digest.py')
+          sd = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(sd)
+          assert sd.safe_url('javascript:alert(1)') == '#'
+          assert sd.safe_url(' data:text/html,x') == '#'
+          assert sd.safe_url('https://arxiv.org/abs/1') == 'https://arxiv.org/abs/1'
+          data = {'generated_at': '2026-01-01T00:00:00+00:00', 'article_count': 1, 'all_articles': [
+              {'title': '<script>x</script>', 'url': 'javascript:alert(1)', 'source': 's', 'tags': ['llm'],
+               'summary': {'what': '<img src=x onerror=1>', 'why': '', 'who': ''}, 'published_at': '2026-01-01'}]}
+          out = sd.build_html(sd.build_stories(data), data) + sd.build_telegram(data)
+          assert 'javascript:' not in out and '<script>' not in out and '<img' not in out, out
+          print('Digest link safety OK')
           EOF
 
       - name: Digest dry-run (builds email + Telegram, sends nothing)

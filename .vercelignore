@@ -1,0 +1,9 @@
+# Deploy allowlist: only the static site is uploaded. Everything else
+# (scripts, workflows, README, local .env / .vercel files) never becomes a public URL.
+/*
+!/index.html
+!/archive.html
+!/assets
+!/data
+!/vercel.json
+/data/*.db

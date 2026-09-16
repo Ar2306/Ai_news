@@ -3,66 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AR — archive of past AI/ML digests">
-    <title>AR — Archive</title>
+    <title>AR — archive</title>
+    <meta name="description" content="AR archive: past AI/ML digests, searchable and filterable by topic.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f6f6f3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1014" media="(prefers-color-scheme: dark)">
+    <meta property="og:title" content="AR — archive">
+    <meta property="og:description" content="AR archive: past AI/ML digests, searchable and filterable by topic.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234c6ef5'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/app.js" defer></script>
 </head>
-<body>
-    <div class="wrap">
-        <header>
-            <h1><a href="/">AR</a></h1>
-            <p>Archive of past digests.</p>
-        </header>
+<body data-page="archive">
+    <a class="skip" href="#feed">Skip to items</a>
 
-        <main>
-            <div class="filters" id="filters" role="group" aria-label="Filter by tag"></div>
-            <p class="status" id="status" aria-live="polite">Loading…</p>
-            <div id="days"></div>
-        </main>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="/" aria-label="AR home"><span class="mark" aria-hidden="true">AR</span><span class="brand-sub">AI/ML research digest</span></a>
+            <nav class="nav" aria-label="Pages">
+                <a href="/">Latest</a>
+                <a href="archive.html" aria-current="page">Archive</a>
+            </nav>
+        </div>
+    </header>
 
-        <footer>
-            <a href="/">Latest</a> ·
-            <a href="https://github.com/Ar2306/Ai_news" target="_blank" rel="noopener">GitHub</a>
-        </footer>
+    <div class="container">
+        <section class="hero" id="hero" aria-live="polite">
+            <p class="kicker skeleton-line"></p>
+            <h1 class="skeleton-line wide"></h1>
+            <p class="hero-meta skeleton-line"></p>
+        </section>
     </div>
 
-    <script src="assets/site.js"></script>
-    <script>
-        const daysEl = document.getElementById('days');
-        const status = document.getElementById('status');
-        const filters = document.getElementById('filters');
+    <div class="toolbar" id="top-of-feed">
+        <div class="container">
+            <div class="toolbar-row">
+                <label class="search">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+                    <span class="sr-only">Search</span>
+                    <input id="search" type="search" placeholder="Search the archive…" autocomplete="off" spellcheck="false" maxlength="100">
+                    <kbd aria-hidden="true">/</kbd>
+                </label>
+                <div class="seg-group" id="view-filters" role="group" aria-label="View"></div>
+                <label class="sort">
+                    <span class="sr-only">Sort</span>
+                    <select id="sort">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="source">By source</option>
+                    </select>
+                </label>
+            </div>
+            <div class="filters" id="tag-filters" role="group" aria-label="Filter by topic"></div>
+        </div>
+    </div>
 
-        async function load() {
-            try {
-                const res = await fetch('data/archive.json', { cache: 'no-cache' });
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const days = ((await res.json()).archive || []).filter(d => (d.articles || []).length);
+    <div class="container layout">
+        <main>
+            <p class="result-line" id="result-line" aria-live="polite"></p>
+            <div id="feed" tabindex="-1">
+                <div class="card skeleton"><p class="skeleton-line"></p><p class="skeleton-line wide"></p><p class="skeleton-line"></p></div>
+                <div class="card skeleton"><p class="skeleton-line"></p><p class="skeleton-line wide"></p><p class="skeleton-line"></p></div>
+                <div class="card skeleton"><p class="skeleton-line"></p><p class="skeleton-line wide"></p><p class="skeleton-line"></p></div>
+            </div>
+            <noscript><p class="empty">AR needs JavaScript to load the digest. The raw data is at <a href="data/archive.json">data/archive.json</a>.</p></noscript>
+        </main>
 
-                daysEl.innerHTML = days.map(day => `
-                    <section class="day">
-                        <h2>${escapeHtml(formatDate(day.date + 'T12:00:00') || day.date)}</h2>
-                        ${day.articles.map(renderArticle).join('')}
-                    </section>`).join('');
+        <aside class="sidebar" aria-label="Browse">
+            <section class="panel">
+                <h2 class="panel-title">Days</h2>
+                <ul class="day-list" id="days"></ul>
+            </section>
+            <section class="panel">
+                <h2 class="panel-title">Top sources</h2>
+                <ul class="source-list" id="sources"></ul>
+            </section>
+            <section class="panel shortcuts">
+                <h2 class="panel-title">Keyboard</h2>
+                <dl>
+                    <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+                    <div><dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Next / previous item</dd></div>
+                    <div><dt><kbd>o</kbd></dt><dd>Open item</dd></div>
+                    <div><dt><kbd>s</kbd></dt><dd>Save item</dd></div>
+                    <div><dt><kbd>esc</kbd></dt><dd>Clear search</dd></div>
+                </dl>
+            </section>
+        </aside>
+    </div>
 
-                const all = days.flatMap(d => d.articles);
-                const setStatus = (n) => {
-                    status.textContent = `${n} item${n === 1 ? '' : 's'} across ${days.length} day${days.length === 1 ? '' : 's'}`;
-                };
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span><strong>AR</strong> · summaries by Claude, sources linked on every item</span>
+            <nav aria-label="Footer">
+                <a href="/">Latest</a>
+                <a href="archive.html">Archive</a>
+                <a href="data/archive.json">JSON</a>
+                <a href="https://github.com/Ar2306/Ai_news" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </footer>
 
-                renderTagFilters(filters, all, tag => {
-                    setStatus(applyTagFilter(daysEl, tag));
-                    // Hide days with nothing left to show
-                    daysEl.querySelectorAll('.day').forEach(sec => {
-                        sec.hidden = !sec.querySelector('.item:not([hidden])');
-                    });
-                });
-                setStatus(all.length);
-            } catch (err) {
-                status.textContent = `Couldn't load the archive (${err.message}).`;
-            }
-        }
-
-        load();
-    </script>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

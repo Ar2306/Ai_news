@@ -4,6 +4,8 @@
 
 An automated AI newsletter that fetches, deduplicates, summarizes, and categorizes AI news from multiple sources daily — then delivers a morning briefing to your inbox and Telegram.
 
+🌐 **Live site:** [ai-news-blush.vercel.app](https://ai-news-blush.vercel.app) · [Archive](https://ai-news-blush.vercel.app/archive.html)
+
 ## Features
 
 - **Automated daily fetching** at 6 AM UTC via GitHub Actions cron
@@ -14,7 +16,8 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
   - ✈️ **Telegram** via bot (compact HTML message)
 - **LLM curation** with Claude Haiku 4.5 — one call per item returns relevance, tags, and a what/why/who summary (falls back to extractive summaries + keyword tags on any failure)
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
-- **Minimal web UI** branded **AR** — one flat list, filterable by tag, with a matching archive page
+- **AR web UI** — search with highlighting, topic and source filters, save-for-later, "new since your last visit", keyboard shortcuts (`/` `j` `k` `o` `s`), shareable filter URLs, automatic light/dark theme, and a searchable archive grouped by day
+- **Locked-down static site** — strict Content-Security-Policy (no inline or third-party scripts), security headers, and a deploy allowlist so only the site files are ever public
 - **Static site** — no backend needed, auto-deployed to Vercel on every push
 
 ## Project Structure
@@ -70,6 +73,7 @@ python3 scripts/fetch-news.py
 ```
 
 ### View newsletter
+- **Live:** [ai-news-blush.vercel.app](https://ai-news-blush.vercel.app)
 - **Locally:** open `index.html` in a browser, or serve it:
 ```bash
 python3 -m http.server 8080
@@ -138,6 +142,14 @@ These behaviors are covered by unit checks in `tests.yml`, so a regression fails
 The site is a static page served by Vercel and auto-deployed on every push to `master` (via the GitHub integration in `vercel.json`). `data/newsletter.json` and `data/archive.json` are committed by the daily cron, so each deploy publishes the freshest news.
 
 To deploy your own copy, import this repo in [Vercel](https://vercel.com/new) — no build settings needed. The archive lives at `/archive.html` on the same domain.
+
+## Security
+
+- All feed and LLM text is treated as untrusted: the site escapes every value and only renders `http(s)` links; the email/Telegram digest does the same.
+- `vercel.json` sends a strict CSP (`script-src 'self'`, no inline code, no third-party hosts), `X-Frame-Options: DENY`, `nosniff`, HSTS, and a restrictive `Permissions-Policy`.
+- `.vercelignore` is an allowlist: only `index.html`, `archive.html`, `assets/` and `data/` are deployed — scripts, workflows and any local `.env` files never become public URLs.
+- Secrets live only in GitHub Actions secrets; CI runs with a read-only token.
+- Saved items and "last visit" live in your browser's `localStorage` only.
 
 ## Data Sources
 
