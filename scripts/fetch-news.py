@@ -370,7 +370,8 @@ class NewsFetcher:
         try:
             result = parse_curation(self._call_llm(prompt))
         except Exception as e:
-            print(f"    ⚠ LLM curation failed ({type(e).__name__}: {e}), using extractive fallback", file=sys.stderr)
+            if getattr(self, "llm", True) is not None:  # missing key was already reported once
+                print(f"    ⚠ LLM curation failed ({type(e).__name__}: {e}), using extractive fallback", file=sys.stderr)
             result = self._fallback_curation(article)
 
         if not result["relevant"]:

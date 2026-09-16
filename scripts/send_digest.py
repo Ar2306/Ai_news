@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Send the daily AI newsletter digest to configured channels.
+"""Send the daily AR digest to configured channels.
 
 Channels (each is enabled only when its environment variables are set):
 
@@ -28,17 +28,9 @@ import httpx
 ROOT = Path(__file__).parent.parent
 DATA_FILE = ROOT / "data" / "newsletter.json"
 
-EMAIL_PER_CATEGORY = 4   # top stories per category in the email
-TELEGRAM_TOTAL = 6       # total stories in the Telegram message
-
-CATEGORY_ORDER = ["breaking", "research", "industry", "tools"]
-CATEGORY_LABELS = {
-    "breaking": "🔥 Breaking News",
-    "research": "📄 Research Papers",
-    "industry": "🏢 Industry",
-    "tools": "🛠️ Tools & Releases",
-}
-CATEGORY_EMOJI = {"breaking": "🔥", "research": "📄", "industry": "🏢", "tools": "🛠️"}
+EMAIL_TOTAL = 15     # stories in the email
+TELEGRAM_TOTAL = 6   # stories in the Telegram message
+SITE_NAME = "AR"
 
 
 def load_digest():
@@ -51,55 +43,67 @@ def load_digest():
     return data
 
 
-def build_stories(data, per_category=EMAIL_PER_CATEGORY):
-    cats = data.get("categories", {})
-    stories = []
-    for cat in CATEGORY_ORDER:
-        for a in (cats.get(cat) or [])[:per_category]:
-            stories.append((cat, a))
-    return stories
+def build_stories(data, total=EMAIL_TOTAL):
+    """Newest stories first from the flat all_articles list."""
+    articles = sorted(data.get("all_articles", []), key=lambda a: a.get("published_at", ""), reverse=True)
+    return articles[:total]
 
 
-def fmt_summary(a):
-    s = (a.get("summary") or "").strip()
-    if len(s) > 220:
-        s = s[:217].rstrip() + "…"
-    return s
+def summary_lines(a, limit=220):
+    """[(label, text)] for the non-empty What / Why / Who lines."""
+    s = a.get("summary") or {}
+    if isinstance(s, str):
+        s = {"what": s}
+    lines = []
+    for key, label in (("what", "What"), ("why", "Why"), ("who", "Who")):
+        text = (s.get(key) or "").strip()
+        if len(text) > limit:
+            text = text[:limit - 1].rstrip() + "…"
+        if text:
+            lines.append((label, text))
+    return lines
+
+
+def fmt_tags(a):
+    return " · ".join(a.get("tags") or [])
+
+
+def fmt_date(iso, fmt):
+    try:
+        return datetime.fromisoformat(iso).strftime(fmt)
+    except Exception:
+        return (iso or "")[:10]
 
 
 def build_html(stories, data):
-    generated = data.get("generated_at", "")
-    try:
-        date_str = datetime.fromisoformat(generated).strftime("%A, %B %d, %Y")
-    except Exception:
-        date_str = generated[:10]
+    date_str = fmt_date(data.get("generated_at", ""), "%A, %B %d, %Y")
 
     cards = []
-    for cat, a in stories:
+    for a in stories:
         title = html.escape(a.get("title", ""))
         url = html.escape(a.get("url", "#"))
-        source = html.escape(a.get("source", ""))
-        summary = html.escape(fmt_summary(a))
+        meta = html.escape(" · ".join(filter(None, [a.get("source", ""), fmt_date(a.get("published_at", ""), "%b %d")])))
+        lines = "".join(
+            f'<p style="margin:4px 0;font-size:14px;line-height:1.55;color:#1a1a1a;"><strong>{label}</strong> {html.escape(text)}</p>'
+            for label, text in summary_lines(a)
+        )
         cards.append(f"""
-      <div style="margin:0 0 16px;padding:16px 18px;border:1px solid #e4e4e7;border-radius:12px;background:#ffffff;">
-        <div style="font-size:11px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:#7c3aed;margin-bottom:6px;">{CATEGORY_LABELS.get(cat, cat)} · {source}</div>
-        <a href="{url}" style="font-size:15px;font-weight:600;color:#18181b;text-decoration:none;line-height:1.35;">{title}</a>
-        <p style="font-size:13px;color:#52525b;line-height:1.5;margin:6px 0 0;">{summary}</p>
+      <div style="padding:20px 0;border-bottom:1px solid #e6e6e6;">
+        <div style="font-size:12px;color:#1f5fd6;margin-bottom:4px;">{html.escape(fmt_tags(a))}</div>
+        <a href="{url}" style="font-size:16px;font-weight:600;color:#1a1a1a;text-decoration:none;line-height:1.4;">{title}</a>
+        {lines}
+        <p style="margin:8px 0 0;font-size:13px;color:#6b6b6b;">{meta}</p>
       </div>""")
 
     return f"""<!DOCTYPE html>
 <html>
-<body style="margin:0;padding:0;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <div style="max-width:640px;margin:0 auto;padding:24px 16px;">
-    <div style="text-align:center;padding:28px 20px;background:linear-gradient(135deg,#111827,#1e1b4b);border-radius:16px;color:#fff;">
-      <div style="font-size:22px;font-weight:700;">🤖 AI Daily Briefing</div>
-      <div style="font-size:13px;color:#a5b4fc;margin-top:6px;">{date_str} · {data.get('article_count', 0)} stories collected</div>
-    </div>
-    <div style="background:#fff;border-radius:16px;padding:20px;margin-top:16px;">
-      {''.join(cards)}
-    </div>
-    <p style="text-align:center;font-size:11px;color:#71717a;margin-top:16px;">
-      Generated by <strong>AI News Update</strong> · <a href="https://github.com/DavidGaso1/AI-News-Update" style="color:#71717a;">View the full newsletter</a>
+<body style="margin:0;padding:0;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
+    <div style="font-size:26px;font-weight:700;color:#1a1a1a;">{SITE_NAME}</div>
+    <div style="font-size:14px;color:#6b6b6b;margin-top:4px;">{date_str} · {data.get('article_count', 0)} items</div>
+    {''.join(cards)}
+    <p style="font-size:12px;color:#6b6b6b;margin-top:24px;">
+      <a href="https://github.com/DavidGaso1/AI-News-Update" style="color:#6b6b6b;">View the full digest</a>
     </p>
   </div>
 </body>
@@ -107,51 +111,37 @@ def build_html(stories, data):
 
 
 def build_text(stories, data):
-    generated = data.get("generated_at", "")
-    try:
-        date_str = datetime.fromisoformat(generated).strftime("%A, %B %d, %Y")
-    except Exception:
-        date_str = generated[:10]
+    date_str = fmt_date(data.get("generated_at", ""), "%A, %B %d, %Y")
 
-    lines = [f"🤖 AI Daily Briefing — {date_str}", f"{data.get('article_count', 0)} stories collected", "=" * 40]
-    for cat, a in stories:
+    lines = [f"{SITE_NAME} — {date_str}", f"{data.get('article_count', 0)} items", "=" * 40]
+    for a in stories:
         lines.append("")
-        lines.append(f"{CATEGORY_EMOJI.get(cat, '•')} [{a.get('source', '')}] {a.get('title', '')}")
-        s = fmt_summary(a)
-        if s:
-            lines.append(f"   {s}")
-        lines.append(f"   {a.get('url', '')}")
+        lines.append(f"[{fmt_tags(a)}] {a.get('title', '')}")
+        for label, text in summary_lines(a):
+            lines.append(f"   {label}: {text}")
+        lines.append(f"   {a.get('source', '')} — {a.get('url', '')}")
     lines.append("")
-    lines.append("Full newsletter: https://github.com/DavidGaso1/AI-News-Update")
+    lines.append("Full digest: https://github.com/DavidGaso1/AI-News-Update")
     return "\n".join(lines)
 
 
 def build_telegram(data, total=TELEGRAM_TOTAL):
-    """Compact Telegram message: top N stories across all categories."""
-    cats = data.get("categories", {})
-    flat = []
-    for cat in CATEGORY_ORDER:
-        for a in (cats.get(cat) or []):
-            flat.append((cat, a))
-    flat.sort(key=lambda x: x[1].get("published_at", ""), reverse=True)
+    """Compact Telegram message: newest N stories with tags and the What line."""
+    date_str = fmt_date(data.get("generated_at", ""), "%b %d, %Y")
 
-    generated = data.get("generated_at", "")
-    try:
-        date_str = datetime.fromisoformat(generated).strftime("%b %d, %Y")
-    except Exception:
-        date_str = generated[:10]
-
-    lines = [f"<b>🤖 AI Daily Briefing — {date_str}</b>", ""]
-    for cat, a in flat[:total]:
+    lines = [f"<b>{SITE_NAME} — {date_str}</b>", ""]
+    for a in build_stories(data, total):
         # Truncate BEFORE escaping so an HTML entity is never split mid-way
         # (Telegram's HTML parser rejects a truncated entity with HTTP 400).
         title = html.escape(a.get("title", "")[:170])
-        source = html.escape(a.get("source", ""))
         url = html.escape(a.get("url", "#"))
-        lines.append(f"{CATEGORY_EMOJI.get(cat, '•')} <a href=\"{url}\">{title}</a>")
-        lines.append(f"<i>{source}</i>")
+        lines.append(f"• <a href=\"{url}\">{title}</a>")
+        what = dict(summary_lines(a, limit=160)).get("What")
+        if what:
+            lines.append(html.escape(what))
+        lines.append(f"<i>{html.escape(fmt_tags(a))} · {html.escape(a.get('source', ''))}</i>")
         lines.append("")
-    lines.append("<a href=\"https://github.com/DavidGaso1/AI-News-Update\">Full newsletter →</a>")
+    lines.append("<a href=\"https://github.com/DavidGaso1/AI-News-Update\">Full digest →</a>")
     return "\n".join(lines)
 
 
@@ -216,7 +206,7 @@ def send_telegram(message):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Send the daily AI newsletter digest")
+    parser = argparse.ArgumentParser(description="Send the daily AR digest")
     parser.add_argument("--dry-run", action="store_true", help="build and print the digests without sending")
     parser.add_argument("--telegram-only", action="store_true", help="only send the Telegram message")
     args = parser.parse_args()
@@ -227,11 +217,8 @@ def main():
         print("ℹ No stories to send")
         return 0
 
-    generated = data.get("generated_at", "")
-    try:
-        subject = f"🤖 AI Daily Briefing — {datetime.fromisoformat(generated).strftime('%b %d, %Y')}"
-    except Exception:
-        subject = f"🤖 AI Daily Briefing — {datetime.now(timezone.utc).strftime('%b %d, %Y')}"
+    generated = data.get("generated_at", "") or datetime.now(timezone.utc).isoformat()
+    subject = f"{SITE_NAME} — {fmt_date(generated, '%b %d, %Y')}"
 
     if args.dry_run:
         print("=" * 60)
