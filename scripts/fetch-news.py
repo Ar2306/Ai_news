@@ -45,13 +45,17 @@ ARCHIVE_RETENTION_DAYS = int(os.environ.get("ARCHIVE_RETENTION_DAYS", "180"))
 #   3. extractive summary + keyword tags (always works, no key needed)
 # A provider without a key is skipped; one that keeps failing is switched off for the run.
 GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
-# Gemini 2.5 only (free tier). Tried in order; the next is used if one is unavailable or out of quota.
-GEMINI_MODELS = [m.strip() for m in os.environ.get("GEMINI_MODELS", "gemini-2.5-flash,gemini-2.5-flash-lite").split(",") if m.strip()]
+# Tried in order; the next is used when a model is unavailable to this key or has no quota.
+# 2.5 first (works for older keys); Google closed 2.5 to new keys and points them at 3.5 Flash-Lite.
+GEMINI_MODELS = [m.strip() for m in os.environ.get(
+    "GEMINI_MODELS", "gemini-2.5-flash,gemini-2.5-flash-lite,gemini-3.5-flash-lite,gemini-3.5-flash").split(",") if m.strip()]
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
 GEMINI_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5"))  # free tier ≈ 10 requests/min
 
 OLLAMA_API_KEY_ENV = "OLLAMA_API_KEY"
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3.5:397b")  # free open-weight Qwen on Ollama Cloud
+# Preferred Ollama Cloud models, in order. Models that need a paid plan (HTTP 402) are skipped
+# automatically, and the rest of the cloud catalogue is tried (Qwen first) until one works.
+OLLAMA_MODELS = [m.strip() for m in os.environ.get("OLLAMA_MODELS", "qwen3.5:397b").split(",") if m.strip()]
 OLLAMA_BASE = "https://ollama.com/api"
 OLLAMA_MIN_INTERVAL = float(os.environ.get("OLLAMA_MIN_INTERVAL", "1.0"))
 
@@ -252,6 +256,32 @@ class LLMProvider:
         self.disabled = False
         self._last_call = 0.0
 
+    models: list[str] = []
+    model_index = 0
+
+    @property
+    def model(self) -> str:
+        return self.models[self.model_index] if self.models else ""
+
+    def _switchable(self, e: "LLMError") -> bool:
+        """Errors that are specific to the current model (so another model may work)."""
+        return False
+
+    def _more_models(self) -> bool:
+        return self.model_index + 1 < len(self.models)
+
+    def _request(self, prompt: str) -> str:
+        while True:
+            try:
+                return self._request_model(prompt)
+            except LLMError as e:
+                if self._switchable(e) and self._more_models():
+                    nxt = self.models[self.model_index + 1]
+                    print(f"    ↻ {self.name} {self.model} unavailable ({str(e)[:110]}); trying {nxt}")
+                    self.model_index += 1
+                    continue
+                raise
+
     def generate(self, prompt: str) -> str:
         # Pace requests to stay under free-tier per-minute limits
         wait = self.min_interval - (time.monotonic() - self._last_call)
@@ -292,42 +322,31 @@ class GeminiProvider(LLMProvider):
         self.models = list(models or GEMINI_MODELS)
         self.model_index = 0
 
-    @property
-    def model(self) -> str:
-        return self.models[self.model_index]
+    def _switchable(self, e):
+        if e.status == 404:
+            # Google names the replacement ("...use models/gemini-3.5-flash-lite..."): queue it next
+            m = re.search(r"use models/([\w.-]+)", str(e))
+            if m and m.group(1) not in self.models[: self.model_index + 1]:
+                if m.group(1) in self.models:
+                    self.models.remove(m.group(1))
+                self.models.insert(self.model_index + 1, m.group(1))
+            return True
+        return e.status == 429 and e.fatal  # no quota for this model on this key
 
-    def _request(self, prompt: str) -> str:
-        while True:
-            try:
-                resp = self._call(prompt)
-                check_response(resp)
-                return self._text(resp)
-            except LLMError as e:
-                # Model missing (404) or no quota left for it: move to the next 2.5 model.
-                # A bad key (401/403/invalid) is the same for every model, so don't switch.
-                switchable = e.status == 404 or (e.status == 429 and e.fatal)
-                if switchable and self.model_index + 1 < len(self.models):
-                    print(f"    ↻ Gemini {self.model} unavailable ({str(e)[:120]}); trying {self.models[self.model_index + 1]}")
-                    self.model_index += 1
-                    continue
-                raise
-
-    def _call(self, prompt: str) -> httpx.Response:
-        return self._post(
+    def _request_model(self, prompt: str) -> str:
+        resp = self._post(
             f"{GEMINI_BASE}/models/{self.model}:generateContent",
             headers={"x-goog-api-key": self.api_key},
             json={
                 "contents": [{"role": "user", "parts": [{"text": prompt}]}],
                 "generationConfig": {
                     "temperature": 0.2,
-                    "maxOutputTokens": 2048,  # headroom: 2.5 models think before answering
+                    "maxOutputTokens": 2048,  # headroom for models that think before answering
                     "responseMimeType": "application/json",
                 },
             },
         )
-
-    @staticmethod
-    def _text(resp: httpx.Response) -> str:
+        check_response(resp)
         data = resp.json()
         candidates = data.get("candidates") or []
         if not candidates:
@@ -344,26 +363,24 @@ class OllamaProvider(LLMProvider):
     name = "Ollama Cloud"
     min_interval = OLLAMA_MIN_INTERVAL
 
-    def __init__(self, http, api_key, model=OLLAMA_MODEL):
+    def __init__(self, http, api_key, models=None):
         super().__init__(http, api_key)
-        self.model = model
+        self.models = list(models or OLLAMA_MODELS)
+        self.model_index = 0
+        self._catalogue_loaded = False
 
-    def _request(self, prompt: str) -> str:
-        resp = self._call(prompt)
-        if resp.status_code == 404:
-            replacement = self._discover_model()
-            if replacement and replacement != self.model:
-                print(f"    ↻ Ollama model {self.model} not found, using {replacement}")
-                self.model = replacement
-                resp = self._call(prompt)
-        check_response(resp)
-        text = ((resp.json().get("message") or {}).get("content") or "")
-        if not text.strip():
-            raise LLMError("empty response")
-        return text
+    def _switchable(self, e):
+        # 402 = needs a paid plan/credits, 404 = model not in the catalogue
+        return e.status in (402, 404)
 
-    def _call(self, prompt: str) -> httpx.Response:
-        return self._post(
+    def _more_models(self) -> bool:
+        if not super()._more_models() and not self._catalogue_loaded:
+            self._catalogue_loaded = True
+            self.models += [m for m in ollama_catalogue(self.http, self.api_key) if m not in self.models]
+        return super()._more_models()
+
+    def _request_model(self, prompt: str) -> str:
+        resp = self._post(
             f"{OLLAMA_BASE}/chat",
             headers={"Authorization": f"Bearer {self.api_key}"},
             json={
@@ -374,20 +391,23 @@ class OllamaProvider(LLMProvider):
                 "options": {"temperature": 0.2},
             },
         )
+        check_response(resp)
+        text = ((resp.json().get("message") or {}).get("content") or "")
+        if not text.strip():
+            raise LLMError("empty response")
+        return text
 
-    def _discover_model(self) -> Optional[str]:
-        try:
-            resp = self.http.get(f"{OLLAMA_BASE}/tags", headers={"Authorization": f"Bearer {self.api_key}"})
-            names = [m.get("name") or m.get("model") for m in resp.json().get("models", [])]
-        except Exception:
-            return None
-        names = [n for n in names if n]
-        preferred = (
-            [n for n in names if n.startswith("qwen3.5")]
-            or [n for n in names if n.startswith("qwen")]
-            or names
-        )
-        return preferred[0] if preferred else None
+
+def ollama_catalogue(http: httpx.Client, api_key: str) -> list[str]:
+    """Cloud model names, Qwen first, then small/open models before the giant ones."""
+    try:
+        resp = http.get(f"{OLLAMA_BASE}/tags", headers={"Authorization": f"Bearer {api_key}"})
+        names = [m.get("name") or m.get("model") for m in resp.json().get("models", [])]
+    except Exception:
+        return []
+    names = [n for n in names if n]
+    rank = lambda n: (0 if n.startswith("qwen") else 1 if n.startswith(("gpt-oss", "gemma")) else 2, n)
+    return sorted(names, key=rank)
 
 
 def retry_after_seconds(resp: httpx.Response, default: float) -> float:

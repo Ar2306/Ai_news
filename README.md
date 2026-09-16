@@ -57,13 +57,13 @@ pip install -r requirements.txt
 
 Every item goes through a provider chain, stopping at the first that returns valid JSON:
 
-1. **Gemini** (`GEMINI_API_KEY`, `gemini-2.5-flash`, then `gemini-2.5-flash-lite` if that one is unavailable or out of quota) — free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-2. **Ollama Cloud** (`OLLAMA_API_KEY`, open-weight `qwen3.5:397b` by default) — free key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
+1. **Gemini** (`GEMINI_API_KEY`) — tries `gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.5-flash-lite`, `gemini-3.5-flash` in order, skipping any that are unavailable to the key or have no free quota (Google has closed 2.5 to new keys) — free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. **Ollama Cloud** (`OLLAMA_API_KEY`) — tries `qwen3.5:397b`, and if it needs a paid plan, the rest of the cloud catalogue (Qwen first) until one works on your plan — free key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
 3. **Extractive fallback** — first sentences of the source + keyword tags (no key needed)
 
 Add the keys as GitHub secrets (repo → Settings → Secrets and variables → Actions) named exactly `GEMINI_API_KEY` and `OLLAMA_API_KEY`. For local runs, `export` them. Then run **Actions → Check API keys → Run workflow** to confirm both work.
 
-**Free-tier limits:** Gemini calls are paced (`GEMINI_MIN_INTERVAL`, default 6.5 s ≈ 10/min), a run makes at most `MAX_LLM_ITEMS` (default 100) calls, and 429s are retried honouring the server's retry delay. A bad key or an exhausted daily quota switches that provider off for the rest of the run, and the next one takes over. Gemini stays on the 2.5 models; if the Ollama model is retired, another Qwen model is picked automatically.
+**Free-tier limits:** Gemini calls are paced (`GEMINI_MIN_INTERVAL`, default 6.5 s ≈ 10/min), a run makes at most `MAX_LLM_ITEMS` (default 100) calls, and 429s are retried honouring the server's retry delay. A bad key or an exhausted daily quota switches that provider off for the rest of the run, and the next one takes over. Run **Actions → Check API keys** to see exactly which models each key can use for free.
 
 ## Usage
 
@@ -125,7 +125,7 @@ python3 scripts/send_digest.py --telegram-only
 | `ARCHIVE_RETENTION_DAYS` | How much archive history is kept (default 180) |
 | `GEMINI_API_KEY` | Gemini API key — primary LLM |
 | `OLLAMA_API_KEY` | Ollama Cloud API key — fallback LLM |
-| `GEMINI_MODELS` / `OLLAMA_MODEL` | *(optional)* Override models (defaults `gemini-2.5-flash,gemini-2.5-flash-lite` and `qwen3.5:397b`) |
+| `GEMINI_MODELS` / `OLLAMA_MODELS` | *(optional)* Comma-separated model preference lists |
 | `GEMINI_MIN_INTERVAL` | *(optional)* Seconds between Gemini calls (default 6.5) |
 | `MAX_LLM_ITEMS` | Max candidates sent to the LLM per run (default 100) |
 
