@@ -45,17 +45,18 @@ ARCHIVE_RETENTION_DAYS = int(os.environ.get("ARCHIVE_RETENTION_DAYS", "180"))
 #   3. extractive summary + keyword tags (always works, no key needed)
 # A provider without a key is skipped; one that keeps failing is switched off for the run.
 GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
-# Tried in order; the next is used when a model is unavailable to this key or has no quota.
-# 2.5 first (works for older keys); Google closed 2.5 to new keys and points them at 3.5 Flash-Lite.
+# Free-tier models confirmed by the "Check API keys" workflow (2026-09-16), tried in order.
+# Each model has its own free daily quota, so when one runs out the next takes over.
 GEMINI_MODELS = [m.strip() for m in os.environ.get(
-    "GEMINI_MODELS", "gemini-2.5-flash,gemini-2.5-flash-lite,gemini-3.5-flash-lite,gemini-3.5-flash").split(",") if m.strip()]
+    "GEMINI_MODELS", "gemini-3.5-flash,gemini-3.6-flash,gemini-3.5-flash-lite,gemini-flash-latest").split(",") if m.strip()]
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
 GEMINI_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5"))  # free tier ≈ 10 requests/min
 
 OLLAMA_API_KEY_ENV = "OLLAMA_API_KEY"
-# Preferred Ollama Cloud models, in order. Models that need a paid plan (HTTP 402) are skipped
-# automatically, and the rest of the cloud catalogue is tried (Qwen first) until one works.
-OLLAMA_MODELS = [m.strip() for m in os.environ.get("OLLAMA_MODELS", "qwen3.5:397b").split(",") if m.strip()]
+# Free-plan Ollama Cloud models confirmed by "Check API keys" (Qwen models need a paid plan).
+# If these ever stop working (HTTP 402/404), the rest of the cloud catalogue is tried automatically.
+OLLAMA_MODELS = [m.strip() for m in os.environ.get(
+    "OLLAMA_MODELS", "gemma4:31b,gpt-oss:120b,nemotron-3-super,gpt-oss:20b").split(",") if m.strip()]
 OLLAMA_BASE = "https://ollama.com/api"
 OLLAMA_MIN_INTERVAL = float(os.environ.get("OLLAMA_MIN_INTERVAL", "1.0"))
 

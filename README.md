@@ -57,8 +57,8 @@ pip install -r requirements.txt
 
 Every item goes through a provider chain, stopping at the first that returns valid JSON:
 
-1. **Gemini** (`GEMINI_API_KEY`) — tries `gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-3.5-flash-lite`, `gemini-3.5-flash` in order, skipping any that are unavailable to the key or have no free quota (Google has closed 2.5 to new keys) — free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-2. **Ollama Cloud** (`OLLAMA_API_KEY`) — tries `qwen3.5:397b`, and if it needs a paid plan, the rest of the cloud catalogue (Qwen first) until one works on your plan — free key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
+1. **Gemini** (`GEMINI_API_KEY`) — free-tier `gemini-3.5-flash` → `gemini-3.6-flash` → `gemini-3.5-flash-lite` → `gemini-flash-latest`; a model that is unavailable or out of free quota is skipped (Google has closed 2.5 to new keys) — free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. **Ollama Cloud** (`OLLAMA_API_KEY`) — free-plan `gemma4:31b` → `gpt-oss:120b` → `nemotron-3-super` → `gpt-oss:20b`; if those stop working, the rest of the cloud catalogue is tried — free key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
 3. **Extractive fallback** — first sentences of the source + keyword tags (no key needed)
 
 Add the keys as GitHub secrets (repo → Settings → Secrets and variables → Actions) named exactly `GEMINI_API_KEY` and `OLLAMA_API_KEY`. For local runs, `export` them. Then run **Actions → Check API keys → Run workflow** to confirm both work.
