@@ -120,7 +120,8 @@
     q: (params.get('q') || '').slice(0, 100),
     tag: TAG_SET.has(params.get('tag')) ? params.get('tag') : 'all',
     source: (params.get('source') || '').slice(0, 120),
-    view: ['saved', 'new'].includes(params.get('view')) ? params.get('view') : 'all',
+    // 'saved' is the old name for the read-later view; keep old links working
+    view: { later: 'later', saved: 'later', new: 'new' }[params.get('view')] || 'all',
     sort: ['oldest', 'source'].includes(params.get('sort')) ? params.get('sort') : 'newest',
   };
 
@@ -136,6 +137,7 @@
     if (raw && typeof raw === 'object') {
       for (const v of Object.values(raw)) {
         const a = normalize(v);
+        a.savedAt = v && Number.isFinite(v.savedAt) ? v.savedAt : 0;
         if (a.url !== '#') out[a.url] = a;
       }
     }
@@ -162,7 +164,7 @@
   // ----------------------------------------------------------------- filters
 
   function baseItems() {
-    if (state.view === 'saved') return Object.values(saved);
+    if (state.view === 'later') return Object.values(saved);
     if (state.view === 'new') return items.filter(isNew);
     return items;
   }
@@ -180,7 +182,11 @@
 
   function sorted(list) {
     const out = list.slice();
-    if (state.sort === 'source') {
+    if (state.view === 'later' && state.sort !== 'source') {
+      // Read later: most recently added first (or oldest first)
+      const dir = state.sort === 'oldest' ? 1 : -1;
+      out.sort((a, b) => (a.savedAt - b.savedAt) * dir);
+    } else if (state.sort === 'source') {
       out.sort((a, b) => a.source.localeCompare(b.source) || (b.published_at > a.published_at ? 1 : -1));
     } else {
       const dir = state.sort === 'oldest' ? 1 : -1;
@@ -191,7 +197,8 @@
 
   // --------------------------------------------------------------- rendering
 
-  const ICON_STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>';
+  const ICON_BOOKMARK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h10a1 1 0 0 1 1 1V21l-6-4-6 4V4.5a1 1 0 0 1 1-1z"/></svg>';
+  const ICON_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
   const ICON_LINK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2"/></svg>';
   const ICON_OUT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
 
@@ -210,6 +217,7 @@
           <div class="chips">${tags}</div>
           <div class="card-meta">
             ${isNew(a) ? '<span class="badge-new">New</span>' : ''}
+            ${state.view === 'later' && a.savedAt ? `<span class="added">added ${esc(relTime(new Date(a.savedAt).toISOString()))}</span><span aria-hidden="true">·</span>` : ''}
             <time datetime="${esc(a.published_at)}" title="${esc(when)}">${esc(relTime(a.published_at))}</time>
           </div>
         </div>
@@ -224,7 +232,9 @@
             <span class="source-dot" aria-hidden="true">${esc(a.source.charAt(0).toUpperCase())}</span>${hl(a.source, q)}
           </button>
           <div class="actions">
-            <button type="button" class="icon-btn save-btn" data-action="save" data-value="${esc(a.url)}" aria-pressed="${isSaved}" title="${isSaved ? 'Remove from saved' : 'Save for later'} (s)">${ICON_STAR}<span class="sr-only">Save</span></button>
+            ${state.view === 'later'
+              ? `<button type="button" class="later-btn done-btn" data-action="done" data-value="${esc(a.url)}" title="Finished reading — remove from Read later">${ICON_CHECK}<span>Done</span></button>`
+              : `<button type="button" class="later-btn" data-action="save" data-value="${esc(a.url)}" aria-pressed="${isSaved}" title="${isSaved ? 'Remove from Read later' : 'Add to Read later'} (l)">${ICON_BOOKMARK}<span class="later-label">${isSaved ? 'In Read later' : 'Read later'}</span></button>`}
             <button type="button" class="icon-btn" data-action="copy" data-value="${esc(a.url)}" title="Copy link">${ICON_LINK}<span class="sr-only">Copy link</span></button>
             <a class="icon-btn" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer" title="Open source (o)">${ICON_OUT}<span class="sr-only">Open</span></a>
           </div>
@@ -279,13 +289,14 @@
       tags.map((t) => `<button type="button" class="filter" data-t="${t}" data-action="tag" data-value="${t}" aria-pressed="${state.tag === t}"><span class="dot" aria-hidden="true"></span>${t} <span class="n">${counts[t] || 0}</span></button>`).join('');
 
     const savedCount = Object.keys(saved).length;
+    updateLaterCount();
     const newCount = items.filter(isNew).length;
     $('#view-filters').innerHTML = [
       ['all', 'Everything', ''],
       ['new', 'New', newCount],
-      ['saved', 'Saved', savedCount],
+      ['later', 'Read later', savedCount],
     ]
-      .filter(([v, , n]) => v === 'all' || v === state.view || n)
+      .filter(([v, , n]) => v === 'all' || v === 'later' || v === state.view || n)
       .map(([v, label, n]) => `<button type="button" class="seg-btn" data-action="view" data-value="${v}" aria-pressed="${state.view === v}">${label}${n !== '' ? ` <span class="n">${n}</span>` : ''}</button>`)
       .join('');
 
@@ -326,7 +337,7 @@
     if (state.q) bits.push(['q', `“${state.q}”`]);
     if (state.tag !== 'all') bits.push(['tag', state.tag]);
     if (state.source) bits.push(['source', state.source]);
-    if (state.view !== 'all') bits.push(['view', state.view]);
+    if (state.view !== 'all') bits.push(['view', state.view === 'later' ? 'read later' : state.view]);
     $('#result-line').innerHTML = `
       <span>Showing <strong>${shown}</strong> of ${of}</span>
       ${bits.map(([k, label]) => `<button type="button" class="pill" data-action="clear" data-value="${k}" title="Remove filter">${esc(label)} <span aria-hidden="true">×</span></button>`).join('')}
@@ -345,14 +356,14 @@
     if (!list.length) {
       feed.innerHTML = `
         <div class="empty">
-          <p class="empty-title">${state.view === 'saved' && !base.length ? 'Nothing saved yet' : 'No items match'}</p>
-          <p class="muted">${state.view === 'saved' && !base.length ? 'Use the star on any item to keep it here.' : 'Try a different search or remove a filter.'}</p>
-          ${state.view !== 'all' || state.q || state.tag !== 'all' || state.source ? '<button type="button" class="btn" data-action="clear" data-value="all">Clear filters</button>' : ''}
+          <p class="empty-title">${state.view === 'later' && !base.length ? 'Your Read later list is empty' : 'No items match'}</p>
+          <p class="muted">${state.view === 'later' && !base.length ? 'Tap “Read later” on any item (or press l) and it stays here — even after the daily refresh — until you mark it Done.' : 'Try a different search or remove a filter.'}</p>
+          ${(state.view === 'later' && !base.length) ? '<button type="button" class="btn" data-action="view" data-value="all">Browse items</button>' : state.view !== 'all' || state.q || state.tag !== 'all' || state.source ? '<button type="button" class="btn" data-action="clear" data-value="all">Clear filters</button>' : ''}
         </div>`;
       return;
     }
 
-    if (PAGE === 'archive' && state.view !== 'saved') {
+    if (PAGE === 'archive' && state.view !== 'later') {
       const groups = new Map();
       list.forEach((a) => {
         if (!groups.has(a.day)) groups.set(a.day, []);
@@ -374,6 +385,8 @@
     renderSidebar();
     renderFeed();
     syncUrl();
+    $$('.nav-later').forEach((el) => el.setAttribute('aria-current', state.view === 'later' ? 'page' : 'false'));
+    $$('.nav a[href="/"]').forEach((el) => el.setAttribute('aria-current', PAGE === 'latest' && state.view !== 'later' ? 'page' : 'false'));
   }
 
   // ------------------------------------------------------------- interactions
@@ -387,22 +400,32 @@
     toastTimer = setTimeout(() => el.classList.remove('show'), 1800);
   }
 
-  function toggleSave(url) {
+  function updateLaterCount() {
+    const n = Object.keys(saved).length;
+    $$('.later-count').forEach((el) => { el.textContent = n; el.hidden = n === 0; });
+  }
+
+  function toggleSave(url, { done = false } = {}) {
     if (saved[url]) {
       delete saved[url];
-      toast('Removed from saved');
+      toast(done ? 'Marked as done' : 'Removed from Read later');
     } else {
       const a = items.find((x) => x.url === url);
       if (!a) return;
-      saved[url] = a;
-      toast('Saved');
+      saved[url] = { ...a, savedAt: Date.now() };
+      toast('Added to Read later');
     }
     persistSaved();
-    // Update in place so the list doesn't jump, except in the Saved view
-    if (state.view === 'saved') {
+    // Update in place so the list doesn't jump, except inside the Read later view
+    if (state.view === 'later') {
       render();
     } else {
-      $$(`.save-btn`).filter((b) => b.dataset.value === url).forEach((b) => b.setAttribute('aria-pressed', String(!!saved[url])));
+      $$('.later-btn').filter((b) => b.dataset.value === url).forEach((b) => {
+        const on = !!saved[url];
+        b.setAttribute('aria-pressed', String(on));
+        b.title = `${on ? 'Remove from Read later' : 'Add to Read later'} (l)`;
+        $('.later-label', b).textContent = on ? 'In Read later' : 'Read later';
+      });
       renderToolbar();
     }
   }
@@ -422,6 +445,13 @@
   }
 
   document.addEventListener('click', (e) => {
+    const laterLink = e.target.closest('a.nav-later');
+    if (laterLink && PAGE === 'latest' && !e.metaKey && !e.ctrlKey && !e.shiftKey) {
+      e.preventDefault();
+      state.view = 'later';
+      render(); scrollToTop();
+      return;
+    }
     const el = e.target.closest('[data-action]');
     if (!el) return;
     const { action, value } = el.dataset;
@@ -448,6 +478,9 @@
         break;
       case 'save':
         toggleSave(value);
+        break;
+      case 'done':
+        toggleSave(value, { done: true });
         break;
       case 'copy':
         copyLink(value);
@@ -504,8 +537,9 @@
       case 'o':
         if (current) window.open(safeUrl(current.dataset.id), '_blank', 'noopener,noreferrer');
         break;
+      case 'l':
       case 's':
-        if (current) toggleSave(current.dataset.id);
+        if (current) toggleSave(current.dataset.id, { done: state.view === 'later' });
         break;
       default:
     }
@@ -548,6 +582,7 @@
 
       renderHero();
       render();
+      updateLaterCount();
       if (location.hash) {
         const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
         if (target) target.scrollIntoView();

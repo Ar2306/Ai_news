@@ -120,6 +120,10 @@ kbd {
 }
 .nav a:hover { color: var(--text); background: var(--surface-2); }
 .nav a[aria-current="page"] { color: var(--text); background: var(--surface-2); }
+.later-count {
+  display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; margin-left: 4px;
+  border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 11px; font-weight: 700;
+}
 
 /* --------------------------------------------------------------------- hero */
 
@@ -301,8 +305,18 @@ kbd {
 }
 .icon-btn:hover { background: var(--surface-2); color: var(--text); }
 .icon-btn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.save-btn[aria-pressed="true"] { color: #f59f00; }
-.save-btn[aria-pressed="true"] svg { fill: currentColor; }
+.later-btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px 0 9px;
+  border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface);
+  color: var(--muted); font-size: 13px; font-weight: 600; margin-right: 4px; white-space: nowrap;
+}
+.later-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; stroke-linecap: round; }
+.later-btn:hover { color: var(--text); border-color: var(--accent); }
+.later-btn[aria-pressed="true"] { color: var(--accent-ink); background: var(--accent-soft); border-color: var(--accent); }
+.later-btn[aria-pressed="true"] svg { fill: currentColor; }
+.done-btn { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
+.done-btn:hover { color: var(--on-accent); filter: brightness(1.08); }
+.added { color: var(--faint); }
 
 /* -------------------------------------------------------------- archive days */
 
@@ -402,6 +416,9 @@ h1.skeleton-line { height: 38px; }
 @media (max-width: 640px) {
   .container { padding-inline: 16px; }
   .brand-sub { display: none; }
+  .nav a { padding: 6px 9px; }
+  .later-btn .later-label { display: none; }
+  .later-btn { padding: 0 8px; }
   .hero { padding: 28px 0 20px; }
   .toolbar-row { gap: 8px; }
   .search { flex-basis: 100%; }
