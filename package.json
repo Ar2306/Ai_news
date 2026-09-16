@@ -1,0 +1,25 @@
+{
+  "name": "ai-newsletter",
+  "version": "1.0.0",
+  "description": "Daily AI Newsletter - Your morning briefing on AI news, research, and tools",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000",
+    "fetch": "python scripts/fetch-news.py",
+    "fetch:full": "./scripts/run-fetch.sh",
+    "vercel-build": "echo 'Static site - no build needed' && cp -r . vercel-output"
+  },
+  "keywords": [
+    "ai",
+    "newsletter",
+    "news",
+    "machine-learning",
+    "artificial-intelligence"
+  ],
+  "author": "DavidGaso1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DavidGaso1/AI-News-Update.git"
+  }
+}

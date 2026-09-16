@@ -1,0 +1,94 @@
+name: Daily AI News Fetch
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run news fetch
+        # Optional: add API keys (e.g. OPENAI_API_KEY, ANTHROPIC_API_KEY) as GitHub secrets.
+        run: |
+          chmod +x scripts/run-fetch.sh
+          ./scripts/run-fetch.sh
+      
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check if data file changed
+          if ! git diff --quiet data/newsletter.json; then
+            git add data/newsletter.json data/archive.json
+            git commit -m "🤖 Daily AI news update $(date '+%Y-%m-%d')"
+            # Rebase + push with retries so concurrent runs (e.g. a manual dispatch
+            # overlapping the cron) can't race us out. -X theirs keeps THIS run's
+            # freshly generated data when both runs wrote the same files.
+            for i in 1 2 3 4 5; do
+              if git pull --rebase -X theirs origin master && git push; then
+                echo "✅ Pushed updated newsletter data"
+                exit 0
+              fi
+              echo "⚠️ push attempt $i failed — rebasing and retrying..."
+              sleep 5
+            done
+            echo "❌ Could not push after 5 attempts"
+            exit 1
+          else
+            echo "ℹ️ No changes to newsletter data"
+          fi
+      
+      - name: Send morning digest (email + Telegram)
+        # Sends the daily briefing to every configured channel (Resend email,
+        # Telegram). Channels with missing credentials are skipped, so this
+        # stays green while a channel is still being set up.
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NEWSLETTER_FROM: ${{ secrets.NEWSLETTER_FROM }}
+          NEWSLETTER_TO: ${{ secrets.NEWSLETTER_TO }}
+          NEWSLETTER_SUBSCRIBERS: ${{ secrets.NEWSLETTER_SUBSCRIBERS }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python3 scripts/send_digest.py
+
+      - name: Upload logs as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fetch-logs
+          path: logs/
+          retention-days: 7

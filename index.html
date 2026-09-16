@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Daily Briefing - Terminal-style AI news aggregator">
+    <title>AI Daily Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f0a;
+            --bg-secondary: #0d140d;
+            --bg-tertiary: #141f14;
+            --text-primary: #00ff41;
+            --text-secondary: #00cc33;
+            --text-muted: #008822;
+            --text-dim: #004411;
+            --accent: #00ff41;
+            --accent-hover: #00ff88;
+            --accent-dim: #003311;
+            --border: #003311;
+            --border-bright: #006622;
+            --card-bg: #0d140d;
+            --card-hover: #141f14;
+            --shadow-sm: 0 0 10px rgba(0, 255, 65, 0.1);
+            --shadow-md: 0 0 20px rgba(0, 255, 65, 0.15);
+            --shadow-lg: 0 0 40px rgba(0, 255, 65, 0.2);
+            --glow: rgba(0, 255, 65, 0.4);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --transition: 150ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color var(--transition), color var(--transition);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Scanline overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.15) 2px,
+                rgba(0, 0, 0, 0.15) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.4;
+        }
+
+        /* CRT vignette */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* Header / Terminal bar */
+        .terminal-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .terminal-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .terminal-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.4rem;
+        }
+
+        .terminal-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+
+        .terminal-dots span:nth-child(1) { background: #ff5f56; box-shadow: 0 0 8px #ff5f56; }
+        .terminal-dots span:nth-child(2) { background: #ffbd2e; box-shadow: 0 0 8px #ffbd2e; }
+        .terminal-dots span:nth-child(3) { background: #27ca4f; box-shadow: 0 0 8px #27ca4f; }
+
+        .terminal-title-text {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .terminal-title-text strong {
+            color: var(--accent);
+        }
+
+        .terminal-status {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-dim);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--glow);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        .last-updated {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Main content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header section */
+        .header-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .prompt-line {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .prompt-symbol {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .prompt-path {
+            color: var(--text-muted);
+        }
+
+        .prompt-path strong {
+            color: var(--text-secondary);
+        }
+
+        .date-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .stats-line {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        .stat strong {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .stat-label {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Search/Filter bar */
+        .filter-bar {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            position: relative;
+        }
+
+        .filter-bar::before {
+            content: 'FILTER';
+            position: absolute;
+            top: -0.6rem;
+            left: 1rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            background: var(--bg-primary);
+            padding: 0 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input-group {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            pointer-events: none;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            transition: all var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-dim);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            padding: 0.5rem 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .filter-chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-chip.active {
+            background: var(--accent-dim);
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-dim);
+        }
+
+        .results-count {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .results-count strong {
+            color: var(--accent);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-tag {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .section-count {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: var(--bg-tertiary);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+
+        .section-count strong {
+            color: var(--accent);
+        }
+
+        /* Articles grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .article-card:hover {
+            border-color: var(--border-bright);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .article-card:hover::before {
+            opacity: 1;
+        }
+
+        .article-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-category.breaking {
+            background: rgba(255, 95, 86, 0.15);
+            border-color: #ff5f56;
+            color: #ff5f56;
+        }
+
+        .article-category.research {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+        }
+
+        .article-category.industry {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: #f59e0b;
+            color: #f59e0b;
+        }
+
+        .article-category.tools {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .article-source {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            font-weight: 500;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .article-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-title:hover {
+            color: var(--accent);
+        }
+
+        .article-summary {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .article-time {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            transition: all var(--transition);
+            padding: 0.25rem 0.5rem;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-link:hover {
+            border-color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .article-link svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-dim);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .empty-state p {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .empty-state .empty-hint {
+            font-size: 0.7rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        /* Loading state */
+        .loading-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-copyright {
+            color: var(--text-dim);
+        }
+
+        /* Hidden utility */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .status-dot,
+            .loading-spinner,
+            .terminal-bar::before {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Terminal Bar -->
+    <header class="terminal-bar" role="banner">
+        <div class="terminal-title">
+            <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="terminal-title-text">~ <strong>ai-daily-briefing</strong> $ <span class="prompt-cursor">_</span></span>
+        </div>
+        <div class="terminal-status">
+            <div class="status-item">
+                <span class="status-dot active" id="status-live"></span>
+                <span>LIVE</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot" id="status-fetch"></span>
+                <span>FETCH</span>
+            </div>
+            <div class="status-item last-updated">
+                <span id="last-updated">Loading...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Header Section -->
+        <section class="header-section" aria-labelledby="date-heading">
+            <div class="header-meta">
+                <div class="prompt-line">
+                    <span class="prompt-symbol">></span>
+                    <span class="prompt-path">cat <strong>/data/newsletter.json</strong></span>
+                </div>
+                <time class="date-display" id="date-heading" datetime=""></time>
+            </div>
+            <div class="stats-line" id="stats-line"></div>
+        </section>
+
+        <!-- Filter/Search Bar -->
+        <div class="filter-bar" role="search" aria-label="Filter articles">
+            <div class="search-wrapper">
+                <div class="search-input-group">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" class="search-input" id="search-input" placeholder="Search articles... (title, summary, source)" aria-label="Search articles by keyword">
+                </div>
+                <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by category">
+                    <button class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-chip" data-filter="breaking" aria-pressed="false">Breaking</button>
+                    <button class="filter-chip" data-filter="research" aria-pressed="false">Research</button>
+                    <button class="filter-chip" data-filter="industry" aria-pressed="false">Industry</button>
+                    <button class="filter-chip" data-filter="tools" aria-pressed="false">Tools</button>
+                </div>
+                <div class="results-count" id="results-count" aria-live="polite">
+                    <strong id="visible-count">0</strong> / <strong id="total-count">0</strong> articles
+                </div>
+            </div>
+        </div>
+
+        <!-- Sections will be injected here -->
+        <div id="sections-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-links">
+            <a href="data/newsletter.json" target="_blank" rel="noopener">Current JSON</a>
+            <a href="data/archive.json" target="_blank" rel="noopener">Archive JSON</a>
+            <a href="archive.html">Archive</a>
+            <a href="https://github.com/DavidGaso1/AI-News-Update" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://ainl.vercel.app" target="_blank" rel="noopener">Live</a>
+        </div>
+        <div class="footer-copyright">
+            AI Daily Briefing • Auto-updated daily via GitHub Actions • Deployed on Vercel
+        </div>
+    </footer>
+
+    <script>
+        // ============================================
+        // DATA & STATE
+        // ============================================
+        let allArticles = [];
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        const categoryConfig = {
+            breaking: { label: 'BREAKING', icon: '⚡' },
+            research: { label: 'RESEARCH', icon: '🔬' },
+            industry: { label: 'INDUSTRY', icon: '🏭' },
+            tools: { label: 'TOOLS', icon: '🛠️' }
+        };
+
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+        const sectionsContainer = document.getElementById('sections-container');
+        const searchInput = document.getElementById('search-input');
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const visibleCountEl = document.getElementById('visible-count');
+        const totalCountEl = document.getElementById('total-count');
+        const lastUpdatedEl = document.getElementById('last-updated');
+        const dateHeading = document.getElementById('date-heading');
+        const statsLine = document.getElementById('stats-line');
+
+        // ============================================
+        // UTILITIES
+        // ============================================
+        function formatRelativeTime(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+
+            if (diffMins < 1) return 'just now';
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ============================================
+        // RENDERING
+        // ============================================
+        function renderArticle(article) {
+            const cat = categoryConfig[article.category] || { label: article.category.toUpperCase(), icon: '📄' };
+            return `
+                <article class="article-card" data-category="${escapeHtml(article.category)}" data-source="${escapeHtml(article.source)}" data-title="${escapeHtml(article.title)}" data-summary="${escapeHtml(article.summary || '')}">
+                    <header class="article-header">
+                        <span class="article-category ${escapeHtml(article.category)}">${cat.label}</span>
+                        <span class="article-source">${escapeHtml(article.source)}</span>
+                    </header>
+                    <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener" class="article-title">${escapeHtml(article.title)}</a>
+                    ${article.summary ? `<p class="article-summary">${escapeHtml(article.summary)}</p>` : ''}
+                    <footer class="article-footer">
+                        <time class="article-time" datetime="${escapeHtml(article.published_at)}">${formatRelativeTime(article.published_at)}</time>
+                        <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener" class="article-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </footer>
+                </article>
+            `;
+        }
+
+        function renderSection(category, articles) {
+            if (articles.length === 0) return '';
+            const cat = categoryConfig[category] || { label: category.toUpperCase() };
+            return `
+                <section class="section" data-category="${category}" aria-labelledby="section-${category}">
+                    <header class="section-header">
+                        <div class="section-title-group">
+                            <span class="section-tag">${cat.label}</span>
+                            <h2 class="section-title" id="section-${category}">${cat.label}</h2>
+                            <span class="section-count"><strong>${articles.length}</strong> articles</span>
+                        </div>
+                    </header>
+                    <div class="articles-grid" role="list">
+                        ${articles.map(a => renderArticle(a)).join('')}
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderEmptyState(category) {
+            const cat = categoryConfig[category] || { label: category.toUpperCase() };
+            return `
+                <section class="section" data-category="${category}">
+                    <header class="section-header">
+                        <div class="section-title-group">
+                            <span class="section-tag">${cat.label}</span>
+                            <h2 class="section-title">${cat.label}</h2>
+                            <span class="section-count"><strong>0</strong> articles</span>
+                        </div>
+                    </header>
+                    <div class="empty-state" role="status">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <p>No ${cat.label.toLowerCase()} articles</p>
+                        <span class="empty-hint">Try adjusting your filters</span>
+                    </div>
+                </section>
+            `;
+        }
+
+        function updateStats() {
+            const filtered = getFilteredArticles();
+            const total = allArticles.length;
+            visibleCountEl.textContent = filtered.length;
+            totalCountEl.textContent = total;
+
+            // Update stats line
+            const cats = ['breaking', 'research', 'industry', 'tools'];
+            statsLine.innerHTML = cats.map(cat => {
+                const count = allArticles.filter(a => a.category === cat).length;
+                const catCfg = categoryConfig[cat];
+                return `<span class="stat"><strong>${count}</strong> <span class="stat-label">${catCfg.label}</span></span>`;
+            }).join('');
+        }
+
+        function getFilteredArticles() {
+            return allArticles.filter(article => {
+                const matchesFilter = currentFilter === 'all' || article.category === currentFilter;
+                const query = searchQuery.toLowerCase().trim();
+                const matchesSearch = !query ||
+                    article.title.toLowerCase().includes(query) ||
+                    (article.summary || '').toLowerCase().includes(query) ||
+                    article.source.toLowerCase().includes(query);
+                return matchesFilter && matchesSearch;
+            });
+        }
+
+        function renderAll() {
+            const filtered = getFilteredArticles();
+            const cats = ['breaking', 'research', 'industry', 'tools'];
+            const byCategory = {};
+            cats.forEach(cat => {
+                byCategory[cat] = filtered.filter(a => a.category === cat);
+            });
+
+            sectionsContainer.innerHTML = cats.map(cat => {
+                const articles = byCategory[cat];
+                return articles.length > 0 ? renderSection(cat, articles) : renderEmptyState(cat);
+            }).join('');
+
+            updateStats();
+        }
+
+        // ============================================
+        // DATA LOADING
+        // ============================================
+        async function loadData() {
+            try {
+                const res = await fetch('data/newsletter.json', { cache: 'no-cache' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+
+                allArticles = [];
+                Object.entries(data.categories || {}).forEach(([cat, articles]) => {
+                    articles.forEach(a => allArticles.push({ ...a, category: cat }));
+                });
+
+                // Sort by published_at desc
+                allArticles.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+                // Update header
+                if (data.generated_at) {
+                    dateHeading.textContent = formatDate(data.generated_at);
+                    dateHeading.dateTime = data.generated_at;
+                    lastUpdatedEl.textContent = `Updated ${formatRelativeTime(data.generated_at)}`;
+                }
+
+                renderAll();
+                setStatus('fetch', true);
+            } catch (err) {
+                console.error('Failed to load data:', err);
+                sectionsContainer.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                        <p>Failed to load newsletter data</p>
+                        <span class="empty-hint">${escapeHtml(err.message)}</span>
+                    </div>
+                `;
+                setStatus('fetch', false);
+            }
+        }
+
+        function setStatus(key, active) {
+            const el = document.getElementById(`status-${key}`);
+            if (el) {
+                if (active) el.classList.add('active');
+                else el.classList.remove('active');
+            }
+        }
+
+        // ============================================
+        // EVENT HANDLERS
+        // ============================================
+        let searchDebounce;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchDebounce);
+            searchDebounce = setTimeout(() => {
+                searchQuery = e.target.value;
+                renderAll();
+            }, 150);
+        });
+
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('active');
+                    c.setAttribute('aria-pressed', 'false');
+                });
+                chip.classList.add('active');
+                chip.setAttribute('aria-pressed', 'true');
+                currentFilter = chip.dataset.filter;
+                renderAll();
+            });
+        });
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadData, 5 * 60 * 1000);
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            setStatus('live', true);
+        });
+
+        // Blinking cursor
+        const cursor = document.querySelector('.prompt-cursor');
+        if (cursor) {
+            setInterval(() => {
+                cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+            }, 530);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Daily Briefing - Historical Archive">
+    <title>AI Daily Briefing — Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f0a;
+            --bg-secondary: #0d140d;
+            --bg-tertiary: #141f14;
+            --text-primary: #00ff41;
+            --text-secondary: #00cc33;
+            --text-muted: #008822;
+            --text-dim: #004411;
+            --accent: #00ff41;
+            --accent-hover: #00ff88;
+            --accent-dim: #003311;
+            --border: #003311;
+            --border-bright: #006622;
+            --card-bg: #0d140d;
+            --card-hover: #141f14;
+            --shadow-sm: 0 0 10px rgba(0, 255, 65, 0.1);
+            --shadow-md: 0 0 20px rgba(0, 255, 65, 0.15);
+            --shadow-lg: 0 0 40px rgba(0, 255, 65, 0.2);
+            --glow: rgba(0, 255, 65, 0.4);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --transition: 150ms ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px);
+            pointer-events: none; z-index: 9999; opacity: 0.4;
+        }
+
+        body::after {
+            content: '';
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none; z-index: 9998;
+        }
+
+        /* Terminal Bar */
+        .terminal-bar {
+            position: sticky; top: 0; z-index: 100;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            flex-wrap: wrap;
+            font-family: 'Space Mono', monospace;
+        }
+        .terminal-bar::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            animation: scan 3s linear infinite;
+        }
+        @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+        .terminal-title { display: flex; align-items: center; gap: 0.75rem; }
+        .terminal-dots { display: flex; gap: 0.4rem; }
+        .terminal-dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--border); }
+        .terminal-dots span:nth-child(1) { background: #ff5f56; box-shadow: 0 0 8px #ff5f56; }
+        .terminal-dots span:nth-child(2) { background: #ffbd2e; box-shadow: 0 0 8px #ffbd2e; }
+        .terminal-dots span:nth-child(3) { background: #27ca4f; box-shadow: 0 0 8px #27ca4f; }
+        .terminal-title-text { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+        .terminal-title-text strong { color: var(--accent); }
+        .terminal-title-text .prompt-cursor { animation: blink 1060ms infinite; }
+        @keyframes blink { 0%, 50% { visibility: visible; } 51%, 100% { visibility: hidden; } }
+
+        .terminal-status { display: flex; align-items: center; gap: 1.5rem; font-size: 0.7rem; color: var(--text-muted); }
+        .status-item { display: flex; align-items: center; gap: 0.4rem; }
+        .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-dim); animation: pulse 2s ease-in-out infinite; }
+        .status-dot.active { background: var(--accent); box-shadow: 0 0 8px var(--glow); }
+        @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .last-updated { font-family: 'JetBrains Mono', monospace; }
+
+        /* Main */
+        .main { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem 4rem; position: relative; z-index: 1; }
+
+        /* Header */
+        .header-section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); position: relative; }
+        .header-section::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100px; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); }
+
+        .header-meta { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .prompt-line { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary); }
+        .prompt-symbol { color: var(--accent); font-weight: 700; }
+        .prompt-path { color: var(--text-muted); }
+        .prompt-path strong { color: var(--text-secondary); }
+
+        .date-display { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; font-family: 'Space Mono', monospace; }
+
+        .stats-line { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; font-size: 0.75rem; color: var(--text-muted); }
+        .stat { display: flex; align-items: center; gap: 0.4rem; padding: 0.25rem 0.75rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .stat strong { color: var(--accent); font-size: 1rem; }
+        .stat-label { text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* Navigation tabs */
+        .nav-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .nav-tab { padding: 0.5rem 1rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-secondary); font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: all var(--transition); }
+        .nav-tab:hover { border-color: var(--accent); color: var(--accent); }
+        .nav-tab.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); box-shadow: 0 0 10px var(--accent-dim); }
+
+        /* Archive list */
+        .archive-list { display: flex; flex-direction: column; gap: 1rem; }
+        .archive-day { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition); }
+        .archive-day:hover { border-color: var(--border-bright); box-shadow: var(--shadow-md); }
+
+        .archive-day-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; background: var(--bg-secondary); border-bottom: 1px solid var(--border); cursor: pointer; }
+        .archive-day-header:hover { background: var(--bg-tertiary); }
+
+        .archive-day-title { display: flex; align-items: center; gap: 0.75rem; }
+        .archive-day-toggle { width: 20px; height: 20px; border: 1px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.75rem; flex-shrink: 0; transition: all var(--transition); }
+        .archive-day-toggle.expanded { transform: rotate(180deg); color: var(--accent); border-color: var(--accent); }
+
+        .archive-day-date { font-size: 1rem; font-weight: 700; color: var(--text-primary); font-family: 'Space Mono', monospace; }
+        .archive-day-badge { font-size: 0.55rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent-dim); padding: 0.15rem 0.5rem; border-radius: var(--radius-sm); border: 1px solid var(--accent-dim); }
+
+        .archive-day-stats { display: flex; gap: 1rem; font-size: 0.65rem; color: var(--text-muted); }
+        .archive-day-stats span { display: flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.5rem; background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .archive-day-stats strong { color: var(--accent); }
+
+        .archive-day-content { max-height: 0; overflow: hidden; transition: max-height 300ms ease; }
+        .archive-day-content.expanded { max-height: 2000px; }
+
+        .archive-day-articles { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+        .archive-article { background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.75rem; transition: all var(--transition); }
+        .archive-article:hover { border-color: var(--border-bright); box-shadow: var(--shadow-sm); }
+
+        .archive-article-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .archive-article-category { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.15rem 0.4rem; border-radius: var(--radius-sm); border: 1px solid; white-space: nowrap; flex-shrink: 0; }
+        .archive-article-category.breaking { background: rgba(255,95,86,0.15); border-color: #ff5f56; color: #ff5f56; }
+        .archive-article-category.research { background: rgba(139,92,246,0.15); border-color: #8b5cf6; color: #8b5cf6; }
+        .archive-article-category.industry { background: rgba(245,158,11,0.15); border-color: #f59e0b; color: #f59e0b; }
+        .archive-article-category.tools { background: rgba(16,185,129,0.15); border-color: #10b981; color: #10b981; }
+
+        .archive-article-source { font-size: 0.6rem; color: var(--text-dim); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+
+        .archive-article-title { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.5rem; text-decoration: none; color: inherit; transition: color var(--transition); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .archive-article-title:hover { color: var(--accent); }
+
+        .archive-article-summary { font-size: 0.7rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.5rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        .archive-article-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid var(--border); }
+        .archive-article-time { font-size: 0.6rem; color: var(--text-dim); font-weight: 500; }
+        .archive-article-link { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.65rem; font-weight: 600; color: var(--accent); text-decoration: none; transition: all var(--transition); padding: 0.2rem 0.4rem; border: 1px solid transparent; border-radius: var(--radius-sm); }
+        .archive-article-link:hover { border-color: var(--accent); background: var(--accent-dim); }
+
+        /* Empty state */
+        .empty-state { text-align: center; padding: 3rem 2rem; color: var(--text-dim); }
+        .empty-state svg { width: 48px; height: 48px; margin-bottom: 1rem; opacity: 0.3; }
+        .empty-state p { font-size: 0.85rem; font-weight: 500; }
+        .empty-state .empty-hint { font-size: 0.7rem; font-weight: 400; margin-top: 0.5rem; }
+
+        /* Loading */
+        .loading-state { text-align: center; padding: 3rem 2rem; color: var(--text-muted); }
+        .loading-spinner { width: 32px; height: 32px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Footer */
+        .footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; }
+        .footer-links { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: color var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .main { padding: 1.5rem 1rem 3rem; }
+            .date-display { font-size: 1.25rem; }
+            .stats-line { gap: 1rem; }
+            .archive-day-header { padding: 0.75rem 1rem; }
+            .archive-day-articles { padding: 0.75rem 1rem; }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .status-dot, .terminal-bar::before, .prompt-cursor { animation: none; }
+            .archive-day-content { transition: none; }
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <!-- Terminal Bar -->
+    <header class="terminal-bar" role="banner">
+        <div class="terminal-title">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <span class="terminal-title-text">~ <strong>ai-daily-briefing</strong> $ <span class="prompt-cursor">_</span></span>
+        </div>
+        <div class="terminal-status">
+            <div class="status-item"><span class="status-dot active" id="status-live"></span><span>LIVE</span></div>
+            <div class="status-item"><span class="status-dot" id="status-fetch"></span><span>ARCHIVE</span></div>
+            <div class="status-item last-updated"><span id="last-updated">Loading...</span></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" role="main">
+        <!-- Header Section -->
+        <section class="header-section" aria-labelledby="date-heading">
+            <div class="header-meta">
+                <div class="prompt-line">
+                    <span class="prompt-symbol">></span>
+                    <span class="prompt-path">cat <strong>/data/archive.json</strong></span>
+                </div>
+                <time class="date-display" id="date-heading" datetime="">Archive</time>
+            </div>
+            <div class="stats-line" id="stats-line"></div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs" role="tablist" aria-label="Archive views">
+            <button class="nav-tab active" role="tab" aria-selected="true" data-view="archive">Archive</button>
+            <button class="nav-tab" role="tab" aria-selected="false" data-view="latest">Latest</button>
+            <button class="nav-tab" role="tab" aria-selected="false" data-view="sources">Sources</button>
+        </nav>
+
+        <!-- Archive View -->
+        <section id="view-archive" role="tabpanel" aria-label="Historical Archive">
+            <div class="archive-list" id="archive-list">
+                <div class="loading-state"><div class="loading-spinner"></div>Loading archive...</div>
+            </div>
+        </section>
+
+        <!-- Latest View -->
+        <section id="view-latest" role="tabpanel" aria-label="Latest Articles" class="hidden">
+            <div class="empty-state">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <p>Redirecting to latest...</p>
+                <span class="empty-hint"><a href="/" style="color: var(--accent);">Go to main page</a></span>
+            </div>
+        </section>
+
+        <!-- Sources View -->
+        <section id="view-sources" role="tabpanel" aria-label="Sources" class="hidden">
+            <div id="sources-list" class="archive-list">
+                <div class="loading-state"><div class="loading-spinner"></div>Loading sources...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-links">
+            <a href="data/newsletter.json" target="_blank" rel="noopener">Current JSON</a>
+            <a href="data/archive.json" target="_blank" rel="noopener">Archive JSON</a>
+            <a href="https://github.com/DavidGaso1/AI-News-Update" target="_blank" rel="noopener">GitHub</a>
+            <a href="/">Live</a>
+        </div>
+        <div class="footer-copyright">AI Daily Briefing • Historical Archive • Auto-updated daily via GitHub Actions</div>
+    </footer>
+
+    <script>
+        // ============================================
+        // STATE & CONFIG
+        // ============================================
+        let archiveData = null;
+        let currentView = 'archive';
+
+        const categoryConfig = {
+            breaking: { label: 'BREAKING', icon: '⚡' },
+            research: { label: 'RESEARCH', icon: '🔬' },
+            industry: { label: 'INDUSTRY', icon: '🏭' },
+            tools: { label: 'TOOLS', icon: '🛠️' }
+        };
+
+        // DOM Elements
+        const archiveList = document.getElementById('archive-list');
+        const sourcesList = document.getElementById('sources-list');
+        const dateHeading = document.getElementById('date-heading');
+        const statsLine = document.getElementById('stats-line');
+        const lastUpdatedEl = document.getElementById('last-updated');
+        const statusFetch = document.getElementById('status-fetch');
+        const navTabs = document.querySelectorAll('.nav-tab');
+
+        // ============================================
+        // UTILITIES
+        // ============================================
+        function formatRelativeTime(dateStr) {
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+            if (diffMins < 1) return 'just now';
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function setStatus(key, active) {
+            const el = document.getElementById(`status-${key}`);
+            if (el) active ? el.classList.add('active') : el.classList.remove('active');
+        }
+
+        // ============================================
+        // RENDERING
+        // ============================================
+        function renderArchive() {
+            if (!archiveData || !archiveData.archive) {
+                archiveList.innerHTML = '<div class="empty-state"><p>No archive data</p></div>';
+                return;
+            }
+
+            if (archiveData.archive.length === 0) {
+                archiveList.innerHTML = '<div class="empty-state"><p>Archive is empty</p><span class="empty-hint">Run the fetcher to populate</span></div>';
+                return;
+            }
+
+            // Update header stats
+            const totalDays = archiveData.archive.length;
+            const totalArticles = archiveData.archive.reduce((sum, d) => sum + d.total, 0);
+            const latestDate = archiveData.archive[0]?.date;
+            dateHeading.textContent = `${totalDays} days archived`;
+            dateHeading.dateTime = latestDate || '';
+            statsLine.innerHTML = `
+                <span class="stat"><strong>${totalDays}</strong> <span class="stat-label">Days</span></span>
+                <span class="stat"><strong>${totalArticles}</strong> <span class="stat-label">Articles</span></span>
+                <span class="stat"><strong>${archiveData.archive[0]?.total || 0}</strong> <span class="stat-label">Latest</span></span>
+            `;
+
+            archiveList.innerHTML = archiveData.archive.map(day => {
+                const cats = day.categories;
+                return `
+                    <article class="archive-day" data-date="${escapeHtml(day.date)}">
+                        <header class="archive-day-header" onclick="toggleDay('${escapeHtml(day.date)}')">
+                            <div class="archive-day-title">
+                                <span class="archive-day-toggle" id="toggle-${escapeHtml(day.date)}">▼</span>
+                                <time class="archive-day-date" datetime="${escapeHtml(day.date)}">${escapeHtml(day.date)}</time>
+                                <span class="archive-day-badge">${day.total} articles</span>
+                            </div>
+                            <div class="archive-day-stats">
+                                <span><strong>${cats.breaking}</strong> BREAKING</span>
+                                <span><strong>${cats.research}</strong> RESEARCH</span>
+                                <span><strong>${cats.industry}</strong> INDUSTRY</span>
+                                <span><strong>${cats.tools}</strong> TOOLS</span>
+                            </div>
+                        </header>
+                        <div class="archive-day-content" id="content-${escapeHtml(day.date)}">
+                            <div class="archive-day-articles">
+                                ${day.articles.map(a => renderArchiveArticle(a)).join('')}
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function renderArchiveArticle(a) {
+            const cat = categoryConfig[a.category] || { label: a.category.toUpperCase() };
+            return `
+                <article class="archive-article" data-category="${escapeHtml(a.category)}" data-source="${escapeHtml(a.source)}">
+                    <header class="archive-article-header">
+                        <span class="archive-article-category ${escapeHtml(a.category)}">${cat.label}</span>
+                        <span class="archive-article-source">${escapeHtml(a.source)}</span>
+                    </header>
+                    <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener" class="archive-article-title">${escapeHtml(a.title)}</a>
+                    ${a.summary ? `<p class="archive-article-summary">${escapeHtml(a.summary)}</p>` : ''}
+                    <footer class="archive-article-footer">
+                        <time class="archive-article-time" datetime="${escapeHtml(a.published_at)}">${formatRelativeTime(a.published_at)}</time>
+                        <a href="${escapeHtml(a.url)}" target="_blank" rel="noopener" class="archive-article-link">
+                            Read
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" width="12" height="12"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </footer>
+                </article>
+            `;
+        }
+
+        function renderSources() {
+            if (!archiveData || !archiveData.archive) {
+                sourcesList.innerHTML = '<div class="empty-state"><p>No data</p></div>';
+                return;
+            }
+
+            // Aggregate sources across all days
+            const sourceCounts = {};
+            archiveData.archive.forEach(day => {
+                day.articles.forEach(a => {
+                    if (!sourceCounts[a.source]) sourceCounts[a.source] = { count: 0, categories: {}, latest: a.published_at };
+                    sourceCounts[a.source].count++;
+                    sourceCounts[a.source].categories[a.category] = (sourceCounts[a.source].categories[a.category] || 0) + 1;
+                    if (new Date(a.published_at) > new Date(sourceCounts[a.source].latest)) {
+                        sourceCounts[a.source].latest = a.published_at;
+                    }
+                });
+            });
+
+            const sortedSources = Object.entries(sourceCounts).sort((a, b) => b[1].count - a[1].count);
+
+            sourcesList.innerHTML = sortedSources.map(([source, data]) => `
+                <article class="archive-day">
+                    <div class="archive-day-header" style="cursor: default;">
+                        <div class="archive-day-title">
+                            <span style="width:20px;height:20px;flex-shrink:0;"></span>
+                            <strong style="font-size:0.9rem;color:var(--text-primary);font-family:'Space Mono',monospace;">${escapeHtml(source)}</strong>
+                            <span class="archive-day-badge">${data.count} articles</span>
+                        </div>
+                        <div class="archive-day-stats">
+                            <span><strong>${data.categories.breaking || 0}</strong> BREAKING</span>
+                            <span><strong>${data.categories.research || 0}</strong> RESEARCH</span>
+                            <span><strong>${data.categories.industry || 0}</strong> INDUSTRY</span>
+                            <span><strong>${data.categories.tools || 0}</strong> TOOLS</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // ============================================
+        // INTERACTIONS
+        // ============================================
+        window.toggleDay = function(date) {
+            const content = document.getElementById(`content-${date}`);
+            const toggle = document.getElementById(`toggle-${date}`);
+            if (content && toggle) {
+                const expanded = content.classList.toggle('expanded');
+                toggle.classList.toggle('expanded', expanded);
+            }
+        };
+
+        // Tab switching
+        navTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                navTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+
+                document.querySelectorAll('[role="tabpanel"]').forEach(p => p.classList.add('hidden'));
+                const view = tab.dataset.view;
+                document.getElementById(`view-${view}`).classList.remove('hidden');
+                currentView = view;
+
+                if (view === 'sources') renderSources();
+            });
+        });
+
+        // ============================================
+        // DATA LOADING
+        // ============================================
+        async function loadArchive() {
+            try {
+                setStatus('fetch', true);
+                const res = await fetch('data/archive.json', { cache: 'no-cache' });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                archiveData = await res.json();
+
+                if (archiveData.generated_at) {
+                    lastUpdatedEl.textContent = `Updated ${formatRelativeTime(archiveData.generated_at)}`;
+                }
+                setStatus('fetch', false);
+
+                renderArchive();
+            } catch (err) {
+                console.error('Failed to load archive:', err);
+                archiveList.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                        <p>Failed to load archive</p>
+                        <span class="empty-hint">${escapeHtml(err.message)}</span>
+                    </div>
+                `;
+                setStatus('fetch', false);
+            }
+        }
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadArchive, 5 * 60 * 1000);
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadArchive();
+            setStatus('live', true);
+        });
+
+        // Blinking cursor
+        const cursor = document.querySelector('.prompt-cursor');
+        if (cursor) {
+            setInterval(() => {
+                cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+            }, 530);
+        }
+    </script>
+</body>
+</html>
