@@ -27,16 +27,83 @@ jobs:
       - name: Validate newsletter data
         run: |
           python3 - <<'EOF'
-          import json, os
+          import importlib.util, json, os
+          spec = importlib.util.spec_from_file_location('fetch_news', 'scripts/fetch-news.py')
+          fetch_news = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(fetch_news)
+          TAGS = set(fetch_news.TOPIC_TAGS)
+
+          def check_article(a, where):
+              assert 'category' not in a, f'{where}: stale "category" field'
+              assert isinstance(a.get('tags'), list) and 1 <= len(a['tags']) <= 3, f'{where}: tags must be a list of 1-3'
+              bad = set(a['tags']) - TAGS
+              assert not bad, f'{where}: tags outside TOPIC_TAGS: {bad}'
+              s = a.get('summary')
+              assert isinstance(s, dict), f'{where}: summary must be an object'
+              for k in ('what', 'why', 'who'):
+                  assert isinstance(s.get(k), str), f'{where}: summary.{k} must be a string'
+
           p = 'data/newsletter.json'
           assert os.path.exists(p), f'{p} is missing'
           d = json.load(open(p))
-          for key in ('generated_at', 'article_count', 'categories', 'all_articles'):
+          for key in ('generated_at', 'article_count', 'all_articles'):
               assert key in d, f'{p} is missing key {key!r}'
+          assert 'categories' not in d, f'{p} still has the old "categories" key'
           assert isinstance(d['all_articles'], list), 'all_articles must be a list'
           assert d['article_count'] == len(d['all_articles']), \
               f'article_count {d["article_count"]} != actual {len(d["all_articles"])}'
+          for i, a in enumerate(d['all_articles']):
+              check_article(a, f'{p} all_articles[{i}]')
+
+          p = 'data/archive.json'
+          for day in json.load(open(p)).get('archive', []):
+              assert 'categories' not in day, f'{p} {day["date"]}: stale "categories" key'
+              for i, a in enumerate(day['articles']):
+                  check_article(a, f'{p} {day["date"]}[{i}]')
+
           print(f'newsletter.json OK — {len(d["all_articles"])} articles from {d["generated_at"]}')
+          EOF
+
+      - name: Curation parsing + fallback checks
+        run: |
+          python3 - <<'EOF'
+          import importlib.util
+          spec = importlib.util.spec_from_file_location('fetch_news', 'scripts/fetch-news.py')
+          fn = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(fn)
+
+          # 1. Valid reply: unknown tags are dropped, max 3 kept, who defaults to Unknown
+          r = fn.parse_curation('{"relevant": true, "tags": ["llm", "made-up", "robotics", "multimodal", "other"],'
+                                ' "summary": {"what": "A model.", "why": "Faster.", "who": ""}}')
+          assert r['tags'] == ['llm', 'robotics', 'multimodal'], r
+          assert r['summary']['who'] == 'Unknown', r
+
+          # 2. Fenced JSON is tolerated; irrelevant items collapse to relevant=false
+          assert fn.parse_curation('```json\n{"relevant": false}\n```') == {'relevant': False}
+
+          # 3. Malformed replies raise so the caller falls back
+          for bad in ('not json', '{"tags": []}', '{"relevant": true, "tags": ["llm"]}'):
+              try:
+                  fn.parse_curation(bad)
+              except ValueError:
+                  pass
+              else:
+                  raise AssertionError(f'should reject {bad!r}')
+
+          # 4. curate(): irrelevant -> None, LLM failure -> extractive fallback with valid tags
+          f = object.__new__(fn.NewsFetcher)
+          art = lambda: fn.Article(title='New RLHF method', url='u', source='s', author='Lab',
+                                   content='We propose a reward model for reinforcement learning. It beats PPO baselines.')
+          f._call_llm = lambda prompt: '{"relevant": false}'
+          assert f.curate(art()) is None, 'irrelevant item must be dropped'
+          def boom(prompt): raise RuntimeError('api down')
+          f._call_llm = boom
+          a = f.curate(art())
+          assert a is not None and a.tags and set(a.tags) <= set(fn.TOPIC_TAGS), a.tags
+          assert a.summary['what'].startswith('We propose'), a.summary
+          assert 'content' not in a.to_dict(), 'raw content must not be serialized'
+
+          print('Curation checks OK')
           EOF
 
       - name: Digest dry-run (builds email + Telegram, sends nothing)
@@ -93,7 +160,9 @@ jobs:
 
           # 1. load_archive_seen seeds URLs/titles from a previous day's archive
           fake = Path(tempfile.mkdtemp()) / 'archive.json'
-          fake.write_text(json.dumps({'archive': [{'date': '2026-08-11', 'articles': [
+          # Use today's date: a hardcoded date eventually falls outside DEDUP_ARCHIVE_DAYS
+          from datetime import date
+          fake.write_text(json.dumps({'archive': [{'date': date.today().isoformat(), 'articles': [
               {'url': 'https://x.com/a/123?utm_source=twitter&s=09', 'title': 'OpenAI announces GPT-5.5 Turbo'},
               {'url': 'https://arxiv.org/abs/2608.05000', 'title': 'RT by @bot: Claude 4 is out'},
           ]}]}))
@@ -110,23 +179,20 @@ jobs:
           assert not f._is_title_duplicate('Meta shows off AR glasses'), 'new story wrongly blocked'
 
           # 3. build_archive_index preserves previous days when rebuilding
-          import sqlite3
-          conn = sqlite3.connect(':memory:')
-          conn.executescript('''
-              CREATE TABLE articles (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT NOT NULL,
-                  url TEXT NOT NULL UNIQUE, source TEXT NOT NULL, summary TEXT, category TEXT NOT NULL,
-                  published_at TEXT NOT NULL, fetched_at TEXT NOT NULL, author TEXT, tags TEXT, date_key TEXT NOT NULL,
-                  created_at TEXT NOT NULL DEFAULT (datetime('now')));
-              INSERT INTO articles (title, url, source, summary, category, published_at, fetched_at, author, tags, date_key)
-              VALUES ('today story', 'https://example.com/today', 'x', NULL, 'breaking', '2026-08-12', 'now', NULL, NULL, '2026-08-12');
-          ''')
+          conn = fetch_news.init_database(':memory:')
+          conn.execute(
+              "INSERT INTO articles (title, url, source, summary, published_at, fetched_at, author, tags, date_key) "
+              "VALUES ('today story', 'https://example.com/today', 'x', '{\"what\": \"w\", \"why\": \"y\", \"who\": \"z\"}', "
+              "'2026-08-12', 'now', NULL, '[\"llm\"]', '2026-08-12')")
           out = Path(tempfile.mkdtemp()) / 'archive.json'
-          out.write_text(json.dumps({'generated_at': 'x', 'archive': [{'date': '2026-08-10', 'total': 5, 'categories': {}, 'articles': []}]}))
+          out.write_text(json.dumps({'generated_at': 'x', 'archive': [{'date': '2026-08-10', 'total': 5, 'tags': {}, 'articles': []}]}))
           fetch_news.build_archive_index(conn, out)
           rebuilt = json.loads(out.read_text())
           dates = [d['date'] for d in rebuilt['archive']]
           assert '2026-08-10' in dates and '2026-08-12' in dates, f'archive history lost: {dates}'
           assert dates == sorted(dates, reverse=True), f'archive not sorted desc: {dates}'
+          today = next(d for d in rebuilt['archive'] if d['date'] == '2026-08-12')
+          assert today['tags'] == {'llm': 1} and today['articles'][0]['summary']['what'] == 'w', today
 
           print('Cross-day dedup + archive merge checks OK')
           EOF

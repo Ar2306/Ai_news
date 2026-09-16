@@ -16,7 +16,7 @@ from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlparse
 
 import feedparser
 import httpx
@@ -31,7 +31,6 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 OUTPUT_FILE = DATA_DIR / "newsletter.json"
 DB_FILE = DATA_DIR / "newsletter.db"
 ARCHIVE_FILE = DATA_DIR / "archive.json"
-SOURCES_FILE = Path(__file__).parent.parent / "sources.json"
 
 # Cross-day dedup window: stories archived within this many days are treated as
 # already covered and won't reappear in the digest. Older stories can return.
@@ -97,64 +96,108 @@ TWITTER_ACCOUNTS = [
     "sama", "greg_brockman", "demishassabis", "hardmaru",
 ]
 
-# Categorization keywords
-CATEGORY_KEYWORDS = {
-    "breaking": [
-        "breaking", "announced", "launch", "release", "unveil", "introduce",
-        "new model", "new version", "v1", "v2", "v3", "launch", "available now",
-        "now available", "announcing", "introducing", "preview", "beta", "ga",
-        "general availability", "open source", "open-source", "released"
-    ],
-    "research": [
-        "paper", "research", "arxiv", "study", "experiment", "benchmark",
-        "evaluation", "analysis", "theoretical", "proof", "algorithm", "method",
-        "approach", "framework", "architecture", "model", "training", "pretrain",
-        "fine-tun", "scaling law", "emergent", "capability", "alignment",
-        "interpretability", "robustness", "generalization", "sample efficiency",
-        "neurips", "icml", "iclr", "cvpr", "iccv", "acl", "emnlp", "naacl",
-        "conference", "proceedings", "accepted", "published", "preprint"
-    ],
-    "industry": [
-        "partnership", "acquisition", "funding", "investment", "series a", "series b",
-        "series c", "ipo", "valuation", "billion", "million", "startup", "enterprise",
-        "deployment", "production", "infrastructure", "cloud", "api", "platform",
-        "commercial", "business", "revenue", "customer", "client", "adoption",
-        "regulation", "policy", "law", "government", "eu ai act", "white house",
-        "executive order", "copyright", "lawsuit", "legal", "ethics", "safety",
-        "responsible ai", "governance", "standard", "certification"
-    ],
-    "tools": [
-        "tool", "library", "framework", "sdk", "api", "cli", "gui", "interface",
-        "release", "version", "update", "patch", "feature", "plugin", "extension",
-        "integration", "wrapper", "binding", "python", "javascript", "typescript",
-        "rust", "go", "docker", "kubernetes", "deployment", "inference", "serving",
-        "quantization", "gguf", "ggml", "llama.cpp", "vllm", "tensorrt", "onnx",
-        "hugging face", "transformers", "accelerate", "peft", "trl", "langchain",
-        "llamaindex", "haystack", "chroma", "weaviate", "pinecone", "milvus",
-        "qdrant", "redis", "vector database", "embedding", "rerank", "rag",
-        "agent", "workflow", "orchestration", "autogen", "crewai", "langgraph",
-        "composio", "browserbase", "playwright", "selenium", "puppeteer"
-    ],
+# Closed tag vocabulary. Articles are multi-label (1-3 tags) and the LLM is
+# never allowed to invent a tag outside this list.
+TOPIC_TAGS = [
+    "llm", "reinforcement-learning", "world-models", "foundational-models",
+    "multimodal", "robotics", "interpretability", "ai-safety",
+    "simulation", "training-infra", "general-ml", "other",
+]
+
+# Keyword hints used only by the fallback path (when the LLM call fails)
+FALLBACK_TAG_KEYWORDS = {
+    "llm": ["llm", "language model", "gpt", "claude", "gemini", "llama", "transformer", "token", "prompt", "chatbot", "rag"],
+    "reinforcement-learning": ["reinforcement learning", "rlhf", "reward model", "policy gradient", "ppo", "grpo", "q-learning"],
+    "world-models": ["world model"],
+    "foundational-models": ["foundation model", "foundational model", "pretrain", "pre-train", "frontier model"],
+    "multimodal": ["multimodal", "vision-language", "vlm", "image", "video", "audio", "speech", "diffusion"],
+    "robotics": ["robot", "embodied", "manipulation", "locomotion", "humanoid"],
+    "interpretability": ["interpretab", "explainab", "mechanistic", "sparse autoencoder", "circuit"],
+    "ai-safety": ["safety", "alignment", "jailbreak", "red team", "misuse", "guardrail"],
+    "simulation": ["simulation", "simulator", "sim-to-real", "synthetic environment"],
+    "training-infra": ["gpu", "inference", "quantization", "distributed training", "kernel", "cuda", "serving", "throughput", "compute"],
 }
 
-# Default categories for sources
-SOURCE_DEFAULT_CATEGORY = {
-    "arXiv": "research",
-    "Hugging Face": "tools",
-    "OpenAI": "breaking",
-    "Anthropic": "breaking",
-    "Google": "industry",
-    "Microsoft": "industry",
-    "Meta": "industry",
-    "NVIDIA": "industry",
-    "DeepMind": "research",
-    "Cohere": "breaking",
-    "LangChain": "tools",
-    "Weights & Biases": "tools",
-    "Reddit": "research",
-    "Hacker News": "breaking",
-    "Twitter": "breaking",
+MAX_ARTICLES = 50  # items kept in newsletter.json
+MAX_PER_SOURCE = 10  # candidate cap per source, keeps the digest varied
+MAX_LLM_ITEMS = int(os.environ.get("MAX_LLM_ITEMS", "100"))  # candidates enriched per run
+
+CURATOR_PROMPT = """You are a technical curator for a personal AI/ML research digest called "AR."
+
+Given the title and abstract/content of one item, do three things:
+
+1. RELEVANCE: Decide if this item is genuinely about AI/ML — not just
+   mentioning "AI" in passing (marketing fluff, AI-adjacent business news,
+   listicles). If not relevant, return only: {"relevant": false}
+
+2. TAGS: If relevant, assign 1-3 tags from this exact list only. Never
+   invent a new tag. Pick the most specific ones that apply:
+   ["llm", "reinforcement-learning", "world-models", "foundational-models",
+    "multimodal", "robotics", "interpretability", "ai-safety",
+    "simulation", "training-infra", "general-ml", "other"]
+
+3. SUMMARY: Write exactly 3 short lines, no fluff, no marketing tone:
+   - WHAT: one sentence, what this actually is (paper/model/tool/announcement)
+   - WHY: one sentence, why it matters or what's new about it
+   - WHO: the lab, company, or author(s) behind it
+
+Rules:
+- Never copy sentences from the source. Fully rewrite in your own words.
+- If you're unsure of "WHO", write "Unknown" rather than guessing.
+- Be skeptical of hype language in the source; report what was actually
+  claimed, not how exciting it sounds.
+- Keep total summary under 60 words.
+
+Return ONLY valid JSON, no markdown fences, no preamble:
+{
+  "relevant": true,
+  "tags": ["llm", "training-infra"],
+  "summary": {"what": "...", "why": "...", "who": "..."}
 }
+
+TITLE: {title}
+SOURCE: {source_name}
+CONTENT: {abstract_or_excerpt}
+"""
+
+
+def fallback_tags(title: str, content: str) -> list[str]:
+    """Keyword-based tags for the fallback path. Always returns 1-3 tags from TOPIC_TAGS."""
+    text = f"{title} {content}".lower()
+    scores = {
+        tag: sum(text.count(kw) for kw in kws)
+        for tag, kws in FALLBACK_TAG_KEYWORDS.items()
+    }
+    tags = [t for t, n in sorted(scores.items(), key=lambda kv: -kv[1]) if n > 0][:3]
+    return tags or ["general-ml"]
+
+
+def parse_curation(raw: str) -> dict:
+    """Parse and validate the curator's JSON reply.
+
+    Returns {"relevant": False} or {"relevant": True, "tags": [...], "summary": {...}}.
+    Raises ValueError on anything malformed so the caller can fall back.
+    """
+    text = raw.strip()
+    # Tolerate a stray ```json fence even though the prompt forbids it
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
+    data = json.loads(text)
+    if not isinstance(data, dict) or not isinstance(data.get("relevant"), bool):
+        raise ValueError("missing boolean 'relevant'")
+    if not data["relevant"]:
+        return {"relevant": False}
+
+    tags = [t for t in data.get("tags") or [] if t in TOPIC_TAGS]
+    tags = list(dict.fromkeys(tags))[:3] or ["other"]
+
+    summary = data.get("summary")
+    if not isinstance(summary, dict):
+        raise ValueError("missing 'summary' object")
+    clean = {k: str(summary.get(k) or "").strip() for k in ("what", "why", "who")}
+    if not clean["what"]:
+        raise ValueError("summary.what is empty")
+    clean["who"] = clean["who"] or "Unknown"
+    return {"relevant": True, "tags": tags, "summary": clean}
 
 
 @dataclass
@@ -162,15 +205,17 @@ class Article:
     title: str
     url: str
     source: str
-    summary: str = ""
-    category: str = "industry"
+    summary: dict = field(default_factory=lambda: {"what": "", "why": "", "who": ""})
     published_at: str = ""
     fetched_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     author: str = ""
     tags: list[str] = field(default_factory=list)
+    content: str = ""  # raw excerpt fed to the LLM; never written to JSON
 
     def to_dict(self):
-        return asdict(self)
+        d = asdict(self)
+        d.pop("content")
+        return d
 
     def to_db_tuple(self):
         """Convert to tuple for database insertion."""
@@ -178,8 +223,7 @@ class Article:
             self.title,
             self.url,
             self.source,
-            self.summary,
-            self.category,
+            json.dumps(self.summary, ensure_ascii=False),
             self.published_at,
             self.fetched_at,
             self.author,
@@ -269,29 +313,6 @@ class NewsFetcher:
         except Exception:
             return True  # Include if can't parse
 
-    def _categorize(self, title: str, summary: str, source: str) -> str:
-        """Categorize article based on content and source."""
-        text = f"{title} {summary}".lower()
-
-        # Check each category's keywords
-        scores = {cat: 0 for cat in CATEGORY_KEYWORDS}
-        for cat, keywords in CATEGORY_KEYWORDS.items():
-            for kw in keywords:
-                if kw.lower() in text:
-                    scores[cat] += 1
-
-        # Boost based on source default
-        source_lower = source.lower()
-        for src_key, cat in SOURCE_DEFAULT_CATEGORY.items():
-            if src_key.lower() in source_lower:
-                scores[cat] = scores.get(cat, 0) + 2
-                break
-
-        # Return highest scoring category
-        if max(scores.values()) > 0:
-            return max(scores, key=scores.get)
-        return "industry"
-
     def _clean_html(self, html: str) -> str:
         """Extract clean text from HTML."""
         if not html:
@@ -305,57 +326,60 @@ class NewsFetcher:
         text = re.sub(r"\s+", " ", text)
         return text.strip()
 
-    async def _summarize_with_llm(self, title: str, content: str, source: str, max_length: int = 200) -> str:
-        """Summarize article using LLM via terminal/hermes tools."""
-        if not content or len(content) < 100:
-            return content[:max_length] + "..." if len(content) > max_length else content
+    def _call_llm(self, prompt: str) -> str:
+        """Run one prompt through the LLM and return the raw text response."""
+        import subprocess
+        result = subprocess.run(
+            [
+                "hermes", "run",
+                "--model", LLM_MODEL,
+                "--provider", LLM_PROVIDER,
+                "--prompt", prompt,
+                "--max-tokens", "300",
+                "--temperature", "0.3",
+            ],
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if result.returncode != 0 or not result.stdout.strip():
+            raise RuntimeError(f"hermes exited {result.returncode}: {result.stderr.strip()[:200]}")
+        return result.stdout
 
-        # Truncate content for LLM
-        content = content[:3000]
-
-        prompt = f"""Summarize this AI news article in 2-3 sentences (max {max_length} chars).
-
-Title: {title}
-Source: {source}
-Content: {content}
-
-Requirements:
-- Focus on key technical details, numbers, model names, benchmarks
-- Mention what's new/novel
-- Be concise and informative
-- No fluff or marketing language
-
-Summary:"""
-
-        try:
-            # Use hermes terminal to run the LLM
-            import subprocess
-            result = subprocess.run(
-                [
-                    "hermes", "run",
-                    "--model", LLM_MODEL,
-                    "--provider", LLM_PROVIDER,
-                    "--prompt", prompt,
-                    "--max-tokens", "300",
-                    "--temperature", "0.3",
-                ],
-                capture_output=True,
-                text=True,
-                timeout=60,
-            )
-            if result.returncode == 0 and result.stdout.strip():
-                summary = result.stdout.strip()
-                # Clean up any preamble
-                summary = re.sub(r"^(Summary:|Here is a summary:)\s*", "", summary, flags=re.IGNORECASE)
-                return summary[:max_length]
-        except Exception as e:
-            print(f"  ⚠ LLM summarization failed: {e}", file=sys.stderr)
-
-        # Fallback: extractive summary
-        sentences = re.split(r"[.!?]+", content)
+    def _fallback_curation(self, article: Article) -> dict:
+        """Extractive summary + keyword tags, used whenever the LLM call fails."""
+        content = article.content or article.title
+        # arXiv RSS abstracts start with "arXiv:2609.12345v1 Announce Type: new Abstract:"
+        content = re.sub(r"^\S*\s*Announce Type:\s*\S+\s*Abstract:\s*", "", content)
+        sentences = re.split(r"(?<=[.!?])\s+", content)
         sentences = [s.strip() for s in sentences if len(s.strip()) > 20]
-        summary = " ".join(sentences[:3])
-        return summary[:max_length]
+        what = sentences[0][:200] if sentences else article.title[:200]
+        why = sentences[1][:200] if len(sentences) > 1 else ""
+        return {
+            "relevant": True,  # can't judge relevance without the LLM; sources are AI-focused
+            "tags": fallback_tags(article.title, content),
+            "summary": {"what": what, "why": why, "who": article.author or "Unknown"},
+        }
+
+    def curate(self, article: Article) -> Optional[Article]:
+        """Classify + summarize one article. Returns None if it isn't AI/ML relevant."""
+        prompt = (
+            CURATOR_PROMPT
+            .replace("{title}", article.title)
+            .replace("{source_name}", article.source)
+            .replace("{abstract_or_excerpt}", (article.content or "(no content)")[:3000])
+        )
+        try:
+            result = parse_curation(self._call_llm(prompt))
+        except Exception as e:
+            print(f"    ⚠ LLM curation failed, using extractive fallback: {e}", file=sys.stderr)
+            result = self._fallback_curation(article)
+
+        if not result["relevant"]:
+            return None
+        article.tags = result["tags"]
+        article.summary = result["summary"]
+        return article
 
     async def fetch_rss_feed(self, name: str, url: str) -> list[Article]:
         """Fetch and parse an RSS feed."""
@@ -411,25 +435,13 @@ Summary:"""
                 # Get author
                 author = entry.get("author", "") or (entry.get("authors", [{}])[0].get("name", "") if entry.get("authors") else "")
 
-                # Get tags/categories
-                tags = [tag.get("term", "") for tag in entry.get("tags", []) if tag.get("term")]
-
-                # Categorize
-                category = self._categorize(title, content, name)
-
-                # Summarize with LLM
-                print(f"    📝 Summarizing: {title[:60]}...")
-                summary = await self._summarize_with_llm(title, content, name)
-
                 article = Article(
                     title=title,
                     url=link,
                     source=name,
-                    summary=summary,
-                    category=category,
+                    content=content,
                     published_at=published_iso,
                     author=author,
-                    tags=tags[:5],
                 )
                 articles.append(article)
 
@@ -476,20 +488,13 @@ Summary:"""
                 if self._is_title_duplicate(title):
                     continue
 
-                category = self._categorize(title, content, name)
-
-                print(f"    📝 Summarizing: {title[:60]}...")
-                summary = await self._summarize_with_llm(title, content, name)
-
                 article = Article(
                     title=title,
                     url=link,
                     source=name,
-                    summary=summary,
-                    category=category,
+                    content=content,
                     published_at=published_iso,
                     author=entry.get("author", ""),
-                    tags=["reddit"],
                 )
                 articles.append(article)
 
@@ -558,20 +563,13 @@ Summary:"""
                 if self._is_title_duplicate(title):
                     continue
 
-                category = self._categorize(title, content, "Hacker News")
-
-                print(f"    📝 Summarizing: {title[:60]}...")
-                summary = await self._summarize_with_llm(title, content, "Hacker News")
-
                 article = Article(
                     title=title,
                     url=url,
                     source="Hacker News",
-                    summary=summary,
-                    category=category,
+                    content=content,
                     published_at=published_iso,
                     author=hit.get("author", ""),
-                    tags=["hacker-news", hit.get("tag", "")],
                 )
                 articles.append(article)
 
@@ -622,20 +620,13 @@ Summary:"""
                     if self._is_title_duplicate(title):
                         continue
 
-                    category = self._categorize(title, content, f"Twitter/@{username}")
-
-                    print(f"    📝 Summarizing: {title[:60]}...")
-                    summary = await self._summarize_with_llm(title, content, f"Twitter/@{username}")
-
                     article = Article(
                         title=title[:200],
                         url=link,
                         source=f"Twitter/@{username}",
-                        summary=summary,
-                        category=category,
+                        content=content,
                         published_at=published_iso,
                         author=username,
-                        tags=["twitter", username.lower()],
                     )
                     articles.append(article)
 
@@ -679,52 +670,68 @@ Summary:"""
             all_articles.extend(articles)
             await asyncio.sleep(1.0)  # Be nice to Nitter instances
 
-        # Sort by date (newest first) and limit
+        # Sort by date (newest first), then pick candidates with a per-source cap
+        # so one prolific feed (e.g. arXiv) can't crowd out everything else.
         all_articles.sort(key=lambda a: a.published_at, reverse=True)
+        per_source: dict[str, int] = {}
+        candidates = []
+        for a in all_articles:
+            if per_source.get(a.source, 0) >= MAX_PER_SOURCE:
+                continue
+            per_source[a.source] = per_source.get(a.source, 0) + 1
+            candidates.append(a)
+        candidates = candidates[:MAX_LLM_ITEMS]
 
-        # Limit per category for balance
-        categorized = {}
-        for cat in ["breaking", "research", "industry", "tools"]:
-            categorized[cat] = [a for a in all_articles if a.category == cat]
+        final_articles = self.curate_all(candidates)
 
-        final_articles = []
-        for cat in ["breaking", "research", "industry", "tools"]:
-            final_articles.extend(categorized[cat][:15])  # Max 15 per category
-
-        # Add remaining to fill up to 50 total
-        remaining = [a for a in all_articles if a not in final_articles]
-        final_articles.extend(remaining[:50 - len(final_articles)])
-
-        print(f"\n✅ Total articles collected: {len(final_articles)}")
-        for cat in ["breaking", "research", "industry", "tools"]:
-            count = len([a for a in final_articles if a.category == cat])
-            print(f"   {cat.capitalize()}: {count}")
+        print(f"\n✅ Total articles kept: {len(final_articles)} (of {len(all_articles)} fetched)")
+        for tag in TOPIC_TAGS:
+            count = sum(1 for a in final_articles if tag in a.tags)
+            if count:
+                print(f"   {tag}: {count}")
 
         self.articles = final_articles
         return final_articles
+
+    def curate_all(self, candidates: list[Article]) -> list[Article]:
+        """Curate candidates in order, dropping irrelevant ones, until MAX_ARTICLES are kept."""
+        kept = []
+        print(f"\n🧠 Curating {len(candidates)} candidates...")
+        for article in candidates:
+            if len(kept) >= MAX_ARTICLES:
+                break
+            print(f"    📝 {article.title[:70]}")
+            if self.curate(article) is None:
+                print("       ↳ dropped (not AI/ML relevant)")
+                continue
+            kept.append(article)
+        return kept
 
 
 def init_database(db_path: Path):
     """Initialize SQLite database with schema."""
     conn = sqlite3.connect(db_path)
+    # The DB is a disposable per-run cache (archive.json is the durable history),
+    # so a table from the old category-based schema is simply rebuilt.
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(articles)")}
+    if "category" in cols:
+        conn.execute("DROP TABLE articles")
     conn.execute("""
         CREATE TABLE IF NOT EXISTS articles (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL,
             url TEXT NOT NULL UNIQUE,
             source TEXT NOT NULL,
-            summary TEXT,
-            category TEXT NOT NULL,
+            summary TEXT,  -- JSON object {what, why, who}
             published_at TEXT NOT NULL,
             fetched_at TEXT NOT NULL,
             author TEXT,
-            tags TEXT,  -- JSON array
+            tags TEXT,  -- JSON array of TOPIC_TAGS
             date_key TEXT NOT NULL,  -- YYYY-MM-DD for date-based queries
             created_at TEXT NOT NULL DEFAULT (datetime('now'))
         )
     """)
     conn.execute("CREATE INDEX IF NOT EXISTS idx_date_key ON articles(date_key)")
-    conn.execute("CREATE INDEX IF NOT EXISTS idx_category ON articles(category)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_published_at ON articles(published_at)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_source ON articles(source)")
     conn.commit()
@@ -739,8 +746,8 @@ def save_to_database(conn: sqlite3.Connection, articles: list[Article], date_key
         try:
             cursor.execute("""
                 INSERT OR IGNORE INTO articles
-                (title, url, source, summary, category, published_at, fetched_at, author, tags, date_key)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                (title, url, source, summary, published_at, fetched_at, author, tags, date_key)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, article.to_db_tuple() + (date_key,))
             if cursor.rowcount > 0:
                 saved += 1
@@ -792,56 +799,39 @@ def build_archive_index(conn: sqlite3.Connection, output_path: Path):
     """
     cursor = conn.cursor()
 
-    # Get all unique dates with article counts
-    cursor.execute("""
-        SELECT date_key, COUNT(*) as count,
-               SUM(CASE WHEN category='breaking' THEN 1 ELSE 0 END) as breaking,
-               SUM(CASE WHEN category='research' THEN 1 ELSE 0 END) as research,
-               SUM(CASE WHEN category='industry' THEN 1 ELSE 0 END) as industry,
-               SUM(CASE WHEN category='tools' THEN 1 ELSE 0 END) as tools
-        FROM articles
-        GROUP BY date_key
-        ORDER BY date_key DESC
-    """)
-    dates = cursor.fetchall()
+    cursor.execute("SELECT DISTINCT date_key FROM articles ORDER BY date_key DESC")
+    date_keys = [row[0] for row in cursor.fetchall()]
 
     # Get articles for each date (limited for archive page)
     archive = []
-    for row in dates:
-        date_key = row[0]
+    for date_key in date_keys:
+        cursor.execute("SELECT COUNT(*) FROM articles WHERE date_key = ?", (date_key,))
+        total = cursor.fetchone()[0]
         cursor.execute("""
-            SELECT title, url, source, summary, category, published_at, author, tags
+            SELECT title, url, source, summary, published_at, author, tags
             FROM articles
             WHERE date_key = ?
-            ORDER BY
-                CASE category WHEN 'breaking' THEN 0 WHEN 'research' THEN 1 WHEN 'industry' THEN 2 WHEN 'tools' THEN 3 ELSE 4 END,
-                published_at DESC
+            ORDER BY published_at DESC
             LIMIT 20
         """, (date_key,))
-        articles = cursor.fetchall()
-
+        articles = [
+            {
+                "title": a[0],
+                "url": a[1],
+                "source": a[2],
+                "summary": json.loads(a[3]) if a[3] else {"what": "", "why": "", "who": "Unknown"},
+                "published_at": a[4],
+                "author": a[5],
+                "tags": json.loads(a[6]) if a[6] else [],
+            }
+            for a in cursor.fetchall()
+        ]
+        tag_counts = {t: sum(1 for a in articles if t in a["tags"]) for t in TOPIC_TAGS}
         archive.append({
             "date": date_key,
-            "total": row[1],
-            "categories": {
-                "breaking": row[2],
-                "research": row[3],
-                "industry": row[4],
-                "tools": row[5],
-            },
-            "articles": [
-                {
-                    "title": a[0],
-                    "url": a[1],
-                    "source": a[2],
-                    "summary": a[3],
-                    "category": a[4],
-                    "published_at": a[5],
-                    "author": a[6],
-                    "tags": json.loads(a[7]) if a[7] else [],
-                }
-                for a in articles
-            ]
+            "total": total,
+            "tags": {t: n for t, n in tag_counts.items() if n},
+            "articles": articles,
         })
 
     # Merge with the previously committed archive so history accumulates across
@@ -909,12 +899,6 @@ async def main():
         data = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "article_count": len(articles),
-            "categories": {
-                "breaking": [a.to_dict() for a in articles if a.category == "breaking"],
-                "research": [a.to_dict() for a in articles if a.category == "research"],
-                "industry": [a.to_dict() for a in articles if a.category == "industry"],
-                "tools": [a.to_dict() for a in articles if a.category == "tools"],
-            },
             "all_articles": [a.to_dict() for a in articles],
         }
 

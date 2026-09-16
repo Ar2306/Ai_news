@@ -15,7 +15,7 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
   - 📧 **Email** via Resend (beautiful HTML + plain-text fallback, multi-recipient support)
   - ✈️ **Telegram** via bot (compact HTML message)
 - **LLM-powered summarization** using Hermes Agent (falls back to extractive)
-- **Smart categorization**: Breaking News, Research Papers, Industry Updates, Tools & Releases
+- **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
 - **Modern, responsive web UI** with dark/light theme toggle
 - **Static site** — no backend needed, auto-deployed to [Vercel](https://ainl.vercel.app) on every push
 
@@ -151,22 +151,26 @@ The script generates `data/newsletter.json` with:
 {
   "generated_at": "2026-07-26T08:00:00Z",
   "article_count": 50,
-  "categories": {
-    "breaking": [...],
-    "research": [...],
-    "industry": [...],
-    "tools": [...]
-  },
-  "all_articles": [...]
+  "all_articles": [
+    {
+      "title": "...",
+      "url": "https://...",
+      "source": "arXiv AI/ML",
+      "tags": ["llm", "training-infra"],
+      "summary": {"what": "...", "why": "...", "who": "..."},
+      "published_at": "2026-07-26T04:00:00Z",
+      "fetched_at": "2026-07-26T06:01:12Z",
+      "author": "..."
+    }
+  ]
 }
 ```
 
-Each article has:
-- `title`, `url`, `source`
-- `summary` (LLM-generated)
-- `category` (breaking/research/industry/tools)
-- `published_at` (ISO timestamp)
-- `author`, `tags`
+- `tags` — 1-3 labels from a fixed list: `llm`, `reinforcement-learning`, `world-models`, `foundational-models`, `multimodal`, `robotics`, `interpretability`, `ai-safety`, `simulation`, `training-infra`, `general-ml`, `other`
+- `summary` — three short lines: **what** it is, **why** it matters, **who** is behind it
+- Items the LLM judges not genuinely about AI/ML are dropped before anything is written
+
+`data/archive.json` holds one entry per day (`date`, `total`, per-tag `tags` counts, `articles` in the same shape).
 
 ## Troubleshooting
 
