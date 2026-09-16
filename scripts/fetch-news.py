@@ -193,6 +193,12 @@ def fallback_tags(title: str, content: str) -> list[str]:
     return tags or ["general-ml"]
 
 
+def short_authors(author: str) -> str:
+    """'A, B, C, D' -> 'A, B, C et al.' so long arXiv author lists stay one line."""
+    names = [n.strip() for n in re.split(r",|;| and ", author) if n.strip()]
+    return ", ".join(names[:3]) + (" et al." if len(names) > 3 else "") if names else "Unknown"
+
+
 def parse_curation(raw: str) -> dict:
     """Parse and validate the curator's JSON reply.
 
@@ -624,6 +630,8 @@ class NewsFetcher:
             return None
         article.tags = result["tags"]
         article.summary = result["summary"]
+        if article.summary.get("who", "Unknown") == "Unknown" and article.author:
+            article.summary["who"] = short_authors(article.author)
         return article
 
     async def fetch_rss_feed(self, name: str, url: str) -> list[Article]:
