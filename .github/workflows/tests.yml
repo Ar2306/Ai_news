@@ -29,7 +29,7 @@ jobs:
         run: node --check assets/app.js
 
       - name: Import smoke test
-        run: python3 -c "import anthropic, feedparser, httpx, bs4, lxml, dateutil; print('dependencies OK')"
+        run: python3 -c "import feedparser, httpx, bs4, lxml, dateutil; print('dependencies OK')"
 
       - name: Validate newsletter data
         run: |
@@ -97,14 +97,24 @@ jobs:
               else:
                   raise AssertionError(f'should reject {bad!r}')
 
-          # 4. curate(): irrelevant -> None, LLM failure -> extractive fallback with valid tags
+          # 4. curate(): provider chain Gemini -> Ollama -> extractive fallback
+          class Fake:
+              def __init__(self, name, fn_):
+                  self.name, self.generate, self.failures, self.disabled = name, fn_, 0, False
+          def boom(prompt): raise RuntimeError('api down')
           f = object.__new__(fn.NewsFetcher)
           art = lambda: fn.Article(title='New RLHF method', url='u', source='s', author='Lab',
                                    content='We propose a reward model for reinforcement learning. It beats PPO baselines.')
-          f._call_llm = lambda prompt: '{"relevant": false}'
+
+          f.providers = [Fake('Gemini', lambda p: '{"relevant": false}')]
           assert f.curate(art()) is None, 'irrelevant item must be dropped'
-          def boom(prompt): raise RuntimeError('api down')
-          f._call_llm = boom
+
+          ok = '{"relevant": true, "tags": ["robotics"], "summary": {"what": "From fallback provider.", "why": "", "who": "X"}}'
+          f.providers = [Fake('Gemini', boom), Fake('Ollama Cloud', lambda p: ok)]
+          a = f.curate(art())
+          assert a.summary['what'] == 'From fallback provider.' and f.providers[0].failures == 1, 'second provider must be used'
+
+          f.providers = [Fake('Gemini', boom), Fake('Ollama Cloud', boom)]
           a = f.curate(art())
           assert a is not None and a.tags and set(a.tags) <= set(fn.TOPIC_TAGS), a.tags
           assert a.summary['what'].startswith('We propose'), a.summary

@@ -40,10 +40,11 @@ jobs:
           pip install -r requirements.txt
       
       - name: Run news fetch
-        # Claude Haiku 4.5 curates each item (relevance, tags, summary). Without the
-        # secret the run still succeeds using extractive summaries + keyword tags.
+        # Each item is curated by Gemini, falling back to Ollama Cloud, then to
+        # extractive summaries + keyword tags — the run succeeds even with no keys.
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
         run: |
           chmod +x scripts/run-fetch.sh
           ./scripts/run-fetch.sh

@@ -18,7 +18,6 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
-import anthropic
 import feedparser
 import httpx
 from bs4 import BeautifulSoup
@@ -41,11 +40,24 @@ DEDUP_ARCHIVE_DAYS = int(os.environ.get("DEDUP_ARCHIVE_DAYS", "14"))
 # of daily runs). The dedup window above is the part that actually matters.
 ARCHIVE_RETENTION_DAYS = int(os.environ.get("ARCHIVE_RETENTION_DAYS", "180"))
 
-# LLM Configuration: Claude Haiku 4.5 via the Anthropic API (ANTHROPIC_API_KEY).
-# Without a key every item uses the extractive fallback instead.
-LLM_MODEL = "claude-haiku-4-5-20251001"
-LLM_MAX_RETRIES = 4       # SDK retries 429/5xx/connection errors with exponential backoff
-LLM_CALL_DELAY = 0.5      # seconds between calls, keeps a ~100-item run under rate limits
+# LLM Configuration. Providers are tried in order for every item:
+#   1. Gemini (GEMINI_API_KEY)        2. Ollama Cloud (OLLAMA_API_KEY)
+#   3. extractive summary + keyword tags (always works, no key needed)
+# A provider without a key is skipped; one that keeps failing is switched off for the run.
+GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
+GEMINI_MIN_INTERVAL = float(os.environ.get("GEMINI_MIN_INTERVAL", "6.5"))  # free tier ≈ 10 requests/min
+
+OLLAMA_API_KEY_ENV = "OLLAMA_API_KEY"
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "gpt-oss:120b")
+OLLAMA_BASE = "https://ollama.com/api"
+OLLAMA_MIN_INTERVAL = float(os.environ.get("OLLAMA_MIN_INTERVAL", "1.0"))
+
+LLM_TIMEOUT = 90.0
+LLM_MAX_RETRIES = 3          # retries on 429 / 5xx / network errors, honouring retry hints
+LLM_MAX_BACKOFF = 60.0       # never wait longer than this for a single retry
+LLM_DISABLE_AFTER = 3        # consecutive failures before a provider is skipped for the run
 
 # RSS Feeds
 RSS_FEEDS = {
@@ -203,6 +215,210 @@ def parse_curation(raw: str) -> dict:
     return {"relevant": True, "tags": tags, "summary": clean}
 
 
+class LLMError(RuntimeError):
+    """fatal=True means retrying this provider is pointless for the rest of the run
+    (bad key, no access, daily quota used up)."""
+
+    def __init__(self, message: str, fatal: bool = False):
+        super().__init__(message)
+        self.fatal = fatal
+
+
+def check_response(resp: httpx.Response) -> None:
+    if resp.status_code == 200:
+        return
+    msg = error_message(resp)
+    fatal = (
+        resp.status_code in (401, 403)
+        or "API_KEY_INVALID" in resp.text
+        or "api key not valid" in msg.lower()
+        or (resp.status_code == 429 and re.search(r"per ?day|daily", resp.text, re.I) is not None)
+    )
+    raise LLMError(f"HTTP {resp.status_code}: {msg}", fatal=fatal)
+
+
+class LLMProvider:
+    """One LLM backend. Subclasses implement _request(prompt) -> text."""
+
+    name = "llm"
+    min_interval = 0.0
+
+    def __init__(self, http: httpx.Client, api_key: str):
+        self.http = http
+        self.api_key = api_key
+        self.failures = 0
+        self.disabled = False
+        self._last_call = 0.0
+
+    def generate(self, prompt: str) -> str:
+        # Pace requests to stay under free-tier per-minute limits
+        wait = self.min_interval - (time.monotonic() - self._last_call)
+        if wait > 0:
+            time.sleep(wait)
+        try:
+            return self._request(prompt)
+        finally:
+            self._last_call = time.monotonic()
+
+    def _post(self, url: str, **kwargs) -> httpx.Response:
+        """POST with retry-with-backoff on 429, 5xx and network errors."""
+        for attempt in range(LLM_MAX_RETRIES + 1):
+            try:
+                resp = self.http.post(url, **kwargs)
+            except httpx.TransportError as e:
+                if attempt == LLM_MAX_RETRIES:
+                    raise LLMError(f"network error: {e}") from e
+                time.sleep(min(2 ** attempt, LLM_MAX_BACKOFF))
+                continue
+            if resp.status_code == 429 and re.search(r"per ?day|daily", resp.text, re.I):
+                check_response(resp)  # daily quota gone: waiting won't help
+            if resp.status_code == 429 or resp.status_code >= 500:
+                if attempt == LLM_MAX_RETRIES:
+                    break
+                time.sleep(min(retry_after_seconds(resp, default=2 ** (attempt + 1)), LLM_MAX_BACKOFF))
+                continue
+            return resp
+        raise LLMError(f"HTTP {resp.status_code} after {LLM_MAX_RETRIES} retries: {error_message(resp)}")
+
+
+class GeminiProvider(LLMProvider):
+    name = "Gemini"
+    min_interval = GEMINI_MIN_INTERVAL
+
+    def __init__(self, http, api_key, model=GEMINI_MODEL):
+        super().__init__(http, api_key)
+        self.model = model
+
+    def _request(self, prompt: str) -> str:
+        resp = self._call(prompt)
+        if resp.status_code == 404:
+            # Configured model retired/renamed: switch to the best available Flash model once
+            replacement = self._discover_model()
+            if replacement and replacement != self.model:
+                print(f"    ↻ Gemini model {self.model} not found, using {replacement}")
+                self.model = replacement
+                resp = self._call(prompt)
+        check_response(resp)
+        data = resp.json()
+        candidates = data.get("candidates") or []
+        if not candidates:
+            reason = (data.get("promptFeedback") or {}).get("blockReason", "no candidates")
+            raise LLMError(f"empty response ({reason})")
+        parts = (candidates[0].get("content") or {}).get("parts") or []
+        text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+        if not text.strip():
+            raise LLMError(f"empty text (finishReason={candidates[0].get('finishReason')})")
+        return text
+
+    def _call(self, prompt: str) -> httpx.Response:
+        return self._post(
+            f"{GEMINI_BASE}/models/{self.model}:generateContent",
+            headers={"x-goog-api-key": self.api_key},
+            json={
+                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "temperature": 0.2,
+                    "maxOutputTokens": 2048,  # headroom for models that think before answering
+                    "responseMimeType": "application/json",
+                },
+            },
+        )
+
+    def _discover_model(self) -> Optional[str]:
+        try:
+            resp = self.http.get(f"{GEMINI_BASE}/models", headers={"x-goog-api-key": self.api_key}, params={"pageSize": 200})
+            names = [
+                m["name"].removeprefix("models/") for m in resp.json().get("models", [])
+                if "generateContent" in m.get("supportedGenerationMethods", [])
+            ]
+        except Exception:
+            return None
+        flash = [n for n in names if "flash" in n and not re.search(r"lite|image|tts|live|audio|exp|preview", n)]
+        return sorted(flash)[-1] if flash else None
+
+
+class OllamaProvider(LLMProvider):
+    name = "Ollama Cloud"
+    min_interval = OLLAMA_MIN_INTERVAL
+
+    def __init__(self, http, api_key, model=OLLAMA_MODEL):
+        super().__init__(http, api_key)
+        self.model = model
+
+    def _request(self, prompt: str) -> str:
+        resp = self._call(prompt)
+        if resp.status_code == 404:
+            replacement = self._discover_model()
+            if replacement and replacement != self.model:
+                print(f"    ↻ Ollama model {self.model} not found, using {replacement}")
+                self.model = replacement
+                resp = self._call(prompt)
+        check_response(resp)
+        text = ((resp.json().get("message") or {}).get("content") or "")
+        if not text.strip():
+            raise LLMError("empty response")
+        return text
+
+    def _call(self, prompt: str) -> httpx.Response:
+        return self._post(
+            f"{OLLAMA_BASE}/chat",
+            headers={"Authorization": f"Bearer {self.api_key}"},
+            json={
+                "model": self.model,
+                "messages": [{"role": "user", "content": prompt}],
+                "stream": False,
+                "format": "json",
+                "options": {"temperature": 0.2},
+            },
+        )
+
+    def _discover_model(self) -> Optional[str]:
+        try:
+            resp = self.http.get(f"{OLLAMA_BASE}/tags", headers={"Authorization": f"Bearer {self.api_key}"})
+            names = [m.get("name") or m.get("model") for m in resp.json().get("models", [])]
+        except Exception:
+            return None
+        names = [n for n in names if n]
+        preferred = [n for n in names if n.startswith("gpt-oss")] or names
+        return preferred[0] if preferred else None
+
+
+def retry_after_seconds(resp: httpx.Response, default: float) -> float:
+    """Honour Retry-After or Gemini's RetryInfo.retryDelay ("23s")."""
+    header = resp.headers.get("retry-after")
+    if header:
+        try:
+            return float(header)
+        except ValueError:
+            pass
+    try:
+        for detail in resp.json().get("error", {}).get("details", []):
+            delay = detail.get("retryDelay")
+            if delay:
+                return float(str(delay).rstrip("s"))
+    except Exception:
+        pass
+    return default
+
+
+def error_message(resp: httpx.Response) -> str:
+    try:
+        err = resp.json().get("error")
+        msg = err.get("message") if isinstance(err, dict) else err
+        return str(msg or resp.text)[:200]
+    except Exception:
+        return resp.text[:200]
+
+
+def build_providers(http: httpx.Client) -> list[LLMProvider]:
+    providers: list[LLMProvider] = []
+    if os.environ.get(GEMINI_API_KEY_ENV, "").strip():
+        providers.append(GeminiProvider(http, os.environ[GEMINI_API_KEY_ENV].strip()))
+    if os.environ.get(OLLAMA_API_KEY_ENV, "").strip():
+        providers.append(OllamaProvider(http, os.environ[OLLAMA_API_KEY_ENV].strip()))
+    return providers
+
+
 @dataclass
 class Article:
     title: str
@@ -244,16 +460,19 @@ class NewsFetcher:
         self.articles: list[Article] = []
         self.seen_urls: set[str] = set()
         self.seen_titles: set[str] = set()
-        api_key = os.environ.get("ANTHROPIC_API_KEY")
-        self.llm = anthropic.Anthropic(api_key=api_key, max_retries=LLM_MAX_RETRIES) if api_key else None
-        if self.llm is None:
-            print("⚠ ANTHROPIC_API_KEY not set — using extractive summaries + keyword tags")
+        self.http = httpx.Client(timeout=LLM_TIMEOUT)
+        self.providers = build_providers(self.http)
+        if self.providers:
+            print(f"🧠 LLM providers (in order): {', '.join(p.name for p in self.providers)}")
+        else:
+            print(f"⚠ Neither {GEMINI_API_KEY_ENV} nor {OLLAMA_API_KEY_ENV} is set — using extractive summaries + keyword tags")
 
     async def __aenter__(self):
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         await self.client.aclose()
+        self.http.close()
 
     def _normalize_url(self, url: str) -> str:
         """Normalize URL for deduplication."""
@@ -333,17 +552,6 @@ class NewsFetcher:
         text = re.sub(r"\s+", " ", text)
         return text.strip()
 
-    def _call_llm(self, prompt: str) -> str:
-        """Run one prompt through Claude and return the raw text response."""
-        if self.llm is None:
-            raise RuntimeError("ANTHROPIC_API_KEY not set")
-        response = self.llm.messages.create(
-            model=LLM_MODEL,
-            max_tokens=300,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        return response.content[0].text
-
     def _fallback_curation(self, article: Article) -> dict:
         """Extractive summary + keyword tags, used whenever the LLM call fails."""
         content = article.content or article.title
@@ -367,11 +575,21 @@ class NewsFetcher:
             .replace("{source_name}", article.source)
             .replace("{abstract_or_excerpt}", (article.content or "(no content)")[:3000])
         )
-        try:
-            result = parse_curation(self._call_llm(prompt))
-        except Exception as e:
-            if getattr(self, "llm", True) is not None:  # missing key was already reported once
-                print(f"    ⚠ LLM curation failed ({type(e).__name__}: {e}), using extractive fallback", file=sys.stderr)
+        result = None
+        for provider in getattr(self, "providers", []):
+            if provider.disabled:
+                continue
+            try:
+                result = parse_curation(provider.generate(prompt))
+                provider.failures = 0
+                break
+            except Exception as e:
+                provider.failures += 1
+                print(f"    ⚠ {provider.name} failed ({type(e).__name__}: {str(e)[:160]})", file=sys.stderr)
+                if getattr(e, "fatal", False) or provider.failures >= LLM_DISABLE_AFTER:
+                    provider.disabled = True
+                    print(f"    ⛔ {provider.name} disabled for the rest of this run", file=sys.stderr)
+        if result is None:
             result = self._fallback_curation(article)
 
         if not result["relevant"]:
@@ -700,8 +918,6 @@ class NewsFetcher:
             if len(kept) >= MAX_ARTICLES:
                 break
             print(f"    📝 {article.title[:70]}")
-            if getattr(self, "llm", None) is not None:
-                time.sleep(LLM_CALL_DELAY)
             if self.curate(article) is None:
                 print("       ↳ dropped (not AI/ML relevant)")
                 continue

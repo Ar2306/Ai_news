@@ -14,7 +14,7 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
 - **Morning digest channels**:
   - 📧 **Email** via Resend (beautiful HTML + plain-text fallback, multi-recipient support)
   - ✈️ **Telegram** via bot (compact HTML message)
-- **LLM curation** with Claude Haiku 4.5 — one call per item returns relevance, tags, and a what/why/who summary (falls back to extractive summaries + keyword tags on any failure)
+- **LLM curation** with **Gemini**, falling back to **Ollama Cloud** — one call per item returns relevance, tags, and a what/why/who summary; if both fail, an extractive summary + keyword tags are used so a run never breaks
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
 - **AR web UI** — search with highlighting, topic and source filters, save-for-later, "new since your last visit", keyboard shortcuts (`/` `j` `k` `o` `s`), shareable filter URLs, automatic light/dark theme, and a searchable archive grouped by day
 - **Locked-down static site** — strict Content-Security-Policy (no inline or third-party scripts), security headers, and a deploy allowlist so only the site files are ever public
@@ -34,7 +34,7 @@ Ai_news/
 │   ├── archive.json        # Daily archive (committed by the daily run)
 │   └── newsletter.db       # SQLite cache (gitignored)
 ├── scripts/
-│   ├── fetch-news.py       # Fetch, dedup, curate with Claude, write JSON
+│   ├── fetch-news.py       # Fetch, dedup, curate with Gemini/Ollama, write JSON
 │   ├── send_digest.py      # Morning digest sender (email + Telegram)
 │   └── run-fetch.sh        # Wrapper used by the workflow (logs to logs/)
 ├── .github/workflows/
@@ -53,17 +53,17 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Claude API key (LLM curation)
+### LLM API keys (Gemini + Ollama Cloud)
 
-The fetcher calls Anthropic's API directly with **Claude Haiku 4.5** (`claude-haiku-4-5-20251001`).
+Every item goes through a provider chain, stopping at the first that returns valid JSON:
 
-1. Create an API key at [console.anthropic.com](https://console.anthropic.com/settings/keys).
-2. Add prepaid credit under **Billing** — the API won't serve requests on a zero balance. The minimum top-up is typically $5.
-3. Add the key as a GitHub secret named `ANTHROPIC_API_KEY` (repo → Settings → Secrets and variables → Actions). For local runs, `export ANTHROPIC_API_KEY=...`.
+1. **Gemini** (`GEMINI_API_KEY`, model `gemini-2.5-flash` by default) — free key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
+2. **Ollama Cloud** (`OLLAMA_API_KEY`, model `gpt-oss:120b` by default) — free key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
+3. **Extractive fallback** — first sentences of the source + keyword tags (no key needed)
 
-**Cost:** Haiku 4.5 is $1 / M input tokens and $5 / M output tokens. Each item is roughly 1.2K input + 0.1K output tokens (≈ $0.0017), and a run curates at most `MAX_LLM_ITEMS` (default 100) candidates, stopping early once 50 relevant items are kept — so roughly $0.09-0.17/day, about $2.5-5/month. Lower `MAX_LLM_ITEMS` to spend less.
+Add the keys as GitHub secrets (repo → Settings → Secrets and variables → Actions) named exactly `GEMINI_API_KEY` and `OLLAMA_API_KEY`. For local runs, `export` them. Then run **Actions → Check API keys → Run workflow** to confirm both work.
 
-Without a key (or if a call fails, rate-limits, or returns malformed JSON) the item still gets an extractive summary and keyword-based tags, so a run never fails because of the LLM.
+**Free-tier limits:** Gemini calls are paced (`GEMINI_MIN_INTERVAL`, default 6.5 s ≈ 10/min), a run makes at most `MAX_LLM_ITEMS` (default 100) calls, and 429s are retried honouring the server's retry delay. A bad key or an exhausted daily quota switches that provider off for the rest of the run, and the next one takes over. If a configured model is retired, the fetcher picks an available one automatically.
 
 ## Usage
 
@@ -123,7 +123,10 @@ python3 scripts/send_digest.py --telegram-only
 | `TELEGRAM_CHAT_ID` | Chat/user ID to receive the Telegram digest |
 | `DEDUP_ARCHIVE_DAYS` | Cross-day dedup window in days (default 14) |
 | `ARCHIVE_RETENTION_DAYS` | How much archive history is kept (default 180) |
-| `ANTHROPIC_API_KEY` | Anthropic API key for Claude Haiku 4.5 curation (needs prepaid credit) |
+| `GEMINI_API_KEY` | Gemini API key — primary LLM |
+| `OLLAMA_API_KEY` | Ollama Cloud API key — fallback LLM |
+| `GEMINI_MODEL` / `OLLAMA_MODEL` | *(optional)* Override models (defaults `gemini-2.5-flash`, `gpt-oss:120b`) |
+| `GEMINI_MIN_INTERVAL` | *(optional)* Seconds between Gemini calls (default 6.5) |
 | `MAX_LLM_ITEMS` | Max candidates sent to the LLM per run (default 100) |
 
 ## Redundancy control
@@ -202,11 +205,11 @@ The script generates `data/newsletter.json` with:
 - Nitter instances may be down
 
 ### LLM curation fails
-- Look for `⚠ LLM curation failed (...)` lines in the fetch log — they name the error type
-- `AuthenticationError`: check the `ANTHROPIC_API_KEY` secret
-- `PermissionDeniedError` / billing errors: top up credit on console.anthropic.com
-- `RateLimitError`: the SDK already retries with backoff; lower `MAX_LLM_ITEMS` if it persists
-- Failed items fall back to extractive summaries + keyword tags, so the run still completes
+- Run **Actions → Check API keys** — it tests each key with the exact request the daily run makes
+- In the fetch log, `⚠ Gemini failed (...)` / `⚠ Ollama Cloud failed (...)` name the error; `⛔ ... disabled` means a bad key or used-up daily quota
+- HTTP 400 "API key not valid" / 401: re-create the key and update the secret
+- HTTP 429: free-tier limit — raise `GEMINI_MIN_INTERVAL` or lower `MAX_LLM_ITEMS`
+- If every provider fails, items still get extractive summaries + keyword tags
 
 ### Digest not delivered
 - Run `python3 scripts/send_digest.py` locally with the channel env vars set and check the output
