@@ -14,7 +14,7 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
 - **Morning digest channels**:
   - 📧 **Email** via Resend (beautiful HTML + plain-text fallback, multi-recipient support)
   - ✈️ **Telegram** via bot (compact HTML message)
-- **LLM-powered summarization** using Hermes Agent (falls back to extractive)
+- **LLM curation** with Claude Haiku 4.5 — one call per item returns relevance, tags, and a what/why/who summary (falls back to extractive summaries + keyword tags on any failure)
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
 - **Modern, responsive web UI** with dark/light theme toggle
 - **Static site** — no backend needed, auto-deployed to [Vercel](https://ainl.vercel.app) on every push
@@ -48,6 +48,18 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+### Claude API key (LLM curation)
+
+The fetcher calls Anthropic's API directly with **Claude Haiku 4.5** (`claude-haiku-4-5-20251001`).
+
+1. Create an API key at [console.anthropic.com](https://console.anthropic.com/settings/keys).
+2. Add prepaid credit under **Billing** — the API won't serve requests on a zero balance. The minimum top-up is typically $5.
+3. Add the key as a GitHub secret named `ANTHROPIC_API_KEY` (repo → Settings → Secrets and variables → Actions). For local runs, `export ANTHROPIC_API_KEY=...`.
+
+**Cost:** Haiku 4.5 is $1 / M input tokens and $5 / M output tokens. Each item is roughly 1.2K input + 0.1K output tokens (≈ $0.0017), and a run curates at most `MAX_LLM_ITEMS` (default 100) candidates, stopping early once 50 relevant items are kept — so roughly $0.09-0.17/day, about $2.5-5/month. Lower `MAX_LLM_ITEMS` to spend less.
+
+Without a key (or if a call fails, rate-limits, or returns malformed JSON) the item still gets an extractive summary and keyword-based tags, so a run never fails because of the LLM.
 
 ## Usage
 
@@ -107,9 +119,8 @@ python3 scripts/send_digest.py --telegram-only
 | `TELEGRAM_CHAT_ID` | Chat/user ID to receive the Telegram digest |
 | `DEDUP_ARCHIVE_DAYS` | Cross-day dedup window in days (default 14) |
 | `ARCHIVE_RETENTION_DAYS` | How much archive history is kept (default 180) |
-| `HERMES_API_URL` | LLM API endpoint (default: localhost:8080/v1) |
-| `HERMES_MODEL` | Model name (default: nemotron-3-ultra-free) |
-| `HERMES_PROVIDER` | Provider (default: opencode-zen) |
+| `ANTHROPIC_API_KEY` | Anthropic API key for Claude Haiku 4.5 curation (needs prepaid credit) |
+| `MAX_LLM_ITEMS` | Max candidates sent to the LLM per run (default 100) |
 
 ## Redundancy control
 
@@ -180,10 +191,12 @@ The script generates `data/newsletter.json` with:
 - Reddit rate limits may apply (429 errors)
 - Nitter instances may be down
 
-### LLM summarization fails
-- Ensure Hermes Agent is running with API server
-- Check `HERMES_API_URL` environment variable
-- Script falls back to extractive summarization
+### LLM curation fails
+- Look for `⚠ LLM curation failed (...)` lines in the fetch log — they name the error type
+- `AuthenticationError`: check the `ANTHROPIC_API_KEY` secret
+- `PermissionDeniedError` / billing errors: top up credit on console.anthropic.com
+- `RateLimitError`: the SDK already retries with backoff; lower `MAX_LLM_ITEMS` if it persists
+- Failed items fall back to extractive summaries + keyword tags, so the run still completes
 
 ### Digest not delivered
 - Run `python3 scripts/send_digest.py` locally with the channel env vars set and check the output

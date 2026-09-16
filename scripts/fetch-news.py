@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Optional
 from urllib.parse import urlparse
 
+import anthropic
 import feedparser
 import httpx
 from bs4 import BeautifulSoup
@@ -40,9 +41,11 @@ DEDUP_ARCHIVE_DAYS = int(os.environ.get("DEDUP_ARCHIVE_DAYS", "14"))
 # of daily runs). The dedup window above is the part that actually matters.
 ARCHIVE_RETENTION_DAYS = int(os.environ.get("ARCHIVE_RETENTION_DAYS", "180"))
 
-# LLM Configuration (uses Hermes Agent's built-in tools)
-LLM_MODEL = os.environ.get("HERMES_MODEL", "nemotron-3-ultra-free")
-LLM_PROVIDER = os.environ.get("HERMES_PROVIDER", "opencode-zen")
+# LLM Configuration: Claude Haiku 4.5 via the Anthropic API (ANTHROPIC_API_KEY).
+# Without a key every item uses the extractive fallback instead.
+LLM_MODEL = "claude-haiku-4-5-20251001"
+LLM_MAX_RETRIES = 4       # SDK retries 429/5xx/connection errors with exponential backoff
+LLM_CALL_DELAY = 0.5      # seconds between calls, keeps a ~100-item run under rate limits
 
 # RSS Feeds
 RSS_FEEDS = {
@@ -241,6 +244,10 @@ class NewsFetcher:
         self.articles: list[Article] = []
         self.seen_urls: set[str] = set()
         self.seen_titles: set[str] = set()
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        self.llm = anthropic.Anthropic(api_key=api_key, max_retries=LLM_MAX_RETRIES) if api_key else None
+        if self.llm is None:
+            print("⚠ ANTHROPIC_API_KEY not set — using extractive summaries + keyword tags")
 
     async def __aenter__(self):
         return self
@@ -327,24 +334,15 @@ class NewsFetcher:
         return text.strip()
 
     def _call_llm(self, prompt: str) -> str:
-        """Run one prompt through the LLM and return the raw text response."""
-        import subprocess
-        result = subprocess.run(
-            [
-                "hermes", "run",
-                "--model", LLM_MODEL,
-                "--provider", LLM_PROVIDER,
-                "--prompt", prompt,
-                "--max-tokens", "300",
-                "--temperature", "0.3",
-            ],
-            capture_output=True,
-            text=True,
-            timeout=60,
+        """Run one prompt through Claude and return the raw text response."""
+        if self.llm is None:
+            raise RuntimeError("ANTHROPIC_API_KEY not set")
+        response = self.llm.messages.create(
+            model=LLM_MODEL,
+            max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
         )
-        if result.returncode != 0 or not result.stdout.strip():
-            raise RuntimeError(f"hermes exited {result.returncode}: {result.stderr.strip()[:200]}")
-        return result.stdout
+        return response.content[0].text
 
     def _fallback_curation(self, article: Article) -> dict:
         """Extractive summary + keyword tags, used whenever the LLM call fails."""
@@ -372,7 +370,7 @@ class NewsFetcher:
         try:
             result = parse_curation(self._call_llm(prompt))
         except Exception as e:
-            print(f"    ⚠ LLM curation failed, using extractive fallback: {e}", file=sys.stderr)
+            print(f"    ⚠ LLM curation failed ({type(e).__name__}: {e}), using extractive fallback", file=sys.stderr)
             result = self._fallback_curation(article)
 
         if not result["relevant"]:
@@ -701,6 +699,8 @@ class NewsFetcher:
             if len(kept) >= MAX_ARTICLES:
                 break
             print(f"    📝 {article.title[:70]}")
+            if getattr(self, "llm", None) is not None:
+                time.sleep(LLM_CALL_DELAY)
             if self.curate(article) is None:
                 print("       ↳ dropped (not AI/ML relevant)")
                 continue

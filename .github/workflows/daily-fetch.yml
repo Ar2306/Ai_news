@@ -40,7 +40,10 @@ jobs:
           pip install -r requirements.txt
       
       - name: Run news fetch
-        # Optional: add API keys (e.g. OPENAI_API_KEY, ANTHROPIC_API_KEY) as GitHub secrets.
+        # Claude Haiku 4.5 curates each item (relevance, tags, summary). Without the
+        # secret the run still succeeds using extractive summaries + keyword tags.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           chmod +x scripts/run-fetch.sh
           ./scripts/run-fetch.sh
