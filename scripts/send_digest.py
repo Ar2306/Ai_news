@@ -103,7 +103,7 @@ def build_html(stories, data):
     <div style="font-size:14px;color:#6b6b6b;margin-top:4px;">{date_str} · {data.get('article_count', 0)} items</div>
     {''.join(cards)}
     <p style="font-size:12px;color:#6b6b6b;margin-top:24px;">
-      <a href="https://github.com/DavidGaso1/AI-News-Update" style="color:#6b6b6b;">View the full digest</a>
+      <a href="https://github.com/Ar2306/Ai_news" style="color:#6b6b6b;">View the full digest</a>
     </p>
   </div>
 </body>
@@ -121,7 +121,7 @@ def build_text(stories, data):
             lines.append(f"   {label}: {text}")
         lines.append(f"   {a.get('source', '')} — {a.get('url', '')}")
     lines.append("")
-    lines.append("Full digest: https://github.com/DavidGaso1/AI-News-Update")
+    lines.append("Full digest: https://github.com/Ar2306/Ai_news")
     return "\n".join(lines)
 
 
@@ -141,7 +141,7 @@ def build_telegram(data, total=TELEGRAM_TOTAL):
             lines.append(html.escape(what))
         lines.append(f"<i>{html.escape(fmt_tags(a))} · {html.escape(a.get('source', ''))}</i>")
         lines.append("")
-    lines.append("<a href=\"https://github.com/DavidGaso1/AI-News-Update\">Full digest →</a>")
+    lines.append("<a href=\"https://github.com/Ar2306/Ai_news\">Full digest →</a>")
     return "\n".join(lines)
 
 

@@ -1,10 +1,8 @@
 # AI Daily Newsletter
 
-[![Tests](https://github.com/DavidGaso1/AI-News-Update/actions/workflows/tests.yml/badge.svg)](https://github.com/DavidGaso1/AI-News-Update/actions/workflows/tests.yml)
+[![Tests](https://github.com/Ar2306/Ai_news/actions/workflows/tests.yml/badge.svg)](https://github.com/Ar2306/Ai_news/actions/workflows/tests.yml)
 
 An automated AI newsletter that fetches, deduplicates, summarizes, and categorizes AI news from multiple sources daily — then delivers a morning briefing to your inbox and Telegram.
-
-🌐 **Live site:** [ainl.vercel.app](https://ainl.vercel.app) — public, updated every morning at 6 AM UTC.
 
 ## Features
 
@@ -17,12 +15,12 @@ An automated AI newsletter that fetches, deduplicates, summarizes, and categoriz
 - **LLM curation** with Claude Haiku 4.5 — one call per item returns relevance, tags, and a what/why/who summary (falls back to extractive summaries + keyword tags on any failure)
 - **Multi-label tags** from a fixed topic list (llm, robotics, ai-safety, …), with irrelevant items filtered out
 - **Minimal web UI** branded **AR** — one flat list, filterable by tag, with a matching archive page
-- **Static site** — no backend needed, auto-deployed to [Vercel](https://ainl.vercel.app) on every push
+- **Static site** — no backend needed, auto-deployed to Vercel on every push
 
 ## Project Structure
 
 ```
-AI-News-Update/
+Ai_news/
 ├── index.html              # AR: today's digest, filterable by tag
 ├── archive.html            # AR: past days, filterable by tag
 ├── assets/
@@ -46,7 +44,7 @@ AI-News-Update/
 ## Installation
 
 ```bash
-cd AI-News-Update
+cd Ai_news
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -72,7 +70,6 @@ python3 scripts/fetch-news.py
 ```
 
 ### View newsletter
-- **Live:** [ainl.vercel.app](https://ainl.vercel.app) (public, auto-updated by the 6 AM cron)
 - **Locally:** open `index.html` in a browser, or serve it:
 ```bash
 python3 -m http.server 8080
@@ -140,9 +137,7 @@ These behaviors are covered by unit checks in `tests.yml`, so a regression fails
 
 The site is a static page served by Vercel and auto-deployed on every push to `master` (via the GitHub integration in `vercel.json`). `data/newsletter.json` and `data/archive.json` are committed by the daily cron, so each deploy publishes the freshest news.
 
-- **Live URL:** `ainl.vercel.app`
-- **Archive page:** `ainl.vercel.app/archive.html`
-- The site is fully public — no login or SSO required.
+To deploy your own copy, import this repo in [Vercel](https://vercel.com/new) — no build settings needed. The archive lives at `/archive.html` on the same domain.
 
 ## Data Sources
 
