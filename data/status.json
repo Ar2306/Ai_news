@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-09-17T11:39:00.068950+00:00",
+  "duration_seconds": 835.7,
+  "counts": {
+    "fetched": 709,
+    "unique": 683,
+    "candidates": 84,
+    "kept": 49
+  },
+  "summarized_by": {
+    "Gemini (gemini-3.5-flash)": 20,
+    "Gemini (gemini-3.6-flash)": 13,
+    "Ollama Cloud (gemma4:31b)": 1,
+    "Gemini (gemini-3.5-flash-lite)": 50
+  },
+  "sources_ok": 45,
+  "sources_failed": 2,
+  "sources": [
+    {
+      "name": "arXiv cs.AI",
+      "group": "arxiv",
+      "ok": true,
+      "items": 60,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CL",
+      "group": "arxiv",
+      "ok": true,
+      "items": 60,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.CV",
+      "group": "arxiv",
+      "ok": true,
+      "items": 60,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.LG",
+      "group": "arxiv",
+      "ok": true,
+      "items": 60,
+      "error": ""
+    },
+    {
+      "name": "arXiv cs.RO",
+      "group": "arxiv",
+      "ok": true,
+      "items": 60,
+      "error": ""
+    },
+    {
+      "name": "Andrej Karpathy",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Chip Huyen",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Eugene Yan",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Hamel Husain",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Import AI",
+      "group": "blogs",
+      "ok": false,
+      "items": 0,
+      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://importai.substack.com/feed'\nFor more information check: h"
+    },
+    {
+      "name": "Interconnects",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Latent Space",
+      "group": "blogs",
+      "ok": true,
+      "items": 7,
+      "error": ""
+    },
+    {
+      "name": "Lil'Log",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Sebastian Raschka",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Simon Willison",
+      "group": "blogs",
+      "ok": true,
+      "items": 13,
+      "error": ""
+    },
+    {
+      "name": "The Gradient",
+      "group": "blogs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Hacker News",
+      "group": "community",
+      "ok": true,
+      "items": 58,
+      "error": ""
+    },
+    {
+      "name": "AWS Machine Learning",
+      "group": "labs",
+      "ok": true,
+      "items": 12,
+      "error": ""
+    },
+    {
+      "name": "Allen AI",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "Apple ML Research",
+      "group": "labs",
+      "ok": true,
+      "items": 5,
+      "error": ""
+    },
+    {
+      "name": "Google AI",
+      "group": "labs",
+      "ok": true,
+      "items": 6,
+      "error": ""
+    },
+    {
+      "name": "Google DeepMind",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "Google Research",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Blog",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "MIT News (AI)",
+      "group": "labs",
+      "ok": false,
+      "items": 0,
+      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://news.mit.edu/rss/topic/artificial-intelligence2'\nFor more"
+    },
+    {
+      "name": "Meta Engineering (ML)",
+      "group": "labs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Microsoft Research",
+      "group": "labs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Mistral AI",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Blog",
+      "group": "labs",
+      "ok": true,
+      "items": 8,
+      "error": ""
+    },
+    {
+      "name": "NVIDIA Technical Blog",
+      "group": "labs",
+      "ok": true,
+      "items": 8,
+      "error": ""
+    },
+    {
+      "name": "OpenAI",
+      "group": "labs",
+      "ok": true,
+      "items": 7,
+      "error": ""
+    },
+    {
+      "name": "Stanford AI Lab",
+      "group": "labs",
+      "ok": true,
+      "items": 0,
+      "error": ""
+    },
+    {
+      "name": "Together AI",
+      "group": "labs",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "Data Science Collective",
+      "group": "medium",
+      "ok": true,
+      "items": 1,
+      "error": ""
+    },
+    {
+      "name": "Medium · AI",
+      "group": "medium",
+      "ok": true,
+      "items": 10,
+      "error": ""
+    },
+    {
+      "name": "Medium · Deep Learning",
+      "group": "medium",
+      "ok": true,
+      "items": 10,
+      "error": ""
+    },
+    {
+      "name": "Medium · Generative AI",
+      "group": "medium",
+      "ok": true,
+      "items": 10,
+      "error": ""
+    },
+    {
+      "name": "Medium · LLM",
+      "group": "medium",
+      "ok": true,
+      "items": 8,
+      "error": ""
+    },
+    {
+      "name": "Medium · Machine Learning",
+      "group": "medium",
+      "ok": true,
+      "items": 10,
+      "error": ""
+    },
+    {
+      "name": "Medium · Reinforcement Learning",
+      "group": "medium",
+      "ok": true,
+      "items": 8,
+      "error": ""
+    },
+    {
+      "name": "Towards Data Science",
+      "group": "medium",
+      "ok": true,
+      "items": 8,
+      "error": ""
+    },
+    {
+      "name": "Ars Technica AI",
+      "group": "news",
+      "ok": true,
+      "items": 3,
+      "error": ""
+    },
+    {
+      "name": "MIT Technology Review AI",
+      "group": "news",
+      "ok": true,
+      "items": 2,
+      "error": ""
+    },
+    {
+      "name": "TechCrunch AI",
+      "group": "news",
+      "ok": true,
+      "items": 20,
+      "error": ""
+    },
+    {
+      "name": "The Verge AI",
+      "group": "news",
+      "ok": true,
+      "items": 10,
+      "error": ""
+    },
+    {
+      "name": "Hugging Face Papers",
+      "group": "papers",
+      "ok": true,
+      "items": 79,
+      "error": ""
+    },
+    {
+      "name": "Reddit",
+      "group": "reddit",
+      "ok": true,
+      "items": 100,
+      "error": ""
+    }
+  ]
+}
