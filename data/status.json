@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-17T11:39:00.068950+00:00",
-  "duration_seconds": 835.7,
+  "generated_at": "2026-09-18T11:14:14.355057+00:00",
+  "duration_seconds": 977.1,
   "counts": {
-    "fetched": 709,
-    "unique": 683,
+    "fetched": 708,
+    "unique": 663,
     "candidates": 84,
-    "kept": 49
+    "kept": 36
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 20,
-    "Gemini (gemini-3.6-flash)": 13,
+    "Gemini (gemini-3.5-flash)": 16,
+    "Gemini (gemini-3.6-flash)": 8,
     "Ollama Cloud (gemma4:31b)": 1,
-    "Gemini (gemini-3.5-flash-lite)": 50
+    "Gemini (gemini-3.5-flash-lite)": 59
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -132,14 +132,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 58,
+      "items": 52,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 12,
+      "items": 19,
       "error": ""
     },
     {
@@ -153,14 +153,14 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 5,
+      "items": 6,
       "error": ""
     },
     {
       "name": "Google AI",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 7,
       "error": ""
     },
     {
@@ -174,7 +174,7 @@
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -216,7 +216,7 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 8,
+      "items": 9,
       "error": ""
     },
     {
@@ -230,7 +230,7 @@
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 7,
+      "items": 8,
       "error": ""
     },
     {
@@ -251,7 +251,7 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -279,7 +279,7 @@
       "name": "Medium · LLM",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 10,
       "error": ""
     },
     {
@@ -293,7 +293,7 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 7,
       "error": ""
     },
     {
@@ -307,14 +307,14 @@
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 3,
+      "items": 6,
       "error": ""
     },
     {
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -335,7 +335,7 @@
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 79,
+      "items": 68,
       "error": ""
     },
     {

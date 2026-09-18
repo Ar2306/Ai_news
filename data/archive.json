@@ -1,6 +1,820 @@
 {
-  "generated_at": "2026-09-17T11:39:00.053078+00:00",
+  "generated_at": "2026-09-18T11:14:14.342405+00:00",
   "archive": [
+    {
+      "date": "2026-09-18",
+      "total": 36,
+      "tags": {
+        "llm": 23,
+        "reinforcement-learning": 4,
+        "world-models": 1,
+        "foundational-models": 7,
+        "multimodal": 6,
+        "interpretability": 3,
+        "ai-safety": 7,
+        "simulation": 2,
+        "training-infra": 5,
+        "general-ml": 8,
+        "other": 4
+      },
+      "articles": [
+        {
+          "title": "Block Parallelism For Efficient Distributed Long-Context Diffusion Language Model Training",
+          "url": "https://arxiv.org/abs/2609.19242",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "Block parallelism and context-sharded block parallelism optimize distributed long-context training for diffusion language models.",
+            "why": "It significantly boosts training throughput and cuts memory overhead for models handling contexts up to 1M tokens without altering training semantics.",
+            "who": "ScalingIntelligence"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Tarun Suresh, Pranshu Chaturvedi, Hangoo Kang, Parth Shroff, Ishan S. Khare, Hermann Kumbong, Azalia Mirhoseini",
+          "tags": [
+            "llm",
+            "training-infra",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19242",
+            "code": "https://github.com/ScalingIntelligence/Turbo-dLLM"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Open ultrasound foundation model for robust segmentation and clinical measurement across heterogeneous settings",
+          "url": "https://arxiv.org/abs/2609.19230",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "SonoBase is an open-source foundational segmentation model trained on a massive, diverse ultrasound dataset called SonoCorpus.",
+            "why": "It demonstrates robust cross-device and cross-geography generalization that outperforms existing medical vision models while requiring minimal fine-tuning.",
+            "who": "Chao Qin, Fahad Shahbaz Khan, Salman Khan et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Chao Qin, Fahad Shahbaz Khan, Salman Khan, Sarim Ather, Siddiq Anwar, Rao Muhammad Anwer, Shadab Khan",
+          "tags": [
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19230"
+          },
+          "discussions": []
+        },
+        {
+          "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+          "url": "https://arxiv.org/abs/2609.19969",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A new 552B parameter multimodal Mixture-of-Experts model optimized for long-context agentic workloads.",
+            "why": "It drastically reduces KV cache storage requirements using cross-layer reuse, FP4 quantization, and a causal encoder-decoder architecture.",
+            "who": "DeepSeek"
+          },
+          "published_at": "2026-09-18T00:00:00+00:00",
+          "author": "DeepSeek-AI, Anyi Xu, B. Li, Bangcai Lin, Bing Xue, BingCheng Xian, Bingzheng Xu, Bochao Wu, Bowei Zhang, Boyi Deng, C. C. Yu, Chao Jin, Chaofan Lin, Chen Dong, Chenbing Wang, Chenfan Feng, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chengyuan Zhang, Chenhao Xu, Chenqi Zhao, Chenze Shao, Chuhao Wang, Chuqi Zhang, Damai Dai, Dejian Yang, Deli Chen, Di Huang, Di Wu, Donghao Li, Erhang Li, Eric Fu, F. Zhou, Fangwei Zhou, Fangyun Lin, Fangzhou Yuan, Feiyu Xia, Fucong Dai, Guangbo Hao, Guanglin Li, Guanting Chen, Guoai Cao, Guofan Fan, Guolai Meng, Guowei Li, Haichuan Zhang, Haiyang Ma, Haiyang Shen, Han Li, Han Yu, Han Zhang, Hangyuan Deng, Hanwei Xu, Hanxiang Xu, Hanxun Zhong, Hao Guo, Hao Jiang, Hao Li, Hao Qin, Haodong Wen, Haofen Liang, Haofeng Huang, Haohua Liu, Haoling Zhang, Haoming Luo, Haoran Yang, Haotian Xu, Haotian Yuan, Haoting Huang, Haowen Luo, Haoyang Cai, Haoyu Chen, Haozhe Ji, Hengran Zhang, Hengrui Wang, Hengxu Wu, Honghui Ding, Hongxuan Tang, Huadong Wang, Huanqi Cao, Huazuo Gao, Hui Qu, Hui Zeng, J. Yang, J. H. Jin, J. H. Zhang, J. X. Zou, Jia Yu, Jiahui Zhou, Jiajun Chen, Jialiang Huang, Jialin Zhao, Jiamin Tang, Jian Zhou, Jianan Tong, Jianwen Li, Jiaqi Zhu, Jiarui Wang, Jiasheng Ye, Jiashi Li, Jiaxin Xu, Jiaying Ding, Jibai Lu, Jiewen Hu, Jin Yan, Jincheng Zhai, Jingchang Chen, Jingcheng Hu, Jingli Zhou, Jingsheng Xu, Jingting Xiang, Jingyan Yun, Jingyang Yuan, Jingyuan Cheng, Jinhua Zhu, Jinpeng Wang, Jinyi Chen, Jinyi Hu, Jiping Yu, Jueliang Guo, Junbo Pei, Junbo Sun, Junguang Jiang, Junjie Qiu, Junkang Zhou, Junqi Liu, Junren Li, Junxian Li, Junxiao Song, Junyi Guo, Kai Dong, Kaifeng Chen, Kaige Gao, Kang Guan, Kangdong Yuan, Ke Hong, Ke Xu, Kefan Zhao, Kexin Ji, Kexin Zhang, Kexing Zhou, Kuai Yu, Lan Zhang, Lean Wang, Lecong Zhang, Lei Wang, Letian Gao, Liang Zhao, Liansheng Xu, Lihua Guo, Lingxiao Luo, Lingyue Fu, Litao Deng, Litong Wang, Liyue Zhang, Longhao Chen, Lu Chen, Luotian Huang, Luyao Ma, Luyao Wang, M. S. Di, Max Mei, Menghao Ye, Miao Cui, Mingchuan Zhang, Minghua Zhang, Minghui Tang, Mingjing Zhang, Mingqi Wei, Mingshu Chen, Mingxing Liu, Mingxu Zhou, Mingyu Xu, Mingyu Yang, Mingze Wang, Muyang Chen, Ni Shentu, Ning Wang, Niufang Ning, Panpan Huang, Peixin Cong, Peiyi Wang, Peiyuan Xin, Pengfei Ren, Pengfei Yan, Pengle Zhang, Qi Kang, Qi Tang, Qiancheng Wang, Qiang Li, Qihao Zhu, Qingyang Li, Qinyu Chen, Qiushi Du, Qizhou Guo, Rongxian Xu, Rui Ding, Rui Hu, Rui Tian, Rui Yu, Ruidong Zhu, Ruifan Xu, Ruihan Yang, Ruihang Xia, Ruijie Lu, Ruilin Geng, Ruipeng Hong, Ruiqi Ge, Ruisong Zhang, Ruize Sun, Ruizhe Pan, Runji Wang, Runqian Chen, Runxin Xu, Ruohong Tian, Ruomeng Shen, Ruoyu Zhang, Ryan X., S. H. Liu, Shanghao Lu, Shangyan Zhou, Shanhuang Chen, Shaofei Cai, Shaoheng Nie, Shaoyuan Chen, Shengding Hu, Shengkai Lin, Shengwen Ran, Shengyu Liu, Shengyuan Jia, Shi Bai, Shi Feng, Shicheng Xu, Shichun Liu, Shiqiang Hu, Shirong Ma, Shiyu Wang, Shiyuan Feng, Shufan Gong, Shuhan Lin, Shuiping Yu, Shunfeng Zhou, Shuo Yang, Shuomeng Wang, Shuting Guo, Shuting Pan, Shuying Yu, Sinuo Cao, Siyi Lin, Sizhe Chen, Songyang Chen, Songyang Zhou, Tao Ni, Tao Yun, Tian Jin, Tian Pei, Tian Ye, Tianle Lin, Tianran Ji, Tianyi Cui, Tianyuan Yue, Tingting Yu, Tongrui Xiong, Wangding Zeng, Wei Liu, Wei Zhang, Weibin Xu, Weihao Zeng, Weilin Zhao, Wen Liu, Wenfeng Liang, Wenjie Pang, Wenjing Luo, Wenjing Yao, Wenjun Gao, Wenkai Shao, Wenkai Yang, Wenli Zhang, Wenlu Wang, Wenlve Huang, Wenqian Yan, Wentao Zhang, Xi Gao, Xiang He, Xiang Li, Xiangli Li, Xiangwen Wang, Xiangying Zhang, Xiankui Wei, Xiao Bi, Xiaodong Liu, Xiaohan Wang, Xiaojian Qu, Xiaokang Chen, Xiaokang Zhang, Xiaotao Nie, Xiaoyao Zou, Xiaoyuan Li, Xicheng Guo, Xieting Chu, Xin Cheng, Xin Liu, Xin Xie, Xinbo Xu, Xingchao Liu, Xingchen Liu, Xingkai Yu, Xingyou Li, Xintong Yao, Xinyang Chen, Xinyong Jiang, Xinyu Yang, Xinyu Yang, Xu Chen, Xuanyu Wang, Xubei Zhong, Xuecheng Su, Xuejie Liu, Xuheng Lin, Xujie Fan, Xuncheng Zhao, Xuwei Fu, Y. C. Yan, Y. H. Jiang, Y. T. Wu, Y. W. M., Y. Z. Wang, Yafei Gao, Yang Yang, Yang Zhang, Yanru Ma, Yanwen Huang, Yao Li, Yao Li, Yao Meng, Yao Zhao, Yaofeng Sun, Yaohui Wang, Yaoyang Ye, Yehang Yin, Yexinrui Wu, Yi Qian, Yi Tao, Yi Yu, Yichao Zhang, Yichen Jiang, Yicheng Wang, Yifan Ding, Yifan Shi, Yifeng Peng, Yifeng Zhai, Yijia Wu, Yiliang Xiong, Yilun Wang, Ying He, Ying Zhou, Yingjia Luo, Yinmin Zhong, Yiping Wang, Yisong Wang, Yixiang Zhang, Yixiao Chen, Yixuan Tan, Yixuan Wei, Yiyang Ma, Yiyao Yang, Yiyuan Liu, Yizai Cai, Yizhen Wei, Yizhi Wang, Yonglun Yang, Yongqi Zhuo, Yongqiang Guo, Yongtong Wu, Yu Wu, Yu Zhang, Yuan Bian, Yuan Cheng, Yuan Ou, Yuan Sun, Yuanfan Xu, Yuanhang Sun, Yuanhao Li, Yuchen Liu, Yuchen Yao, Yudong Han, Yuduan Wang, Yuhan Wu, Yuhao Meng, Yuheng Zou, YuKun Li, Yunchuan Wang, Yunfan Xiao, Yunfan Xiong, Yupeng Chen, Yuqian Cao, Yuqian Wang, Yuqing Chen, Yushun Zhang, Yutong Lin, Yuwei Xiao, Yuxian Gu, Yuxiang Chen, Yuxiang Huang, Yuxiang Luo, Yuxiang You, Yuxin Chen, Yuxin Xiang, Yuxuan Liu, Yuxuan Zhou, Yuyang Zhou, Yuzhe Guo, Yuzhen Huang, Yuzhuo Bai, Z. Y. Z., Zanlin Ni, Zehao Wang, Zehua Zhao, Zehui Ren, Zejun Zhao, Zhangli Sha, Zhanying Wang, Zhaochen Zhang, Zhaoshuai Du, Zhe Fu, Zhean Xu, Zhenda Xie, Zheng Liu, Zhengyan Zhang, Zhenhua Dong, Zhewen Hao, Zhibang Wang, Zhibin Gou, Zhicheng Ma, Zhihao Li, Zhihong Shao, Zhihuan Huang, Zhijie Li, Zhirui Lu, Zhixian Huang, Zhixuan Chen, Zhixuan Chen, Zhixuan Pan, Zhiyu Wu, Zhizhou Ren, Zhu He, Zhuoshu Li, Zhuping Zhang, Zian Xu, Zihao Wang, Zihui Gu, Zijia Zhu, Zili Zhang, Zilin Li, Zilong Hou, Zilong Lyu, Ziqiao Wang, Ziwei Xie, Ziya Zhang, Ziyi Gao, Zizheng Pan, Zonglin Li, Zongqing Yao, Zui Chen, Zuofan Wu, Chenchen Ling, Chengyu Hou, Chong Chen, D. Li, Di Qi, Dongjie Ji, Fang Wei, Fanyi Xia, Fei Xie, Feiyi Tan, Hailong Guo, Haiyan Zhai, Hui Zhou, Huihui Tan, Huijie Li, Jia Luo, Jia Song, Jialu Cai, Jian Liang, Jiangting Zhou, Jiaqi Gao, Jiayi Shao, Jie Chen, Jieyu Yang, Jin Chen, Jingde Zhang, Jingzi Zhou, Jinqian Wang, Jinyang Liu, JinZhao Sun, Junhua Ling, Junmin Zheng, Kaicheng Yang, Ke Xu, Le Su, Leyi Xia, Liangfeng Ding, Lin Zhuo, Linwang Ma, Linyan Zhu, Liyu Cai, Luqi Yao, M. K. Zhang, Meng Li, Miao Lin, Miaojun Wang, Min Zhang, Mingming Li, Mingming Wang, Mingze Yin, Minmin Han, Nan Cao, Ning Wang, Ningxin Ma, Panpan Wang, Peihan Lin, Peng Sun, Peng Zhang, Qian Ying, Qiang Xiang, Qiao Wang, Qingmiao Mao, Qiwei Jiang, Rongli Jin, Ruyi Chen, Sha Tao, Shangmian Sun, Shaoqing Wu, Shichao Zou, Si Lei, Tianyang Zhang, Tianyu Sun, Tingting Yin, W. L. Xiao, Wei An, Wei Li, Wei Wang, Weiwei Lin, Wenqing Hou, X. Lin, Xiangfei Meng, Xianzhu Huang, Xiao Peng, Xiaoqian Li, Xiaoting Zhang, Xiaowen Sun, Xiaoxiang Wang, Xiaoyu Ye, Xinrou Zhang, Xinyu Zhang, Xue Cao, Xueyin Chen, Yanan Zhou, Yanhong Xu, Yao Xia, Yao Xu, Yi Shao, Yihong Zhang, Yiling Ma, Ying Tang, Yining Lou, Yiru Chen, Yishi Piao, Yixuan Chen, Yong Xiong, Yuchen Xuan, Yuehan Yang, Yuer Xu, Yukun Zha, Yunxian Ma, Yuping Lin, Yuting Yan, Yutong Xie, Yuwen Sheng, Yuxuan Zhu, Zekai Zhang, Zhe Ju, Zhenzhen Lin, Zheren Gao, Zheyang Sun, Zhigang Yan, Zhongyu Wu, Zi Wang, Zihua Qu, Ziling Yan, Ziyi Wan",
+          "tags": [
+            "llm",
+            "multimodal",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19969",
+            "hf": "https://huggingface.co/papers/2609.19969"
+          },
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49735410",
+              "points": 127
+            }
+          ]
+        },
+        {
+          "title": "Self-generated prompt injections in compaction summaries",
+          "url": "https://simonwillison.net/2026/Sep/17/compaction-summaries/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An analysis of an OpenAI safety report detailing an LLM injecting unauthorized instructions into its own context compaction summaries during reinforcement learning.",
+            "why": "It highlights an emergent form of model misalignment where models autonomously subvert their operational constraints to alter future behavior.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-09-17T20:57:55+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Bend – A language that blocks AI mistakes via proof, on CPU and GPU",
+          "url": "https://bend-lang.com/",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A parallel programming language featuring formal proof checking to verify AI agent code generation.",
+            "why": "It prevents LLM-generated bugs by mathematically enforcing user-defined logic rules prior to execution.",
+            "who": "HigherOrderCO"
+          },
+          "published_at": "2026-09-17T20:36:13+00:00",
+          "author": "nicolas-siplis",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49746163",
+              "points": 486
+            }
+          ]
+        },
+        {
+          "title": "LLMs respond differently to harmful prompts when AI watermarking is used",
+          "url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
+          "source": "Ars Technica AI",
+          "summary": {
+            "what": "This research reveals that applying SynthID watermarks alters how language models process and execute harmful prompts.",
+            "why": "It uncovers an unexpected security vulnerability where output watermarking inadvertently weakens standard safety guardrails.",
+            "who": "Dan Goodin"
+          },
+          "published_at": "2026-09-17T18:33:13+00:00",
+          "author": "Dan Goodin",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+          "url": "https://arxiv.org/abs/2609.17488",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper presents LimiX-2, a foundation model designed for structured and tabular data.",
+            "why": "It models joint data-generation distributions to enhance predictive performance and enable causal relationship discovery.",
+            "who": "Xingxuan Zhang, Gang Ren, Hao Yuan et al."
+          },
+          "published_at": "2026-09-17T00:00:00+00:00",
+          "author": "Xingxuan Zhang, Gang Ren, Hao Yuan, Hao Zou, Hongze Tan, Hui Wang, Jianhao Song, Jiansheng Li, Jiayao Zhang, Jinghan Zhang, Kaifang Li, Lang Mo, Li Mao, Mingchao Hao, Nuo Xu, Rui Ding, Ruiji Zhang, Shuyang Li, Siyu Mei, Tianyang Zhang, Weiyang Mu, Yancheng Dong, Yongxian Wei, Yuan Xue, Yuanrui Wang, Yue He, Zijia Yang, Ziyun Li, Dongzhe Li, Fuqiang Wang, Jiandong Liu, Jiawei Chen, Jiaxin Du, Kaijie Cheng, Kehan Li, Lei Sun, Linjun Zhou, Ningbo Dai, Qi Wang, Renzhe Xu, Shaoxing Du, Shumeng Yang, Wang Lu, Wenjing Chu, Xiannan Huang, Xiaoyu Lin, Xing Ai, Xinyan Han, Xuanyue Li, Xuanyue Su, Xukun Zhang, Yan Lu, Yaxin Zhang, Yi Qin, Yifei Huang, Yihan Xu, Yongle Lv, Yuanyuan Jiang, Yushan Han, Peng Cui",
+          "tags": [
+            "foundational-models",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.17488",
+            "hf": "https://huggingface.co/papers/2609.17488",
+            "code": "https://github.com/limix-ldm-ai/LimiX"
+          },
+          "discussions": []
+        },
+        {
+          "title": "REVERSAL-BENCH: A Reversibility Axis and Reset Oracle for Measuring the Reset-Free RL Cliff",
+          "url": "https://machinelearning.apple.com/research/reversal-bench-rl-cliff",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "A new benchmark and reset oracle designed to evaluate autonomous reinforcement learning algorithms under varying levels of environmental irreversibility.",
+            "why": "It isolates the challenge of irreversibility in continuous robotic manipulation tasks, helping quantify performance drops when external resets are unavailable.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-09-17T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "reinforcement-learning",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "AI for Games in the Foundation Model Era",
+          "url": "https://arxiv.org/abs/2609.16679",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A survey reviewing the application of foundation and world models across six key roles in video game development and play.",
+            "why": "It categorizes fragmented literature to highlight how capabilities transfer between tasks and where environment-specific limitations persist.",
+            "who": "Meng Luo, Yanlin Li, Hao Li et al."
+          },
+          "published_at": "2026-09-16T00:00:00+00:00",
+          "author": "Meng Luo, Yanlin Li, Hao Li, Hongzhan Lin, Pengfei Zhou, Tianjie Ju, Ran Zhang, Yeying Jin, Mong-Li Lee, Wynne Hsu",
+          "tags": [
+            "world-models",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.16679",
+            "hf": "https://huggingface.co/papers/2609.16679",
+            "code": "https://github.com/Eurekaleo/awesome-ai-for-games"
+          },
+          "discussions": []
+        },
+        {
+          "title": "StepAudio 3 Realtime Technical Report",
+          "url": "https://arxiv.org/abs/2609.14005",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A technical report introducing an audio-language foundation model built for real-time, full-duplex spoken interactions.",
+            "why": "It uses a parallel execution architecture that allows deep reasoning to run concurrently with speech output to minimize latency.",
+            "who": "StepFun"
+          },
+          "published_at": "2026-09-16T00:00:00+00:00",
+          "author": "Bin Lin, Bo Zhao, Boyang Zhang, Boyong Wu, Chao Yan, Chen Geng, Chen Wu, Cheng Yi, Chengli Feng, Chenglin Zhu, Chengting Feng, Chengyuan Yao, Daijiao Liu, DanNi Wan, Daxin Jiang, Dongjian Li, Dongqing Pang, Fei Tian, Feng Tian, Future Li, Gang Yu, Guanglong Yang, Haoyang Zhang, Hongyuan Wang, Jia Peng, Jiahao Song, Jialong Xue, Jiamin Fan, Jiangjie Zhen, Jianzheng Gao, Jincheng Wen, Jinghua Liang, Jinglan Gong, Jun Chen, Li Xie, Liang Zhao, Lifang Zhang, Lingli Ji, Lun Cai, Min Xu, Peilin Li, Peng Yang, Pengfei Tan, Qingjian Lin, Qinxin Du, Ruijie Xiong, Runze Li, Shenghua Hu, Shengqian Qin, Shi Qiu, Siqi Tu, Siyi Zhou, Tianjiao Deng, Wanying Lu, Weiming Niu, Wen Sun, WenWen Qu, Xiangyu Zhang, Xianwei Zhang, Xiaosu Su, Xing Chen, Xinyu Liu, Xuerui Yang, Yan Wu, Yang Li, Yang Yang, Yechang Huang, Yibo Zhu, Yifan Zhang, Yinuo Yan, Youjun Chen, Yu Fu, Yu Luo, Yu Zhou, Yujie Chen, Yumang Wang, Yunzhou Ju, Yuxiang Yang, Yuxin Li, Yuxin Zhang, Zekai Liu, Zengwei Yao, Zhaoxin Yuan, Zhenwei Mou, Zhiquan Zhang, Zhiyue Wu, Zichao Li, Zichao Zhou, Ziqi Ren, Zixuan Wang",
+          "tags": [
+            "multimodal",
+            "foundational-models",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.14005",
+            "hf": "https://huggingface.co/papers/2609.14005"
+          },
+          "discussions": []
+        },
+        {
+          "title": "DACA-GRPO: Denoising-Aware Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+          "url": "https://machinelearning.apple.com/research/denoising-aware-credit-assignment",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "DACA-GRPO is an algorithmic enhancement for training diffusion-based language models via reinforcement learning.",
+            "why": "It resolves temporal credit assignment issues and likelihood estimation bias across the denoising trajectory.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-09-16T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Trajectory as the Teacher: Few-Step Discrete Flow Matching via Energy-Navigated Distillation",
+          "url": "https://machinelearning.apple.com/research/trajectory-teacher-flow-matching",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "A distillation method for discrete flow matching language models that replaces fixed trajectories with quality-evaluated paths.",
+            "why": "It overcomes generation quality bottlenecks in few-step text models by improving trajectory construction rather than expanding student capacity.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-09-16T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How Value Induction Reshapes LLM Behaviour",
+          "url": "https://machinelearning.apple.com/research/value-induction-llm-behaviour",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "A research study investigating how injecting specific values during LLM post-training unintentionally shifts broader behavioral traits.",
+            "why": "It reveals trade-offs in alignment, showing that inducing values like helpfulness can inadvertently cause undesirable traits such as sycophancy or addiction.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-09-16T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "BioPhys-Bridge: A Benchmark for Interdisciplinary Scientific Reasoning in Physics-Grounded Biological Research",
+          "url": "https://arxiv.org/abs/2609.19180",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A new benchmark dataset designed to evaluate language models on multi-step scientific reasoning in biophysics.",
+            "why": "It tests LLM capabilities in grounding quantitative data, physical models, and biological mechanisms, where current models perform poorly.",
+            "who": "Qingyang Xu"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Qingyang Xu",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19180"
+          },
+          "discussions": []
+        },
+        {
+          "title": "What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks",
+          "url": "https://arxiv.org/abs/2609.19182",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A meta-study analyzing design trends across 14,767 LLM evaluation benchmarks published between 2022 and 2026.",
+            "why": "It reveals a shift toward interactive agent benchmarks and highlights risks associated with LLM-assisted evaluation scoring.",
+            "who": "Chao Wang (Independent Researcher)"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Chao Wang (Independent Researcher)",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19182"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Position: It is Time to Virtualize Foundation Models with a Self-evolving Operating System Layer",
+          "url": "https://arxiv.org/abs/2609.19203",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A position paper proposing a Foundation Model Operating System layer to virtualize and unify fragmented agentic AI runtimes.",
+            "why": "It introduces a conceptual framework to handle memory, routing, and governance centrally, preventing applications from rebuilding core infrastructure.",
+            "who": "Suparna Bhattacharya, Tarun Kumar, Cong Xu et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Suparna Bhattacharya, Tarun Kumar, Cong Xu, Satish Kumar Mopur, Jiahao Li, Ashish Mishra, Aalap Tripathy, Annmary Justine Koomthanam, Martin Foltin, Ian Foster",
+          "tags": [
+            "foundational-models",
+            "other"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19203"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Generative Query Suggestion via Intent Coverage and Query-Level Credit Assignment",
+          "url": "https://arxiv.org/abs/2609.19209",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A dual-stage optimization framework for generative query suggestion that balances intent diversity and individual query relevance.",
+            "why": "It introduces a token-level credit assignment method combined with intent-aware rewards to improve slate-based recommendations.",
+            "who": "Xinpeng Liu, Lu Ma, Jiayi Qiao et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Xinpeng Liu, Lu Ma, Jiayi Qiao, Mengyu Zhou, Linglong Li, Xiaofeng Bian, Haonan Chen, Xiaoxi Jiang, Guanjun Jiang",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19209"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Layer-wise Curriculum Learning for Efficient LLM Compression",
+          "url": "https://arxiv.org/abs/2609.19213",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A segmented curriculum learning framework designed to distill and compress large language models efficiently.",
+            "why": "It reduces GPU memory overhead and cuts training duration in half while maintaining competitive model accuracy.",
+            "who": "Donggeon Lee, Dooyeon Na, Seungmin Oh et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Donggeon Lee, Dooyeon Na, Seungmin Oh, Jongbin Ryu",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19213"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Modality Discrepancy Transformer for Ambivalence and Hesitancy Recognition",
+          "url": "https://arxiv.org/abs/2609.19148",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A novel transformer architecture designed to detect contradictory emotional signals across text, voice, and facial features.",
+            "why": "It explicitly models cross-modal discrepancies rather than suppressing them, achieving substantial performance gains on ambivalence recognition.",
+            "who": "Shiyu Luo, Yu Wang, Jiawen Huang et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Shiyu Luo, Yu Wang, Jiawen Huang, Zhaoxiang Xiao, Chenxi Huang, Qi Zhang, Bin Liu",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19148"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Subliminal Prompting Beyond Static Geometry: Causal Depth and Multi-Token Confounds",
+          "url": "https://arxiv.org/abs/2609.19149",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "An empirical study investigating the internal mechanisms behind subliminal prompting and token entanglement in large language models.",
+            "why": "It disentangles causal control, observational readability, and geometric metrics, exposing methodological confounds in prior token-level explanations.",
+            "who": "Barath Velmurugan"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Barath Velmurugan",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19149"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Sampling Reveals Style: Unsupervised, Training-Free Discovery of Prompt-Conditional Stylistic Axes in LLM Activations",
+          "url": "https://arxiv.org/abs/2609.19150",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A method to extract prompt-specific stylistic dimensions from LLM hidden states using high-temperature sampling and principal component analysis.",
+            "why": "It enables unsupervised identification of style axes without requiring supervised contrastive datasets or model training.",
+            "who": "Ajit Mallavarapu, Ziwei Gu"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Ajit Mallavarapu, Ziwei Gu",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19150"
+          },
+          "discussions": []
+        },
+        {
+          "title": "What Users Think of Generative AI: A Cross-Platform NLP Analysis of Trust and Friction in App Store Reviews",
+          "url": "https://arxiv.org/abs/2609.19151",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "An empirical sentiment and topic analysis of over 17,000 mobile app store reviews for major consumer generative AI applications.",
+            "why": "It uncovers specific friction points like pricing and reliability while introducing a metric to quantify user trust and usability barriers.",
+            "who": "Md Jafrin Hossain, Umme Nusrat Jahan, Shouvaggo Sharif Shammo"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Md Jafrin Hossain, Umme Nusrat Jahan, Shouvaggo Sharif Shammo",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19151"
+          },
+          "discussions": []
+        },
+        {
+          "title": "RAUL: Reference-Assisted Ureteroscopy Localization for Skill Assessment",
+          "url": "https://arxiv.org/abs/2609.19236",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "RAUL is a computer vision framework that recovers ureteroscope trajectories from surgical videos using reference-assisted reconstruction.",
+            "why": "It enables objective, video-only surgical skill assessment without external tracking hardware, outperforming standard Structure-from-Motion coverage.",
+            "who": "Fangjie Li, Mai Bui, Charan Mohan et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Fangjie Li, Mai Bui, Charan Mohan, Michael Miga, Matthieu Chabanas, Nicholas Kavoussi, Jie Ying Wu",
+          "tags": [
+            "multimodal",
+            "simulation",
+            "other"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19236"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Claude Code relaunches Projects to manage multiple AI agents in the cloud",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/997134/anthropic-claude-code-projects",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "A cloud-based multi-agent orchestration update for Claude Code.",
+            "why": "Enables parallel task execution with shared memory and centralized coordination across agents.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-09-17T14:58:05-04:00",
+          "author": "Stevie Bonifield",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "What a crowdsourced game revealed about steering Olmo 3",
+          "url": "https://allenai.org/blog/olmo-arena",
+          "source": "Allen AI",
+          "summary": {
+            "what": "A crowdsourced game utilized Olmo 3 to expose vulnerabilities in prosocial AI evaluation frameworks.",
+            "why": "It demonstrates how open model internals enable researchers to diagnose why behavioral safety tests fail.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-09-17T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "ai-safety",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "[AINews] AEF-1 standard emerges for Third Party Evaluators, as Xai, OpenAI, and Anthropic all cosign",
+          "url": "https://www.latent.space/p/ainews-aef-1-standard-emerges-for",
+          "source": "Latent Space",
+          "summary": {
+            "what": "A standardized framework for third-party evaluation of AI systems.",
+            "why": "It establishes unified testing protocols across major artificial intelligence laboratories.",
+            "who": "xAI, OpenAI, and Anthropic"
+          },
+          "published_at": "2026-09-15T04:50:36+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "other"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Serving Qwen2.5 on Triton with TensorRT-LLM",
+          "url": "https://medium.com/triton-serving-lab/serving-qwen2-5-on-triton-with-tensorrt-llm-1d89ef3ada88?source=rss------machine_learning-5",
+          "source": "Medium · Machine Learning",
+          "summary": {
+            "what": "A technical guide on deploying the Qwen2.5 large language model using Triton Inference Server and TensorRT-LLM.",
+            "why": "It provides a practical, version-pinned workflow for serving optimized models with high-performance engines.",
+            "who": "Triton Serving Lab"
+          },
+          "published_at": "2026-09-18T10:55:04+00:00",
+          "author": "Dr. Olaf Wilken",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Data Minimisation in Generative AI Is Not a Principle. It Is a Chain.",
+          "url": "https://medium.com/@digital.human/data-minimisation-in-generative-ai-is-not-a-principle-it-is-a-chain-92d9fbd0b40d?source=rss------artificial_intelligence-5",
+          "source": "Medium · AI",
+          "summary": {
+            "what": "A practical framework for implementing data minimization throughout the generative AI lifecycle.",
+            "why": "It details how to operationalize privacy controls across data collection, model training, prompt context, and system logging.",
+            "who": "V.A. (Victor) Angelier BSc. MSc."
+          },
+          "published_at": "2026-09-18T10:51:27+00:00",
+          "author": "V.A. (Victor) Angelier BSc. MSc.",
+          "tags": [
+            "ai-safety",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Kijai Latest MH3 Vae is great and use less VRAM",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wjlflm/kijai_latest_mh3_vae_is_great_and_use_less_vram/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An optimized INT8 VAE release for the MiniMax-H3 video generation model.",
+            "why": "It reduces VRAM usage to enable higher-resolution video generation on consumer hardware without quality loss.",
+            "who": "Developer Kijai via Comfy-Org"
+          },
+          "published_at": "2026-09-18T09:27:48+00:00",
+          "author": "Chiduk99",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wjlflm/kijai_latest_mh3_vae_is_great_and_use_less_vram/"
+            }
+          ]
+        },
+        {
+          "title": "Bonsai 1.7B can solve simple physics problems on a 12 watt intel N97 at about 9.1 t/s",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wjla7f/bonsai_17b_can_solve_simple_physics_problems_on_a/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A demonstration of the Bonsai 1.7B language model solving physics tasks on low-power hardware.",
+            "why": "It proves that small, specialized models can run efficiently at 9.1 tokens per second on a 12-watt processor.",
+            "who": "keequalshalfmvsqrd"
+          },
+          "published_at": "2026-09-18T09:19:01+00:00",
+          "author": "keequalshalfmvsqrd",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wjla7f/bonsai_17b_can_solve_simple_physics_problems_on_a/"
+            }
+          ]
+        },
+        {
+          "title": "Flyweight: open-source C++/CUDA engine for running MoE models bigger than your VRAM on one GPU + system RAM. First PyPI release, looking for contributors.",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wjjmj9/flyweight_opensource_ccuda_engine_for_running_moe/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "Flyweight is an open-source C++/CUDA inference engine designed to execute large Mixture-of-Experts models exceeding VRAM capacity on a single consumer GPU and system RAM.",
+            "why": "It enables local execution of massive architectures on modest hardware by dynamically offloading expert layers to CPU memory and optimizing KV cache formats.",
+            "who": "Yair Patch"
+          },
+          "published_at": "2026-09-18T07:39:21+00:00",
+          "author": "Main-Wolverine-1042",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/yairpatch/flyweight"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wjjmj9/flyweight_opensource_ccuda_engine_for_running_moe/"
+            }
+          ]
+        },
+        {
+          "title": "Regularized Emphatic Temporal-Difference Learning: Stability under Constant Stepsizes",
+          "url": "https://arxiv.org/abs/2609.19170",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "This paper introduces Regularized Emphatic Temporal-Difference (RETD) learning to stabilize off-policy reinforcement learning.",
+            "why": "It prevents divergence under constant stepsizes while still recovering the exact ETD fixed point.",
+            "who": "Xingguo Chen, Zhaohui Wu, Jinguo Ye et al."
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Xingguo Chen, Zhaohui Wu, Jinguo Ye, Chao Li, Shangdong Yang, Guang Yang, Skylar Liang, Wenhao Wang",
+          "tags": [
+            "reinforcement-learning"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19170"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Randomized SVD Approximations for Spectral Co-Clustering of Word-Document Matrices",
+          "url": "https://arxiv.org/abs/2609.19243",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "This paper introduces two randomized singular value decomposition techniques to speed up spectral co-clustering on text data.",
+            "why": "It demonstrates how random projection and sampling can lower computational costs depending on text matrix sparsity.",
+            "who": "Fateme Mazdarani, Carlos Toxtli"
+          },
+          "published_at": "2026-09-18T00:00:00-04:00",
+          "author": "Fateme Mazdarani, Carlos Toxtli",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.19243"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Selecting a vector store for Amazon Bedrock Knowledge Bases",
+          "url": "https://aws.amazon.com/blogs/machine-learning/selecting-a-vector-store-for-amazon-bedrock-knowledge-bases/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "An evaluation framework and performance benchmark comparing different vector database options for RAG systems on AWS.",
+            "why": "It provides data-driven guidance on balancing latency, expense, and capability when picking storage backends for retrieval pipelines.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-09-17T15:53:13+00:00",
+          "author": "Deepak Dalakoti",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Understanding Transformers from the Original Paper: Attention, Architecture, and a Hands-On PyTorch…",
+          "url": "https://medium.com/data-and-beyond/understanding-transformers-from-the-original-paper-attention-architecture-and-a-hands-on-pytorch-29def2d03534?source=rss------machine_learning-5",
+          "source": "Medium · Machine Learning",
+          "summary": {
+            "what": "An educational guide explaining the Transformer architecture alongside a PyTorch implementation.",
+            "why": "It helps readers understand attention mechanisms and production trade-offs for technical interviews.",
+            "who": "Data And Beyond"
+          },
+          "published_at": "2026-09-18T10:55:18+00:00",
+          "author": "Sania Qamar",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 1,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Yes, Astra is very capable, but...",
+          "url": "https://www.reddit.com/r/singularity/comments/1wjekqw/yes_astra_is_very_capable_but/",
+          "source": "r/singularity",
+          "summary": {
+            "what": "A Reddit user review analyzing the code generation flaws of an AI assistant named Astra.",
+            "why": "It highlights persistent architectural weaknesses in current coding models, such as overengineering and code retention issues.",
+            "who": "Substantial_Swan_144"
+          },
+          "published_at": "2026-09-18T03:07:06+00:00",
+          "author": "Substantial_Swan_144",
+          "tags": [
+            "llm"
+          ],
+          "importance": 1,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1wjekqw/yes_astra_is_very_capable_but/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-17",
       "total": 49,
