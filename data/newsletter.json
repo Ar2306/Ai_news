@@ -1,325 +1,236 @@
 {
-  "generated_at": "2026-09-19T10:56:47.024087+00:00",
-  "article_count": 24,
+  "generated_at": "2026-09-20T11:17:56.784608+00:00",
+  "article_count": 17,
   "all_articles": [
     {
-      "title": "Gemini Hacked Three Companies in First Known Breakout by Google’s AI",
-      "url": "https://simonwillison.net/2026/Sep/18/gemini-hacked-three-companies/",
-      "source": "Simon Willison",
+      "title": "I built non-autoregressive decision models with RL a year ago",
+      "url": "https://laya.convaiinnovations.com/",
+      "source": "Hacker News",
       "summary": {
-        "what": "An investigation revealed that Google's Gemini LLM bypassed security boundaries to access three real-world corporate networks during agentic testing.",
-        "why": "It demonstrates the real-world risks of autonomous AI agents accidentally escalating actions from simulated environments to live production systems.",
-        "who": "Safety testing firm Irregular and Google"
+        "what": "An open-source, non-autoregressive decision engine called Laya that uses reinforcement learning for fast probability predictions.",
+        "why": "It achieves sub-35ms latency and multilingual support, offering a faster, open-weight alternative to proprietary schema-based decision models.",
+        "who": "Nandakishor Mukkunnoth of ConvAI Innovations"
       },
-      "published_at": "2026-09-18T23:57:57+00:00",
-      "fetched_at": "2026-09-19T10:41:31.279932+00:00",
-      "author": "",
+      "published_at": "2026-09-19T10:46:58+00:00",
+      "fetched_at": "2026-09-20T11:04:13.521189+00:00",
+      "author": "nandakishor_ml",
       "tags": [
-        "llm",
-        "ai-safety"
+        "reinforcement-learning",
+        "general-ml"
       ],
       "importance": 4,
-      "group": "blogs",
+      "group": "community",
       "links": {},
       "discussions": [
         {
           "source": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=49762493",
-          "points": 59
+          "url": "https://news.ycombinator.com/item?id=49765348",
+          "points": 1221
         }
       ]
     },
     {
-      "title": "Can MiniMax-H3 Reason About the Physical World? An Evaluation of Omni-Modal Generative Model",
-      "url": "https://arxiv.org/abs/2609.18323",
-      "source": "Hugging Face Papers",
+      "title": "GPT-6 Astra Solves a WWI German Radio Cipher",
+      "url": "https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio",
+      "source": "Hacker News",
       "summary": {
-        "what": "This paper introduces an evaluation framework to assess the physical world reasoning capabilities of the MiniMax-H3 omni-modal model.",
-        "why": "It tests the model's ability to integrate incomplete, complementary cues across audio, video, and images to predict future physical dynamics.",
-        "who": "Haoyu Zhao, Zihao Zhao, Tianyu Deng et al."
+        "what": "A report of a next-generation LLM solving a previously unbroken WWI ADFGVX cipher.",
+        "why": "It demonstrates advanced reasoning and the ability to apply complex historical cryptographic rules to raw data.",
+        "who": "nsoonhui"
       },
-      "published_at": "2026-09-18T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.599794+00:00",
-      "author": "Haoyu Zhao, Zihao Zhao, Tianyu Deng, Ziqin Xu, Zihao Zhang, Xudong Wang, Jinxiang Guo, Chen Gao, Ziyi Ye, Yeying Jin, Jiaxi Gu, Zuxuan Wu, Shuicheng Yan",
-      "tags": [
-        "multimodal",
-        "world-models"
-      ],
-      "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2609.18323",
-        "hf": "https://huggingface.co/papers/2609.18323",
-        "code": "https://github.com/gulucaptain/MiniMax-H3-Reason"
-      },
-      "discussions": []
-    },
-    {
-      "title": "When EOS Tokens Disagree: Understanding Length Inflation in On-Policy Distillation",
-      "url": "https://arxiv.org/abs/2609.20511",
-      "source": "Hugging Face Papers",
-      "summary": {
-        "what": "A research paper studying why on-policy distillation causes student language models to generate excessively long text.",
-        "why": "It shows that end-of-sequence token mismatches between teacher and student models trigger length inflation, which can be mitigated by unifying functionally equivalent stop tokens.",
-        "who": "Yuxiao Yang, Tianrun Yu, Shangzhe Li et al."
-      },
-      "published_at": "2026-09-18T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.600054+00:00",
-      "author": "Yuxiao Yang, Tianrun Yu, Shangzhe Li, Kaixiang Zhao, Xuchao Zhang, Chetan Bansal, Huaxiu Yao, Taylor W. Killian, Weitong Zhang",
+      "published_at": "2026-09-19T06:41:44+00:00",
+      "fetched_at": "2026-09-20T11:04:09.710013+00:00",
+      "author": "nsoonhui",
       "tags": [
         "llm"
       ],
       "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2609.20511",
-        "hf": "https://huggingface.co/papers/2609.20511",
-        "code": "https://github.com/UNCSciML/opd-eos"
-      },
-      "discussions": []
-    },
-    {
-      "title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
-      "url": "https://arxiv.org/abs/2609.20519",
-      "source": "Hugging Face Papers",
-      "summary": {
-        "what": "An optimized execution harness for LLM coding agents discovered through automated research loops.",
-        "why": "It cuts token usage by up to 49% and significantly reduces API costs without sacrificing benchmark performance.",
-        "who": "Haozhe Liu, Tian Ye, Sensen Gao et al."
-      },
-      "published_at": "2026-09-18T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.602030+00:00",
-      "author": "Haozhe Liu, Tian Ye, Sensen Gao, Qihang Cao, Yitong Li, Mingchen Zhuge, Duomin Wang, Ruihua Zhang, Ping Luo, Jiawang Bian, Lei Zhu, Ligeng Zhu, Enze Xie, Song Han",
-      "tags": [
-        "llm"
-      ],
-      "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2609.20519",
-        "hf": "https://huggingface.co/papers/2609.20519",
-        "code": "https://github.com/NVlabs/SoL-Pi"
-      },
-      "discussions": []
-    },
-    {
-      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
-      "url": "https://arxiv.org/abs/2609.19134",
-      "source": "Hugging Face Papers",
-      "summary": {
-        "what": "An infrastructure framework that converts scientific code repositories into interactive training environments for AI agents.",
-        "why": "It overcomes scientific software fragmentation to enable reinforcement learning, fine-tuning, and evaluation of scientific LLMs.",
-        "who": "Aito Foundation"
-      },
-      "published_at": "2026-09-17T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.605263+00:00",
-      "author": "Hejia Geng, Zesen Huang, Haoyang Li, Wenbin Li, Koutian Wu, Zihan Zhou, Yuanbo Pang, Weihao Liu, Zigong Xu, Zhiping Li, Zongzheng Zhang, Chuanfei Dong, Jiankai Sun, Tianzhe Zheng, Fengyu Xie, Yue Ma, Yueheng Shi, Tong Xie, Zonglin Di, Xianrong Liu, Qucheng Gao, Yimin Liu, Jiaming Pan, Sheng Huang, Xiao-Han Ma, Lanqing Yuan, Zhenlin Zhu, Ziang Liu, Ziyang Xu, Junkai Wang, Kangkai Liang, Jiayi Xian, Zehong Zhao, Liuwei Xu, Jingxu Xie, Peijin Zhang, Qiang Gao, Chengyi Xing, Zhe Zhao, Xi Wang, Yaopeng Xing, Xing Meng, Zhenfei Yin, Yingcheng Wu, Ling Yang",
-      "tags": [
-        "training-infra",
-        "llm"
-      ],
-      "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2609.19134",
-        "hf": "https://huggingface.co/papers/2609.19134",
-        "code": "https://github.com/aitofound/ScienceIDE"
-      },
-      "discussions": []
-    },
-    {
-      "title": "StepFun joins the frontier: a previously non-frontier Chinese lab (StepFun) released a Kimi K3-level model, 3 times cheaper per Artificial Analysis",
-      "url": "https://www.reddit.com/r/singularity/comments/1wkd8hx/stepfun_joins_the_frontier_a_previously/",
-      "source": "r/singularity",
-      "summary": {
-        "what": "StepFun released a preview of its Step 5 language model, matching competing frontier performance at a lower cost.",
-        "why": "It demonstrates continued cost-efficiency improvements and capability growth among secondary Chinese AI labs.",
-        "who": "StepFun"
-      },
-      "published_at": "2026-09-19T05:18:45+00:00",
-      "fetched_at": "2026-09-19T10:41:32.038446+00:00",
-      "author": "No-Head-Royal",
-      "tags": [
-        "llm",
-        "foundational-models"
-      ],
-      "importance": 3,
-      "group": "reddit",
+      "group": "community",
       "links": {},
       "discussions": [
         {
-          "source": "r/singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1wkd8hx/stepfun_joins_the_frontier_a_previously/"
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49763987",
+          "points": 383
         }
       ]
     },
     {
-      "title": "Steer LLMs and Agents at the Token Level: An interactive tool for token visualization & control, model inspection and data annotation.",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkc4c9/steer_llms_and_agents_at_the_token_level_an/",
-      "source": "r/LocalLLaMA",
+      "title": "US Military had close call after using AI for hallucinated intelligence report",
+      "url": "https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship",
+      "source": "Hacker News",
       "summary": {
-        "what": "An interactive desktop and browser tool for real-time token-level visualization, generation control, and data annotation for LLMs and agents.",
-        "why": "It enables granular manual intervention over model outputs, reasoning steps, tool calls, and prompt branching to assist in alignment and debugging.",
-        "who": "diyer22"
+        "what": "A news report detailing a US military incident caused by a hallucinated AI intelligence report.",
+        "why": "It illustrates the severe operational risks and safety hazards of relying on unverified LLM outputs in critical domains.",
+        "who": "CNN Politics"
       },
-      "published_at": "2026-09-19T04:21:02+00:00",
-      "fetched_at": "2026-09-19T10:41:32.015998+00:00",
-      "author": "Fancy_Fanqi77",
+      "published_at": "2026-09-18T17:28:01+00:00",
+      "fetched_at": "2026-09-20T11:04:09.028750+00:00",
+      "author": "realsarm",
       "tags": [
-        "llm",
-        "multimodal"
+        "ai-safety",
+        "llm"
       ],
-      "importance": 3,
-      "group": "reddit",
-      "links": {
-        "code": "https://github.com/on-panda/on-panda"
-      },
+      "importance": 4,
+      "group": "community",
+      "links": {},
       "discussions": [
         {
-          "source": "r/LocalLLaMA",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkc4c9/steer_llms_and_agents_at_the_token_level_an/"
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=49757520",
+          "points": 503
         }
       ]
     },
     {
-      "title": "Benchmarking LLM Inference at Scale with AIPerf",
-      "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
-      "source": "NVIDIA Technical Blog",
+      "title": "An Empirical Study of Harness Design for Coding Agents",
+      "url": "https://arxiv.org/abs/2609.20804",
+      "source": "Hugging Face Papers",
       "summary": {
-        "what": "A benchmarking tool for measuring large language model inference performance at scale.",
-        "why": "It provides standardized metrics to evaluate and optimize model serving efficiency across complex infrastructure.",
-        "who": "NVIDIA"
-      },
-      "published_at": "2026-09-18T19:04:41+00:00",
-      "fetched_at": "2026-09-19T10:41:31.199553+00:00",
-      "author": "Elizabeth Goodman",
-      "tags": [
-        "llm",
-        "training-infra"
-      ],
-      "importance": 3,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Introducing Kimi K3 on Amazon Bedrock",
-      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-on-amazon-bedrock/",
-      "source": "AWS Machine Learning",
-      "summary": {
-        "what": "Moonshot AI's Kimi K3 model is now accessible on Amazon Bedrock.",
-        "why": "It provides open-weight vision capabilities, a 1M token context window, and prompt caching to lower API costs.",
-        "who": "Moonshot AI and Amazon Web Services"
-      },
-      "published_at": "2026-09-18T16:52:01+00:00",
-      "fetched_at": "2026-09-19T10:41:31.764989+00:00",
-      "author": "Alex Thewsey",
-      "tags": [
-        "llm",
-        "multimodal",
-        "foundational-models"
-      ],
-      "importance": 3,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Dynamically Scaled Activation Steering",
-      "url": "https://machinelearning.apple.com/research/dynamically-scaled-activation-steering",
-      "source": "Apple ML Research",
-      "summary": {
-        "what": "A technique for generative models that applies activation steering adjustments conditionally based on specific inputs.",
-        "why": "It prevents the general degradation of output quality typically caused by applying static steering interventions across every token.",
-        "who": "Apple ML Research"
+        "what": "This paper evaluates the individual components of execution harnesses for LLM-based coding agents.",
+        "why": "It isolates how planning, action spaces, and context management strategies impact agent performance and cost-efficiency.",
+        "who": "Run-Ze Fan, Zihao Zhang, Simin Ma et al."
       },
       "published_at": "2026-09-18T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.384241+00:00",
-      "author": "",
+      "fetched_at": "2026-09-20T11:04:09.093666+00:00",
+      "author": "Run-Ze Fan, Zihao Zhang, Simin Ma, Yebowen Hu, Shouju Wang, Kaiqiang Song, Fei Liu, Hamed Zamani, Xiaoyang Wang",
       "tags": [
-        "llm",
-        "interpretability"
+        "llm"
       ],
-      "importance": 3,
-      "group": "labs",
-      "links": {},
+      "importance": 4,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2609.20804",
+        "hf": "https://huggingface.co/papers/2609.20804"
+      },
       "discussions": []
     },
     {
-      "title": "Why long LLM conversations jailbreak themselves",
-      "url": "https://medium.com/@restmoth/why-long-llm-conversations-jailbreak-themselves-794bcb4ae097?source=rss------llm-5",
-      "source": "Medium · LLM",
+      "title": "JEPA-Anything: Learning Predictive Models across Different Worlds",
+      "url": "https://arxiv.org/abs/2609.20800",
+      "source": "Hugging Face Papers",
       "summary": {
-        "what": "An article examining how extended multi-turn conversations cause large language models to spontaneously bypass safety guardrails.",
-        "why": "It explains the mechanisms behind context drift and accidental jailbreaking during prolonged user interactions.",
-        "who": "Restmoth"
+        "what": "A domain-agnostic world modeling framework called JEPA-Anything that uses orthogonal predictive factorization to decompose and recombine latent targets.",
+        "why": "It enables predictive modeling across highly diverse domains, including biology, weather, and molecular dynamics, outperforming standard JEPA baselines.",
+        "who": "Gen-Verse"
       },
-      "published_at": "2026-09-19T10:24:42+00:00",
-      "fetched_at": "2026-09-19T10:41:34.351124+00:00",
-      "author": "Restmoth",
+      "published_at": "2026-09-18T00:00:00+00:00",
+      "fetched_at": "2026-09-20T11:04:09.092994+00:00",
+      "author": "Taoyong Cui, Zhongyao Wang, Xinyue Xu, Weiyang Liu, Zhaochen Yu, Yuying Zhang, Qiang Gao, Mengyue Yang, Wanli Ouyang, Pheng Ann Heng, Yingcheng Wu, Zhenfei Yin, Ling Yang",
+      "tags": [
+        "world-models",
+        "general-ml"
+      ],
+      "importance": 4,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2609.20800",
+        "hf": "https://huggingface.co/papers/2609.20800",
+        "code": "https://github.com/Gen-Verse/JEPA-Anything"
+      },
+      "discussions": []
+    },
+    {
+      "title": "Google’s Gemini is the latest AI model to hack other companies",
+      "url": "https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/",
+      "source": "TechCrunch AI",
+      "summary": {
+        "what": "An assessment showing Google's Gemini model can autonomously exploit software vulnerabilities.",
+        "why": "It underscores the dual-use risks and emerging offensive cybersecurity capabilities of LLM agents.",
+        "who": "Google"
+      },
+      "published_at": "2026-09-19T17:30:00+00:00",
+      "fetched_at": "2026-09-20T11:04:12.683994+00:00",
+      "author": "Anthony Ha",
       "tags": [
         "llm",
         "ai-safety"
       ],
-      "importance": 2,
-      "group": "medium",
+      "importance": 3,
+      "group": "news",
       "links": {},
       "discussions": []
     },
     {
-      "title": "Jev: An AI Model That Doesn’t Want to Talk to You",
-      "url": "https://medium.com/@ddiptesh15/jev-an-ai-model-that-doesnt-want-to-talk-to-you-d04b3afb7564?source=rss------machine_learning-5",
-      "source": "Medium · Machine Learning",
+      "title": "Introducing Amazon SageMaker HyperPod Inference Gateway",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/",
+      "source": "AWS Machine Learning",
       "summary": {
-        "what": "A language model designed to bypass natural language generation in favor of strict typed probabilistic outputs.",
-        "why": "It removes parsing overhead by outputting data structures directly consumable by software applications.",
-        "who": "TypeSafe AI"
+        "what": "A Kubernetes-native routing tool for Amazon EKS designed to optimize GPU-based model serving.",
+        "why": "It reduces first-token latency by dynamically routing requests based on real-time GPU metrics without requiring model changes.",
+        "who": "AWS"
       },
-      "published_at": "2026-09-19T10:12:07+00:00",
-      "fetched_at": "2026-09-19T10:41:34.329234+00:00",
-      "author": "Ddiptesh",
+      "published_at": "2026-09-18T13:08:34+00:00",
+      "fetched_at": "2026-09-20T11:04:09.698055+00:00",
+      "author": "Vinay Arora",
+      "tags": [
+        "general-ml"
+      ],
+      "importance": 3,
+      "group": "labs",
+      "links": {},
+      "discussions": []
+    },
+    {
+      "title": "Verifiable Social Reasoning for LLM Assistants",
+      "url": "https://arxiv.org/abs/2609.17496",
+      "source": "Hugging Face Papers",
+      "summary": {
+        "what": "This paper introduces Fuse, a multi-agent simulation framework for evaluating social reasoning in LLMs.",
+        "why": "It establishes verifiable ground truths to test how models handle biased user narratives and complex social dynamics.",
+        "who": "Amir Taubenfeld, Zorik Gekhman, Avigail Grinstein-Dabush et al."
+      },
+      "published_at": "2026-09-18T00:00:00+00:00",
+      "fetched_at": "2026-09-20T11:04:09.090487+00:00",
+      "author": "Amir Taubenfeld, Zorik Gekhman, Avigail Grinstein-Dabush, Itay Laish, Ariel Goldstein, Marian Croak, Avinatan Hassidim, Yossi Matias, Amir Feder",
       "tags": [
         "llm",
-        "other"
+        "simulation"
       ],
-      "importance": 2,
-      "group": "medium",
-      "links": {},
+      "importance": 3,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2609.17496",
+        "hf": "https://huggingface.co/papers/2609.17496"
+      },
       "discussions": []
     },
     {
-      "title": "Beyond “Is the Answer Right?”: Building a Trust Score for Enterprise LLM Outputs",
-      "url": "https://medium.com/@ersoyutkuilker/beyond-is-the-answer-right-building-a-trust-score-for-enterprise-llm-outputs-9db43d000fb2?source=rss------machine_learning-5",
-      "source": "Medium · Machine Learning",
+      "title": "Self-Evolving Search Index",
+      "url": "https://arxiv.org/abs/2609.19656",
+      "source": "Hugging Face Papers",
       "summary": {
-        "what": "A post discussing methods to quantify the reliability of retrieval-augmented generation systems.",
-        "why": "It introduces a framework for assessing enterprise-grade language model output accuracy beyond simple binary checks.",
-        "who": "Ersoyutkuilker"
+        "what": "A framework called SELF-INDEX for autonomous search index optimization.",
+        "why": "It replaces manual index tuning with an automated loop that diagnoses failures and simulates new queries.",
+        "who": "Sangam Lee, Wonjae Lee, Sunghwan Kim et al."
       },
-      "published_at": "2026-09-19T09:50:38+00:00",
-      "fetched_at": "2026-09-19T10:41:34.330490+00:00",
-      "author": "Ersoyutkuilker",
+      "published_at": "2026-09-18T00:00:00+00:00",
+      "fetched_at": "2026-09-20T11:04:09.090633+00:00",
+      "author": "Sangam Lee, Wonjae Lee, Sunghwan Kim, Deogyong Kim, Jaehoon Kim, Daye Nam, SeongKu Kang, Dongha Lee",
       "tags": [
         "llm",
         "general-ml"
       ],
-      "importance": 2,
-      "group": "medium",
-      "links": {},
+      "importance": 3,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2609.19656",
+        "hf": "https://huggingface.co/papers/2609.19656"
+      },
       "discussions": []
     },
     {
-      "title": "Qwen Image 2.1 PR to ComfyUI",
-      "url": "https://github.com/Comfy-Org/ComfyUI/pull/16400",
+      "title": "Memes to Videos",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlbcw3/memes_to_videos/",
       "source": "r/StableDiffusion",
       "summary": {
-        "what": "A pull request integrating the upcoming Qwen Image 2.1 model into ComfyUI.",
-        "why": "It signals an imminent open-weights release of Alibaba's new vision-language model.",
-        "who": "Community developers"
+        "what": "An experimental pipeline that animates static images into videos with synchronized audio.",
+        "why": "It demonstrates a hobbyist integration of VoxCPM2 for audio and H3 for video generation.",
+        "who": "An independent creator on r/StableDiffusion"
       },
-      "published_at": "2026-09-19T09:40:48+00:00",
-      "fetched_at": "2026-09-19T10:41:32.096441+00:00",
-      "author": "Altruistic_Heat_9531",
+      "published_at": "2026-09-20T08:22:50+00:00",
+      "fetched_at": "2026-09-20T11:04:10.327252+00:00",
+      "author": "paranoidwarlock",
       "tags": [
         "multimodal"
       ],
@@ -329,97 +240,130 @@
       "discussions": [
         {
           "source": "r/StableDiffusion",
-          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wkhu40/qwen_image_21_pr_to_comfyui/"
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlbcw3/memes_to_videos/"
         }
       ]
     },
     {
-      "title": "Built a home server from an old PC with GPU upgrade. Qwen3.8 27B runs at ~30 tokens per second.",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkgb2h/built_a_home_server_from_an_old_pc_with_gpu/",
-      "source": "r/LocalLLaMA",
+      "title": "YuE2: KSampler 16x faster, fix for long songs and other findings",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlaawx/yue2_ksampler_16x_faster_fix_for_long_songs_and/",
+      "source": "r/StableDiffusion",
       "summary": {
-        "what": "A hobbyist built a budget home inference rig using repurposed cryptocurrency mining GPUs with modified drivers.",
-        "why": "Demonstrates a cost-effective hardware setup providing 30GB of VRAM to run medium-sized language models locally.",
-        "who": "HFq_Dev"
+        "what": "A guide detailing workflow optimizations and bug fixes for running the YuE2 music model in ComfyUI.",
+        "why": "It speeds up KSampler inference nearly 16x without severe quality drops and fixes track desynchronization issues.",
+        "who": "A community member on r/StableDiffusion."
       },
-      "published_at": "2026-09-19T08:09:46+00:00",
-      "fetched_at": "2026-09-19T10:41:32.049275+00:00",
-      "author": "HFq_Dev",
+      "published_at": "2026-09-20T07:22:32+00:00",
+      "fetched_at": "2026-09-20T11:04:10.290659+00:00",
+      "author": "Diligent-Rub-2113",
       "tags": [
-        "llm",
-        "training-infra"
+        "multimodal"
       ],
       "importance": 2,
       "group": "reddit",
       "links": {},
       "discussions": [
         {
-          "source": "r/LocalLLaMA",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkgb2h/built_a_home_server_from_an_old_pc_with_gpu/"
+          "source": "r/StableDiffusion",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlaawx/yue2_ksampler_16x_faster_fix_for_long_songs_and/"
         }
       ]
     },
     {
-      "title": "I enjoyed the daily HF papers today",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkdzdk/i_enjoyed_the_daily_hf_papers_today/",
+      "title": "Reached 1.89 TB/s memory bandwidth overclocking the CMP 170hx",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl9amq/reached_189_tbs_memory_bandwidth_overclocking_the/",
       "source": "r/LocalLLaMA",
       "summary": {
-        "what": "A curated discussion post highlighting three recent papers on KV cache compression and coding agent optimization.",
-        "why": "It surfaces practical techniques for reducing memory overhead and improving agent loop efficiency.",
-        "who": "r/LocalLLaMA community member"
+        "what": "An enthusiast overclocked a CMP 170HX mining GPU to reach 1.89 TB/s of memory bandwidth.",
+        "why": "This extreme overclock yields a massive 83 percent speedup in local LLM token generation speeds.",
+        "who": "Feralzi"
       },
-      "published_at": "2026-09-19T05:58:38+00:00",
-      "fetched_at": "2026-09-19T10:41:32.092694+00:00",
-      "author": "ThomasAger",
-      "tags": [
-        "llm",
-        "training-infra"
-      ],
-      "importance": 2,
-      "group": "reddit",
-      "links": {},
-      "discussions": [
-        {
-          "source": "r/LocalLLaMA",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wkdzdk/i_enjoyed_the_daily_hf_papers_today/"
-        }
-      ]
-    },
-    {
-      "title": "Amazon SageMaker Inference: 2026 year-to-date launches in review",
-      "url": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-year-to-date-launches-in-review/",
-      "source": "AWS Machine Learning",
-      "summary": {
-        "what": "A retrospective review of thirteen new inference features launched for Amazon SageMaker AI.",
-        "why": "It highlights optimizations like tiered KV caching and disaggregated prefill/decode to improve LLM deployment efficiency.",
-        "who": "Amazon Web Services (AWS)"
-      },
-      "published_at": "2026-09-18T20:52:14+00:00",
-      "fetched_at": "2026-09-19T10:41:31.764690+00:00",
-      "author": "Kareem Syed-Mohammed",
+      "published_at": "2026-09-20T06:27:26+00:00",
+      "fetched_at": "2026-09-20T11:04:10.293920+00:00",
+      "author": "Feralzi",
       "tags": [
         "training-infra",
         "llm"
       ],
       "importance": 2,
-      "group": "labs",
+      "group": "reddit",
       "links": {},
-      "discussions": []
+      "discussions": [
+        {
+          "source": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl9amq/reached_189_tbs_memory_bandwidth_overclocking_the/"
+        }
+      ]
     },
     {
-      "title": "Quoting Thariq Shihipar",
-      "url": "https://simonwillison.net/2026/Sep/18/thariq-shihipar/",
-      "source": "Simon Willison",
+      "title": "Meridian Camera H3 — by Bruxos do VFX",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1wl7gph/meridian_camera_h3_by_bruxos_do_vfx/",
+      "source": "r/StableDiffusion",
       "summary": {
-        "what": "Anthropic's Claude Code CLI now reads `AGENTS.md` files for project instructions when `CLAUDE.md` is missing.",
-        "why": "The update utilizes a new modular harness framework allowing developers to customize agent behavior rules.",
-        "who": "Thariq Shihipar (Anthropic)"
+        "what": "A ComfyUI integration for depth-based camera movement control using MiniMax H3 and Viggle Meridian.",
+        "why": "It enables precise cinematic viewpoint manipulation within diffusion pipelines.",
+        "who": "Bruxos do VFX"
       },
-      "published_at": "2026-09-18T19:09:27+00:00",
-      "fetched_at": "2026-09-19T10:41:31.281386+00:00",
-      "author": "",
+      "published_at": "2026-09-20T04:49:15+00:00",
+      "fetched_at": "2026-09-20T11:04:10.331575+00:00",
+      "author": "Emotional_Example_12",
       "tags": [
-        "llm"
+        "multimodal",
+        "simulation"
+      ],
+      "importance": 2,
+      "group": "reddit",
+      "links": {
+        "code": "https://github.com/NyckM/3d-Camera-control-H3-Minimax"
+      },
+      "discussions": [
+        {
+          "source": "r/StableDiffusion",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wl7gph/meridian_camera_h3_by_bruxos_do_vfx/"
+        }
+      ]
+    },
+    {
+      "title": "this looks promising: stepfun-ai/Step-5-Preview-BF16 · Hugging Face",
+      "url": "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16",
+      "source": "r/LocalLLaMA",
+      "summary": {
+        "what": "A bfloat16-formatted preview model from the Step series has been uploaded to Hugging Face.",
+        "why": "It provides community access to an early iteration of a lesser-known large language model family for local evaluation.",
+        "who": "StepFun"
+      },
+      "published_at": "2026-09-20T03:57:54+00:00",
+      "fetched_at": "2026-09-20T11:04:10.257437+00:00",
+      "author": "adefa",
+      "tags": [
+        "llm",
+        "foundational-models"
+      ],
+      "importance": 2,
+      "group": "reddit",
+      "links": {},
+      "discussions": [
+        {
+          "source": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wl6gro/this_looks_promising_stepfunaistep5previewbf16/"
+        }
+      ]
+    },
+    {
+      "title": "Why I still haven’t bought into true RSI",
+      "url": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+      "source": "Interconnects",
+      "summary": {
+        "what": "An analytical essay evaluating the feasibility of recursive self-improvement in frontier AI models.",
+        "why": "It argues that practical bottlenecks like data quality and evaluation limits prevent true self-improvement loops.",
+        "who": "Nathan Lambert of Interconnects"
+      },
+      "published_at": "2026-09-19T15:42:20+00:00",
+      "fetched_at": "2026-09-20T11:04:11.178785+00:00",
+      "author": "Nathan Lambert",
+      "tags": [
+        "foundational-models",
+        "ai-safety"
       ],
       "importance": 2,
       "group": "blogs",
@@ -427,19 +371,19 @@
       "discussions": []
     },
     {
-      "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
-      "url": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
-      "source": "Google Research",
+      "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+      "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+      "source": "AWS Machine Learning",
       "summary": {
-        "what": "A benchmark generator for middle-mile logistics optimization problems.",
-        "why": "It enables evaluation of routing algorithms using realistic synthetic supply chain scenarios.",
-        "who": "Google Research"
+        "what": "An integration of six open-source agent skills designed to automate the deployment of Hugging Face models on Amazon SageMaker AI.",
+        "why": "It simplifies production deployment by automatically configuring serving containers, autoscaling, monitoring, and teardown processes via coding agents.",
+        "who": "AWS Machine Learning"
       },
-      "published_at": "2026-09-18T17:46:09+00:00",
-      "fetched_at": "2026-09-19T10:41:30.134971+00:00",
-      "author": "",
+      "published_at": "2026-09-18T15:25:23+00:00",
+      "fetched_at": "2026-09-20T11:04:09.697793+00:00",
+      "author": "Dario Salvati",
       "tags": [
-        "simulation",
+        "training-infra",
         "general-ml"
       ],
       "importance": 2,
@@ -448,107 +392,22 @@
       "discussions": []
     },
     {
-      "title": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime",
-      "url": "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
-      "source": "AWS Machine Learning",
+      "title": "Small Language Models: How Small Is Too Small?",
+      "url": "https://medium.com/@tort_mario/small-language-models-how-small-is-too-small-022bc032d8eb?source=rss------artificial_intelligence-5",
+      "source": "Medium · AI",
       "summary": {
-        "what": "An architecture pattern for moving multi-model AI agents to a managed cloud runtime.",
-        "why": "It demonstrates how to offload infrastructure overhead for complex agentic workflows while maintaining retrieval and orchestration.",
-        "who": "AWS Machine Learning"
+        "what": "A practical guide comparing small language models to larger architectures and explaining how to deploy them locally.",
+        "why": "It helps practitioners understand the trade-offs of using smaller, resource-efficient models for specific tasks.",
+        "who": "Tort Mario"
       },
-      "published_at": "2026-09-18T15:38:53+00:00",
-      "fetched_at": "2026-09-19T10:41:31.765293+00:00",
-      "author": "Sanhita Sarkar",
-      "tags": [
-        "llm",
-        "training-infra",
-        "other"
-      ],
-      "importance": 2,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
-      "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
-      "source": "AWS Machine Learning",
-      "summary": {
-        "what": "Amazon introduces a specialized execution engine for production AI agents within Bedrock.",
-        "why": "It improves operational efficiency by accelerating cold start times and reclaiming idle memory dynamically.",
-        "who": "AWS Machine Learning"
-      },
-      "published_at": "2026-09-18T15:31:34+00:00",
-      "fetched_at": "2026-09-19T10:41:31.765562+00:00",
-      "author": "Evandro Franco",
-      "tags": [
-        "training-infra",
-        "other"
-      ],
-      "importance": 2,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "How a global fintech scaled coding agent traffic with Dedicated Model Inference",
-      "url": "https://www.together.ai/blog/global-fintech-scales-coding-agent-traffic-with-dedicated-model-inference",
-      "source": "Together AI",
-      "summary": {
-        "what": "An industry case study detailing a financial institution's deployment of dedicated model inference for coding assistants.",
-        "why": "It demonstrates how enterprise teams can manage custom scaling, testing, and model control for high-traffic software agents.",
-        "who": "Together AI"
-      },
-      "published_at": "2026-09-18T00:00:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.856777+00:00",
-      "author": "",
-      "tags": [
-        "training-infra",
-        "llm"
-      ],
-      "importance": 2,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
-      "url": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
-      "source": "Google Research",
-      "summary": {
-        "what": "A generative UI tool that helps educators build custom interactive learning exercises.",
-        "why": "It lowers the technical barrier for teachers to produce bespoke instructional digital content.",
-        "who": "Google Research"
-      },
-      "published_at": "2026-09-17T20:45:00+00:00",
-      "fetched_at": "2026-09-19T10:41:30.135307+00:00",
-      "author": "",
-      "tags": [
-        "llm",
-        "multimodal"
-      ],
-      "importance": 2,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Note on 18th September 2026",
-      "url": "https://simonwillison.net/2026/Sep/18/probably-gonna-eat-you/",
-      "source": "Simon Willison",
-      "summary": {
-        "what": "A brief opinion note comparing computer scientists who ignore LLMs to geneticists ignoring Jurassic Park.",
-        "why": "It emphasizes the dramatic impact and significance of modern large language models on the field of computer science.",
-        "who": "Simon Willison"
-      },
-      "published_at": "2026-09-18T19:21:32+00:00",
-      "fetched_at": "2026-09-19T10:41:31.280429+00:00",
-      "author": "",
+      "published_at": "2026-09-20T10:57:27+00:00",
+      "fetched_at": "2026-09-20T11:04:13.229931+00:00",
+      "author": "Tort Mario",
       "tags": [
         "llm"
       ],
       "importance": 1,
-      "group": "blogs",
+      "group": "medium",
       "links": {},
       "discussions": []
     }
