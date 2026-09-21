@@ -4,153 +4,245 @@
     <title>AR — daily AI/ML digest</title>
     <link>https://ai-news-blush.vercel.app</link>
     <description>Curated AI/ML research and releases with what/why/who summaries.</description>
-    <lastBuildDate>Sun, 20 Sep 2026 11:17:56 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 12:48:41 +0000</lastBuildDate>
     <item>
-      <title>I built non-autoregressive decision models with RL a year ago</title>
-      <link>https://laya.convaiinnovations.com/</link>
-      <guid isPermaLink="false">https://laya.convaiinnovations.com/</guid>
-      <pubDate>Sat, 19 Sep 2026 10:46:58 +0000</pubDate>
+      <title>Elastic Threshold Attention: Learned Contextual Sparsity for Long-Context Decoding</title>
+      <link>https://arxiv.org/abs/2609.20888</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20888</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A trainable sparse attention mechanism called Elastic Threshold Attention.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses dynamic thresholds to prune KV caches, increasing decoding speed without losing dense model accuracy.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Themistoklis Haris, Henry Li, Maryam Karimzadehgan&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts</title>
+      <link>https://arxiv.org/abs/2609.21346</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.21346</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>general-ml</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces IntBMoE, a block-conditioned Mixture-of-Experts architecture.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It decouples expert participation, execution, and memory costs to achieve full expert contribution with sparse computation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AMap (Alibaba) machine learning team&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · general-ml, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Grounded Skill Synthesis from Code at Scale for Agentic Intelligence</title>
+      <link>https://arxiv.org/abs/2609.05571</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.05571</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A pipeline called Code2Skill that automatically extracts and verifies executable agent skills from GitHub repositories.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It allows AI agents to acquire procedural knowledge from source code without needing prior interaction experience.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yongqi Tong, Pan Wang, Hang Wang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CodeMidas: Scaling Agentic Coding RL Environments from Code Itself</title>
+      <link>https://arxiv.org/abs/2609.22068</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.22068</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>reinforcement-learning</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A pipeline that converts existing source code into executable RL training environments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables scaling agentic coding training by generating diverse tasks directly from codebases rather than relying on manual issues.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Bowen Ye, Lei Li, Shicheng Li et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · reinforcement-learning, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>EvoOntology: A Self-Evolving Ontology Layer for Data Agents</title>
+      <link>https://arxiv.org/abs/2609.15779</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.15779</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework that creates and autonomously updates a semantic ontology layer for data agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reduces the gap between LLMs and heterogeneous data by replacing manual schemas with a self-refining loop.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; RUC DataLab&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pirate Face Rescues LLM Models from Deletion</title>
+      <link>https://pirateface.co/</link>
+      <guid isPermaLink="false">https://pirateface.co/</guid>
+      <pubDate>Sun, 20 Sep 2026 15:16:07 +0000</pubDate>
+      <category>training-infra</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A decentralized hosting service that mirrors open-source models as torrents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a censorship-resistant alternative to centralized hubs like Hugging Face.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Pirate Face&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · training-infra, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Qwen Image 2.1</title>
+      <link>https://qwen.ai/blog?id=qwen-image-2.1</link>
+      <guid isPermaLink="false">https://qwen.ai/blog?id=qwen-image-2.1</guid>
+      <pubDate>Sun, 20 Sep 2026 13:09:25 +0000</pubDate>
+      <category>multimodal</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An updated version of the Qwen vision-language model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Improves image understanding and processing capabilities over previous iterations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Alibaba Qwen Team&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models</title>
+      <link>https://arxiv.org/abs/2609.20971</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20971</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A training-free sparse attention mechanism for accelerating LLM prefill.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses a dual-branch selection process to prevent relevant tokens from being ignored during block-sparse attention.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Chuxu Song, Jiuqi Wei, Zhencan Peng&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Attention-Aware Routing: Coupling Routing and Attention in MoEs</title>
+      <link>https://arxiv.org/abs/2609.20974</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20974</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>interpretability</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A novel routing method for Mixture-of-Experts architectures that integrates contextual attention features into expert selection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves mathematical reasoning performance while keeping base transformer weights frozen and uncovering dynamic interactions between routing and attention.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Despoina Kosmopoulou, Anastasios Tsetsilas, Efthymios Georgiou et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, interpretability&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CaLR: Causal Latent Revision for Robust Diffusion Reasoning</title>
+      <link>https://arxiv.org/abs/2609.20981</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20981</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>foundational-models</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework called CaLR that treats reasoning as constrained latent optimization for diffusion language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses a causal topology matrix to allow parallel generation to self-correct and maintain logical consistency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Wei Cai, Jian Zhao, Yuchen Yuan et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · foundational-models, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sparse Priors for Efficient Distribution Learning</title>
+      <link>https://arxiv.org/abs/2609.20883</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20883</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A theoretical paper introducing sparse priors to improve distribution learning efficiency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a mathematical framework to bypass the curse of dimensionality in sample complexity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Saumya Goyal, Barnab\'as P\'oczos&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Do Quantum Models Scale Like LLMs?</title>
+      <link>https://arxiv.org/abs/2609.20912</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20912</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>foundational-models</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study on neural scaling laws using a transformer trained on Rydberg atom measurement data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It suggests scaling laws depend on the data's multi-scale structure, specifically near quantum critical points.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; David S. Berman, Ying-Jer Kao, Roger G. Melko et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · foundational-models, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Do small language models know what they don't know?</title>
+      <link>https://arxiv.org/abs/2609.20824</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20824</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>interpretability</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study on uncertainty estimation in models under 3B parameters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It finds token-level entropy fails in small models, but semantic entropy enables effective routing to larger experts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Prashant Mudgal&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, interpretability&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HERMES: Contrast-Aware Knowledge Graph Reasoning from Clinical Notes for Patient Outcome Prediction</title>
+      <link>https://arxiv.org/abs/2609.20825</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20825</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A graph-based framework for predicting patient outcomes using clinical notes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses LLMs to build personalized knowledge graphs that capture temporal dynamics and treatment failures better than flat text sequences.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Gia-Bach Nguyen, Hoang-Ha Nguyen, Tuan-Cuong Vuong et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From Discharge Notes to Patient Understanding: Persona-Grounded, Open-Ended Simulation of LLMs as Discharge Educators</title>
+      <link>https://arxiv.org/abs/2609.20827</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20827</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>simulation</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark called DischargeBench for evaluating LLMs in patient education roles.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses persona-grounded simulations to test if models can adapt medical instructions to varying patient literacy levels.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Won Seok Jang, Zonghai Yao, Hong Yu&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, simulation&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TAPe+ML: A Compact Structured Representation for Multi-Task Computer Vision</title>
+      <link>https://arxiv.org/abs/2609.20869</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20869</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A compact multi-task computer vision system using a structured representation called TAPe.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves high performance on COCO and ImageNet with fewer than 100k parameters by encoding perceptual relations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Sergey Kurinov (Comexp Research Lab, TAPe + ML Project, Nizhniy Novgorod et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · general-ml, multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stop Sending Every Tool to Your LLM: Building a Simple Agentic Controller to Reduce Token Cost</title>
+      <link>https://veerannababu.medium.com/stop-sending-every-tool-to-your-llm-building-a-simple-agentic-controller-to-reduce-token-cost-5e15596b64be?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://veerannababu.medium.com/stop-sending-every-tool-to-your-llm-building-a-simple-agentic-controller-to-reduce-token-cost-5e15596b64be?source=rss------llm-5</guid>
+      <pubDate>Mon, 21 Sep 2026 12:14:28 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A proposal for an agentic controller to filter tool selection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It aims to lower token consumption by preventing the main model from seeing every available tool.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; veeranna babu&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The current balance of power in open models</title>
+      <link>https://www.interconnects.ai/p/the-current-balance-of-power-in-open</link>
+      <guid isPermaLink="false">https://www.interconnects.ai/p/the-current-balance-of-power-in-open</guid>
+      <pubDate>Mon, 21 Sep 2026 11:56:56 +0000</pubDate>
+      <category>llm</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An analysis of the competitive landscape between open-source and proprietary AI models, adapted from congressional testimony.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It evaluates how open models perform relative to closed ones and discusses the policy implications of open-weight AI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nathan Lambert of Interconnects&lt;/p&gt;&lt;p&gt;Interconnects · importance 2/5 · llm, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Some very simple Qwen-Image-2.1 workflows</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows/</guid>
+      <pubDate>Mon, 21 Sep 2026 08:47:16 +0000</pubDate>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A collection of ComfyUI workflows for the Qwen-Image-2.1 model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Provides practical implementations for image editing, outpainting, and subject extraction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; nomadoor&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>V5 Update Newbie Minimax H3 sam 3.1 latent mask for guided character replacement</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1wm62zl/v5_update_newbie_minimax_h3_sam_31_latent_mask/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wm62zl/v5_update_newbie_minimax_h3_sam_31_latent_mask/</guid>
+      <pubDate>Mon, 21 Sep 2026 07:39:00 +0000</pubDate>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A workflow update for the Minimax model featuring latent masking and audio controls.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces guided character replacement via SAM 3.1 and precise resolution selection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; roycho87&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ostris/ai-toolkit + Qwen-Image-2.1 LoRA training support</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1wm4p91/ostrisaitoolkit_qwenimage21_lora_training_support/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wm4p91/ostrisaitoolkit_qwenimage21_lora_training_support/</guid>
+      <pubDate>Mon, 21 Sep 2026 06:19:16 +0000</pubDate>
+      <category>multimodal</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An update to the ai-toolkit repository adding LoRA training support for Qwen-Image-2.1.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables fine-tuning for a specific multimodal vision-language model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; ostris&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Clarification on the Qwen-image-2.1 license</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/</guid>
+      <pubDate>Mon, 21 Sep 2026 06:17:43 +0000</pubDate>
+      <category>multimodal</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A licensing update for the Qwen-image-2.1 model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It clarifies the legal terms for using the vision-language model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Qwen&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · multimodal, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LoRA Enhanced Contrastive Learning with SAS Vision Transformers</title>
+      <link>https://arxiv.org/abs/2609.21061</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.21061</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>multimodal</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A three-stage parameter-efficient framework for adapting Vision Transformers to sonar imagery.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates that simple LoRA adaptation outperforms complex contrastive learning and negative mining for this domain.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Dan Zimmerman, Frank E. Bobe III, Amelia L. McCormack et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies</title>
+      <link>https://arxiv.org/abs/2609.20906</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20906</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
       <category>reinforcement-learning</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-source, non-autoregressive decision engine called Laya that uses reinforcement learning for fast probability predictions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves sub-35ms latency and multilingual support, offering a faster, open-weight alternative to proprietary schema-based decision models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nandakishor Mukkunnoth of ConvAI Innovations&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · reinforcement-learning, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GPT-6 Astra Solves a WWI German Radio Cipher</title>
-      <link>https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio</link>
-      <guid isPermaLink="false">https://www.prinzai.com/p/gpt-6-astra-solves-a-wwi-german-radio</guid>
-      <pubDate>Sat, 19 Sep 2026 06:41:44 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A report of a next-generation LLM solving a previously unbroken WWI ADFGVX cipher.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates advanced reasoning and the ability to apply complex historical cryptographic rules to raw data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; nsoonhui&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>US Military had close call after using AI for hallucinated intelligence report</title>
-      <link>https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship</link>
-      <guid isPermaLink="false">https://www.cnn.com/2026/09/18/politics/us-military-ai-false-intelligence-china-ship</guid>
-      <pubDate>Fri, 18 Sep 2026 17:28:01 +0000</pubDate>
-      <category>ai-safety</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A news report detailing a US military incident caused by a hallucinated AI intelligence report.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It illustrates the severe operational risks and safety hazards of relying on unverified LLM outputs in critical domains.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; CNN Politics&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · ai-safety, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>An Empirical Study of Harness Design for Coding Agents</title>
-      <link>https://arxiv.org/abs/2609.20804</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.20804</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper evaluates the individual components of execution harnesses for LLM-based coding agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It isolates how planning, action spaces, and context management strategies impact agent performance and cost-efficiency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Run-Ze Fan, Zihao Zhang, Simin Ma et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>JEPA-Anything: Learning Predictive Models across Different Worlds</title>
-      <link>https://arxiv.org/abs/2609.20800</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.20800</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <category>world-models</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A domain-agnostic world modeling framework called JEPA-Anything that uses orthogonal predictive factorization to decompose and recombine latent targets.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables predictive modeling across highly diverse domains, including biology, weather, and molecular dynamics, outperforming standard JEPA baselines.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Gen-Verse&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · world-models, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Google’s Gemini is the latest AI model to hack other companies</title>
-      <link>https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/</link>
-      <guid isPermaLink="false">https://techcrunch.com/2026/09/19/googles-gemini-is-the-latest-ai-model-to-hack-other-companies/</guid>
-      <pubDate>Sat, 19 Sep 2026 17:30:00 +0000</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An assessment showing Google's Gemini model can autonomously exploit software vulnerabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It underscores the dual-use risks and emerging offensive cybersecurity capabilities of LLM agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · llm, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Introducing Amazon SageMaker HyperPod Inference Gateway</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/</guid>
-      <pubDate>Fri, 18 Sep 2026 13:08:34 +0000</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A Kubernetes-native routing tool for Amazon EKS designed to optimize GPU-based model serving.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reduces first-token latency by dynamically routing requests based on real-time GPU metrics without requiring model changes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 3/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Verifiable Social Reasoning for LLM Assistants</title>
-      <link>https://arxiv.org/abs/2609.17496</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.17496</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
       <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces Fuse, a multi-agent simulation framework for evaluating social reasoning in LLMs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes verifiable ground truths to test how models handle biased user narratives and complex social dynamics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Amir Taubenfeld, Zorik Gekhman, Avigail Grinstein-Dabush et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 3/5 · llm, simulation&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A paper introducing a modified SGD with delayed memory and a continuous-time RL policy gradient framework.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It claims to improve convergence and exploration in stochastic landscapes without requiring HJB PDE solutions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Debartha Paul, Juncheng Yi&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · reinforcement-learning, general-ml, simulation&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Self-Evolving Search Index</title>
-      <link>https://arxiv.org/abs/2609.19656</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.19656</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
+      <title>TALON: A Temporally Aware Longitudinal Framework for Radiology Report Generation</title>
+      <link>https://arxiv.org/abs/2609.20826</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20826</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
+      <category>multimodal</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework called SELF-INDEX for autonomous search index optimization.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It replaces manual index tuning with an automated loop that diagnoses failures and simulates new queries.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Sangam Lee, Wonjae Lee, Sunghwan Kim et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework for generating radiology reports using longitudinal patient data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses a dual-channel fusion module to better track changes across multiple prior exams.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nien-Tsyr Sun, Min-Chen Chen, Hui Nien Hung et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Memes to Videos</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1wlbcw3/memes_to_videos/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wlbcw3/memes_to_videos/</guid>
-      <pubDate>Sun, 20 Sep 2026 08:22:50 +0000</pubDate>
+      <title>MemeTAG: Keyword-Driven Meme Classification through Tag Embedding Reconstruction</title>
+      <link>https://arxiv.org/abs/2609.20962</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.20962</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 -0400</pubDate>
       <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An experimental pipeline that animates static images into videos with synchronized audio.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a hobbyist integration of VoxCPM2 for audio and H3 for video generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; An independent creator on r/StableDiffusion&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>YuE2: KSampler 16x faster, fix for long songs and other findings</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1wlaawx/yue2_ksampler_16x_faster_fix_for_long_songs_and/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wlaawx/yue2_ksampler_16x_faster_fix_for_long_songs_and/</guid>
-      <pubDate>Sun, 20 Sep 2026 07:22:32 +0000</pubDate>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A guide detailing workflow optimizations and bug fixes for running the YuE2 music model in ComfyUI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It speeds up KSampler inference nearly 16x without severe quality drops and fixes track desynchronization issues.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; A community member on r/StableDiffusion.&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reached 1.89 TB/s memory bandwidth overclocking the CMP 170hx</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1wl9amq/reached_189_tbs_memory_bandwidth_overclocking_the/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1wl9amq/reached_189_tbs_memory_bandwidth_overclocking_the/</guid>
-      <pubDate>Sun, 20 Sep 2026 06:27:26 +0000</pubDate>
-      <category>training-infra</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An enthusiast overclocked a CMP 170HX mining GPU to reach 1.89 TB/s of memory bandwidth.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; This extreme overclock yields a massive 83 percent speedup in local LLM token generation speeds.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Feralzi&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · training-infra, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Meridian Camera H3 — by Bruxos do VFX</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1wl7gph/meridian_camera_h3_by_bruxos_do_vfx/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wl7gph/meridian_camera_h3_by_bruxos_do_vfx/</guid>
-      <pubDate>Sun, 20 Sep 2026 04:49:15 +0000</pubDate>
-      <category>multimodal</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A ComfyUI integration for depth-based camera movement control using MiniMax H3 and Viggle Meridian.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables precise cinematic viewpoint manipulation within diffusion pipelines.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Bruxos do VFX&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>this looks promising: stepfun-ai/Step-5-Preview-BF16 · Hugging Face</title>
-      <link>https://huggingface.co/stepfun-ai/Step-5-Preview-BF16</link>
-      <guid isPermaLink="false">https://huggingface.co/stepfun-ai/Step-5-Preview-BF16</guid>
-      <pubDate>Sun, 20 Sep 2026 03:57:54 +0000</pubDate>
-      <category>llm</category>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A bfloat16-formatted preview model from the Step series has been uploaded to Hugging Face.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides community access to an early iteration of a lesser-known large language model family for local evaluation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; StepFun&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm, foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Why I still haven’t bought into true RSI</title>
-      <link>https://www.interconnects.ai/p/where-i-stand-on-rsi</link>
-      <guid isPermaLink="false">https://www.interconnects.ai/p/where-i-stand-on-rsi</guid>
-      <pubDate>Sat, 19 Sep 2026 15:42:20 +0000</pubDate>
-      <category>foundational-models</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An analytical essay evaluating the feasibility of recursive self-improvement in frontier AI models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It argues that practical bottlenecks like data quality and evaluation limits prevent true self-improvement loops.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nathan Lambert of Interconnects&lt;/p&gt;&lt;p&gt;Interconnects · importance 2/5 · foundational-models, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Deploy Hugging Face models on Amazon SageMaker AI with coding agents</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/</guid>
-      <pubDate>Fri, 18 Sep 2026 15:25:23 +0000</pubDate>
-      <category>training-infra</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An integration of six open-source agent skills designed to automate the deployment of Hugging Face models on Amazon SageMaker AI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It simplifies production deployment by automatically configuring serving containers, autoscaling, monitoring, and teardown processes via coding agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · training-infra, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A dual-objective framework for classifying harmful internet memes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses a keyword-aware reconstruction loss to better align visual and textual features.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Akshit Sharma, Prashant W. Patil&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Small Language Models: How Small Is Too Small?</title>
-      <link>https://medium.com/@tort_mario/small-language-models-how-small-is-too-small-022bc032d8eb?source=rss------artificial_intelligence-5</link>
-      <guid isPermaLink="false">https://medium.com/@tort_mario/small-language-models-how-small-is-too-small-022bc032d8eb?source=rss------artificial_intelligence-5</guid>
-      <pubDate>Sun, 20 Sep 2026 10:57:27 +0000</pubDate>
+      <title>llm-keys-ui 0.1</title>
+      <link>https://simonwillison.net/2026/Sep/20/llm-keys-ui/</link>
+      <guid isPermaLink="false">https://simonwillison.net/2026/Sep/20/llm-keys-ui/</guid>
+      <pubDate>Sun, 20 Sep 2026 19:22:19 +0000</pubDate>
       <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A practical guide comparing small language models to larger architectures and explaining how to deploy them locally.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It helps practitioners understand the trade-offs of using smaller, resource-efficient models for specific tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Tort Mario&lt;/p&gt;&lt;p&gt;Medium · AI · importance 1/5 · llm&lt;/p&gt;</description>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A plugin for managing API keys via a web interface.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It allows secure key configuration on remote machines without pasting secrets into chat sessions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Simon Willison&lt;/p&gt;&lt;p&gt;Simon Willison · importance 2/5 · llm, other&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

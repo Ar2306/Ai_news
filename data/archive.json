@@ -1,6 +1,641 @@
 {
-  "generated_at": "2026-09-20T11:17:56.769389+00:00",
+  "generated_at": "2026-09-21T12:48:41.625658+00:00",
   "archive": [
+    {
+      "date": "2026-09-21",
+      "total": 27,
+      "tags": {
+        "llm": 14,
+        "reinforcement-learning": 2,
+        "foundational-models": 4,
+        "multimodal": 9,
+        "interpretability": 2,
+        "simulation": 2,
+        "training-infra": 4,
+        "general-ml": 11,
+        "other": 2
+      },
+      "articles": [
+        {
+          "title": "Elastic Threshold Attention: Learned Contextual Sparsity for Long-Context Decoding",
+          "url": "https://arxiv.org/abs/2609.20888",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A trainable sparse attention mechanism called Elastic Threshold Attention.",
+            "why": "It uses dynamic thresholds to prune KV caches, increasing decoding speed without losing dense model accuracy.",
+            "who": "Themistoklis Haris, Henry Li, Maryam Karimzadehgan"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Themistoklis Haris, Henry Li, Maryam Karimzadehgan",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20888"
+          },
+          "discussions": []
+        },
+        {
+          "title": "IntBMoE: Integrating Block-Level Conditioning into Expert Composition for Full-Participation Mixture-of-Experts",
+          "url": "https://arxiv.org/abs/2609.21346",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces IntBMoE, a block-conditioned Mixture-of-Experts architecture.",
+            "why": "It decouples expert participation, execution, and memory costs to achieve full expert contribution with sparse computation.",
+            "who": "AMap (Alibaba) machine learning team"
+          },
+          "published_at": "2026-09-21T00:00:00+00:00",
+          "author": "Ran Cheng, Longfei Xu, Zheng Liu, Kaikui Liu, Xiangxiang Chu",
+          "tags": [
+            "general-ml",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.21346",
+            "hf": "https://huggingface.co/papers/2609.21346"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Grounded Skill Synthesis from Code at Scale for Agentic Intelligence",
+          "url": "https://arxiv.org/abs/2609.05571",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A pipeline called Code2Skill that automatically extracts and verifies executable agent skills from GitHub repositories.",
+            "why": "It allows AI agents to acquire procedural knowledge from source code without needing prior interaction experience.",
+            "who": "Yongqi Tong, Pan Wang, Hang Wang et al."
+          },
+          "published_at": "2026-09-21T00:00:00+00:00",
+          "author": "Yongqi Tong, Pan Wang, Hang Wang, Jianshe Li, Xin Zhang, Jiang-Ming Yang, Wei Wu",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.05571",
+            "hf": "https://huggingface.co/papers/2609.05571",
+            "code": "https://github.com/ant-intl/Code2Skill"
+          },
+          "discussions": []
+        },
+        {
+          "title": "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself",
+          "url": "https://arxiv.org/abs/2609.22068",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A pipeline that converts existing source code into executable RL training environments.",
+            "why": "It enables scaling agentic coding training by generating diverse tasks directly from codebases rather than relying on manual issues.",
+            "who": "Bowen Ye, Lei Li, Shicheng Li et al."
+          },
+          "published_at": "2026-09-21T00:00:00+00:00",
+          "author": "Bowen Ye, Lei Li, Shicheng Li, Zihao Yue, Linghao Zhang, Hanglong Lv, Yuanxin Liu, Wenhan Ma, Hao Tian, Rang Li, Jinhao Dong, Yikai Zhao, Xiangwei Deng, Hailin Zhang, Liang Zhao, Qi Liu, Lingpeng Kong, Tong Yang, Fuli Luo",
+          "tags": [
+            "reinforcement-learning",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.22068",
+            "hf": "https://huggingface.co/papers/2609.22068"
+          },
+          "discussions": []
+        },
+        {
+          "title": "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+          "url": "https://arxiv.org/abs/2609.15779",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A framework that creates and autonomously updates a semantic ontology layer for data agents.",
+            "why": "It reduces the gap between LLMs and heterogeneous data by replacing manual schemas with a self-refining loop.",
+            "who": "RUC DataLab"
+          },
+          "published_at": "2026-09-21T00:00:00+00:00",
+          "author": "Meiduo Chong, Shaolei Zhang, Ju Fan, Xiaoyong Du",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.15779",
+            "hf": "https://huggingface.co/papers/2609.15779",
+            "code": "https://github.com/ruc-datalab/EvoOntology"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Pirate Face Rescues LLM Models from Deletion",
+          "url": "https://pirateface.co/",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A decentralized hosting service that mirrors open-source models as torrents.",
+            "why": "It provides a censorship-resistant alternative to centralized hubs like Hugging Face.",
+            "who": "Pirate Face"
+          },
+          "published_at": "2026-09-20T15:16:07+00:00",
+          "author": "skepticalgenius",
+          "tags": [
+            "training-infra",
+            "other"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49776699",
+              "points": 538
+            }
+          ]
+        },
+        {
+          "title": "Qwen Image 2.1",
+          "url": "https://qwen.ai/blog?id=qwen-image-2.1",
+          "source": "Hacker News",
+          "summary": {
+            "what": "An updated version of the Qwen vision-language model.",
+            "why": "Improves image understanding and processing capabilities over previous iterations.",
+            "who": "Alibaba Qwen Team"
+          },
+          "published_at": "2026-09-20T13:09:25+00:00",
+          "author": "jmillikin",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49775499",
+              "points": 670
+            },
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wlgb7k/qwen_image_21_official_blog_post/"
+            }
+          ]
+        },
+        {
+          "title": "RBS-Attention: Radius-Bounded Sparse Prefill for Long-Context Large Language Models",
+          "url": "https://arxiv.org/abs/2609.20971",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A training-free sparse attention mechanism for accelerating LLM prefill.",
+            "why": "It uses a dual-branch selection process to prevent relevant tokens from being ignored during block-sparse attention.",
+            "who": "Chuxu Song, Jiuqi Wei, Zhencan Peng"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Chuxu Song, Jiuqi Wei, Zhencan Peng",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20971"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Attention-Aware Routing: Coupling Routing and Attention in MoEs",
+          "url": "https://arxiv.org/abs/2609.20974",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A novel routing method for Mixture-of-Experts architectures that integrates contextual attention features into expert selection.",
+            "why": "It improves mathematical reasoning performance while keeping base transformer weights frozen and uncovering dynamic interactions between routing and attention.",
+            "who": "Despoina Kosmopoulou, Anastasios Tsetsilas, Efthymios Georgiou et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Despoina Kosmopoulou, Anastasios Tsetsilas, Efthymios Georgiou, Giannis Karamanolakis, Swastik Roy, Alexandros Potamianos",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20974"
+          },
+          "discussions": []
+        },
+        {
+          "title": "CaLR: Causal Latent Revision for Robust Diffusion Reasoning",
+          "url": "https://arxiv.org/abs/2609.20981",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A framework called CaLR that treats reasoning as constrained latent optimization for diffusion language models.",
+            "why": "It uses a causal topology matrix to allow parallel generation to self-correct and maintain logical consistency.",
+            "who": "Wei Cai, Jian Zhao, Yuchen Yuan et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Wei Cai, Jian Zhao, Yuchen Yuan, Xuelong Li",
+          "tags": [
+            "foundational-models",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20981"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Sparse Priors for Efficient Distribution Learning",
+          "url": "https://arxiv.org/abs/2609.20883",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A theoretical paper introducing sparse priors to improve distribution learning efficiency.",
+            "why": "It provides a mathematical framework to bypass the curse of dimensionality in sample complexity.",
+            "who": "Saumya Goyal, Barnab\\'as P\\'oczos"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Saumya Goyal, Barnab\\'as P\\'oczos",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20883"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Do Quantum Models Scale Like LLMs?",
+          "url": "https://arxiv.org/abs/2609.20912",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A study on neural scaling laws using a transformer trained on Rydberg atom measurement data.",
+            "why": "It suggests scaling laws depend on the data's multi-scale structure, specifically near quantum critical points.",
+            "who": "David S. Berman, Ying-Jer Kao, Roger G. Melko et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "David S. Berman, Ying-Jer Kao, Roger G. Melko, Alexander G. Stapleton",
+          "tags": [
+            "foundational-models",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20912"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Do small language models know what they don't know?",
+          "url": "https://arxiv.org/abs/2609.20824",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A study on uncertainty estimation in models under 3B parameters.",
+            "why": "It finds token-level entropy fails in small models, but semantic entropy enables effective routing to larger experts.",
+            "who": "Prashant Mudgal"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Prashant Mudgal",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20824"
+          },
+          "discussions": []
+        },
+        {
+          "title": "HERMES: Contrast-Aware Knowledge Graph Reasoning from Clinical Notes for Patient Outcome Prediction",
+          "url": "https://arxiv.org/abs/2609.20825",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A graph-based framework for predicting patient outcomes using clinical notes.",
+            "why": "It uses LLMs to build personalized knowledge graphs that capture temporal dynamics and treatment failures better than flat text sequences.",
+            "who": "Gia-Bach Nguyen, Hoang-Ha Nguyen, Tuan-Cuong Vuong et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Gia-Bach Nguyen, Hoang-Ha Nguyen, Tuan-Cuong Vuong, Trang Mai Xuan, Duy Quoc Ngo, Tien-Cuong Nguyen, Huan Vu, Thien Van Luong",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20825"
+          },
+          "discussions": []
+        },
+        {
+          "title": "From Discharge Notes to Patient Understanding: Persona-Grounded, Open-Ended Simulation of LLMs as Discharge Educators",
+          "url": "https://arxiv.org/abs/2609.20827",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A benchmark called DischargeBench for evaluating LLMs in patient education roles.",
+            "why": "It uses persona-grounded simulations to test if models can adapt medical instructions to varying patient literacy levels.",
+            "who": "Won Seok Jang, Zonghai Yao, Hong Yu"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Won Seok Jang, Zonghai Yao, Hong Yu",
+          "tags": [
+            "llm",
+            "simulation"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20827"
+          },
+          "discussions": []
+        },
+        {
+          "title": "TAPe+ML: A Compact Structured Representation for Multi-Task Computer Vision",
+          "url": "https://arxiv.org/abs/2609.20869",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "A compact multi-task computer vision system using a structured representation called TAPe.",
+            "why": "It achieves high performance on COCO and ImageNet with fewer than 100k parameters by encoding perceptual relations.",
+            "who": "Sergey Kurinov (Comexp Research Lab, TAPe + ML Project, Nizhniy Novgorod et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Sergey Kurinov (Comexp Research Lab, TAPe + ML Project, Nizhniy Novgorod, Russia), Alexey Upatov (Comexp Research Lab, TAPe + ML Project, Nizhniy Novgorod, Russia)",
+          "tags": [
+            "general-ml",
+            "multimodal"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20869"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Stop Sending Every Tool to Your LLM: Building a Simple Agentic Controller to Reduce Token Cost",
+          "url": "https://veerannababu.medium.com/stop-sending-every-tool-to-your-llm-building-a-simple-agentic-controller-to-reduce-token-cost-5e15596b64be?source=rss------llm-5",
+          "source": "Medium · LLM",
+          "summary": {
+            "what": "A proposal for an agentic controller to filter tool selection.",
+            "why": "It aims to lower token consumption by preventing the main model from seeing every available tool.",
+            "who": "veeranna babu"
+          },
+          "published_at": "2026-09-21T12:14:28+00:00",
+          "author": "veeranna babu",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "The current balance of power in open models",
+          "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+          "source": "Interconnects",
+          "summary": {
+            "what": "An analysis of the competitive landscape between open-source and proprietary AI models, adapted from congressional testimony.",
+            "why": "It evaluates how open models perform relative to closed ones and discusses the policy implications of open-weight AI.",
+            "who": "Nathan Lambert of Interconnects"
+          },
+          "published_at": "2026-09-21T11:56:56+00:00",
+          "author": "Nathan Lambert",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Some very simple Qwen-Image-2.1 workflows",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A collection of ComfyUI workflows for the Qwen-Image-2.1 model.",
+            "why": "Provides practical implementations for image editing, outpainting, and subject extraction.",
+            "who": "nomadoor"
+          },
+          "published_at": "2026-09-21T08:47:16+00:00",
+          "author": "nomadoor",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm77xo/some_very_simple_qwenimage21_workflows/"
+            }
+          ]
+        },
+        {
+          "title": "V5 Update Newbie Minimax H3 sam 3.1 latent mask for guided character replacement",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm62zl/v5_update_newbie_minimax_h3_sam_31_latent_mask/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A workflow update for the Minimax model featuring latent masking and audio controls.",
+            "why": "It introduces guided character replacement via SAM 3.1 and precise resolution selection.",
+            "who": "roycho87"
+          },
+          "published_at": "2026-09-21T07:39:00+00:00",
+          "author": "roychodraws",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/roycho87/minimax_wf"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm62zl/v5_update_newbie_minimax_h3_sam_31_latent_mask/"
+            }
+          ]
+        },
+        {
+          "title": "ostris/ai-toolkit + Qwen-Image-2.1 LoRA training support",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm4p91/ostrisaitoolkit_qwenimage21_lora_training_support/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An update to the ai-toolkit repository adding LoRA training support for Qwen-Image-2.1.",
+            "why": "It enables fine-tuning for a specific multimodal vision-language model.",
+            "who": "ostris"
+          },
+          "published_at": "2026-09-21T06:19:16+00:00",
+          "author": "reeight",
+          "tags": [
+            "multimodal",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/ostris/ai-toolkit"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wm4p91/ostrisaitoolkit_qwenimage21_lora_training_support/"
+            }
+          ]
+        },
+        {
+          "title": "Clarification on the Qwen-image-2.1 license",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A licensing update for the Qwen-image-2.1 model.",
+            "why": "It clarifies the legal terms for using the vision-language model.",
+            "who": "Qwen"
+          },
+          "published_at": "2026-09-21T06:17:43+00:00",
+          "author": "Bestlife73",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wm4o8x/clarification_on_the_qwenimage21_license/"
+            }
+          ]
+        },
+        {
+          "title": "LoRA Enhanced Contrastive Learning with SAS Vision Transformers",
+          "url": "https://arxiv.org/abs/2609.21061",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A three-stage parameter-efficient framework for adapting Vision Transformers to sonar imagery.",
+            "why": "Demonstrates that simple LoRA adaptation outperforms complex contrastive learning and negative mining for this domain.",
+            "who": "Dan Zimmerman, Frank E. Bobe III, Amelia L. McCormack et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Dan Zimmerman, Frank E. Bobe III, Amelia L. McCormack, Matthew Cook, Gregory D. Vetaw",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.21061"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Continuous Delayed-Memory Stochastic Gradient Descent and Continuous-Time Reinforcement Learning from History of Astrophysical Time Series Studies",
+          "url": "https://arxiv.org/abs/2609.20906",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A paper introducing a modified SGD with delayed memory and a continuous-time RL policy gradient framework.",
+            "why": "It claims to improve convergence and exploration in stochastic landscapes without requiring HJB PDE solutions.",
+            "who": "Debartha Paul, Juncheng Yi"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Debartha Paul, Juncheng Yi",
+          "tags": [
+            "reinforcement-learning",
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20906"
+          },
+          "discussions": []
+        },
+        {
+          "title": "TALON: A Temporally Aware Longitudinal Framework for Radiology Report Generation",
+          "url": "https://arxiv.org/abs/2609.20826",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A framework for generating radiology reports using longitudinal patient data.",
+            "why": "It uses a dual-channel fusion module to better track changes across multiple prior exams.",
+            "who": "Nien-Tsyr Sun, Min-Chen Chen, Hui Nien Hung et al."
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Nien-Tsyr Sun, Min-Chen Chen, Hui Nien Hung, Vincent S. Tseng",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20826"
+          },
+          "discussions": []
+        },
+        {
+          "title": "MemeTAG: Keyword-Driven Meme Classification through Tag Embedding Reconstruction",
+          "url": "https://arxiv.org/abs/2609.20962",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "A dual-objective framework for classifying harmful internet memes.",
+            "why": "It uses a keyword-aware reconstruction loss to better align visual and textual features.",
+            "who": "Akshit Sharma, Prashant W. Patil"
+          },
+          "published_at": "2026-09-21T00:00:00-04:00",
+          "author": "Akshit Sharma, Prashant W. Patil",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.20962"
+          },
+          "discussions": []
+        },
+        {
+          "title": "llm-keys-ui 0.1",
+          "url": "https://simonwillison.net/2026/Sep/20/llm-keys-ui/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A plugin for managing API keys via a web interface.",
+            "why": "It allows secure key configuration on remote machines without pasting secrets into chat sessions.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-09-20T19:22:19+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-09-20",
       "total": 17,
