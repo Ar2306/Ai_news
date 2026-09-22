@@ -1,16 +1,17 @@
 {
-  "generated_at": "2026-09-21T12:48:41.642835+00:00",
-  "duration_seconds": 984.1,
+  "generated_at": "2026-09-22T11:41:00.237536+00:00",
+  "duration_seconds": 1240.8,
   "counts": {
-    "fetched": 589,
-    "unique": 550,
-    "candidates": 77,
-    "kept": 27
+    "fetched": 650,
+    "unique": 606,
+    "candidates": 85,
+    "kept": 36
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 7,
-    "Ollama Cloud (gemma4:31b)": 68,
-    "Gemini (gemini-3.6-flash)": 2
+    "Gemini (gemini-3.5-flash)": 13,
+    "Ollama Cloud (gemma4:31b)": 3,
+    "Gemini (gemini-3.6-flash)": 10,
+    "Gemini (gemini-3.5-flash-lite)": 59
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -75,7 +76,7 @@
       "name": "Hamel Husain",
       "group": "blogs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -117,7 +118,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 16,
+      "items": 15,
       "error": ""
     },
     {
@@ -131,14 +132,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 38,
+      "items": 45,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 13,
+      "items": 11,
       "error": ""
     },
     {
@@ -152,14 +153,14 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Google AI",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
@@ -173,14 +174,14 @@
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 4,
       "error": ""
     },
     {
@@ -201,7 +202,7 @@
       "name": "Microsoft Research",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -215,21 +216,21 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 5,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 4,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 6,
       "error": ""
     },
     {
@@ -243,14 +244,14 @@
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 0,
+      "items": 4,
       "error": ""
     },
     {
@@ -271,7 +272,7 @@
       "name": "Medium · Generative AI",
       "group": "medium",
       "ok": true,
-      "items": 9,
+      "items": 10,
       "error": ""
     },
     {
@@ -292,21 +293,21 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 2,
+      "items": 6,
       "error": ""
     },
     {
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 6,
+      "items": 7,
       "error": ""
     },
     {
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 0,
+      "items": 3,
       "error": ""
     },
     {
@@ -320,21 +321,21 @@
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 12,
+      "items": 15,
       "error": ""
     },
     {
       "name": "The Verge AI",
       "group": "news",
       "ok": true,
-      "items": 9,
+      "items": 8,
       "error": ""
     },
     {
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 23,
+      "items": 52,
       "error": ""
     },
     {
