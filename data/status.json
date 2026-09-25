@@ -1,15 +1,17 @@
 {
-  "generated_at": "2026-09-24T11:37:43.080361+00:00",
-  "duration_seconds": 486.3,
+  "generated_at": "2026-09-25T11:50:46.544009+00:00",
+  "duration_seconds": 926.1,
   "counts": {
-    "fetched": 740,
-    "unique": 675,
+    "fetched": 731,
+    "unique": 678,
     "candidates": 85,
-    "kept": 38
+    "kept": 33
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 14,
-    "Ollama Cloud (gemma4:31b)": 71
+    "Ollama Cloud (gemma4:31b)": 3,
+    "Gemini (gemini-3.5-flash)": 10,
+    "Gemini (gemini-3.6-flash)": 7,
+    "Gemini (gemini-3.5-flash-lite)": 65
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -88,14 +90,14 @@
       "name": "Interconnects",
       "group": "blogs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 6,
+      "items": 9,
       "error": ""
     },
     {
@@ -116,7 +118,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 16,
+      "items": 15,
       "error": ""
     },
     {
@@ -130,14 +132,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 54,
+      "items": 50,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 16,
+      "items": 19,
       "error": ""
     },
     {
@@ -151,7 +153,7 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 3,
       "error": ""
     },
     {
@@ -165,14 +167,14 @@
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 3,
       "error": ""
     },
     {
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -214,21 +216,21 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 8,
+      "items": 9,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 11,
+      "items": 12,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 19,
+      "items": 16,
       "error": ""
     },
     {
@@ -249,7 +251,7 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 4,
+      "items": 5,
       "error": ""
     },
     {
@@ -291,7 +293,7 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 7,
       "error": ""
     },
     {
@@ -312,7 +314,7 @@
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -333,7 +335,7 @@
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 82,
+      "items": 71,
       "error": ""
     },
     {
