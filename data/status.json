@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-25T11:50:46.544009+00:00",
-  "duration_seconds": 926.1,
+  "generated_at": "2026-09-26T11:26:06.689341+00:00",
+  "duration_seconds": 970.5,
   "counts": {
-    "fetched": 731,
-    "unique": 678,
-    "candidates": 85,
-    "kept": 33
+    "fetched": 393,
+    "unique": 347,
+    "candidates": 70,
+    "kept": 22
   },
   "summarized_by": {
-    "Ollama Cloud (gemma4:31b)": 3,
-    "Gemini (gemini-3.5-flash)": 10,
-    "Gemini (gemini-3.6-flash)": 7,
-    "Gemini (gemini-3.5-flash-lite)": 65
+    "Gemini (gemini-3.5-flash)": 15,
+    "Gemini (gemini-3.6-flash)": 9,
+    "Ollama Cloud (gemma4:31b)": 1,
+    "Gemini (gemini-3.5-flash-lite)": 45
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -20,35 +20,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
@@ -97,7 +97,7 @@
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 9,
+      "items": 10,
       "error": ""
     },
     {
@@ -132,14 +132,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 50,
+      "items": 45,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 19,
+      "items": 20,
       "error": ""
     },
     {
@@ -181,7 +181,7 @@
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 2,
       "error": ""
     },
     {
@@ -202,7 +202,7 @@
       "name": "Microsoft Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -216,21 +216,21 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 9,
+      "items": 5,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 12,
+      "items": 9,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 16,
+      "items": 14,
       "error": ""
     },
     {
@@ -244,14 +244,14 @@
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 5,
+      "items": 3,
       "error": ""
     },
     {
@@ -293,14 +293,14 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 7,
+      "items": 10,
       "error": ""
     },
     {
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 7,
       "error": ""
     },
     {
@@ -335,7 +335,7 @@
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 71,
+      "items": 51,
       "error": ""
     },
     {
