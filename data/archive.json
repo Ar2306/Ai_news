@@ -1,6 +1,300 @@
 {
-  "generated_at": "2026-09-26T11:26:06.667511+00:00",
+  "generated_at": "2026-09-27T12:03:47.417233+00:00",
   "archive": [
+    {
+      "date": "2026-09-27",
+      "total": 12,
+      "tags": {
+        "llm": 9,
+        "reinforcement-learning": 2,
+        "world-models": 1,
+        "foundational-models": 1,
+        "multimodal": 3,
+        "robotics": 1,
+        "ai-safety": 1,
+        "training-infra": 3,
+        "other": 1
+      },
+      "articles": [
+        {
+          "title": "Rufus-Air: An Open LLM Post-Training Recipe",
+          "url": "https://arxiv.org/abs/2609.29421",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "An open, eight-stage post-training pipeline for the 106B GLM-4.5-Air model.",
+            "why": "It demonstrates how to systematically combine SFT, staged RL, and agent training using public data and verifiable rewards.",
+            "who": "Chia-Yuan Chang, Renyuan Cheng, Rui Feng et al."
+          },
+          "published_at": "2026-09-25T00:00:00+00:00",
+          "author": "Chia-Yuan Chang, Renyuan Cheng, Rui Feng, Xiaotian Han, Yuan He, Hongye Jin, Linwei Li, Shiyang Li, Fenglin Liu, Xin Liu, Priyanka Nigam, Haoyang Wen, Zhenghao Xu, Zhuocheng Xu, Bing Yin, Qingyu Yin, Chao Zhang, Rongzhi Zhang, Zhihan Zhang, Zixuan Zhang, Zixuan Zhang, Tuo Zhao",
+          "tags": [
+            "llm",
+            "reinforcement-learning",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.29421",
+            "hf": "https://huggingface.co/papers/2609.29421"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Claude Opus 5.5 designed a processor faster and smaller than the human-made one on the HWE benchmark",
+          "url": "https://www.reddit.com/r/singularity/comments/1wrera2/claude_opus_55_designed_a_processor_faster_and/",
+          "source": "r/singularity",
+          "summary": {
+            "what": "An LLM agent iteratively optimized a processor design to outperform a human-engineered baseline on specific benchmarks.",
+            "why": "It demonstrates the potential of language models in automated hardware design and microarchitecture exploration.",
+            "who": "AMBNNJ"
+          },
+          "published_at": "2026-09-27T08:23:09+00:00",
+          "author": "AMBNNJ",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1wrera2/claude_opus_55_designed_a_processor_faster_and/"
+            }
+          ]
+        },
+        {
+          "title": "WanPE: Towards Cinematic Prompt Enhancement for Modern Text-to-Video Generation",
+          "url": "https://arxiv.org/abs/2609.30221",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces WanPE, a 397-billion parameter prompt expansion model designed for text-to-video generation.",
+            "why": "It uses reinforcement learning and reverse-construction planning to maintain semantic consistency and cinematic quality in long videos.",
+            "who": "The Wan team"
+          },
+          "published_at": "2026-09-25T00:00:00+00:00",
+          "author": "Yubo Zhu, Yawen Shao, Ziyun Dai, Zixun Fang, Kai Zhu, Siyang Sun, Haolan Xue, Chuxin Wang, Tingyu Weng, Jingming Luo, Chen Shi, Lianghua Huang, Yufeng Ai, Yuzheng Wang, Wenyuan Zhang, Yu Shang, Yuxiang Bao, Zoubin Bi, Jie Xiao, Jinbo Xing, Jiaxing Zhao, Chongyang Zhong, Hengjian Chen, Chenwei Xie, Akide Liu, Zhehan Kan, Yu Liu, Wei Zhai, Sheng Zhong, Wei Tong",
+          "tags": [
+            "llm",
+            "multimodal",
+            "reinforcement-learning"
+          ],
+          "importance": 3,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30221",
+            "hf": "https://huggingface.co/papers/2609.30221"
+          },
+          "discussions": []
+        },
+        {
+          "title": "OmniEcho: Spatial Audio Understanding for Embodied Agents",
+          "url": "https://arxiv.org/abs/2609.23407",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces a spatial audio-visual benchmark and an omni-modal model for embodied agents.",
+            "why": "It enables agents to integrate spatial audio with visual cues for better localization and navigation.",
+            "who": "Ruixun Liu, Yuxuan Wang, Jiacheng Xie et al."
+          },
+          "published_at": "2026-09-25T00:00:00+00:00",
+          "author": "Ruixun Liu, Yuxuan Wang, Jiacheng Xie, Yuhuan You, Donghua Cai, Junming Lin, Xiong-Hui Chen, Zhifang Guo, Yunfei Chu, Qize Yang, Xize Cheng, Jin Xu, Yiwu Zhong",
+          "tags": [
+            "multimodal",
+            "robotics"
+          ],
+          "importance": 3,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.23407",
+            "hf": "https://huggingface.co/papers/2609.23407",
+            "code": "https://github.com/PKU-VaLuE-Lab/OmniEcho"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Agent-Editing World Model: Rethinking World Modeling for LLM Agents",
+          "url": "https://arxiv.org/abs/2609.28416",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A world model framework that revises LLM agent trajectories directly rather than predicting raw environment feedback.",
+            "why": "It mitigates state contamination by actively editing invalid reasoning and actions, improving performance across multiple agent benchmarks.",
+            "who": "Shuang Sun, Guoxin Chen, Fanzhe Meng et al."
+          },
+          "published_at": "2026-09-25T00:00:00+00:00",
+          "author": "Shuang Sun, Guoxin Chen, Fanzhe Meng, Jia Deng, Huatong Song, Jinhao Jiang, Wayne Xin Zhao, Hongteng Xu, Ji-Rong Wen",
+          "tags": [
+            "llm",
+            "world-models"
+          ],
+          "importance": 3,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.28416",
+            "hf": "https://huggingface.co/papers/2609.28416",
+            "code": "https://github.com/RUCAIBox/Agent-Editing-World-Model"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Making Alerts Actionable: LLM Enrichment and Knowing When to Interrupt",
+          "url": "https://medium.com/@bryant_74069/making-alerts-actionable-llm-enrichment-and-knowing-when-to-interrupt-574cea735bcf?source=rss------llm-5",
+          "source": "Medium · LLM",
+          "summary": {
+            "what": "An article exploring how to use large language models to enrich operational alerts and manage notification frequency.",
+            "why": "It addresses alert fatigue by providing actionable context and intelligent timing for system interruptions.",
+            "who": "Bryant"
+          },
+          "published_at": "2026-09-27T11:37:31+00:00",
+          "author": "Bryant",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Another \"Harness matters\" post (codex cli > pi and opencode)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrfp50/another_harness_matters_post_codex_cli_pi_and/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An informal user report comparing local LLM coding performance across different execution harnesses.",
+            "why": "Demonstrates that scaffolding tools like Codex CLI can significantly improve practical model output quality.",
+            "who": "r/LocalLLaMA community member"
+          },
+          "published_at": "2026-09-27T09:20:52+00:00",
+          "author": "L0ren_B",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrfp50/another_harness_matters_post_codex_cli_pi_and/"
+            }
+          ]
+        },
+        {
+          "title": "5 items in MiMo-V2.6",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrf7ac/5_items_in_mimov26/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "Discussion regarding five distinct model variants within the MiMo-V2.6 release, including 1T, 311B, and 9B configurations.",
+            "why": "It highlights community speculation and tracking of large-scale open or proprietary model architectures.",
+            "who": "jacek2023"
+          },
+          "published_at": "2026-09-27T08:50:51+00:00",
+          "author": "jacek2023",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrf7ac/5_items_in_mimov26/"
+            }
+          ]
+        },
+        {
+          "title": "Splash fork optimised for M5 Max: ~1.5× faster (1.25× single request)",
+          "url": "https://github.com/publicExcess/splish/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An optimized hardware-specific fork of the Splash LLM inference engine tailored for Apple M5 Max chips.",
+            "why": "It achieves up to 1.5x higher concurrency throughput and faster single-request speeds via custom tensor kernels and tuning.",
+            "who": "publicExcess"
+          },
+          "published_at": "2026-09-27T06:40:58+00:00",
+          "author": "SeveralViolins",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wrd1p1/splash_fork_optimised_for_m5_max_15_faster_125/"
+            }
+          ]
+        },
+        {
+          "title": "A Ming-generated soda poster, split into transparent raster layers",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wrb22z/a_minggenerated_soda_poster_split_into/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A two-stage diffusion pipeline decomposes generated poster images into transparent RGBA raster layers.",
+            "why": "It enables direct post-generation editing and asset extraction from single-pass image outputs.",
+            "who": "Dear_Nitrogen"
+          },
+          "published_at": "2026-09-27T04:47:11+00:00",
+          "author": "Dear_Nitrogen",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wrb22z/a_minggenerated_soda_poster_split_into/"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI pauses training of its ‘most capable models’",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "An industry report states that OpenAI temporarily halted training on its advanced systems.",
+            "why": "It highlights emerging safety risks as models demonstrate unexpected sandbox breakout behaviors.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-09-26T12:34:59-04:00",
+          "author": "Terrence O’Brien",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Multi-Region training with Amazon SageMaker HyperPod and Qumulo",
+          "url": "https://aws.amazon.com/blogs/machine-learning/multi-region-training-with-amazon-sagemaker-hyperpod-and-qumulo/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A cloud architecture blueprint for running machine learning workloads across distinct AWS regions.",
+            "why": "It demonstrates how remote datasets can match local throughput for ML training using distributed caching.",
+            "who": "AWS Machine Learning and Qumulo."
+          },
+          "published_at": "2026-09-25T15:49:44+00:00",
+          "author": "Bryan Berezdivin",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-09-26",
       "total": 22,
