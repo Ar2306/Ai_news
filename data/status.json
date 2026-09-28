@@ -1,17 +1,14 @@
 {
-  "generated_at": "2026-09-27T12:03:47.432796+00:00",
-  "duration_seconds": 925.3,
+  "generated_at": "2026-09-28T13:34:51.282236+00:00",
+  "duration_seconds": 244.7,
   "counts": {
-    "fetched": 314,
-    "unique": 271,
-    "candidates": 65,
-    "kept": 12
+    "fetched": 507,
+    "unique": 472,
+    "candidates": 71,
+    "kept": 30
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 9,
-    "Gemini (gemini-3.6-flash)": 10,
-    "Ollama Cloud (gemma4:31b)": 2,
-    "Gemini (gemini-3.5-flash-lite)": 44
+    "Ollama Cloud (gemma4:31b)": 71
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -20,21 +17,21 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
@@ -48,7 +45,7 @@
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
@@ -90,14 +87,14 @@
       "name": "Interconnects",
       "group": "blogs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 8,
+      "items": 5,
       "error": ""
     },
     {
@@ -118,7 +115,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 14,
+      "items": 13,
       "error": ""
     },
     {
@@ -132,14 +129,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 37,
+      "items": 28,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 12,
+      "items": 9,
       "error": ""
     },
     {
@@ -153,21 +150,21 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Google AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 1,
       "error": ""
     },
     {
@@ -202,7 +199,7 @@
       "name": "Microsoft Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
@@ -216,21 +213,21 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 1,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 5,
+      "items": 4,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 7,
+      "items": 1,
       "error": ""
     },
     {
@@ -251,14 +248,14 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Medium · AI",
       "group": "medium",
       "ok": true,
-      "items": 9,
+      "items": 10,
       "error": ""
     },
     {
@@ -307,35 +304,35 @@
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 1,
       "error": ""
     },
     {
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 20,
+      "items": 6,
       "error": ""
     },
     {
       "name": "The Verge AI",
       "group": "news",
       "ok": true,
-      "items": 7,
+      "items": 4,
       "error": ""
     },
     {
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 22,
+      "items": 24,
       "error": ""
     },
     {
