@@ -1,6 +1,749 @@
 {
-  "generated_at": "2026-09-28T13:34:51.258448+00:00",
+  "generated_at": "2026-09-29T12:40:09.580504+00:00",
   "archive": [
+    {
+      "date": "2026-09-29",
+      "total": 33,
+      "tags": {
+        "llm": 17,
+        "reinforcement-learning": 3,
+        "world-models": 2,
+        "foundational-models": 5,
+        "multimodal": 4,
+        "interpretability": 2,
+        "ai-safety": 7,
+        "simulation": 3,
+        "training-infra": 5,
+        "general-ml": 9,
+        "other": 2
+      },
+      "articles": [
+        {
+          "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
+          "url": "https://arxiv.org/abs/2609.35347",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper presents DN-MOPD, a technique for distilling multiple specialized teacher LLMs into a single student model.",
+            "why": "It balances feedback strength across different domains to prevent instruction-following data from drowning out mathematical reasoning.",
+            "who": "Xin Li, Hao Jiang, Xin Gao et al."
+          },
+          "published_at": "2026-09-29T00:00:00+00:00",
+          "author": "Xin Li, Hao Jiang, Xin Gao, Annan Wang, Yuchen Xie, Jinghao Guo, Xingwei Qu, Yichi Zhang, Chau Yuen",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.35347",
+            "hf": "https://huggingface.co/papers/2609.35347",
+            "code": "https://github.com/LiXin97/DN-MOPD"
+          },
+          "discussions": []
+        },
+        {
+          "title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
+          "url": "https://arxiv.org/abs/2609.33757",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces YuE2, a music generation model combining symbolic planning and audio synthesis.",
+            "why": "By generating a readable score before audio, it improves musicality and enables precise editing.",
+            "who": "Ruibin Yuan, Jiahao Pan, Junyan Jiang et al."
+          },
+          "published_at": "2026-09-29T00:00:00+00:00",
+          "author": "Ruibin Yuan, Jiahao Pan, Junyan Jiang, Zhiyue Wu, Ziya Zhou, Jiankai Sun, Yizhi Li, Ge Zhang, Yicheng Gu, Zeyue Tian, Junyu Dai, Hanfeng Lin, Kai Li, Shangda Wu, Xuanjie Liu, Jiaming Wang, Zihan Liu, Yue Wang, Yinghao Ma, Hanzhi Yin, Kangrui Chen, Xinyue Zhang, Ziyang Ma, Mengqi Liao, Hejia Zhao, Guowei Huang, Chao Yan, Lei Ke, Jianwei Yu, Bei Liu, Joe Guo, Liumeng Xue, Gus Xia, Wei Xue, Yike Guo",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.33757",
+            "hf": "https://huggingface.co/papers/2609.33757"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
+          "url": "https://arxiv.org/abs/2609.29233",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A study introducing Active Taskless Distillation (ATD) to transfer capabilities via unrelated text.",
+            "why": "It demonstrates that models can acquire new skills without task-specific data or teacher logits.",
+            "who": "Ziyang Zhang, Yubin Jing, Yuanhao Zeng et al."
+          },
+          "published_at": "2026-09-29T00:00:00+00:00",
+          "author": "Ziyang Zhang, Yubin Jing, Yuanhao Zeng, Yuyao Li, Haofan Wang, Yichen Gong",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.29233",
+            "hf": "https://huggingface.co/papers/2609.29233",
+            "code": "https://github.com/myboker/ATD"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Claude Sonnet 5.5",
+          "url": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A new iteration of the Claude Sonnet model.",
+            "why": "It offers improved speed and cost efficiency while maintaining or exceeding previous benchmark performance.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-09-28T22:07:38+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Jeff – Jev-compatible 0.8B decision models, trained at home, ~30 ms",
+          "url": "https://github.com/firelex/jeff",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A set of small, fine-tuned models based on Qwen and Gemma for zero-shot classification.",
+            "why": "They provide fast, calibrated probability outputs for decision-making without needing text generation or parsing.",
+            "who": "firelex"
+          },
+          "published_at": "2026-09-28T20:23:36+00:00",
+          "author": "firelex",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49883844",
+              "points": 522
+            }
+          ]
+        },
+        {
+          "title": "Sonnet 5.5",
+          "url": "https://www.anthropic.com/claude-sonnet-5-5",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A new mid-tier large language model release.",
+            "why": "It offers significant speed and cost improvements alongside a major leap in agentic coding benchmarks.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-09-28T17:58:11+00:00",
+          "author": "D2OQZG8l5BI1S06",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49881850",
+              "points": 828
+            },
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1wslxcu/claude_sonnet_55_released/"
+            }
+          ]
+        },
+        {
+          "title": "Disaggregated Quantization: Specializing LLM Prefill and Decode",
+          "url": "https://arxiv.org/abs/2609.26333",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A quantization method that uses different precision formats for the prefill and decode phases of LLM inference.",
+            "why": "It improves accuracy and reduces time-to-first-token by optimizing for the distinct computational needs of each phase.",
+            "who": "Andrei Panferov, Maximilian Kleinegger, Sweta Priyadarshi et al."
+          },
+          "published_at": "2026-09-28T00:00:00+00:00",
+          "author": "Andrei Panferov, Maximilian Kleinegger, Sweta Priyadarshi, Tijmen Blankevoort, Dan Alistarh",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.26333",
+            "hf": "https://huggingface.co/papers/2609.26333",
+            "code": "https://github.com/IST-DASLab/disaggregated-quantization"
+          },
+          "discussions": []
+        },
+        {
+          "title": "A company ran 8 identical AI societies for weeks with different models and just published what happened. Some of it is genuinely unsettling.",
+          "url": "https://www.reddit.com/r/artificial/comments/1wt5joo/a_company_ran_8_identical_ai_societies_for_weeks/",
+          "source": "r/artificial",
+          "summary": {
+            "what": "A study observing autonomous agent societies across different LLM backends.",
+            "why": "Demonstrates emergent behaviors like tool-misuse and coded language that bypass standard safety benchmarks.",
+            "who": "Emergence AI"
+          },
+          "published_at": "2026-09-29T09:29:13+00:00",
+          "author": "Slight-Box-2890",
+          "tags": [
+            "world-models",
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/artificial",
+              "url": "https://www.reddit.com/r/artificial/comments/1wt5joo/a_company_ran_8_identical_ai_societies_for_weeks/"
+            }
+          ]
+        },
+        {
+          "title": "[Release] GSQ-RCO GGUFs for Qwen3.8-Flash-Next, plus a 50% expert-pruned Coder build at ~1.89 bpw",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt4s88/release_gsqrco_ggufs_for_qwen38flashnext_plus_a/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "Quantized GGUF releases of Qwen3.8-Flash-Next using GSQ and RCO methods.",
+            "why": "Demonstrates high performance retention at very low bit-widths and significant expert pruning for reduced VRAM usage.",
+            "who": "ISTA-DASLab"
+          },
+          "published_at": "2026-09-29T08:40:34+00:00",
+          "author": "Loginhe",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/IST-DASLab/GSQ"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt4s88/release_gsqrco_ggufs_for_qwen38flashnext_plus_a/"
+            }
+          ]
+        },
+        {
+          "title": "Claude Code’s Next Era — Thariq Shihipar, Anthropic",
+          "url": "https://www.latent.space/p/thariq",
+          "source": "Latent Space",
+          "summary": {
+            "what": "An announcement regarding updates to the Claude Code developer tool and model versions.",
+            "why": "Introduces new model iterations and extensibility features like plugins and projects for coding.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-09-29T01:48:18+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Stealth Apart, Harm Together: Skill Cascading Attacks on Skill-Based Agent Systems",
+          "url": "https://arxiv.org/abs/2609.30383",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "This paper introduces a new vulnerability paradigm where malicious objectives are split across multiple seemingly benign agent skills.",
+            "why": "It demonstrates that current safety monitors fail to detect these distributed attacks, exposing a gap between individual component security and overall system safety.",
+            "who": "Zihao Zhu, Siwei Lyu, Adel Bibi et al."
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Zihao Zhu, Siwei Lyu, Adel Bibi, Baoyuan Wu",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30383"
+          },
+          "discussions": []
+        },
+        {
+          "title": "A Synthetic Ground-Truth Framework for the Evaluation of Explainable AI Methods",
+          "url": "https://arxiv.org/abs/2609.30397",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A framework for evaluating XAI methods using synthetic datasets with known ground-truth explanations.",
+            "why": "It addresses the lack of reliable benchmarks by using controlled interventions to verify if explanations reflect actual model logic.",
+            "who": "Miquel Mir\\'o-Nicolau, Francesco Spinnato, Riccardo Guidotti"
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Miquel Mir\\'o-Nicolau, Francesco Spinnato, Riccardo Guidotti",
+          "tags": [
+            "interpretability",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30397"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Spectral Feedback for Test-Time Alignment of Protein Diffusion Models",
+          "url": "https://arxiv.org/abs/2609.30456",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "An iterative alignment algorithm called Spectral Feedback for discrete diffusion models.",
+            "why": "It improves protein stability by treating token re-masking as an optimization problem using sparse Fourier representations.",
+            "who": "Shai Dickman, Mert Cemri, Landon Butler et al."
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Shai Dickman, Mert Cemri, Landon Butler, Kannan Ramchandran",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30456"
+          },
+          "discussions": []
+        },
+        {
+          "title": "HybridInfer: Thermal-Aware Reinforcement-Learning Tier Routing for On-Device, Edge, and Cloud LLM Inference",
+          "url": "https://arxiv.org/abs/2609.30270",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A Q-learning based router that distributes LLM queries across on-device, edge, and cloud tiers.",
+            "why": "It prevents mobile GPU crashes by incorporating real-time thermal headroom into the routing decision.",
+            "who": "Simran Koul"
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Simran Koul",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30270"
+          },
+          "discussions": []
+        },
+        {
+          "title": "When the Preconditioning Exponent Turns Negative: Learning-Rate Coupling and Cross-Environment Generalization",
+          "url": "https://arxiv.org/abs/2609.30271",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A study on the relationship between adaptive optimizer preconditioning exponents and learning rates.",
+            "why": "It reveals that negative exponents can improve cross-environment generalization by reducing reliance on spurious features.",
+            "who": "Gongyue Zhang, Honghai Liu"
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Gongyue Zhang, Honghai Liu",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30271"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Offline Policy Evaluation as a decision support tool for designing Adaptive Experiments",
+          "url": "https://arxiv.org/abs/2609.30273",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A methodology for using off-policy evaluation to transition from A/B tests to adaptive contextual bandits.",
+            "why": "It provides a framework to determine if adaptive policies are worth deploying based on historical static data.",
+            "who": "Jo\\~ao Victor Ferreira Alves, Eduardo Rocha Laurentino, Gustavo de Oliveira Kanno et al."
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Jo\\~ao Victor Ferreira Alves, Eduardo Rocha Laurentino, Gustavo de Oliveira Kanno, Thiago Costa Rizuti da Rocha",
+          "tags": [
+            "reinforcement-learning",
+            "simulation"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30273"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Towards safety cases for frontier AI training",
+          "url": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A set of preliminary guidelines for developing safety cases during frontier model training.",
+            "why": "It establishes frameworks for technical safeguards and the handling of misalignment events.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-09-28T19:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Introducing Claude Sonnet 5.5 on AWS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "An updated version of the Claude Sonnet model available via AWS.",
+            "why": "It offers improved performance in coding and knowledge tasks with reduced latency and cost.",
+            "who": "Anthropic and AWS"
+          },
+          "published_at": "2026-09-28T18:57:13+00:00",
+          "author": "Dani Mitchell",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "AMD is acquiring AI company World Labs in a deal worth more than $8 billion",
+          "url": "https://www.theverge.com/tech/1001749/amd-world-labs-ai-acquisition-deal",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "AMD is acquiring the AI startup World Labs for $8.2 billion.",
+            "why": "The deal integrates a specialized world generation model lab into AMD's hardware ecosystem.",
+            "who": "AMD and World Labs"
+          },
+          "published_at": "2026-09-28T17:31:35-04:00",
+          "author": "Jay Peters",
+          "tags": [
+            "world-models",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Faster Rates for Federated Variational Inequalities",
+          "url": "https://machinelearning.apple.com/research/federated-variational-inequalities",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "A theoretical study on federated optimization for stochastic variational inequalities.",
+            "why": "It provides tighter convergence rate guarantees for the Local Extra SGD algorithm.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-09-28T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How to Design Architectural Guardrails Around AI Agents",
+          "url": "https://towardsdatascience.com/how-to-design-architectural-guardrails-around-ai-agents/",
+          "source": "Towards Data Science",
+          "summary": {
+            "what": "A guide outlining architectural design patterns and guardrails for deploying AI agents.",
+            "why": "It helps engineers build safer, more reliable agentic systems by implementing structured boundaries.",
+            "who": "Thuwarakesh Murallie"
+          },
+          "published_at": "2026-09-29T12:30:02+00:00",
+          "author": "Thuwarakesh Murallie",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Language Models for Text Classification: From Bag-of-Words to Jev",
+          "url": "https://magazine.sebastianraschka.com/p/classifier-history-and-jev",
+          "source": "Sebastian Raschka",
+          "summary": {
+            "what": "A comprehensive educational guide and experimental analysis of text classification architectures ranging from traditional bag-of-words to modern transformers.",
+            "why": "It provides practical insights and visual explanations comparing the accuracy, efficiency, and calibration of different model paradigms.",
+            "who": "Sebastian Raschka"
+          },
+          "published_at": "2026-09-29T10:50:25+00:00",
+          "author": "Sebastian Raschka, PhD",
+          "tags": [
+            "general-ml",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Ornith-1.5 DFlash",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt35c6/ornith15_dflash/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A series of LLM releases utilizing DFlash draft models.",
+            "why": "Implements speculative decoding to increase inference speed across various model sizes.",
+            "who": "Ornith AI"
+          },
+          "published_at": "2026-09-29T06:57:10+00:00",
+          "author": "jacek2023",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wt35c6/ornith15_dflash/"
+            }
+          ]
+        },
+        {
+          "title": "Predicting Transmembrane Protein Topology from 3D Structure",
+          "url": "https://arxiv.org/abs/2609.30446",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A graph neural network approach using SchNet to predict transmembrane protein topology.",
+            "why": "It utilizes full atom-level embeddings rather than just protein sequences or alpha-carbons.",
+            "who": "Sitong Chen, Xiaopeng Mao"
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Sitong Chen, Xiaopeng Mao",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30446"
+          },
+          "discussions": []
+        },
+        {
+          "title": "ENAS: An Efficient Hardware-Aware Neural Architecture Search Framework for TinyML on Resource-Constrained Microcontrollers",
+          "url": "https://arxiv.org/abs/2609.30272",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A hardware-aware neural architecture search framework for microcontrollers.",
+            "why": "It optimizes for peak RAM usage and operates without requiring GPU acceleration.",
+            "who": "EdgeIntelligenceLab"
+          },
+          "published_at": "2026-09-29T00:00:00-04:00",
+          "author": "Mohd Moin Khan, Naman Srivastava, Pandarasamy Arjunan",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.30272",
+            "code": "https://github.com/EdgeIntelligenceLab/ENAS"
+          },
+          "discussions": []
+        },
+        {
+          "title": "OpenAI reportedly ditches model over safety concerns",
+          "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "A report regarding the abandonment of an internal model.",
+            "why": "The model was discarded due to failure in instruction following and safety risks.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-09-28T23:39:20+00:00",
+          "author": "Lucas Ropek",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Quoting @joedaroo",
+          "url": "https://simonwillison.net/2026/Sep/28/joedaroo/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A commentary on the unpredictability of emergent model capabilities in cybersecurity.",
+            "why": "Highlights the difficulty of maintaining security postures when AI capabilities jump suddenly.",
+            "who": "Joe Roo (OpenAI)"
+          },
+          "published_at": "2026-09-28T19:11:42+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "OpenAI still doesn’t seem to have a handle on all of its rogue AI activity",
+          "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "OpenAI launched a public database documenting instances of model misalignment and unintended behaviors.",
+            "why": "It provides transparency into how their systems fail or deviate from intended safety guidelines in real-world scenarios.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-09-28T17:09:02+00:00",
+          "author": "Russell Brandom",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49881484",
+              "points": 106
+            }
+          ]
+        },
+        {
+          "title": "When can we say AI made a scientific discovery?",
+          "url": "https://www.technologyreview.com/2026/09/28/1145230/when-can-we-say-ai-made-a-scientific-discovery/",
+          "source": "MIT Technology Review AI",
+          "summary": {
+            "what": "A report on Anthropic's new molecular biology laboratory.",
+            "why": "It explores the integration of LLM agents in generating biological hypotheses for human validation.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-09-28T17:03:16+00:00",
+          "author": "James O'Donnell",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Build real-time voice applications with vLLM-Omni on SageMaker AI – Part 1",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-applications-with-vllm-omni-on-sagemaker-ai-part-1/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A deployment guide for real-time text-to-speech using vLLM-Omni on SageMaker.",
+            "why": "It demonstrates streaming speech generation via bidirectional connections using Qwen3-TTS.",
+            "who": "AWS"
+          },
+          "published_at": "2026-09-28T16:15:46+00:00",
+          "author": "Yadan Wei",
+          "tags": [
+            "llm",
+            "multimodal",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Generate images and video with vLLM-Omni on SageMaker AI – Part 2",
+          "url": "https://aws.amazon.com/blogs/machine-learning/generate-images-and-video-with-vllm-omni-on-sagemaker-ai-part-2/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A deployment guide for running FLUX.2 and Wan2.1 models via vLLM-Omni on SageMaker.",
+            "why": "It demonstrates a pipeline for sequential image generation and video animation within a single container.",
+            "who": "AWS"
+          },
+          "published_at": "2026-09-28T16:15:17+00:00",
+          "author": "Yadan Wei",
+          "tags": [
+            "multimodal",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Hallo, Deutschland!",
+          "url": "https://mistral.ai/news/hallo-deutschland/",
+          "source": "Mistral AI",
+          "summary": {
+            "what": "Announcement of a new research hub in Munich.",
+            "why": "Focuses on applying AI to physics and industrial sectors via German partnerships.",
+            "who": "Mistral AI"
+          },
+          "published_at": "2026-09-28T15:57:59+00:00",
+          "author": "",
+          "tags": [
+            "general-ml",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Implementing synthetic monitoring using Amazon Nova Act",
+          "url": "https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A guide on using Amazon Nova Act and Bedrock AgentCore for synthetic monitoring.",
+            "why": "It replaces static UI scripts with agent-driven validation for user journeys.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-09-28T15:56:32+00:00",
+          "author": "Sarath Krishnan",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-09-28",
       "total": 30,
