@@ -4,353 +4,179 @@
     <title>AR — daily AI/ML digest</title>
     <link>https://ai-news-blush.vercel.app</link>
     <description>Curated AI/ML research and releases with what/why/who summaries.</description>
-    <lastBuildDate>Fri, 02 Oct 2026 12:32:16 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 11:46:17 +0000</lastBuildDate>
     <item>
-      <title>How NVIDIA GPUs Help Accelerate OpenAI’s GPT-6 Astra Ultrafast</title>
-      <link>https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/</link>
-      <guid isPermaLink="false">https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/</guid>
-      <pubDate>Thu, 01 Oct 2026 23:44:13 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; OpenAI released GPT-6 Astra Ultrafast, an optimized version of their latest model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It leverages Blackwell GPU architecture to achieve an 8x speedup in token generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI and NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Blog · importance 5/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DualCast: A Dual-Path Language Model for Bimodal Financial Time-Series Forecasting</title>
-      <link>https://arxiv.org/abs/2609.38197</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38197</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>multimodal</category>
-      <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; DualCast is a dual-path architecture that couples a frozen language model with quantized numerical tokens for financial forecasting.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It decouples rapid statistical prediction from text-conditioned revision via group relative policy optimization, improving multi-horizon asset forecasting.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Wentao Zhao, Hongqiang Wu, Shanghang Liu et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, multimodal, reinforcement-learning&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Framing the Narrative: Ideological Mimicry in Large Language Models</title>
-      <link>https://arxiv.org/abs/2609.38256</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38256</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study and evaluation framework examining how subtle user cues shift the political stances of large language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that model political output is unstable and heavily driven by user framing, risking customized echo chambers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Olivia Macmillan-Scott, Michael Jacobs, Nils Metternich et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 4/5 · llm, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Adaptive Reward Routing: Dynamic Multi-Reward Optimization for Joint Audio-Video Diffusion via Forward-Process RL</title>
-      <link>https://arxiv.org/abs/2609.37200</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.37200</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
-      <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A paper introducing Adaptive Reward Routing, a method to optimize multi-reward reinforcement learning for joint audio-video diffusion models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It dynamically adjusts where reward updates occur and how competing rewards are weighted, improving audio-video synchronization and quality.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Songlin Yang, Xiaotong Zhao, Jiacheng Zhang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, reinforcement-learning&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction</title>
-      <link>https://arxiv.org/abs/2610.01762</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.01762</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A new streaming video-language model and an associated dataset of over one million records.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It unifies real-time perception and long-term memory by proactively generating hierarchical captions to store historical context without re-processing old video frames.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xiangyu Zeng, Yuandong Yang, Zhiqiu Zhang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States</title>
-      <link>https://arxiv.org/abs/2610.01415</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.01415</guid>
+      <title>On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics</title>
+      <link>https://arxiv.org/abs/2609.35259</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.35259</guid>
       <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
       <category>llm</category>
-      <category>world-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces PoS, an inference-time framework that maintains explicit belief states to manage context for LLM agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves long-horizon performance by validating context consistency and recovering when agents stop making meaningful progress.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yu Luo, Jiamin Jiang, Yimin Zuo et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, world-models&lt;/p&gt;</description>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper systematically investigates the effects of rollout policies and KL divergence directions during LLM distillation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reveals that KL direction and learning rate influence performance more than rollout policy, challenging the default preference for on-policy learning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Julianna Piskorz, Antonin Berthon, Mihaela van der Schaar&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, reinforcement-learning&lt;/p&gt;</description>
     </item>
     <item>
-      <title>With most information hidden, the game Stratego had stumped AI—until now</title>
-      <link>https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/</link>
-      <guid isPermaLink="false">https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/</guid>
-      <pubDate>Thu, 01 Oct 2026 16:28:04 +0000</pubDate>
-      <category>reinforcement-learning</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An algorithmic approach combining deep reinforcement learning and auxiliary hidden-state estimation to solve imperfect-information games.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It overcomes a long-standing barrier in game theory by successfully mastering Stratego despite hidden elements and massive state spaces.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; DeepMind&lt;/p&gt;&lt;p&gt;Ars Technica AI · importance 4/5 · reinforcement-learning, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Clef: Open-weight decision models, and new RL fine-tuning platform</title>
-      <link>https://blog.cloudflare.com/clef-decision-models/</link>
-      <guid isPermaLink="false">https://blog.cloudflare.com/clef-decision-models/</guid>
-      <pubDate>Thu, 01 Oct 2026 16:18:57 +0000</pubDate>
-      <category>reinforcement-learning</category>
+      <title>Hierarchical Continuous Diffusion Language Models</title>
+      <link>https://arxiv.org/abs/2610.02193</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.02193</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Cloudflare released Clef and Clef-flash, two open-weight decision models, alongside a reinforcement learning fine-tuning platform.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; These models provide fast, deterministic, structured classification outputs for agentic workflows at lower latency than traditional LLMs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Cloudflare&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · reinforcement-learning, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces HC-DLM, a language model combining discrete token generation with continuous latent trajectories.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It fixes statistical dependency issues in parallel decoding, boosting performance on structured reasoning and text generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hui Ren, Zihan Li, Chang Liu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs</title>
-      <link>https://allenai.org/blog/olmocore3</link>
-      <guid isPermaLink="false">https://allenai.org/blog/olmocore3</guid>
-      <pubDate>Thu, 01 Oct 2026 00:00:00 -0800</pubDate>
+      <title>Sharpening Tax in Post-Training</title>
+      <link>https://arxiv.org/abs/2610.01509</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.01509</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
       <category>llm</category>
-      <category>training-infra</category>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study on how RL post-training affects LLM solution coverage and a new metric called Sharpening Tax.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that post-training improves single-shot accuracy but often reduces the model's ability to find solutions via repeated sampling.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Changdae Oh, Qi Zeng, Qi Qi et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, reinforcement-learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Agent Priors-guided Policy Learning</title>
+      <link>https://arxiv.org/abs/2609.35690</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2609.35690</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>robotics</category>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A robotic learning framework that embeds structural priors into skill interfaces to link policy learning with composition.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enhances out-of-distribution skill generalization and enables robots to successfully execute novel multi-step tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Puming Jiang, Tianrun Hu, Haozhe Du et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · robotics, reinforcement-learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Limits of Confidence in Diffusion</title>
+      <link>https://machinelearning.apple.com/research/limits-confidence-diffusion</link>
+      <guid isPermaLink="false">https://machinelearning.apple.com/research/limits-confidence-diffusion</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A theoretical analysis of mathematical limitations in discrete diffusion models and token generation dependencies.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It proves fundamental constraints on how per-position distributions fail to accurately model dependent data tokens.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 4/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FLUX 3 Image</title>
+      <link>https://bfl.ai/models/flux-3-image</link>
+      <guid isPermaLink="false">https://bfl.ai/models/flux-3-image</guid>
+      <pubDate>Thu, 01 Oct 2026 19:24:29 +0000</pubDate>
+      <category>multimodal</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open training framework built to scale mixture-of-experts models up to trillion-parameter sizes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It lowers the barrier to training massive sparse architectures with an entirely public codebase.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 4/5 · llm, training-infra, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A spatial layout feature for FLUX image generation models that uses bounding boxes to specify element placement.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides precise control over scene composition and object positioning in generated images.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Black Forest Labs&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Rethinking Latent Visual Reasoning: Grounding Latent Reasoning in Visual Evidence</title>
-      <link>https://arxiv.org/abs/2609.34563</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.34563</guid>
-      <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
+      <title>[AINews] AMD buys World Labs for $8.2B, as Atlas solves sparse reconstruction problem for robotics, design and more</title>
+      <link>https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b</link>
+      <guid isPermaLink="false">https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b</guid>
+      <pubDate>Tue, 29 Sep 2026 02:55:27 +0000</pubDate>
+      <category>world-models</category>
+      <category>robotics</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; News coverage on AMD acquiring World Labs and the Atlas system solving sparse 3D reconstruction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Signals massive industry investment into spatial AI models for robotics and 3D design.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Latent Space&lt;/p&gt;&lt;p&gt;Latent Space · importance 4/5 · world-models, robotics&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Far is Adam from Natural Gradient Descent?</title>
+      <link>https://arxiv.org/abs/2610.00004</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.00004</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A theoretical analysis of the geometric relationship between the Adam optimizer and Natural Gradient Descent.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that Adam often deviates significantly from the natural gradient path, especially in ill-conditioned landscapes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Vihaan Paka-Hegde&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A model guide for the GPT-6 family</title>
+      <link>https://openai.com/index/practical-guide-building-gpt-6</link>
+      <guid isPermaLink="false">https://openai.com/index/practical-guide-building-gpt-6</guid>
+      <pubDate>Fri, 02 Oct 2026 16:15:00 +0000</pubDate>
       <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces ReaLVR, a training framework that improves latent visual reasoning in multimodal models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It resolves weak latent token supervision by contrasting correct and incorrect answers alongside matching visual evidence.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xi Xiao, Tianchen Zhao, Youngeun Kim et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, llm&lt;/p&gt;</description>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A practical guide detailing how to select and optimize GPT-6 models for production workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It explains how to adjust reasoning effort, refine prompts, and manage tool integration for startups.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 3/5 · llm, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>RLTL;DR: Self-Improvement by Internalizing Self-Generated Feedback</title>
-      <link>https://machinelearning.apple.com/research/rltl-dr-self-improvement</link>
-      <guid isPermaLink="false">https://machinelearning.apple.com/research/rltl-dr-self-improvement</guid>
-      <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+      <title>Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/</guid>
+      <pubDate>Fri, 02 Oct 2026 15:44:20 +0000</pubDate>
+      <category>llm</category>
       <category>reinforcement-learning</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A reinforcement learning method that enables models to self-improve by generating concise feedback after failed attempts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It removes the need for expert demonstrations or teacher models when tackling extremely difficult tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 4/5 · reinforcement-learning, llm&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide on using multi-turn reinforcement learning to fine-tune small LLM search agents on Amazon SageMaker AI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates how targeted RL training can help smaller models match frontier-level retrieval performance and reliability at lower cost.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 3/5 · llm, reinforcement-learning&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Detecting hallucinations in local models without eating VRAM: What we learned testing 1.5B to 120B models</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1wvm15e/detecting_hallucinations_in_local_models_without/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1wvm15e/detecting_hallucinations_in_local_models_without/</guid>
-      <pubDate>Fri, 02 Oct 2026 05:55:30 +0000</pubDate>
-      <category>llm</category>
-      <category>interpretability</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A zero-dependency Python metric evaluates local language model hallucinations using CPU-based string entropy across multiple stochastic generations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It replaces costly NLI cross-encoders with a sub-microprocessor string check, revealing that 27B models achieve strong reliability while 120B models suffer from unanimous false confidence.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; More_Slide5739&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm, interpretability&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AutoSynthData: Generating Training Data for Enterprise Agents</title>
-      <link>https://huggingface.co/blog/ServiceNow-AI/autosynthdata</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/ServiceNow-AI/autosynthdata</guid>
-      <pubDate>Fri, 02 Oct 2026 04:01:31 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A new framework designed to automatically generate synthetic training datasets for enterprise AI agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It helps developers overcome data scarcity by creating high-quality, domain-specific data for specialized agent workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hugging Face&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Heavy-Tailed Memory Traces in Long-Horizon Language Agents</title>
-      <link>https://arxiv.org/abs/2610.00010</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00010</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>world-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces a rank-based memory controller called Core-Tail World Model (CTWM) for long-horizon language agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It optimizes prompt budgets and reduces tail prediction errors by managing how agents retrieve and summarize rare versus frequent states.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xinyuan Song, Zekun Cai&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, world-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>When Do Causal World Models Help Modular LLM Agents</title>
-      <link>https://arxiv.org/abs/2610.00012</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00012</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>world-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A paper analyzing when causal world models improve modular LLM agent planning over observational models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that causal interfaces prevent planning errors in structured tool environments but offer less benefit in dialogue settings.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xinyuan Song, Zekun Cai&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, world-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>What Do Rationales Communicate? A Message-Intervention Study in Role-Specialized QA</title>
-      <link>https://arxiv.org/abs/2610.00018</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00018</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>interpretability</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A diagnostic study evaluating how rationales passed from reasoners to verifiers impact role-specialized QA systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Faithful rationales do not boost accuracy, but corrupted ones heavily distort verifier support judgments, exposing overtrust risks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jiameng Zhang, Hongqiu Wu&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, interpretability&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>FlashDiffusion: Fused Tiled Kernel Spectral Decomposition</title>
-      <link>https://arxiv.org/abs/2609.38198</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38198</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
+      <title>Toward provably private learning from federated data</title>
+      <link>https://research.google/blog/toward-provably-private-learning-from-federated-data/</link>
+      <guid isPermaLink="false">https://research.google/blog/toward-provably-private-learning-from-federated-data/</guid>
+      <pubDate>Fri, 02 Oct 2026 14:57:41 +0000</pubDate>
       <category>general-ml</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; FlashDiffusion is a matrix-free algorithm for computing dense Gaussian kernel blocks using fused GPU tiles.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bypasses quadratic memory limits in spectral decomposition by employing a continuation approach across resolutions and bandwidths.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Julio Candanedo&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml, training-infra&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research study on achieving mathematical privacy guarantees in distributed machine learning architectures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces formal frameworks to prevent data leakage during decentralized network training.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google Research&lt;/p&gt;&lt;p&gt;Google Research · importance 3/5 · general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Conformal Factuality Control for Multi-Hop Retrieval-Augmented Generation</title>
-      <link>https://arxiv.org/abs/2609.38222</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38222</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper evaluates split-conformal claim filtering to control factuality in multi-hop retrieval-augmented generation systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It proves that rigorous statistical reliability targets can be met, though at the cost of high abstention rates and low claim retention.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Muhammad Aimal Rehman, Chi-Kuang Yeh&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ContextAdapt: Evaluating Contextual Adaptation and Value Alignment in LLMs</title>
-      <link>https://arxiv.org/abs/2609.38260</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38260</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A novel evaluation framework called ContextAdapt assesses how well language models apply ethical values like honesty and confidentiality across professional domains.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reveals that while models generally follow baseline norms, changes in perceived stakes trigger severe failures in contextual consistency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Olivia Macmillan-Scott, Mirco Musolesi&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>STATERA: Hidden Mass Estimation via Zero-Shot Sim-to-Real Kinematics using Frozen Temporal Tubelets</title>
-      <link>https://arxiv.org/abs/2610.00003</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00003</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>world-models</category>
-      <category>simulation</category>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A vision-based method that adapts frozen video backbones using temporal tubelets to estimate hidden centers of mass from monocular footage.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves zero-shot sim-to-real physical property inference without requiring full parameter retraining.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Animesh Varma&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · world-models, simulation, multimodal&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Emergent Object Binding Has a Finite Spatial Horizon</title>
-      <link>https://arxiv.org/abs/2610.00006</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00006</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>interpretability</category>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper analyzes the spatial limits of object binding signals found inside pretrained vision transformers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that patch-level object grouping decays exponentially over distance rather than being globally uniform.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mayank Singal&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · interpretability, multimodal&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Much of a Harness Does a Strong Agent Need for Autonomous ML Engineering?</title>
-      <link>https://machinelearning.apple.com/research/harness-autonomous-ml-engineering</link>
-      <guid isPermaLink="false">https://machinelearning.apple.com/research/harness-autonomous-ml-engineering</guid>
-      <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical investigation into whether complex multi-agent setups are necessary for automated machine learning engineering tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It evaluates simpler agent architectures with direct environment access against elaborate multi-agent orchestration frameworks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>llama, server: add /v1/systemone API (models: laya, julia-1, lev, openjev, kev) by ngxson · Pull Request #29818 · ggml-org/llama.cpp</title>
-      <link>https://github.com/ggml-org/llama.cpp/pull/29818</link>
-      <guid isPermaLink="false">https://github.com/ggml-org/llama.cpp/pull/29818</guid>
-      <pubDate>Fri, 02 Oct 2026 10:29:47 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A pull request adding a `/v1/systemone` API endpoint to the llama.cpp server.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables local inference support for a new set of GGUF models, including OpenJev and Kev.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Contributor ngxson via the ggml-org GitHub repository.&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Don’t be fooled—LLMs don’t reason</title>
-      <link>https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/</link>
-      <guid isPermaLink="false">https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/</guid>
-      <pubDate>Fri, 02 Oct 2026 08:00:00 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An essay analyzing whether large language models possess genuine reasoning capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It argues that LLMs rely on statistical pattern matching rather than actual cognitive comprehension.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; An AlphaGo co-creator writing for MIT Technology Review.&lt;/p&gt;&lt;p&gt;MIT Technology Review AI · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>While Claude and GPT are still the two best choices, Gemini seems to be catching up on coding agent index with agy-cli</title>
-      <link>https://www.reddit.com/r/singularity/comments/1wvnh2d/while_claude_and_gpt_are_still_the_two_best/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/singularity/comments/1wvnh2d/while_claude_and_gpt_are_still_the_two_best/</guid>
-      <pubDate>Fri, 02 Oct 2026 07:25:17 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark comparing coding agent performance and cost across different models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It evaluates the trade-off between task success rates and operational expenses for AI coding tools.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Artificial Analysis&lt;/p&gt;&lt;p&gt;r/singularity · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AINews] Pi 1.0, Pi Durable, and AIE NYC</title>
-      <link>https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc</link>
-      <guid isPermaLink="false">https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc</guid>
-      <pubDate>Fri, 02 Oct 2026 06:40:53 +0000</pubDate>
+      <title>OpenAI’s Dot agent is enterprise software that can also order your dinner</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent</link>
+      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1004096/openai-chatgpt-dots-hands-on-agent</guid>
+      <pubDate>Fri, 02 Oct 2026 14:00:00 -0400</pubDate>
       <category>llm</category>
       <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A stable 1.0 release of Pi, a minimalist TypeScript harness and durable execution framework for AI agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides developers with a lightweight, reliable way to build and run persistent AI workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Latent Space&lt;/p&gt;&lt;p&gt;Latent Space · importance 2/5 · llm, other&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; OpenAI announced a new agent platform named Dots targeted primarily at enterprise workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bridges autonomous agent capabilities with corporate software integration alongside consumer tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;The Verge AI · importance 3/5 · llm, other&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Krea 2 vs Ming 0.1 vs Qwen 2.1: 192 prompt side by side.</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1wvmpm9/krea_2_vs_ming_01_vs_qwen_21_192_prompt_side_by/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1wvmpm9/krea_2_vs_ming_01_vs_qwen_21_192_prompt_side_by/</guid>
-      <pubDate>Fri, 02 Oct 2026 06:37:09 +0000</pubDate>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community benchmark gallery comparing image generation outputs across 192 prompts for Krea 2, Ming 0.1, and Qwen 2.1.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a direct visual side-by-side comparison to help evaluate prompt adherence and output quality among emerging visual models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Reddit user via ImageBench.ai&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
+      <title>Open-sourcing AstaBrief, the fast report-generation model in Asta</title>
+      <link>https://allenai.org/blog/astabrief</link>
+      <guid isPermaLink="false">https://allenai.org/blog/astabrief</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 -0800</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-weights 8B language model designed to produce cited academic reports.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It brings fast, verifiable scientific synthesis to local hardware and open-source infrastructure.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 3/5 · llm&lt;/p&gt;</description>
     </item>
     <item>
-      <title>AI music maker Suno now generates spoken words</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability</link>
-      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1003925/suno-speech-ai-voice-feature-beta-availability</guid>
-      <pubDate>Fri, 02 Oct 2026 05:42:19 -0400</pubDate>
-      <category>multimodal</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An audio generation tool now supports synthesized voiceovers alongside background tracks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It expands generative audio platforms into concurrent speech and music production.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Suno&lt;/p&gt;&lt;p&gt;The Verge AI · importance 2/5 · multimodal, other&lt;/p&gt;</description>
+      <title>Language Discrimination Improves Linguistic Learning in Multilingual Speech Models</title>
+      <link>https://machinelearning.apple.com/research/language-discrimination-multilingual-learning</link>
+      <guid isPermaLink="false">https://machinelearning.apple.com/research/language-discrimination-multilingual-learning</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>foundational-models</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A training technique that adds language discrimination objectives to self-supervised multilingual speech models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bridges the performance gap between multilingual and monolingual speech models while keeping cross-lingual transfer benefits.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 3/5 · foundational-models, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Academia is for Ambition — Alex Zhang, MIT</title>
-      <link>https://www.latent.space/p/rlm</link>
-      <guid isPermaLink="false">https://www.latent.space/p/rlm</guid>
-      <pubDate>Fri, 02 Oct 2026 00:28:04 +0000</pubDate>
+      <title>ai_decide(): The Bridge Between Knowledge and Action in Agentic Systems</title>
+      <link>https://medium.com/@manoj.patil04/ai-decide-the-bridge-between-knowledge-and-action-in-agentic-systems-75882c6942c8?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://medium.com/@manoj.patil04/ai-decide-the-bridge-between-knowledge-and-action-in-agentic-systems-75882c6942c8?source=rss------llm-5</guid>
+      <pubDate>Sat, 03 Oct 2026 10:56:11 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An architectural pattern for handling enterprise classification, routing, and scoring tasks with language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It standardizes how decision-making logic integrates into production agentic workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Databricks&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reverse Item Response Theory for Sparsity-Robust Ranking in Fragmented Cancer Drug-Response Matrices</title>
+      <link>https://arxiv.org/abs/2610.00002</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.00002</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper presents a reverse Item Response Theory model for ranking cancer drug sensitivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It robustly estimates drug efficacy and cancer resistance despite highly fragmented and missing data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jung Min Kang&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FourierQK: Filter Shape, Admissibility and the Leakage-Coverage Law</title>
+      <link>https://arxiv.org/abs/2610.00009</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.00009</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An interview discussing academic AI research, evaluation harnesses, and PhD experiences.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides perspective on the evolution of LLM evaluation tools and the state of academic machine learning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Alex Zhang (MIT) interviewed by Latent Space&lt;/p&gt;&lt;p&gt;Latent Space · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research paper analyzing how different frequency filter shapes affect query-key attention mechanisms in transformers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes design principles for frequency-based attention, showing zero-mean bandpass filters improve bidirectional performance over standard dot products.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Athanasios Zeris&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>From Proposal to Verified Effect: Praxa, an Evidence-Bound Harness for Governed AI Agent Execution</title>
-      <link>https://arxiv.org/abs/2610.00015</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.00015</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A governance harness called Praxa that explicitly tracks and verifies the execution of LLM agent actions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a deterministic framework to audit and reconcile agent proposals before they affect external systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Stefan G. Creadore&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 2/5 · llm, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Conformal Adversarial Generative Ensemble</title>
-      <link>https://arxiv.org/abs/2609.38196</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38196</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A time series forecasting framework called CAGE that integrates generative models with conformal prediction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses nonconformity scores to dynamically weight models, reducing the impact of outliers and extreme forecasts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ahmad Shahi, Mamehgol Yousefi, Brendon J. Woodford et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Kinematic signatures of impairment: Detecting alcohol intoxication in e-scooter riders using sensor data and machine learning</title>
-      <link>https://arxiv.org/abs/2609.38276</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38276</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A machine learning pipeline that classifies e-scooter rider intoxication levels using IMU motion sensor telemetry and entropy features.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that physical riding kinematics can reliably detect impairment in real time with high accuracy.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Rahul Rajendra Pai, Marco Dozza, Alexander Rasch et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>TutlAit v1: a crowdsourced Moroccan Tamazight speech dataset with Arabic transcriptions and regional accent labels</title>
-      <link>https://arxiv.org/abs/2609.38219</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2609.38219</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A crowdsourced speech dataset and collection tool for Moroccan Tamazight containing over 20 hours of audio with regional accent metadata and Arabic transcriptions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses a severe data scarcity gap for low-resource Amazigh speech recognition and translation technologies.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mohamed-Amine Chadi, Ezzahra Ait El Arbi, Ismail Khayoub et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Build Applications on NVIDIA BlueField Faster with NVIDIA DOCA Agent Skills</title>
-      <link>https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/</link>
-      <guid isPermaLink="false">https://developer.nvidia.com/blog/build-applications-on-nvidia-bluefield-faster-with-nvidia-doca-agent-skills/</guid>
-      <pubDate>Thu, 01 Oct 2026 18:13:29 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A set of domain-specific tools allowing AI coding agents to interact directly with the NVIDIA DOCA framework for BlueField DPUs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It simplifies infrastructure software development by equipping LLM agents with specialized knowledge of data processing unit APIs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 2/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Build Local AI Apps with C++ and NVIDIA TensorRT RTX Samples</title>
-      <link>https://developer.nvidia.com/blog/build-local-ai-apps-with-c-and-nvidia-tensorrt-rtx-samples/</link>
-      <guid isPermaLink="false">https://developer.nvidia.com/blog/build-local-ai-apps-with-c-and-nvidia-tensorrt-rtx-samples/</guid>
-      <pubDate>Thu, 01 Oct 2026 17:59:27 +0000</pubDate>
-      <category>training-infra</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A guide and code samples for deploying local AI applications using C++ and TensorRT.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It streamlines the integration of accelerated machine learning inference into desktop software.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 2/5 · training-infra, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Build agent memory with NVIDIA NeMo Agent Toolkit and Amazon S3 Vectors</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors/</guid>
-      <pubDate>Thu, 01 Oct 2026 17:34:56 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An architectural guide for integrating Amazon S3 Vectors with NVIDIA NeMo Agent Toolkit on Kubernetes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes a scalable cloud-native blueprint for persistent agentic memory.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, training-infra, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Uplifting conversion across the acquisition funnel with personalization using contextual bandits on AWS</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/</guid>
-      <pubDate>Thu, 01 Oct 2026 16:51:04 +0000</pubDate>
+      <title>Integrating Fairness and Explainability in a Multiple Instance Reinforcement Learning System</title>
+      <link>https://arxiv.org/abs/2610.00035</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.00035</guid>
+      <pubDate>Sat, 03 Oct 2026 00:00:00 -0400</pubDate>
       <category>reinforcement-learning</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A multi-objective contextual bandit framework deployed on SageMaker to optimize customer acquisition funnels.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates practical personalization gains while highlighting content quality as the primary system bottleneck.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · reinforcement-learning, general-ml&lt;/p&gt;</description>
+      <category>interpretability</category>
+      <category>ai-safety</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research paper analyzing a multi-objective reinforcement learning framework designed to balance accuracy, explainability, and demographic fairness.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that standard hypernetwork preference conditioning fails to control fairness-performance trade-offs due to objective dominance and gradient collapse.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Bente Hinkenhuis, Seyed Sahand Mohammadi Ziabari, Ali Mohammed Mansoor Alsahag&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · reinforcement-learning, interpretability, ai-safety&lt;/p&gt;</description>
     </item>
     <item>
-      <title>OpenAI DevDay 2026 live blog</title>
-      <link>https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/</link>
-      <guid isPermaLink="false">https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/</guid>
-      <pubDate>Tue, 29 Sep 2026 15:55:13 +0000</pubDate>
+      <title>Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/</guid>
+      <pubDate>Fri, 02 Oct 2026 15:46:05 +0000</pubDate>
       <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A live blog documenting keynotes and announcements from OpenAI's developer event.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Provides real-time developer commentary and updates on OpenAI's latest releases.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Simon Willison&lt;/p&gt;&lt;p&gt;Simon Willison · importance 2/5 · llm, other&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide for connecting web search capabilities to Claude Desktop using Amazon Bedrock AgentCore Gateway.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables secure, authenticated live web querying to overcome model knowledge cutoff limitations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm&lt;/p&gt;</description>
     </item>
     <item>
-      <title>2026 in LLMs (so far)</title>
-      <link>https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/</link>
-      <guid isPermaLink="false">https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/</guid>
-      <pubDate>Sun, 27 Sep 2026 23:54:15 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A conference keynote presentation reviewing major LLM trends and coding agent milestones.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It outlines the practical tipping point where coding agents became reliable for daily development tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Simon Willison&lt;/p&gt;&lt;p&gt;Simon Willison · importance 2/5 · llm&lt;/p&gt;</description>
+      <title>NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI</title>
+      <link>https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/</link>
+      <guid isPermaLink="false">https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/</guid>
+      <pubDate>Fri, 02 Oct 2026 13:00:39 +0000</pubDate>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A localized hardware workstation featuring 64GB of unified memory designed for running open models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It expands local development capabilities for engineers deploying AI agents on personal hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Blog · importance 2/5 · training-infra&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
