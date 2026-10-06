@@ -1,6 +1,592 @@
 {
-  "generated_at": "2026-10-05T14:31:52.786785+00:00",
+  "generated_at": "2026-10-06T13:21:49.054115+00:00",
   "archive": [
+    {
+      "date": "2026-10-06",
+      "total": 25,
+      "tags": {
+        "llm": 18,
+        "reinforcement-learning": 1,
+        "world-models": 2,
+        "foundational-models": 6,
+        "multimodal": 3,
+        "robotics": 3,
+        "ai-safety": 4,
+        "simulation": 1,
+        "training-infra": 2,
+        "general-ml": 2,
+        "other": 4
+      },
+      "articles": [
+        {
+          "title": "Internal Anthropic model refuted the 3SUM and APSP hypotheses: first truly subquadratic 3SUM and truly subcubic APSP (Alman & Vassilevska Williams)",
+          "url": "https://arxiv.org/abs/2610.06783",
+          "source": "r/singularity",
+          "summary": {
+            "what": "A new theoretical computer science preprint presents algorithms that break longstanding subquadratic and subcubic complexity bounds.",
+            "why": "An AI model reportedly discovered the core algorithm independently, with proofs formally verified in the Lean theorem prover.",
+            "who": "Josh Alman and Virginia Vassilevska Williams"
+          },
+          "published_at": "2026-10-06T07:16:54+00:00",
+          "author": "AMBNNJ",
+          "tags": [
+            "general-ml",
+            "other"
+          ],
+          "importance": 5,
+          "group": "reddit",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.06783"
+          },
+          "discussions": [
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1wyw84m/internal_anthropic_model_refuted_the_3sum_and/"
+            }
+          ]
+        },
+        {
+          "title": "Prism (Tencent Hunyuan + Fudan) just dropped a preview: native 2K video + audio, MIT license",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1wywpt7/prism_tencent_hunyuan_fudan_just_dropped_a/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "Prism is an open-source joint video and audio generation model supporting resolutions up to 2K.",
+            "why": "It introduces a dynamic sparse attention mechanism that accelerates training speeds by 2.5 times while maintaining output quality.",
+            "who": "Tencent Hunyuan and Fudan University"
+          },
+          "published_at": "2026-10-06T07:50:08+00:00",
+          "author": "Current-Row-159",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/Tencent-Hunyuan/Prism"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1wywpt7/prism_tencent_hunyuan_fudan_just_dropped_a/"
+            }
+          ]
+        },
+        {
+          "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+          "url": "https://arxiv.org/abs/2610.05608",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A family of open-source diffusion models for synchronized text-to-video and audio generation.",
+            "why": "It uses a dual-stream CrossDiT architecture to achieve temporal and semantic alignment between video and high-fidelity audio.",
+            "who": "Sber AI"
+          },
+          "published_at": "2026-10-06T00:00:00+00:00",
+          "author": "Team Kandinsky, Julia Agafonova, Bulat Akhmatov, Mikhail Aksyutin, Grigorii Alekseenko, Anastasia Aliaskina, Olga Androsova, Vladimir Arkhipkin, Anna Averchenkova, Alexander Belykh, Serafima Bocharova, Sofiya Bogakovskaya, Anton Bukashkin, Mark Bulygin, Kirill Buzygin, Irina Cheremnykh, Kirill Chernyshev, Mikhail Chernyshov, Vladimir Chernyy, David Chikovani, Georgy Daniltsev, Denis Dimitrov, Anna Dmitrienko, Vladimir Dokholyan, Sergey Emelyanov, Dmitry Ermilov, Georgii Fedorov, Polina Gavrilova, Nikolai Gerasimenko, Aleksandr Gordeev, Andrey Inozemtsev, Andrei Ivaniuta, Alexander Ivanov, Mikhail Karaev, Anastasiia Kargapoltseva, Ivan Kirillov, Nikita Kiselev, Valeria Kobenko, Yury Kolabushin, Denis Koposov, Anatoly Korobov, Vladimir Korviakov, Kirill Kozlov, Denis Krzhivokolskiy, Konstantin Kuklev, Alexander Kunitsyn, Sergey Kuzin, Vladislav Lakhtionov, Alexey Letunovskiy, Maxim Litvinov, Alexander Lyulkov, Georgy Makarov, Kirill Malakhov, Egor Malykh, Mikhail Mamaev, Dmitrii Mikhailov, Polina Mikhailova, Ivan Mikheev, Elizaveta Muromtseva, Nikolai Nazarkin, Tatiana Nikulina, Lev Novitskiy, Stanislav Onuchin, Nikita Osterov, Denis Parkhomenko, Anatoliy Parpara, Vladimir Polovnikov, Konstantin Reznikov, Azat Saginbaev, Nikita Samsonov, Alexander Sentsov, Nikita Shaimov, Artem Sherstyuk, Andrey Shutkin, Egor Silvestrov, Bulat Suleimanov, Matvey Suprunov, Sergey Taranov, Irina Tolstykh, Tatiana Trofimuk, Ilya Trushkin, Aleksandra Tsybina, Olga Varlashina, Viacheslav Vasilev, Ilya Vasiliev, Eugeny Vilisov, Sergey Yakubson, Konstantin Zakharov",
+          "tags": [
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.05608",
+            "hf": "https://huggingface.co/papers/2610.05608",
+            "code": "https://github.com/kandinskylab/kandinsky-6"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Beam: Reflection's 501B open-weight model",
+          "url": "https://reflection.ai/blog/introducing-beam",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A 501B parameter sparse MoE open-weight model optimized for coding and agents.",
+            "why": "It utilizes massive-scale RL training on 10.5K GPUs to balance frontier performance with inference efficiency.",
+            "who": "Reflection"
+          },
+          "published_at": "2026-10-05T19:16:35+00:00",
+          "author": "Philpax",
+          "tags": [
+            "llm",
+            "reinforcement-learning",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49969183",
+              "points": 483
+            }
+          ]
+        },
+        {
+          "title": "Anthropic reported diary entry to police, woman faces felony charge",
+          "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A news report detailing how Anthropic flagged a user's violent threat entered into Claude and reported it to law enforcement, leading to an arrest.",
+            "why": "It highlights the privacy limitations of LLM interactions and the active role AI safety moderation systems play in real-world policing.",
+            "who": "Anthropic and Florida law enforcement"
+          },
+          "published_at": "2026-10-05T05:37:40+00:00",
+          "author": "emptybits",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49961057",
+              "points": 757
+            }
+          ]
+        },
+        {
+          "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+          "url": "https://arxiv.org/abs/2610.01780",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces RealCompanion, a benchmark containing ten real-world, long-term human-AI chat histories to test conversational memory.",
+            "why": "It reveals that current models struggle to detect when historical context is needed, and that simple recency windows often outperform complex memory retrieval.",
+            "who": "Arman Behnam, Sunglyoung Kim, Liangwei Yang"
+          },
+          "published_at": "2026-10-05T00:00:00+00:00",
+          "author": "Arman Behnam, Sunglyoung Kim, Liangwei Yang",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.01780",
+            "hf": "https://huggingface.co/papers/2610.01780"
+          },
+          "discussions": []
+        },
+        {
+          "title": "World Action Modeling with Progressive Visual Planning",
+          "url": "https://arxiv.org/abs/2610.02508",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces ProWAM, a progressive world action model for robotic control.",
+            "why": "It improves efficiency and robustness by predicting sparse visual sub-goals instead of full video rollouts.",
+            "who": "Researchers from the SII-Ferenas group."
+          },
+          "published_at": "2026-10-05T00:00:00+00:00",
+          "author": "Fei Zhang, Zhaochong An, Duncan Frost, Yikai Wang, Pengfei Liu, Ya Zhang, Michal Drozdzal, Amir Bar",
+          "tags": [
+            "world-models",
+            "robotics",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.02508",
+            "hf": "https://huggingface.co/papers/2610.02508"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Native Action-Prior Learning from Videos for World Action Models",
+          "url": "https://arxiv.org/abs/2610.03391",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces NAVA-WAM, a framework that directly pretrains robot action policies using passive video datasets without action labels.",
+            "why": "It bypasses latent-action modeling and indirect representation transfer, leading to improved action-label efficiency and real-robot generalization.",
+            "who": "Zhaochong An, Fei Zhang, Menglin Jia et al."
+          },
+          "published_at": "2026-10-05T00:00:00+00:00",
+          "author": "Zhaochong An, Fei Zhang, Menglin Jia, Duncan Frost, Zijian Zhou, Yikai Wang, Xudong Wang, Aditya Patel, Belinda Zeng, Tao Xiang, Serge Belongie, Amir Bar, Sen He",
+          "tags": [
+            "world-models",
+            "robotics"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.03391",
+            "hf": "https://huggingface.co/papers/2610.03391"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Microsoft confirms OpenAI has been using Looped Transformers in the GPT-6 series",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz00vv/microsoft_confirms_openai_has_been_using_looped/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A leaked documentation page reveals OpenAI utilized looped transformer architectures in their GPT-6 series.",
+            "why": "It offers technical validation regarding recurring inference passes used in frontier model scaling.",
+            "who": "Microsoft"
+          },
+          "published_at": "2026-10-06T11:21:30+00:00",
+          "author": "ResearchCrafty1804",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz00vv/microsoft_confirms_openai_has_been_using_looped/"
+            }
+          ]
+        },
+        {
+          "title": "Tencent releases Octop, a self-hosted AI assistant",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzef4/tencent_releases_octop_a_selfhosted_ai_assistant/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "Octop is an open-source, multi-agent AI assistant designed for local execution across desktops and servers.",
+            "why": "It provides a unified self-hosted environment integrating web, desktop, and API interfaces with privacy preservation.",
+            "who": "TencentCloud"
+          },
+          "published_at": "2026-10-06T10:45:43+00:00",
+          "author": "ResearchCrafty1804",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/TencentCloud/Octop"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzef4/tencent_releases_octop_a_selfhosted_ai_assistant/"
+            }
+          ]
+        },
+        {
+          "title": "Introducing GLM 5.3 on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "Amazon Bedrock now hosts GLM 5.3, a 753B MoE model designed for coding and complex agentic tasks.",
+            "why": "It provides cloud access with OpenAI-compatible APIs and prompt caching to reduce latency and deployment costs.",
+            "who": "Z.ai and AWS"
+          },
+          "published_at": "2026-10-05T23:25:17+00:00",
+          "author": "Alex Thewsey",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "MCP for agent-to-agent comms may be the riskiest protocol you've never heard of",
+          "url": "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/",
+          "source": "Ars Technica AI",
+          "summary": {
+            "what": "An analysis of security vulnerabilities in the Model Context Protocol (MCP) for agent-to-agent communication.",
+            "why": "It demonstrates how trust gaps can allow malicious prompt injections to spread transitively between connected AI agents.",
+            "who": "Ars Technica"
+          },
+          "published_at": "2026-10-05T22:26:35+00:00",
+          "author": "Dan Goodin",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Our approach to EU text provenance rules",
+          "url": "https://openai.com/index/eu-text-provenance",
+          "source": "OpenAI",
+          "summary": {
+            "what": "An announcement detailing OpenAI's strategy for implementing text watermarking and detection tools to comply with European Union regulations.",
+            "why": "It explains how AI-generated text can be identified and tracked, balancing regulatory compliance with researcher access.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-05T15:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=49966293",
+              "points": 68
+            },
+            {
+              "source": "r/OpenAI",
+              "url": "https://www.reddit.com/r/OpenAI/comments/1wyci57/openai_explains_how_it_will_watermark_chatgpt/"
+            }
+          ]
+        },
+        {
+          "title": "JEV-27B-VL: Jev AI for Images",
+          "url": "https://medium.com/data-science-in-your-pocket/jev-27b-vl-jev-ai-for-images-023684137a6b?source=rss------machine_learning-5",
+          "source": "Medium · Machine Learning",
+          "summary": {
+            "what": "A 27-billion parameter multimodal model designed for diverse vision-language and action tasks.",
+            "why": "It performs action selection, agent evaluation, and robotic control simultaneously in a single forward pass.",
+            "who": "Jev AI"
+          },
+          "published_at": "2026-10-06T13:04:41+00:00",
+          "author": "Mehul Gupta",
+          "tags": [
+            "multimodal",
+            "robotics"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Story time: Qwen3.8-Flash-Next on my Strix Halo laptop vs Claude Opus 5.5 on the same feature",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzt1d/story_time_qwen38flashnext_on_my_strix_halo/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An anecdotal benchmark comparing a local open-weight model against a proprietary frontier model on a complex coding task.",
+            "why": "It highlights the practical viability and edge-case handling of running smaller models locally for software engineering tasks.",
+            "who": "Deepu Sasidharan"
+          },
+          "published_at": "2026-10-06T11:08:41+00:00",
+          "author": "deepu105",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wyzt1d/story_time_qwen38flashnext_on_my_strix_halo/"
+            }
+          ]
+        },
+        {
+          "title": "Falcon-Emirati: When an LLM Learns the Dialect, the Culture, and the Nuance",
+          "url": "https://huggingface.co/blog/tiiuae/falcon-emirati",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A specialized version of the Falcon large language model adapted for Emirati Arabic dialect and culture.",
+            "why": "It addresses the gap in regional language representation by capturing local linguistic nuances and cultural context.",
+            "who": "Technology Innovation Institute (TII)"
+          },
+          "published_at": "2026-10-06T06:44:39+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "[AINews] Reflection Beam - 501B-A23B American Open Model",
+          "url": "https://www.latent.space/p/ainews-reflection-beam-501b-a23b",
+          "source": "Latent Space",
+          "summary": {
+            "what": "An announcement of an open-source large language model named Reflection Beam.",
+            "why": "It represents a minor development for the United States open-source AI ecosystem.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-10-06T06:28:43+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Quoting Felix Rieseberg",
+          "url": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An architectural update to Anthropic's Cowork agent platform.",
+            "why": "It shifts model inference and tool-execution sandboxes from local virtual machines to the cloud to improve performance and battery life.",
+            "who": "Felix Rieseberg at Anthropic"
+          },
+          "published_at": "2026-10-05T23:56:47+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "OpenAI will start watermarking ChatGPT’s text in the EU",
+          "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "OpenAI is implementing text watermarking for ChatGPT and Codex outputs in the European Union.",
+            "why": "The deployment addresses EU AI Act compliance, though OpenAI notes that manual editing can impair detection accuracy.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-05T20:36:48+00:00",
+          "author": "Aditya Mehta",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Supercharge regulated workloads with Claude Code and Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/supercharge-regulated-workloads-with-claude-code-and-amazon-bedrock/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "Anthropic's latest Claude models and agentic coding tools are deployed on AWS GovCloud via Amazon Bedrock.",
+            "why": "It enables teams handling ITAR and regulated government workloads to utilize advanced frontier models securely.",
+            "who": "AWS and Anthropic"
+          },
+          "published_at": "2026-10-05T17:25:20+00:00",
+          "author": "Bradley Wyman",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent",
+          "url": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "An integration that equips coding assistants with specialized knowledge for AWS inference optimization.",
+            "why": "It enables automated generation of functional benchmarking code for cloud model deployment.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-05T17:23:19+00:00",
+          "author": "Mona Mona",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Negotiating Ontological Boundaries in User-Authored Personal Sensing Systems",
+          "url": "https://machinelearning.apple.com/research/ontological-boundary-negotiation",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "An empirical study exploring how users interact with and define boundaries when training personalized machine learning systems.",
+            "why": "It highlights the often-ignored philosophical and structural limitations users face when authoring their own sensing applications.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-10-05T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "general-ml",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Together Link: open models in the harness you already use. Start with one command today.",
+          "url": "https://www.together.ai/blog/together-link-frontier-quality-open-models-in-the-harness-you-already-use",
+          "source": "Together AI",
+          "summary": {
+            "what": "A development integration tool connecting open-source models to existing coding assistants.",
+            "why": "It lowers inference expenses significantly while enabling custom model usage in standard developer workflows.",
+            "who": "Together AI"
+          },
+          "published_at": "2026-10-05T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Qwen3.8 27B addition in words",
+          "url": "https://simonwillison.net/2026/Oct/4/qwen38-addition-in-words/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An empirical test evaluating a local LLM's ability to perform large-number addition with answers formatted as words.",
+            "why": "It shows that enabling reasoning traces dramatically improves arithmetic accuracy from highly error-prone to nearly perfect.",
+            "who": "Simon Willison, building on an experiment by Colin Fraser."
+          },
+          "published_at": "2026-10-04T23:34:00+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Qwen 4 apparently coming out at the end of October",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz1pqn/qwen_4_apparently_coming_out_at_the_end_of_october/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A Reddit post sharing an unverified rumor about the upcoming release of Alibaba's next model series.",
+            "why": "It suggests the next iteration of these highly-rated open models could arrive as early as late October.",
+            "who": "An anonymous Reddit user"
+          },
+          "published_at": "2026-10-06T12:48:19+00:00",
+          "author": "Dependent_Hunter_155",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 1,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wz1pqn/qwen_4_apparently_coming_out_at_the_end_of_october/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-05",
       "total": 28,
