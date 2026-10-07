@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-10-06T13:21:49.086079+00:00",
-  "duration_seconds": 768.1,
+  "generated_at": "2026-10-07T13:15:42.276575+00:00",
+  "duration_seconds": 696.9,
   "counts": {
-    "fetched": 366,
-    "unique": 347,
-    "candidates": 63,
-    "kept": 25
+    "fetched": 714,
+    "unique": 674,
+    "candidates": 83,
+    "kept": 48
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 18,
-    "Gemini (gemini-3.6-flash)": 5,
-    "Ollama Cloud (gemma4:31b)": 3,
-    "Gemini (gemini-3.5-flash-lite)": 37
+    "Gemini (gemini-3.5-flash)": 20,
+    "Gemini (gemini-3.6-flash)": 2,
+    "Ollama Cloud (gemma4:31b)": 61
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -20,35 +19,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
@@ -90,14 +89,14 @@
       "name": "Interconnects",
       "group": "blogs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 5,
+      "items": 4,
       "error": ""
     },
     {
@@ -118,7 +117,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 6,
+      "items": 16,
       "error": ""
     },
     {
@@ -132,14 +131,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 32,
+      "items": 48,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 10,
+      "items": 12,
       "error": ""
     },
     {
@@ -153,7 +152,7 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -167,7 +166,7 @@
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -209,7 +208,7 @@
       "name": "Mistral AI",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -223,14 +222,14 @@
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 3,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 6,
       "error": ""
     },
     {
@@ -244,14 +243,14 @@
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 5,
+      "items": 8,
       "error": ""
     },
     {
@@ -265,7 +264,7 @@
       "name": "Medium · Deep Learning",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 10,
       "error": ""
     },
     {
@@ -293,35 +292,35 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 9,
+      "items": 10,
       "error": ""
     },
     {
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 5,
+      "items": 7,
       "error": ""
     },
     {
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 5,
       "error": ""
     },
     {
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 2,
       "error": ""
     },
     {
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 15,
+      "items": 18,
       "error": ""
     },
     {
