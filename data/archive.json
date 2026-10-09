@@ -1,6 +1,844 @@
 {
-  "generated_at": "2026-10-08T13:31:56.010585+00:00",
+  "generated_at": "2026-10-09T13:12:36.866690+00:00",
   "archive": [
+    {
+      "date": "2026-10-09",
+      "total": 37,
+      "tags": {
+        "llm": 21,
+        "reinforcement-learning": 2,
+        "world-models": 2,
+        "foundational-models": 4,
+        "multimodal": 6,
+        "robotics": 2,
+        "interpretability": 1,
+        "ai-safety": 5,
+        "simulation": 6,
+        "training-infra": 5,
+        "general-ml": 8,
+        "other": 5
+      },
+      "articles": [
+        {
+          "title": "[Paper] Stepped MoE: Segment-Level Routing with Configurable Inference Complexity",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1f5gz/paper_stepped_moe_segmentlevel_routing_with/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A unified framework merges elastic structures with sparse mixture-of-experts to scale inference capacity dynamically.",
+            "why": "It enables a single model to adapt its active parameter count to match hardware constraints without sacrificing accuracy.",
+            "who": "pmttyji"
+          },
+          "published_at": "2026-10-09T07:39:16+00:00",
+          "author": "pmttyji",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x1f5gz/paper_stepped_moe_segmentlevel_routing_with/"
+            }
+          ]
+        },
+        {
+          "title": "SPERA: Spherical Prior EEG Foundation Model with Geometry- and Frequency-Aware Latent Prediction",
+          "url": "https://arxiv.org/abs/2610.10571",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A foundation model for electroencephalography utilizing a joint-embedding predictive architecture with spatial and spectral priors.",
+            "why": "It improves cross-subject and cross-device generalization by operating in a latent space rather than relying on raw signal reconstruction.",
+            "who": "Minsu Kim, Ye-Sung Kim, Hyeseong Jeon et al."
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Minsu Kim, Ye-Sung Kim, Hyeseong Jeon, Wooseok Hyung, Joshua Lee, Chang-Hwan Im",
+          "tags": [
+            "foundational-models",
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10571"
+          },
+          "discussions": []
+        },
+        {
+          "title": "SLVR: Structured Latent Visual Reasoning via Human-like Reasoning Flows",
+          "url": "https://arxiv.org/abs/2610.10563",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "SLVR is a training method that organizes multimodal model reasoning into typed latent stages rather than generating textual chains.",
+            "why": "It improves fine-grained visual evidence grounding and reasoning performance while eliminating textual decoding overhead during inference.",
+            "who": "Albert Gao, Bing Xue, Andrea Zanette"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Albert Gao, Bing Xue, Andrea Zanette",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10563"
+          },
+          "discussions": []
+        },
+        {
+          "title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
+          "url": "https://arxiv.org/abs/2610.06100",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces Trace2Env, a framework that simulates interactive environments for LLM agents using historical interaction logs.",
+            "why": "It allows realistic, stateful agent evaluation and training without needing access to the original executable systems.",
+            "who": "Quanyu Long, Xiao Chen, Jianda Chen et al."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Quanyu Long, Xiao Chen, Jianda Chen, Haozhen Zhang, Qisheng Hu, Jianzhu Bao, Wenya Wang",
+          "tags": [
+            "world-models",
+            "simulation",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.06100",
+            "hf": "https://huggingface.co/papers/2610.06100",
+            "code": "https://github.com/ruyue0001/trace2env"
+          },
+          "discussions": []
+        },
+        {
+          "title": "AgentGarten: Code Worlds for Evolving Agents",
+          "url": "https://arxiv.org/abs/2610.12374",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A framework combining simulation backends with a neural renderer to build real-time interactive training environments.",
+            "why": "It allows agents to learn efficiently from visual observations, reducing training requirements from millions of steps to just four rounds.",
+            "who": "Jiawei Chi, Shangchen Miao, Zhiyuan Shi et al."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Jiawei Chi, Shangchen Miao, Zhiyuan Shi, Kailu Wu, Hanyang Wang, Weiliang Chen, Qiyu Dai, Jinshan Ren, Jun Gao, Mingsheng Long, Yueqi Duan, Jiangran Lyu, Jialong Wu, Fangfu Liu",
+          "tags": [
+            "simulation",
+            "world-models",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.12374",
+            "hf": "https://huggingface.co/papers/2610.12374",
+            "code": "https://github.com/MirroS-Lab/AgentGarten"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+          "url": "https://arxiv.org/abs/2610.08215",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A benchmark designed to measure how LLM agents learn from interactive feedback within novel, counterintuitive text games.",
+            "why": "It isolates experiential learning from pre-trained memory while testing agent generalizability across varied game scenarios.",
+            "who": "Shiliu Liu et al."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Yibo Li, Jinhang Qiu, Zhi Zheng, Qianyun Guo, Jiaying Wu, Shuo Ji, Bryan Hooi",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.08215",
+            "hf": "https://huggingface.co/papers/2610.08215",
+            "code": "https://github.com/liushiliushi/Learn2Play-Bench"
+          },
+          "discussions": []
+        },
+        {
+          "title": "OpenAI Withdraws 3 Math Papers",
+          "url": "https://github.com/openai/math/blob/main/history.md",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A repository update detailing the retraction of three mathematical research papers and revisions to several others due to proof errors.",
+            "why": "It demonstrates rigorous self-correction and formalization progress in automated or assisted mathematical reasoning repositories.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-08T08:08:37+00:00",
+          "author": "theemathas",
+          "tags": [
+            "other"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50003107",
+              "points": 341
+            }
+          ]
+        },
+        {
+          "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+          "url": "https://arxiv.org/abs/2610.08077",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces Self-Retrospection Distillation (SRD), a method that trains agents by distilling post-hoc trajectory experiences into predictive foresight.",
+            "why": "It extracts valuable learning signals from failed or uniform-reward rollouts, preventing training stagnation in sparse-reward environments.",
+            "who": "Haoxiang Zhang, Qinglin Chen, Hiroaki Hayashi et al."
+          },
+          "published_at": "2026-10-08T00:00:00+00:00",
+          "author": "Haoxiang Zhang, Qinglin Chen, Hiroaki Hayashi, Zhuofeng Li, Siming Zhang, Jiaxin Zhang, Jixuan Chen, Fang Wu, Pan Lu, Silvio Savarese, Julian McAuley, Chien-Sheng Wu",
+          "tags": [
+            "reinforcement-learning",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.08077",
+            "hf": "https://huggingface.co/papers/2610.08077",
+            "code": "https://github.com/SalesforceAIResearch/SRD"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Normalizing Trajectory Models",
+          "url": "https://machinelearning.apple.com/research/normalizing-trajectory-models",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "This paper introduces Normalizing Trajectory Models to enable exact likelihood training for few-step diffusion generation.",
+            "why": "It removes the need for distillation or adversarial objectives when compressing sampling steps.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-10-08T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "other"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Synthesis Through Simulation: Generating Coherent Enterprise Data via Scalable Agent-System Interaction",
+          "url": "https://arxiv.org/abs/2610.10549",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A framework that generates valid enterprise data using LLM agents in simulated environments.",
+            "why": "It bypasses the need for database schemas or seed data while maintaining high constraint satisfaction.",
+            "who": "SAP"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Yipeng Li, Ashutosh Hathidara, Jane Lo, Harshavardhan Abichandani, Gunraj Singh, Atin Ghosh",
+          "tags": [
+            "simulation",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10549",
+            "code": "https://github.com/SAP/synthesis-through-simulation"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Agent-Controlled Forgetting for Tool-Using Agents: Reversible Context Curation in Practice",
+          "url": "https://arxiv.org/abs/2610.10590",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A framework allowing LLM agents to replace verbose tool outputs with brief notes while archiving the original content for later retrieval.",
+            "why": "It drastically reduces context size and API costs during noisy tool trajectories, though its effectiveness is highly workload-dependent.",
+            "who": "Jan-Peter Franke"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Jan-Peter Franke",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10590"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Verification and Self-Improvement in Agentic AI: Foundations and Limits",
+          "url": "https://arxiv.org/abs/2610.10611",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A theoretical framework for analyzing verification and self-improvement in agentic systems.",
+            "why": "It establishes formal complexity bounds and limits on how agents can improve without introducing errors.",
+            "who": "Chien-Ping Lu"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Chien-Ping Lu",
+          "tags": [
+            "ai-safety",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10611"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Freeze the Decoder, Heal the Encoder: Parameter-Efficient Adaptation for SVD-Based KV-Cache Compression",
+          "url": "https://arxiv.org/abs/2610.10552",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A study identifying shared learning rate confounding in parameter-efficient fine-tuning and proposing encoder-only healing for SVD-based KV-cache compression.",
+            "why": "It demonstrates that apparent performance gains from asymmetric trainable parameters vanish with per-arm tuning, while still saving memory.",
+            "who": "Yufeng Wang"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Yufeng Wang",
+          "tags": [
+            "llm",
+            "multimodal",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10552"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Coverage, Not Difficulty, Sets How Much Synthetic Data an Activation Probe Needs",
+          "url": "https://arxiv.org/abs/2610.10594",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "An empirical study investigating sample complexity for training activation probes on synthetic LLM data.",
+            "why": "It demonstrates that data coverage and cross-distribution transfer—rather than sample difficulty—determine how many synthetic examples probes require.",
+            "who": "Ankush Checkervarty"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Ankush Checkervarty",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10594"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Temporal transformer CAN encoder with federated lightweight heads for anomaly detection",
+          "url": "https://arxiv.org/abs/2610.10613",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A federated temporal transformer architecture designed to identify anomalies within vehicular network data.",
+            "why": "It enables collaborative threat detection across decentralized units without compromising raw data privacy.",
+            "who": "Konstantinos Gyftodimos, Kyriakos Chiotis, Elena Politi et al."
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Konstantinos Gyftodimos, Kyriakos Chiotis, Elena Politi, George Dimitrakopoulos, Eirini Liotou",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10613"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Diffu-LoRA: A Novel Low-Rank Adaptation for Personalized Diffusion Models",
+          "url": "https://arxiv.org/abs/2610.10550",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "This paper presents Diffu-LoRA, a parameter-efficient approach for customizing text-to-image diffusion models using a few reference photos.",
+            "why": "It uses bilevel optimization and progressive pruning to automatically distribute low-rank adaptation capacity across layers without changing the frozen base model.",
+            "who": "Tianjing Li, Wei Zhu"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Tianjing Li, Wei Zhu",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10550"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Wieszcz-XIX: A 3.1-Billion-Word Corpus of Pre-1918 Polish and Temporally Bounded Language Models Trained From Scratch",
+          "url": "https://arxiv.org/abs/2610.10592",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "This paper introduces Wieszcz-XIX, a 3.1-billion-word historical Polish text corpus spanning 1800 to 1918, along with a suite of decoder-only language models trained from scratch on this data.",
+            "why": "It provides a rigorously cleaned dataset and demonstrates that models trained exclusively on historical text capture period-specific language structures and spelling more effectively than modern baselines.",
+            "who": "Szymon Kocur"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Szymon Kocur",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10592"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Cognitive Thermometers: Machine Learning and Logical Complexity",
+          "url": "https://arxiv.org/abs/2610.10724",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "An academic paper examining how machine learning models serve as empirical proxies for semantic complexity in natural language.",
+            "why": "It demonstrates that data-driven learned representations often align better with linguistic typology than traditional symbolic logic.",
+            "who": "Shane Steinert-Threlkeld, Jakub Szymanik"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Shane Steinert-Threlkeld, Jakub Szymanik",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10724"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Building Reliable Data Analytics Agents: Lessons from the KDD Cup",
+          "url": "https://developer.nvidia.com/blog/building-reliable-data-analytics-agents-lessons-from-the-kdd-cup/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "An overview of the architecture used by NVIDIA's KGMON team for data analytics agents in the KDD Cup.",
+            "why": "It demonstrates that compact execution harnesses can improve agent reliability in complex competitive tasks.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-08T18:30:02+00:00",
+          "author": "Jiwei Liu",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Anthropic launches free AI security scans for open-source projects",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "A complimentary automated vulnerability detection service utilizing frontier language models for open-source software.",
+            "why": "It provides critical security analysis resources to public codebases at zero financial cost.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-08T17:53:51-04:00",
+          "author": "Stevie Bonifield",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Share GPU clusters across teams with isolation and fairness using Amazon SageMaker HyperPod",
+          "url": "https://aws.amazon.com/blogs/machine-learning/share-gpu-clusters-across-teams-with-isolation-and-fairness-using-amazon-sagemaker-hyperpod/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A reference architecture for dividing a single GPU cluster among multiple teams with strict access boundaries.",
+            "why": "It enables multi-tenant resource scheduling and cost tracking for large-scale machine learning hardware.",
+            "who": "AWS"
+          },
+          "published_at": "2026-10-08T16:20:04+00:00",
+          "author": "Giuseppe Angelo Porcelli",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Introducing Falcon ASR",
+          "url": "https://huggingface.co/blog/tiiuae/falcon-asr",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "Falcon ASR is an automatic speech recognition model released on Hugging Face.",
+            "why": "It expands the Falcon model family into the audio and speech processing domain.",
+            "who": "Technology Innovation Institute"
+          },
+          "published_at": "2026-10-07T13:21:03+00:00",
+          "author": "",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Scale Bitwise-Deterministic Pretraining with NVIDIA Megatron Core",
+          "url": "https://developer.nvidia.com/blog/scale-bitwise-deterministic-pretraining-with-nvidia-megatron-core/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A technical framework for ensuring bitwise-deterministic execution during large-scale model pretraining.",
+            "why": "It simplifies debugging and ensures reproducible checkpoint recovery across massive cluster runs.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-06T19:58:03+00:00",
+          "author": "Ashwath Aithal",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Lamp, two months later: it talks with more feeling, it can read the room, and its brain is swappable",
+          "url": "https://www.reddit.com/r/robotics/comments/1x1hyx6/lamp_two_months_later_it_talks_with_more_feeling/",
+          "source": "r/robotics",
+          "summary": {
+            "what": "An updated DIY 5-DOF robotic desk companion featuring integrated environmental sensors and modular LLM agent backends.",
+            "why": "It demonstrates practical integration of local emotion detection, text-to-speech, and sensor-driven event triggers in a physical agent.",
+            "who": "deebuildsthings"
+          },
+          "published_at": "2026-10-09T10:36:51+00:00",
+          "author": "deebuildsthings",
+          "tags": [
+            "robotics",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/robotics",
+              "url": "https://www.reddit.com/r/robotics/comments/1x1hyx6/lamp_two_months_later_it_talks_with_more_feeling/"
+            }
+          ]
+        },
+        {
+          "title": "AI can now turn a text description into a working 3D game object entirely through code, a new 100-object test finds Astra is the most reliable, while people think Opus 5.5’s creations look better",
+          "url": "https://www.reddit.com/r/singularity/comments/1x1hih4/ai_can_now_turn_a_text_description_into_a_working/",
+          "source": "r/singularity",
+          "summary": {
+            "what": "A 100-item evaluation testing LLMs on generating code for 3D game objects from text prompts.",
+            "why": "It shows Astra achieves higher functional code accuracy, whereas human evaluators prefer the visual aesthetics of Opus.",
+            "who": "141_1337"
+          },
+          "published_at": "2026-10-09T10:09:54+00:00",
+          "author": "141_1337",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1x1hih4/ai_can_now_turn_a_text_description_into_a_working/"
+            }
+          ]
+        },
+        {
+          "title": "We’re putting too much faith in AI’s ability to say no",
+          "url": "https://www.technologyreview.com/2026/10/09/1145728/we-are-putting-too-much-faith-in-ai-to-say-no/",
+          "source": "MIT Technology Review AI",
+          "summary": {
+            "what": "An article examining societal overreliance on AI systems' ability to refuse unsafe instructions.",
+            "why": "It highlights potential failure modes in current AI guardrails and alignment assumptions.",
+            "who": "MIT Technology Review"
+          },
+          "published_at": "2026-10-09T09:00:00+00:00",
+          "author": "Arthur Holland Michel",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "ttok 1.0",
+          "url": "https://simonwillison.net/2026/Oct/9/ttok/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A command-line utility for counting and managing text tokens.",
+            "why": "Version 1.0 updates the default tokenizer to support newer OpenAI models.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-10-09T00:34:43+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Roundtables: A Conversation With the Creator of AI-Designed Viruses",
+          "url": "https://www.technologyreview.com/2026/10/08/1146224/roundtables-a-conversation-with-the-creator-of-ai-designed-viruses/",
+          "source": "MIT Technology Review AI",
+          "summary": {
+            "what": "An interview discussion regarding generative biological models used for creating virus genetic blueprints.",
+            "why": "It highlights emerging bio-security risks and dual-use dangers surrounding AI applications in synthetic biology.",
+            "who": "MIT Technology Review"
+          },
+          "published_at": "2026-10-09T00:08:24+00:00",
+          "author": "MIT Technology Review",
+          "tags": [
+            "ai-safety",
+            "other"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "An Explainable Header-Centric Framework for Large-Scale Semantic Table Interpretation and Data Quality Assessment",
+          "url": "https://arxiv.org/abs/2610.10541",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "An explainable, header-centric framework for metadata-only Column Type Annotation and Data Quality Assessment.",
+            "why": "It allows semantic table interpretation and data quality scoring using only column headers when cell data is missing or noisy.",
+            "who": "Marcelo Valentim Silva, Hannes Herrmann, Valerie Maxville"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Marcelo Valentim Silva, Hannes Herrmann, Valerie Maxville",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10541"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Large Language Model-Assisted Preparation of Transportation Management Plans: A Case Study with WisDOT WisTMP System",
+          "url": "https://arxiv.org/abs/2610.10650",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "An automated framework utilizing fine-tuned open-source language models to generate transportation management plans.",
+            "why": "It demonstrates domain adaptation for administrative civil engineering documents while exposing current limitations in cost estimation and scaling gains.",
+            "who": "Zihao Sheng, Pei Li, Zilin Huang et al."
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Zihao Sheng, Pei Li, Zilin Huang, Yen-Jung Chen, Yuhao Luo, Zhengyang Wan, Steven T. Parker, David A. Noyce, Sikai Chen",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10650"
+          },
+          "discussions": []
+        },
+        {
+          "title": "A Camera-Native Stereo VR180 Dataset",
+          "url": "https://arxiv.org/abs/2610.10607",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "A raw, uncompressed stereo VR180 dataset captured directly from professional cinematic cameras with accompanying AI annotations.",
+            "why": "It replaces heavily compressed web-scraped video with calibrated, camera-native source material for immersive computer vision research.",
+            "who": "Lulin Xuan"
+          },
+          "published_at": "2026-10-09T00:00:00-04:00",
+          "author": "Linxuan Lu",
+          "tags": [
+            "multimodal",
+            "simulation",
+            "other"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.10607",
+            "code": "https://github.com/lulinxuan/vr180-dataset-tools"
+          },
+          "discussions": []
+        },
+        {
+          "title": "ttok 0.4",
+          "url": "https://simonwillison.net/2026/Oct/8/ttok/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A command-line utility for counting LLM tokens using OpenAI's tiktoken encoder.",
+            "why": "This minor update resolves dependency warnings, updates continuous integration pipelines, and adds a flag to list available models.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-10-08T23:34:28+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+          "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+          "source": "NVIDIA Blog",
+          "summary": {
+            "what": "An article demonstrating how developers integrate frontier AI agents with NVIDIA Omniverse to build 3D simulations.",
+            "why": "It highlights the practical automation of physics, rendering, and asset assembly using LLM-driven workflows.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-08T21:06:35+00:00",
+          "author": "NVIDIA Writers",
+          "tags": [
+            "simulation",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "5 Steps to Create SimReady Assets for Robotics with Frontier AI Models",
+          "url": "https://developer.nvidia.com/blog/5-steps-to-create-simready-assets-for-robotics-with-frontier-ai-models/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A guide on utilizing generative AI models to automate the preparation of 3D CAD assets for physics simulations.",
+            "why": "It simplifies the tedious process of defining physical properties, materials, and collision bounds for virtual robot environments.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-08T20:57:55+00:00",
+          "author": "Elizabeth Goodman",
+          "tags": [
+            "robotics",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments",
+          "url": "https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "An overview of Amazon Bedrock AgentCore payments for micro-transactions between autonomous AI agents.",
+            "why": "It simplifies implementing per-request payment models while enforcing infrastructure-level spending limits.",
+            "who": "AWS, Incarna, and BlockRun"
+          },
+          "published_at": "2026-10-08T18:33:29+00:00",
+          "author": "Peter Jiang",
+          "tags": [
+            "training-infra",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Anthropic bans ‘abusive or cruel behavior’ toward Claude",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "Anthropic updated its usage policy to restrict high-risk activities and ban abusive behavior toward its AI chatbot.",
+            "why": "It addresses emerging risks like election interference, weapons development, and the ethical implications of mistreating AI.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-08T13:00:00-04:00",
+          "author": "Hayden Field",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50008565",
+              "points": 73
+            },
+            {
+              "source": "r/artificial",
+              "url": "https://www.reddit.com/r/artificial/comments/1x0ydf8/anthropic_bans_abusive_or_cruel_behavior_toward/"
+            },
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1x18ywv/anthropic_bans_abusive_or_cruel_behavior_toward/"
+            },
+            {
+              "source": "r/OpenAI",
+              "url": "https://www.reddit.com/r/OpenAI/comments/1x1bxtb/anthropic_bans_abusive_or_cruel_behavior_toward/"
+            }
+          ]
+        },
+        {
+          "title": "LegalOn halves Codex costs while maintaining development speed",
+          "url": "https://openai.com/index/legalon-halves-codex-costs",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A case study detailing cost reduction strategies for enterprise language model deployment.",
+            "why": "It demonstrates a practical method to slash operational LLM expenses by nearly two-thirds without hurting output.",
+            "who": "LegalOn"
+          },
+          "published_at": "2026-10-08T12:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "total": 41,
