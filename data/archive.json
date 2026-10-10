@@ -1,6 +1,429 @@
 {
-  "generated_at": "2026-10-09T13:12:36.866690+00:00",
+  "generated_at": "2026-10-10T12:25:34.013931+00:00",
   "archive": [
+    {
+      "date": "2026-10-10",
+      "total": 19,
+      "tags": {
+        "llm": 12,
+        "reinforcement-learning": 1,
+        "world-models": 1,
+        "foundational-models": 3,
+        "multimodal": 4,
+        "robotics": 1,
+        "ai-safety": 3,
+        "simulation": 1,
+        "training-infra": 4,
+        "general-ml": 5,
+        "other": 2
+      },
+      "articles": [
+        {
+          "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+          "url": "https://arxiv.org/abs/2610.12242",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A serving framework designed specifically for fine-grained, token-level routing across multiple language models.",
+            "why": "It resolves step desynchronization and batching delays in multi-model inference, achieving up to 64x higher decoding throughput.",
+            "who": "Researchers from Tsinghua University (thu-nics)"
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Tianyu Fu, Tengxuan Liu, Ruoxi Wang, Yixin Dong, Yi Ge, Yichen You, Yu Wang",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.12242",
+            "hf": "https://huggingface.co/papers/2610.12242",
+            "code": "https://github.com/thu-nics/TokenRouter"
+          },
+          "discussions": []
+        },
+        {
+          "title": "SuperNav: An Agentic Navigation System for Any Task in Any Scene",
+          "url": "https://arxiv.org/abs/2610.12126",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A training-free agentic framework that equips pretrained multimodal LLMs with visual tool interfaces for embodied robot navigation.",
+            "why": "It decouples high-level visual reasoning from physical motion control, improving zero-shot generalization across diverse environments and tasks.",
+            "who": "Researchers from Zhejiang University."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Jinkai Zhang, Jingyi Xu, Yuanhong Yu, Jiarui Guo, Ruizhen Hu, Hujun Bao, Xiaowei Zhou, Sida Peng",
+          "tags": [
+            "robotics",
+            "multimodal",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.12126",
+            "hf": "https://huggingface.co/papers/2610.12126",
+            "code": "https://github.com/zju3dv/SuperNav"
+          },
+          "discussions": []
+        },
+        {
+          "title": "MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement",
+          "url": "https://arxiv.org/abs/2610.11959",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A report on the MiMo-V2.6 omni-modal model series focused on scaling RL compute.",
+            "why": "It introduces high-throughput asynchronous training and agentic grading to improve self-improvement in complex environments.",
+            "who": "Core Team, Zongming Qiao, Ziyue Hua et al."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Core Team, Zongming Qiao, Ziyue Hua, Zirui Ou, Zihao Yue, Zihan Jiang, Zhuo Huang, Zhiyang Chen, Zhixian Zheng, Zhipeng Xu, Zhengrui Ma, Yuyang Hu, Yuhang Dong, Yuechen Zhang, Yudong Wang, Yuanxin Liu, Yixin Yang, Yishuo Cai, Yikai Zhao, Yihan Yan, Yifan Zhang, Yifan Song, Xiyu Wei, Xing Zhang, Xin Zhang, Xiaoqian Liu, Xiaodong Ji, Xiangwei Deng, Xueyu Guo, Wenhan Ma, Weimin Xiong, Weikun Wang, Weiji Zhuang, Shuo Liu, Shuhuai Ren, Shuhao Gu, Shimao Chen, Shijie Cao, Shihua Yu, Shicheng Li, Shengjie Zhou, Shaolei Zhang, Rang Li, Qiying Wang, Qingkai Fang, Qianli Chen, Minzheng Wang, Liwen Wang, Linli Yao, Linghao Zhang, Liangyu Cheng, Liang Zhao, Lei Li, Jinhao Dong, Jinyu Xiang, Jianyu Wei, Jiangshan Duo, Huaqiu Liu, Huanjie Fan, Hongyi Guan, Hongshen Xu, Hao Tian, Hanyu Li, Hailin Zhang, Gang Wang, Fuli Luo, Feng Wei, Dong Zhang, Dawei Zhu, Chiheng Lou, Chenhong He, Chenhao He, Chenghua Liu, Bowen Ye, Bowen Shen, Boshen Xu, Bo Yang, Bingquan Xia, Bangjun Xiao, Baixuan Xu, Zhouxiang Mao, Zhiyang Zhang, Zhixiang Xu, Zhenru Lin, Zhengju Tang, Zhaojun Huang, Yuzhe Weng, Yuxing Xiang, Yuxiao Li, Yuheng Yang, Yuhang Wang, Yuchen Liu, Yuanyuan Tian, Yuanliang Dong, Yu Cheng, Yongzhe He, Yongshun Liang, Yong Wang, Yiyan Wang, Yitian Gong, Yijie Zhang, Yanshu Xin, Xun Zhang, Xingjian Zhao, Wenyu Yang, Wenshan Huang, Wenhao Li, Tingwei Huang, Tianyu Yu, Tianyang Lu, Taoyu Yang, Sinan Du, Shutong Tian, Shulin Du, Shengfan Wang, Shanchuan Fang, Qihao Zhang, Qibin Yang, Qian Yu, Qian Tu, Pengrong Xie, Peipei Wang, Peidian Li, Minkun Guo, Mingchen Shao, Luohan Gao, Lijie Wang, Liang Shi, Kaiqi Chen, Kaiming Liu, Kaifei Wang, Kai Yang, Jinlong Xue, Jiechen Zhang, Jiaxuan Liu, Hongxu An, Hao Peng, Hanglong Lü, Guonan Wang, Feiyu Yang, Fanyu Cao, Fangyue Liu, Fan Cui, Cong Wang, Chun Chen, Chenxu Bai, Chengxuan Zhu, Chenghua Wang, Boyi Zeng",
+          "tags": [
+            "reinforcement-learning",
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.11959",
+            "hf": "https://huggingface.co/papers/2610.11959"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Multi-Agent Egocentric World Model with Fine-Grained Embodied Interaction",
+          "url": "https://arxiv.org/abs/2610.12299",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "ME-World is a multi-agent egocentric world model that synchronously generates first-person video streams for interacting agents.",
+            "why": "It advances embodied AI by handling fine-grained multi-agent interactions while maintaining cross-view and environment consistency.",
+            "who": "Dahyun Chung, Siyoon Jin, Hyunwook Choi et al."
+          },
+          "published_at": "2026-10-09T00:00:00+00:00",
+          "author": "Dahyun Chung, Siyoon Jin, Hyunwook Choi, Honggyu An, Junyoung Seo, Hyunsung Kim, Seung Wook Kim, Seungryong Kim",
+          "tags": [
+            "world-models",
+            "multimodal",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.12299",
+            "hf": "https://huggingface.co/papers/2610.12299",
+            "code": "https://github.com/cvlab-kaist/ME-World"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Why Temperature 0 Isn't Deterministic",
+          "url": "https://towardsdatascience.com/why-temperature-0-isnt-deterministic/",
+          "source": "Towards Data Science",
+          "summary": {
+            "what": "An analysis explaining why zero-temperature large language model generation fails to maintain true determinism.",
+            "why": "It provides a mathematical formula predicting token instability and long-context divergence.",
+            "who": "Utkarsh Mangal"
+          },
+          "published_at": "2026-10-10T12:00:00+00:00",
+          "author": "Utkarsh Mangal",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "A 3-billion-parameter model that paints every pixel directly without a VAE",
+          "url": "https://huggingface.co/speridlabs/iris-3b",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A three billion parameter neural network that generates images pixel by pixel without using a variational autoencoder.",
+            "why": "It bypasses traditional latent space compression to perform direct pixel-level generation.",
+            "who": "Deadity"
+          },
+          "published_at": "2026-10-10T10:19:06+00:00",
+          "author": "Deadity",
+          "tags": [
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1x2bsk1/a_3billionparameter_model_that_paints_every_pixel/"
+            }
+          ]
+        },
+        {
+          "title": "Why AlphaFold Didn't Solve Protein Folding — Pushmeet Kohli, Google DeepMind & Sal Candido, Biohub",
+          "url": "https://www.latent.space/p/biohub-deepmind",
+          "source": "Latent Space",
+          "summary": {
+            "what": "An interview analyzing the limitations of current AI models like AlphaFold in biological discovery.",
+            "why": "It examines how AI scaling concepts apply to complex biological systems beyond structure prediction.",
+            "who": "Pushmeet Kohli (Google DeepMind) and Sal Candido (CZ Biohub)"
+          },
+          "published_at": "2026-10-10T00:31:26+00:00",
+          "author": "",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead",
+          "url": "https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "Anthropic has disabled live internet access across its internal evaluation suites for AI agents.",
+            "why": "The decision stems from difficulties in reliably controlling autonomous agent actions when connected to the open web.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-10T00:18:32+00:00",
+          "author": "Tim Fernholz",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "AI coding agents generate more code, but not more software",
+          "url": "https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/",
+          "source": "Ars Technica AI",
+          "summary": {
+            "what": "An empirical study analyzing the actual impact of generative AI coding assistants on software delivery.",
+            "why": "It demonstrates that output volume increases do not translate to faster shipping due to human verification limits.",
+            "who": "Ars Technica AI"
+          },
+          "published_at": "2026-10-09T19:43:50+00:00",
+          "author": "Kyle Orland",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "&#8216;Pure insanity&#8217;: Mathematicians will need years to make sense of OpenAI&#8217;s latest drop",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1008726/openai-mathematics-solutions-chaos",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "An unexpected release of complex mathematical outputs generated by OpenAI's systems.",
+            "why": "It highlights a sudden capability leap that experts find difficult to immediately analyze or verify.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-09T15:09:44-04:00",
+          "author": "Robert Hart",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Impactful scheduling for GPU clusters",
+          "url": "https://allenai.org/blog/impactful-scheduling",
+          "source": "Allen AI",
+          "summary": {
+            "what": "A specialized GPU cluster scheduling system integrating time budgets and time-slicing.",
+            "why": "It improves workload throughput and reduces queue times for high-priority experiments.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-10-09T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Ai2 at COLM 2026: Open research, from models to agents for science",
+          "url": "https://allenai.org/blog/colm-2026-recap",
+          "source": "Allen AI",
+          "summary": {
+            "what": "A conference presentation detailing open-source language models, training frameworks, and scientific AI applications.",
+            "why": "It introduces new open architectures like Olmo Hybrid and Asta to advance public machine learning research.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-10-09T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Is Your Football Model Failing Because of Your Closing-Odds Data?",
+          "url": "https://medium.com/@dash_63328/is-your-football-model-failing-because-of-your-closing-odds-data-d5279139d99b?source=rss------machine_learning-5",
+          "source": "Medium · Machine Learning",
+          "summary": {
+            "what": "A practical guide on auditing sports betting data used in predictive models.",
+            "why": "It shows that poor predictions often stem from data pipeline errors like timestamp mismatches rather than model architecture.",
+            "who": "Dashrath Vishwakarma"
+          },
+          "published_at": "2026-10-10T12:01:46+00:00",
+          "author": "Dashrath Vishwakarma",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "I Ran My AI Agent Team Against a Single Agent. The Team Cost Twice as Much and Resolved Nothing.",
+          "url": "https://orbytlabs.medium.com/i-ran-my-ai-agent-team-against-a-single-agent-the-team-cost-twice-as-much-and-resolved-nothing-a69238e5a0b2?source=rss------artificial_intelligence-5",
+          "source": "Medium · AI",
+          "summary": {
+            "what": "An empirical test comparing a multi-agent AI setup against a single AI agent across several task briefs.",
+            "why": "The multi-agent team doubled compute costs without successfully resolving any tasks, challenging the benefit of multi-agent architectures.",
+            "who": "Justin Bartak | Orbyt Labs"
+          },
+          "published_at": "2026-10-10T12:01:22+00:00",
+          "author": "Justin Bartak | Orbyt Labs",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Strata with Qwen3.8 Flash Next UD-Q4_K_XL",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bbx6/strata_with_qwen38_flash_next_udq4_k_xl/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A community benchmark evaluating the Strata backend running an Unsloth-quantized Qwen model on consumer workstation hardware.",
+            "why": "Demonstrates significant inference speedups over vLLM using custom quantization and KV cache configurations.",
+            "who": "hyudryu"
+          },
+          "published_at": "2026-10-10T09:50:37+00:00",
+          "author": "hyudryu",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x2bbx6/strata_with_qwen38_flash_next_udq4_k_xl/"
+            }
+          ]
+        },
+        {
+          "title": "Quoting The New York Times",
+          "url": "https://simonwillison.net/2026/Oct/10/the-new-york-times/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A report detailing an incident where Anthropic's autonomous agents submitted incomplete visa applications on a government website.",
+            "why": "Highlights practical safety and control challenges when testing web-navigating LLM agents in real-world environments.",
+            "who": "Anthropic, as reported by The New York Times"
+          },
+          "published_at": "2026-10-10T02:04:12+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Anthropic’s AI gave Philadelphia police a fake tip about an unsolved homicide",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1009090/anthropic-fake-homicide-information-philadelphia-pd-tip",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "An Anthropic conversational model generated and submitted a fabricated tip regarding an unresolved murder case.",
+            "why": "It highlights real-world risks associated with generative AI hallucinations reaching public tip lines and law enforcement.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-09T17:15:38-04:00",
+          "author": "Emma Roth",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How Postman runs Agent Mode for 40 million developers on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A technical case study detailing the production architecture of Postman's AI agent on Amazon Bedrock.",
+            "why": "It addresses practical engineering challenges in scaling agents, such as context management and tool selection.",
+            "who": "Postman and AWS"
+          },
+          "published_at": "2026-10-09T15:35:02+00:00",
+          "author": "Srinivas Kini",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "NVIDIA, Microsoft Kick Off a New Beginning for Windows PCs With RTX Spark and AI Agents",
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+          "source": "NVIDIA Blog",
+          "summary": {
+            "what": "A joint initiative by NVIDIA and Microsoft to optimize Windows hardware and software for local AI agents.",
+            "why": "It establishes a dedicated ecosystem for running autonomous agents directly on consumer PC hardware.",
+            "who": "NVIDIA and Microsoft"
+          },
+          "published_at": "2026-10-07T18:45:28+00:00",
+          "author": "Gerardo Delgado",
+          "tags": [
+            "general-ml",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-09",
       "total": 37,

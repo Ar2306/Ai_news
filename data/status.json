@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-10-09T13:12:36.886887+00:00",
-  "duration_seconds": 890.7,
+  "generated_at": "2026-10-10T12:25:34.033093+00:00",
+  "duration_seconds": 613.1,
   "counts": {
-    "fetched": 728,
-    "unique": 668,
-    "candidates": 85,
-    "kept": 37
+    "fetched": 427,
+    "unique": 366,
+    "candidates": 67,
+    "kept": 19
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 18,
-    "Gemini (gemini-3.6-flash)": 9,
+    "Gemini (gemini-3.5-flash)": 16,
     "Ollama Cloud (gemma4:31b)": 1,
-    "Gemini (gemini-3.5-flash-lite)": 57
+    "Gemini (gemini-3.5-flash-lite)": 50
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -20,35 +19,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
@@ -90,14 +89,14 @@
       "name": "Interconnects",
       "group": "blogs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 6,
+      "items": 8,
       "error": ""
     },
     {
@@ -118,7 +117,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 20,
+      "items": 22,
       "error": ""
     },
     {
@@ -132,28 +131,28 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 35,
+      "items": 33,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 20,
+      "items": 16,
       "error": ""
     },
     {
       "name": "Allen AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 3,
       "error": ""
     },
     {
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -174,14 +173,14 @@
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 5,
       "error": ""
     },
     {
@@ -209,14 +208,14 @@
       "name": "Mistral AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 5,
+      "items": 4,
       "error": ""
     },
     {
@@ -230,7 +229,7 @@
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 13,
+      "items": 10,
       "error": ""
     },
     {
@@ -244,14 +243,14 @@
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 1,
+      "items": 5,
       "error": ""
     },
     {
@@ -293,7 +292,7 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 4,
+      "items": 10,
       "error": ""
     },
     {
@@ -307,14 +306,14 @@
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 6,
+      "items": 3,
       "error": ""
     },
     {
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 2,
       "error": ""
     },
     {
