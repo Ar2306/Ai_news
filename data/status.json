@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-10T12:25:34.033093+00:00",
-  "duration_seconds": 613.1,
+  "generated_at": "2026-10-11T12:39:59.003762+00:00",
+  "duration_seconds": 560.6,
   "counts": {
-    "fetched": 427,
-    "unique": 366,
-    "candidates": 67,
-    "kept": 19
+    "fetched": 373,
+    "unique": 313,
+    "candidates": 62,
+    "kept": 17
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 16,
+    "Gemini (gemini-3.5-flash)": 14,
     "Ollama Cloud (gemma4:31b)": 1,
-    "Gemini (gemini-3.5-flash-lite)": 50
+    "Gemini (gemini-3.5-flash-lite)": 47
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -96,7 +96,7 @@
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 8,
+      "items": 9,
       "error": ""
     },
     {
@@ -117,7 +117,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 22,
+      "items": 23,
       "error": ""
     },
     {
@@ -131,21 +131,21 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 33,
+      "items": 34,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 16,
+      "items": 11,
       "error": ""
     },
     {
       "name": "Allen AI",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
@@ -159,21 +159,21 @@
       "name": "Google AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -215,21 +215,21 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 3,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 10,
+      "items": 6,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 10,
+      "items": 6,
       "error": ""
     },
     {
@@ -250,7 +250,7 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 5,
+      "items": 6,
       "error": ""
     },
     {
@@ -299,7 +299,7 @@
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 8,
+      "items": 5,
       "error": ""
     },
     {
@@ -313,14 +313,14 @@
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 2,
+      "items": 0,
       "error": ""
     },
     {
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 20,
+      "items": 13,
       "error": ""
     },
     {
@@ -334,7 +334,7 @@
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 100,
+      "items": 72,
       "error": ""
     },
     {
