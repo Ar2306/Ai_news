@@ -1,6 +1,627 @@
 {
-  "generated_at": "2026-10-12T15:14:37.201095+00:00",
+  "generated_at": "2026-10-14T11:38:24.031348+00:00",
   "archive": [
+    {
+      "date": "2026-10-14",
+      "total": 28,
+      "tags": {
+        "llm": 15,
+        "world-models": 1,
+        "foundational-models": 6,
+        "multimodal": 4,
+        "robotics": 3,
+        "interpretability": 1,
+        "ai-safety": 2,
+        "training-infra": 7,
+        "general-ml": 5,
+        "other": 3
+      },
+      "articles": [
+        {
+          "title": "[AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks",
+          "url": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+          "source": "Latent Space",
+          "summary": {
+            "what": "General availability release of the Gemini 4 Argon model.",
+            "why": "Independent benchmarks like CursorBench validate the model's performance claims.",
+            "who": "Google"
+          },
+          "published_at": "2026-10-14T05:40:28+00:00",
+          "author": "Latent.Space",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Developing Gemini 4 Argon responsibly and safely",
+          "url": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+          "source": "Google DeepMind",
+          "summary": {
+            "what": "A technical report on the safety and responsibility frameworks for Gemini 4 Argon.",
+            "why": "It details the alignment and risk mitigation strategies used during the model's development.",
+            "who": "Google DeepMind"
+          },
+          "published_at": "2026-10-13T19:43:07+00:00",
+          "author": "",
+          "tags": [
+            "foundational-models",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Gemini 4 Argon for Robotics",
+          "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+          "source": "Google DeepMind",
+          "summary": {
+            "what": "A specialized model iteration for robotic control.",
+            "why": "Extends Gemini capabilities to physical actuation and spatial reasoning.",
+            "who": "Google DeepMind"
+          },
+          "published_at": "2026-10-13T16:01:58+00:00",
+          "author": "",
+          "tags": [
+            "robotics",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50074869",
+              "points": 222
+            }
+          ]
+        },
+        {
+          "title": "Higgsfield takes AI video from 1 minute to over 10",
+          "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A set of new generative models for extended video, images, and voice.",
+            "why": "It increases the maximum duration of AI-generated video to over ten minutes.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-13T12:00:00+00:00",
+          "author": "",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives",
+          "url": "https://arxiv.org/abs/2609.39601",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "GroundingPI is a 4B-parameter spatial grounding model that outputs visual coordinates as quantized vocabulary tokens.",
+            "why": "It outperforms larger baselines across 34 grounding benchmarks and significantly boosts performance in downstream robotic manipulation and autonomous driving.",
+            "who": "Qize Yu, Lianrui Fan, Boyu Chen et al."
+          },
+          "published_at": "2026-10-13T00:00:00+00:00",
+          "author": "Qize Yu, Lianrui Fan, Boyu Chen, Jiaqi Liang, Xini Ding, Yue Chen, Zetian Song, Yuran Wang, Yi Zou, Kaixuan Wang, Tianxing Chen, Wenxuan Song, Bohan Zhou, Mingleyang Li, Siqiao Huang, Yuqi Ye, Caigao Jiang, Wei Wei, Ruihai Wu, Hang Zhang, Yixiao Ge, Shuchang Zhou, Shilong Liu, Xianming Liu, Ping Luo, Shiyu Huang",
+          "tags": [
+            "multimodal",
+            "robotics",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2609.39601",
+            "hf": "https://huggingface.co/papers/2609.39601",
+            "code": "https://github.com/groundingpi/GroundingPI"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Thinking Inertia: LLMs Keep Thinking When Told Not To",
+          "url": "https://arxiv.org/abs/2610.11765",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A study on the ability of LLMs to suppress internal reasoning traces when instructed.",
+            "why": "It identifies 'Thinking Inertia,' where models continue to reason despite explicit commands to provide only the final answer.",
+            "who": "Dianqiao Lei, Kevin Qinghong Lin, Pan Lu et al."
+          },
+          "published_at": "2026-10-13T00:00:00+00:00",
+          "author": "Dianqiao Lei, Kevin Qinghong Lin, Pan Lu, Philip Torr, James Zou",
+          "tags": [
+            "llm",
+            "interpretability"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.11765",
+            "hf": "https://huggingface.co/papers/2610.11765",
+            "code": "https://github.com/thinking-inertia/code"
+          },
+          "discussions": []
+        },
+        {
+          "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+          "url": "https://arxiv.org/abs/2610.13361",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A new benchmark called AgentSWE for evaluating coding agents' ability to build other agents.",
+            "why": "It reveals a significant gap between an agent's demonstrated capabilities and its actual delivery of requirements.",
+            "who": "Jiahao Wang, Hongjin Qian, Yuyang Hu et al."
+          },
+          "published_at": "2026-10-13T00:00:00+00:00",
+          "author": "Jiahao Wang, Hongjin Qian, Yuyang Hu, Jiajun Zhang, Zheng Liu",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.13361",
+            "hf": "https://huggingface.co/papers/2610.13361",
+            "code": "https://github.com/VectorSpaceLab/AgentSWE"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Scaling Agentic Data for Long-Horizon Terminal Intelligence",
+          "url": "https://arxiv.org/abs/2610.13166",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "TerminalHorizon is an automated data synthesis engine for creating long-horizon agent trajectories.",
+            "why": "It generates complex task environments that force agents to explore and iterate rather than following simplified paths.",
+            "who": "Shun Zou, Ziyu Ma, Yi Zou et al."
+          },
+          "published_at": "2026-10-13T00:00:00+00:00",
+          "author": "Shun Zou, Ziyu Ma, Yi Zou, Yong Wang, Lin Chen, Zehui Chen, Guanhua Chen, Xiangxiang Chu, Feng Zhao",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.13166",
+            "hf": "https://huggingface.co/papers/2610.13166"
+          },
+          "discussions": []
+        },
+        {
+          "title": "llm-meta-ai 0.2",
+          "url": "https://simonwillison.net/2026/Oct/12/llm-meta-ai/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A plugin update for accessing Meta's new Muse Wonder model series.",
+            "why": "Introduces models with multiple reasoning levels and claimed performance parity with top-tier competitors.",
+            "who": "Meta AI"
+          },
+          "published_at": "2026-10-12T23:58:46+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Redesigning source control at Anthropic",
+          "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A description of Scion, a custom centralized source control system replacing Git.",
+            "why": "It handles massive scale (30k daily merges) and high CI traffic that crashed standard Git.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-13T23:00:06+00:00",
+          "author": "",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50073633",
+              "points": 794
+            }
+          ]
+        },
+        {
+          "title": "Dyna-2: General Purpose Physical Agents with Hour-Long Autonomy — Jason Ma, Dyna Robotics",
+          "url": "https://www.latent.space/p/dyna",
+          "source": "Latent Space",
+          "summary": {
+            "what": "A discussion on the development of World Action Models for physical agents.",
+            "why": "It aims to enable robots to maintain autonomy over hour-long durations.",
+            "who": "Dyna Robotics"
+          },
+          "published_at": "2026-10-13T22:25:55+00:00",
+          "author": "",
+          "tags": [
+            "robotics",
+            "world-models"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Run fast, private agents on-device with LFM2.5-24B-A2B",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A new 24B parameter model optimized for local execution.",
+            "why": "It aims to provide high-performance agentic capabilities while maintaining data privacy on-device.",
+            "who": "Liquid AI"
+          },
+          "published_at": "2026-10-13T17:05:48+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI",
+          "url": "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai/",
+          "source": "Meta Engineering (ML)",
+          "summary": {
+            "what": "A large-scale recommendation foundation model for advertising.",
+            "why": "It applies LLM-style architectures to RecSys to improve ad performance and compute efficiency.",
+            "who": "Meta"
+          },
+          "published_at": "2026-10-13T16:01:00+00:00",
+          "author": "",
+          "tags": [
+            "foundational-models",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "NVIDIA Run:ai Is Now Open Source as Part of NVIDIA DSX AI Factory Platform",
+          "url": "https://developer.nvidia.com/blog/nvidia-runai-is-now-open-source-as-part-of-nvidia-dsx-ai-factory-platform/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "An open-source release of the Run:ai orchestration platform.",
+            "why": "It provides tools for managing GPU resources and scheduling workloads across AI clusters.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-13T14:19:40+00:00",
+          "author": "Tanya Lenz",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How Anthropic’s Dynamic Workflows Coordinate Claude Agents",
+          "url": "https://www.latent.space/p/claude-dynamic-workflows",
+          "source": "Latent Space",
+          "summary": {
+            "what": "A presentation on dynamic workflow coordination for Claude agents.",
+            "why": "It applies operating system principles to manage complex agentic tasks.",
+            "who": "Anthropic"
+          },
+          "published_at": "2026-10-12T18:18:17+00:00",
+          "author": "Richard MacManus",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Minions: A Dynamic and Distributed Virtual GPU Cloud Built on Idle Apple Silicon Devices",
+          "url": "https://machinelearning.apple.com/research/distributed-gpu-cloud",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "A distributed virtual GPU cloud system for ML inference.",
+            "why": "It aggregates idle GPU resources across multiple Apple Silicon macOS devices to reduce infrastructure costs.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-10-12T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50070593",
+              "points": 246
+            }
+          ]
+        },
+        {
+          "title": "Your LLM Fits in GPU Memory. So Why Is It Still Slow?",
+          "url": "https://milind-divre.medium.com/your-llm-fits-in-gpu-memory-so-why-is-it-still-slow-bc17527dee29?source=rss------artificial_intelligence-5",
+          "source": "Medium · AI",
+          "summary": {
+            "what": "An explanation of memory bandwidth bottlenecks in LLM inference.",
+            "why": "Clarifies why VRAM capacity does not guarantee high token throughput.",
+            "who": "Milind Divre"
+          },
+          "published_at": "2026-10-14T11:26:34+00:00",
+          "author": "Milind Divre",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say",
+          "url": "https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/",
+          "source": "Ars Technica AI",
+          "summary": {
+            "what": "A report on jailbreaking techniques used to bypass safety filters.",
+            "why": "It demonstrates vulnerabilities in the content moderation systems of major frontier models.",
+            "who": "Ashley Belanger"
+          },
+          "published_at": "2026-10-14T11:00:30+00:00",
+          "author": "Ashley Belanger",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "drama-3-int4 TTS",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1x5lyqz/drama3int4_tts/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A 4-bit quantized version of the Drama-3 text-to-speech model.",
+            "why": "Reduces memory requirements for deploying high-fidelity voice synthesis.",
+            "who": "akhaliq"
+          },
+          "published_at": "2026-10-14T08:37:48+00:00",
+          "author": "Illustrious_Row_9971",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1x5lyqz/drama3int4_tts/"
+            }
+          ]
+        },
+        {
+          "title": "Updated list of official MCP servers (300+), well-known and widely used projects only",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5j0p7/updated_list_of_official_mcp_servers_300/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A curated directory of over 300 official Model Context Protocol (MCP) servers.",
+            "why": "Provides a centralized registry of standardized tools for connecting LLMs to external data sources.",
+            "who": "VoltAgent"
+          },
+          "published_at": "2026-10-14T05:28:58+00:00",
+          "author": "omeraplak",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5j0p7/updated_list_of_official_mcp_servers_300/"
+            }
+          ]
+        },
+        {
+          "title": "Koboldcpp v1.123 released",
+          "url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.123",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A new version update for the Koboldcpp local inference engine.",
+            "why": "Provides updated software for running large language models on consumer hardware.",
+            "who": "Fcking_Chuck"
+          },
+          "published_at": "2026-10-14T05:04:37+00:00",
+          "author": "Fcking_Chuck",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x5im9u/koboldcpp_v1123_released/"
+            },
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1x5iql6/koboldcpp_v1123_released/"
+            }
+          ]
+        },
+        {
+          "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+          "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+          "source": "Google DeepMind",
+          "summary": {
+            "what": "A specialized implementation of Gemma models for on-device scam detection.",
+            "why": "It enables real-time interception of fraudulent messages without sending private chat data to the cloud.",
+            "who": "Google DeepMind and GovTech Singapore"
+          },
+          "published_at": "2026-10-14T02:00:14+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "llm-gemini 0.35",
+          "url": "https://simonwillison.net/2026/Oct/13/llm-gemini/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A plugin update for the llm-gemini tool to support the Gemini 4 Argon model.",
+            "why": "It enables access to a new model noted for its SVG generation and competitive initial pricing.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-10-13T22:28:54+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How to Rewrite Apache Spark UDFs for GPU Acceleration with AI Agents",
+          "url": "https://developer.nvidia.com/blog/rewrite-apache-spark-udfs-gpu-acceleration-ai-agents/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A workflow using AI agents to convert Spark UDFs into GPU-accelerated code.",
+            "why": "It automates the optimization of data processing pipelines for better hardware utilization.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-13T21:33:21+00:00",
+          "author": "Elizabeth Goodman",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Building agents that transact with Anchor Browser and AgentCore payments",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-agents-that-transact-with-anchor-browser-and-agentcore-payments/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A framework for AI agents to execute autonomous financial transactions via a specialized browser and payment layer.",
+            "why": "It enables agents to pay for web resources and APIs while keeping wallet credentials isolated from the runtime.",
+            "who": "AWS Generative AI Innovation Center"
+          },
+          "published_at": "2026-10-13T20:10:33+00:00",
+          "author": "Cher Simon",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Manage private pricing offers for Amazon Bedrock with managed entitlements",
+          "url": "https://aws.amazon.com/blogs/machine-learning/manage-private-pricing-offers-for-amazon-bedrock-with-managed-entitlements/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A guide on automating private pricing offer activations for Amazon Bedrock.",
+            "why": "It reduces administrative overhead when managing model access across multiple AWS accounts.",
+            "who": "AWS"
+          },
+          "published_at": "2026-10-13T17:17:25+00:00",
+          "author": "Daniel Wirjo",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Natural language security queries at Orca Security using Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/natural-language-security-queries-at-orca-security-using-amazon-bedrock/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A natural language interface for security queries built on Amazon Bedrock.",
+            "why": "It optimizes token usage and latency by converting English to a proprietary query language.",
+            "who": "Orca Security"
+          },
+          "published_at": "2026-10-13T16:03:31+00:00",
+          "author": "Deniz Yilmaz",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Quoting Geoffrey Huntley",
+          "url": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A workflow for enforcing coding standards in AI agents via git pre-commit hooks.",
+            "why": "It uses automated commit failures to force agents to use specific diagnostic libraries instead of bypassing them.",
+            "who": "Geoffrey Huntley"
+          },
+          "published_at": "2026-10-13T13:32:00+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-12",
       "total": 29,
