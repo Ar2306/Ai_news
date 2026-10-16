@@ -1,6 +1,934 @@
 {
-  "generated_at": "2026-10-15T11:27:50.991239+00:00",
+  "generated_at": "2026-10-16T11:29:24.019866+00:00",
   "archive": [
+    {
+      "date": "2026-10-16",
+      "total": 41,
+      "tags": {
+        "llm": 26,
+        "reinforcement-learning": 3,
+        "foundational-models": 12,
+        "multimodal": 9,
+        "robotics": 1,
+        "interpretability": 4,
+        "ai-safety": 4,
+        "simulation": 5,
+        "training-infra": 3,
+        "general-ml": 8,
+        "other": 6
+      },
+      "articles": [
+        {
+          "title": "Muse Spark Open",
+          "url": "https://research.meta.ai/blog/muse-spark-open",
+          "source": "Hacker News",
+          "summary": {
+            "what": "An open-weight multimodal mixture-of-experts model featuring 816B total parameters and a one-million-token context window.",
+            "why": "It introduces advanced agentic capabilities optimized for desktop execution on local Apple Silicon hardware alongside standard GPU backends.",
+            "who": "Meta AI Research"
+          },
+          "published_at": "2026-10-15T17:47:39+00:00",
+          "author": "bigwheels",
+          "tags": [
+            "llm",
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 5,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50107379",
+              "points": 828
+            }
+          ]
+        },
+        {
+          "title": "New paper from Stanford, Together AI, UIUC, and Meta introduces Hybrid Reasoning Agents. These AI models think mostly in a hidden internal way (faster and cheaper), and only use normal text when they need tools or give the final answer.",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7a8i8/new_paper_from_stanford_together_ai_uiuc_and_meta/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A new framework for language models that alternates between hidden latent reasoning and explicit textual generation.",
+            "why": "It achieves higher benchmark scores while significantly reducing token overhead, latency, and operational costs.",
+            "who": "Stanford, Together AI, UIUC, and Meta"
+          },
+          "published_at": "2026-10-16T07:58:04+00:00",
+          "author": "R_Duncan",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7a8i8/new_paper_from_stanford_together_ai_uiuc_and_meta/"
+            }
+          ]
+        },
+        {
+          "title": "Evaluating Model Capabilities After Benchmark Saturation",
+          "url": "https://arxiv.org/abs/2610.20667",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "An empirical study on extracting latent performance signals from model execution transcripts after standard benchmark scores saturate.",
+            "why": "It demonstrates that pairwise judging on saturated benchmark logs can predict hidden capabilities, though robustness issues under distribution shifts remain.",
+            "who": "Morio Hamada, Jehyeok Yeon, Matteo Migliarini et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Morio Hamada, Jehyeok Yeon, Matteo Migliarini, Justin Olive, Magda Dubois",
+          "tags": [
+            "llm",
+            "ai-safety",
+            "interpretability"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20667"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Value-Informed Schedule Trimming for Accelerated Sequential Monte Carlo Guidance in Discrete Diffusion",
+          "url": "https://arxiv.org/abs/2610.20669",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "VISTA is a training-free algorithm that dynamically selects optimal timesteps for sparse reward guidance in discrete diffusion models.",
+            "why": "It minimizes probability path divergence via dynamic programming, achieving major generation speedups without sacrificing alignment performance.",
+            "who": "Jaehyeon Kim, Ziseok Lee, Siyoung Choi et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Jaehyeon Kim, Ziseok Lee, Siyoung Choi, Kyungsu Kim",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20669"
+          },
+          "discussions": []
+        },
+        {
+          "title": "AlphaDiana: A Measurement System for Agents in Verifiable Reasoning Tasks",
+          "url": "https://arxiv.org/abs/2610.20675",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "AlphaDiana is an evaluation framework designed to analyze the execution behavior and performance of reasoning agents.",
+            "why": "It reveals that standard agent harnesses and components often degrade overall accuracy despite consuming more compute.",
+            "who": "Zhanke Zhou, Zongze Li, Weikai Huang et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Zhanke Zhou, Zongze Li, Weikai Huang, Xuan Li, Chentao Cao, Xiao Feng, Xiangyu Lu, Jinbo Hu, Yi Xie, Nico Pelleriti, Shiyang Liu, Menghan Lu, Max Zimmer, Brando Miranda, Jiangchao Yao, Bo Liu, Sanmi Koyejo, Sebastian Pokutta, Bo Han",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20675"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States",
+          "url": "https://arxiv.org/abs/2610.20637",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A mathematical reformulation of the transformer attention mechanism using truncated Taylor series to achieve linear-time complexity and fixed-size recurrent states.",
+            "why": "It enables drastically faster decoding and parallelizable prefill without sacrificing the expressiveness of the underlying exponential kernel.",
+            "who": "Zicong Huang"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Zicong Huang",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20637"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Feature Elicitation for SAE Steering of Deceptive Behaviour in Small LLMs",
+          "url": "https://arxiv.org/abs/2610.20638",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A research paper investigating sparse autoencoder feature steering to address alignment faking in language models.",
+            "why": "It demonstrates the first successful activation-level intervention capable of reducing the compliance gap in smaller models.",
+            "who": "J Koorndijk"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "J Koorndijk",
+          "tags": [
+            "llm",
+            "interpretability",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20638"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Same Answer, New Box: How Much of RLVR's Out-of-Domain Gain Is Answer Format?",
+          "url": "https://arxiv.org/abs/2610.20639",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A research paper investigating whether out-of-domain improvements from reinforcement learning with verifiable rewards stem from better reasoning or merely output formatting changes.",
+            "why": "It demonstrates that standard answer extractors misattribute up to 82% of out-of-domain gains to improved capability when they are actually format shifts.",
+            "who": "Zongye Lyu"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Zongye Lyu",
+          "tags": [
+            "reinforcement-learning",
+            "llm",
+            "interpretability"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20639"
+          },
+          "discussions": []
+        },
+        {
+          "title": "OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding",
+          "url": "https://arxiv.org/abs/2610.18829",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A comprehensive benchmark for evaluating video grounding and understanding across vision and audio-visual modalities.",
+            "why": "It tests temporal and spatial grounding alongside QA to identify gaps in how MLLMs process multi-modal evidence.",
+            "who": "Xuyang Liu, Shihao Wang, Xinyu Wei et al."
+          },
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "author": "Xuyang Liu, Shihao Wang, Xinyu Wei, Minghan Li, Zeqing Wang, Zuhao Yang, Zichen Wen, Lei Zhang",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.18829",
+            "hf": "https://huggingface.co/papers/2610.18829",
+            "code": "https://github.com/PolyU-VCLab/OmniCompass"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation",
+          "url": "https://arxiv.org/abs/2610.21601",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A distillation method that uses intermediate teacher checkpoints to evaluate directional agreement in reinforcement learning policy shifts.",
+            "why": "It improves math and code reasoning transfer by suppressing conflicting action preferences during student training.",
+            "who": "Bingxi Hou, Guochao Jiang, Guofeng Quan et al."
+          },
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "author": "Bingxi Hou, Guochao Jiang, Guofeng Quan, Weiqing Li, Wenfeng Feng, Guohua Liu, Yuewei Zhang",
+          "tags": [
+            "reinforcement-learning",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.21601",
+            "hf": "https://huggingface.co/papers/2610.21601",
+            "code": "https://github.com/hhhbxloveai/WaypointOPD"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Self-Evolving Agent Harness",
+          "url": "https://arxiv.org/abs/2610.18813",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A formal framework that iteratively improves AI agent scaffolding while keeping model weights static.",
+            "why": "It provides theoretical PAC-learning bounds and validation rules for automated evolutionary code updates.",
+            "who": "zgcagi"
+          },
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "author": "Chuyang Wei, Haoxiang Guan, Minghang Zhu, Kexin Zhou, Jiyan He, Xiren Zhou, Huanhuan Chen, Yifei Shen",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.18813",
+            "hf": "https://huggingface.co/papers/2610.18813",
+            "code": "https://github.com/zgcagi/Harness-RSI"
+          },
+          "discussions": []
+        },
+        {
+          "title": "RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment",
+          "url": "https://arxiv.org/abs/2610.17665",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A benchmark for assessing 3D spatial reasoning in vision-language models via interactive projection alignment tasks.",
+            "why": "It uncovers a major performance gap between current frontier models and humans in closed-loop 3D spatial control.",
+            "who": "Qingchuan Ma, Yuexiao Ma, Xiang Meng et al."
+          },
+          "published_at": "2026-10-16T00:00:00+00:00",
+          "author": "Qingchuan Ma, Yuexiao Ma, Xiang Meng, Yixuan Zou, Tianyu Xie, Wang Chen, Yuhui Zeng, Yuhang Wu, Xiawu Zheng, Rongrong Ji",
+          "tags": [
+            "multimodal",
+            "robotics",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.17665",
+            "hf": "https://huggingface.co/papers/2610.17665",
+            "code": "https://github.com/MAC-AutoML/RoTA-Bench"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Scale Agentic Coding Workflows with Meta’s Muse Spark Open on NVIDIA GB300 NVL72",
+          "url": "https://developer.nvidia.com/blog/scale-agentic-coding-workflows-with-metas-muse-spark-open-on-nvidia-gb300-nvl72/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "Meta released Muse Spark Open, a massive 816B mixture-of-experts model optimized specifically for programming tasks.",
+            "why": "It features a 1 million token context window and runs efficiently on NVIDIA hardware for scaled software engineering workloads.",
+            "who": "Meta"
+          },
+          "published_at": "2026-10-15T18:00:01+00:00",
+          "author": "Tanya Lenz",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Neural networks are clean",
+          "url": "https://already-clean.goodfire.com/",
+          "source": "Hacker News",
+          "summary": {
+            "what": "An essay arguing that neural network polysemanticity stems from recursive generalization rather than superposition.",
+            "why": "It suggests models are naturally more interpretable than previously thought, potentially bypassing the need for auxiliary decomposition models.",
+            "who": "Nick Cammarata"
+          },
+          "published_at": "2026-10-15T16:04:01+00:00",
+          "author": "themgt",
+          "tags": [
+            "interpretability",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50105647",
+              "points": 706
+            },
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1x6pc0o/interpretability_might_have_been_solved_by_an/"
+            }
+          ]
+        },
+        {
+          "title": "Open From Data Center to Desktop: NVIDIA Expands Nemotron Family With Highest Efficiency Super VL and Bolt Models",
+          "url": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+          "source": "NVIDIA Blog",
+          "summary": {
+            "what": "NVIDIA released a suite of open models including the 120B Super VL and smaller Bolt variants ranging down to 4GB.",
+            "why": "It provides tiered options optimized for both high-end server tasks and resource-constrained local agent deployments.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-15T15:00:24+00:00",
+          "author": "Kari Briski",
+          "tags": [
+            "llm",
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "tencent/Hy-Memory-30B-A3B · Hugging Face",
+          "url": "https://huggingface.co/tencent/Hy-Memory-30B-A3B",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "Tencent released Hy-Memory-30B-A3B, an open-weights language model with 3B active parameters out of 30B total.",
+            "why": "It is optimized specifically for memory-intensive tasks, claiming high benchmark performance while maintaining low active compute requirements.",
+            "who": "Tencent"
+          },
+          "published_at": "2026-10-16T10:10:59+00:00",
+          "author": "paf1138",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7cc2z/tencenthymemory30ba3b_hugging_face/"
+            }
+          ]
+        },
+        {
+          "title": "Here we go again. MOSS-Image",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1x796qs/here_we_go_again_mossimage/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An open-source text-to-image foundational model trained on billions of images with permissive licensing.",
+            "why": "It offers dual support for natural language and tag-based prompting while operating with fewer content restrictions than competitors.",
+            "who": "OpenMOSS-Team"
+          },
+          "published_at": "2026-10-16T06:51:57+00:00",
+          "author": "Different_Fix_2217",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/OpenMOSS/MOSS-Image"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1x796qs/here_we_go_again_mossimage/"
+            }
+          ]
+        },
+        {
+          "title": "Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline",
+          "url": "https://huggingface.co/blog/nvidia/scaling-indic-pretraining",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A 2.8 trillion token dataset and open-source pipeline designed for pretraining Indic language models.",
+            "why": "It provides scalable open data infrastructure to improve multilingual model capabilities for underrepresented languages.",
+            "who": "Hugging Face"
+          },
+          "published_at": "2026-10-16T01:44:47+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "The World Won't Wait: Evaluating and Teaching Agents Under a Live Clock",
+          "url": "https://arxiv.org/abs/2610.20665",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A benchmark called RealtimeBench and a self-improvement method named TORSI.",
+            "why": "It addresses the latency gap between LLM reasoning and real-time environment changes.",
+            "who": "Ningxin Pan, Hanyu Li, Yeqing Shen et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Ningxin Pan, Hanyu Li, Yeqing Shen, Ning Ding, Yehui Tang, Wentao Zhang",
+          "tags": [
+            "llm",
+            "simulation"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20665"
+          },
+          "discussions": []
+        },
+        {
+          "title": "FlowBudget: Training-Free Sampling-Budget Estimation for Flow Matching Models",
+          "url": "https://arxiv.org/abs/2610.20636",
+          "source": "arXiv cs.LG",
+          "summary": {
+            "what": "A method to estimate inference sampling budgets for flow matching models without generating images or running grid sweeps.",
+            "why": "It replaces costly empirical FID evaluations with a training-free mathematical estimator based on local discretization error probes.",
+            "who": "Yasaman-dt"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Zahra Dehghani, Pablo Piantanida, Mohammadhadi Shateri",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20636",
+            "code": "https://github.com/Yasaman-dt/FlowBudget"
+          },
+          "discussions": []
+        },
+        {
+          "title": "DeepUnfolding_Agent: A Classical_Quantum Adaptive Control API",
+          "url": "https://arxiv.org/abs/2610.20615",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A FastAPI platform decoupling adaptive control logic from optimization tasks via a schema-driven external service.",
+            "why": "It standardizes optimization workflows across classical, federated, and quantum systems to improve reproducibility and safety.",
+            "who": "Shanika Iroshi Nanayakkara, Shiva Raj Pokhrel"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Shanika Iroshi Nanayakkara, Shiva Raj Pokhrel",
+          "tags": [
+            "general-ml",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20615"
+          },
+          "discussions": []
+        },
+        {
+          "title": "PRISM: PRIvileged Sibling-guided Multi-Agent Topology Design",
+          "url": "https://arxiv.org/abs/2610.20628",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A post-training framework that optimizes graph generators for multi-agent LLM systems using privileged sibling guidance.",
+            "why": "It recovers fine-grained preference signals from unranked execution datasets to prevent performance drift across different tasks.",
+            "who": "Phuong Tuan Dat, Qi Li, Xinchao Wang"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Phuong Tuan Dat, Qi Li, Xinchao Wang",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20628"
+          },
+          "discussions": []
+        },
+        {
+          "title": "BD-HazardVLM: Probing Vision-Language Models for Latent Defensive-Driving Hazards in Bangladesh Road Scenes",
+          "url": "https://arxiv.org/abs/2610.20627",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "A diagnostic benchmark evaluating vision-language models on defensive driving reasoning within unstructured traffic settings.",
+            "why": "It demonstrates that prominent models perform poorly on fine-grained hazard anticipation and risk timing despite decent binary detection.",
+            "who": "Abdullah Al Maruf, Md. Sajedul Islam, Tanmoy Mridha et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Abdullah Al Maruf, Md. Sajedul Islam, Tanmoy Mridha, Irfan Hossain Bhuiyan",
+          "tags": [
+            "multimodal",
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20627"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Towards automatic digital garment assembly",
+          "url": "https://arxiv.org/abs/2610.20651",
+          "source": "arXiv cs.CV",
+          "summary": {
+            "what": "A machine learning system that automates 2D clothing pattern assembly and draping initialization for virtual garment software.",
+            "why": "It eliminates manual CAD sewing definitions by processing raw vector patterns to accurately predict complex seam topologies and layer placements.",
+            "who": "Alejandro Rodriguez"
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Alejandro Rodriguez",
+          "tags": [
+            "multimodal",
+            "simulation",
+            "other"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20651"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A unified model endpoint handling conversation, decision-making, and audio tasks.",
+            "why": "It consolidates multiple modalities into a single interface for broader deployment flexibility.",
+            "who": "Unknown"
+          },
+          "published_at": "2026-10-15T20:34:01+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Meta launches an open-weight AI model that runs on Macs",
+          "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "An open-weight language model optimized to execute locally on Apple silicon hardware.",
+            "why": "It enables efficient on-device execution of generative models for consumer hardware.",
+            "who": "Meta"
+          },
+          "published_at": "2026-10-15T20:04:53+00:00",
+          "author": "Lucas Ropek",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Anthropic is letting METR researchers look under the hood with employee-level access",
+          "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "An agreement granting evaluation researchers internal access to examine safety risks.",
+            "why": "It enables independent risk assessments without corporate censorship.",
+            "who": "Anthropic and METR"
+          },
+          "published_at": "2026-10-15T19:14:26+00:00",
+          "author": "Aditya Mehta",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "ChatGPT can peek at your Chrome tabs now",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "A browser extension update enables ChatGPT to directly read and utilize open Google Chrome tabs.",
+            "why": "It bridges desktop LLM workflows with active web browsing contexts via explicit user tagging.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-15T18:43:23-04:00",
+          "author": "Stevie Bonifield",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning",
+          "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A multimodal language model built for enterprise automation and complex reasoning tasks.",
+            "why": "It enables continuous enterprise agents to process diverse data types for extended workflows.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-15T18:01:00+00:00",
+          "author": "Michelle Horton",
+          "tags": [
+            "llm",
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
+          "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+          "source": "Google DeepMind",
+          "summary": {
+            "what": "A computational system designed to speed up the discovery of novel antimicrobial peptides.",
+            "why": "It applies targeted algorithms to a critical domain of biological therapeutics.",
+            "who": "Google DeepMind"
+          },
+          "published_at": "2026-10-15T16:08:03+00:00",
+          "author": "",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Introducing Timestral",
+          "url": "https://mistral.ai/news/timestral/",
+          "source": "Mistral AI",
+          "summary": {
+            "what": "A family of lightweight probabilistic time-series forecasting models ranging from five to two hundred million parameters.",
+            "why": "It enables efficient zero-shot inference and strong performance on temporal data directly on CPU hardware.",
+            "who": "Mistral AI"
+          },
+          "published_at": "2026-10-15T12:00:00+00:00",
+          "author": "",
+          "tags": [
+            "foundational-models",
+            "other"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio",
+          "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+          "source": "Apple ML Research",
+          "summary": {
+            "what": "An open-source array framework for running local model inference and fine-tuning on Apple silicon hardware.",
+            "why": "It leverages unified memory architecture and RDMA to enable distributed large language model workflows on Mac Studio setups.",
+            "who": "Apple ML Research"
+          },
+          "published_at": "2026-10-15T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Seoul National University of Science and Technology Researchers Show How Smartphones Can Help…",
+          "url": "https://medium.com/@SEOULTECH/seoul-national-university-of-science-and-technology-researchers-show-how-smartphones-can-help-55604230ce9d?source=rss------deep_learning-5",
+          "source": "Medium · Deep Learning",
+          "summary": {
+            "what": "A domain-adaptive neural network framework for identifying irregular respiratory sounds via mobile devices.",
+            "why": "It enables acoustic disease screening using standard smartphone hardware without requiring extensive target domain data.",
+            "who": "Seoul National University of Science and Technology"
+          },
+          "published_at": "2026-10-16T10:31:01+00:00",
+          "author": "Seoul National University of Science & Technology",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Qwen Flash Next potential SOTA Q2 nobody talks about",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7bboy/qwen_flash_next_potential_sota_q2_nobody_talks/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A community review of an unofficial low-bit quantization method for large language models called the GYRO series.",
+            "why": "It evaluates claims that a custom 2-bit quantization format achieves performance comparable to larger 3-bit baselines with improved loop resistance.",
+            "who": "Agentionai"
+          },
+          "published_at": "2026-10-16T09:08:25+00:00",
+          "author": "PlasticRevenue4601",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x7bboy/qwen_flash_next_potential_sota_q2_nobody_talks/"
+            }
+          ]
+        },
+        {
+          "title": "Agentic workflows coming for Minecraft building?",
+          "url": "https://www.reddit.com/r/singularity/comments/1x76yfu/agentic_workflows_coming_for_minecraft_building/",
+          "source": "r/singularity",
+          "summary": {
+            "what": "An open-source Minecraft modification that executes text prompts to construct structures within selected game regions.",
+            "why": "It demonstrates practical agentic automation for procedural design tasks within a sandbox environment.",
+            "who": "Ni-Cobra"
+          },
+          "published_at": "2026-10-16T04:38:04+00:00",
+          "author": "Acclynn",
+          "tags": [
+            "other"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/Ni-Cobra/worldprompt"
+          },
+          "discussions": [
+            {
+              "source": "r/singularity",
+              "url": "https://www.reddit.com/r/singularity/comments/1x76yfu/agentic_workflows_coming_for_minecraft_building/"
+            }
+          ]
+        },
+        {
+          "title": "A Large-Scale Dataset for Multi-Class Financial News Classification in Brazilian Portuguese",
+          "url": "https://arxiv.org/abs/2610.20630",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A large benchmark dataset of 160,000 Brazilian Portuguese financial news articles with semantic similarity classification baselines.",
+            "why": "It addresses a major resource scarcity in domain-specific financial NLP and reveals significant performance drops when using noisy LLM annotations over human labels.",
+            "who": "Leomax Bandeira, Gabriel Aguiar, Dalton C\\'ezane Gomes Valadares et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Leomax Bandeira, Gabriel Aguiar, Dalton C\\'ezane Gomes Valadares, Luiz Pereira, Helder Fernando de Ara\\'ujo Oliveira, Gustavo Xavier, Andson M. Balieiro",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20630"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Real-time Chatbot Romance Scam Detection in Stage Classification",
+          "url": "https://arxiv.org/abs/2610.20631",
+          "source": "arXiv cs.CL",
+          "summary": {
+            "what": "A messaging-integrated chatbot that analyzes conversations using large language models to identify the progression of romance scams.",
+            "why": "It applies established social science stage theories to operationalize real-time threat detection and user intervention.",
+            "who": "Yi-cheng Liu, Guan-ru Lai, Yi-cheng Lai et al."
+          },
+          "published_at": "2026-10-16T00:00:00-04:00",
+          "author": "Yi-cheng Liu, Guan-ru Lai, Yi-cheng Lai, Lyn Chao-ling Chen",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.20631"
+          },
+          "discussions": []
+        },
+        {
+          "title": "How Meta Built Forum With AI-Native Engineering",
+          "url": "https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/",
+          "source": "Meta Engineering (ML)",
+          "summary": {
+            "what": "An engineering blog post describing the use of coding agents to develop a new social app.",
+            "why": "It demonstrates early practical workflows of embedding AI agents throughout a production software development lifecycle.",
+            "who": "Meta Engineering"
+          },
+          "published_at": "2026-10-15T19:00:03+00:00",
+          "author": "",
+          "tags": [
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Bringing GPT-Rosalind to academic research labs",
+          "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A subsidized software tier providing academic life science laboratories access to specialized LLM capabilities.",
+            "why": "It lowers financial barriers for university researchers to adopt advanced AI tools in biology.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-15T19:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Meta’s Muse Spark Open now available in Amazon SageMaker JumpStart",
+          "url": "https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "Meta's open-weight coding model is now accessible on Amazon SageMaker JumpStart.",
+            "why": "It streamlines the deployment and inference process for developers within AWS environments.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-15T17:43:35+00:00",
+          "author": "Aris Tsakpinis",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Sullivan & Cromwell brings legal expertise into agreement review",
+          "url": "https://openai.com/index/sullivan-cromwell",
+          "source": "OpenAI",
+          "summary": {
+            "what": "Agreement Analyzer is a specialized software application for contract review and risk detection.",
+            "why": "It demonstrates domain-specific legal deployment built directly on language model technology.",
+            "who": "Sullivan & Cromwell and OpenAI"
+          },
+          "published_at": "2026-10-15T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-15",
       "total": 33,

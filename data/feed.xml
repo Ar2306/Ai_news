@@ -4,304 +4,374 @@
     <title>AR — daily AI/ML digest</title>
     <link>https://ai-news-blush.vercel.app</link>
     <description>Curated AI/ML research and releases with what/why/who summaries.</description>
-    <lastBuildDate>Thu, 15 Oct 2026 11:27:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 11:29:24 +0000</lastBuildDate>
     <item>
-      <title>Jais 3 is out</title>
-      <link>https://ifm.ai/jais/</link>
-      <guid isPermaLink="false">https://ifm.ai/jais/</guid>
-      <pubDate>Thu, 15 Oct 2026 08:08:39 +0000</pubDate>
+      <title>Muse Spark Open</title>
+      <link>https://research.meta.ai/blog/muse-spark-open</link>
+      <guid isPermaLink="false">https://research.meta.ai/blog/muse-spark-open</guid>
+      <pubDate>Thu, 15 Oct 2026 17:47:39 +0000</pubDate>
       <category>llm</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A new series of open-weight multilingual language models scaled from 0.9B to 375B parameters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It expands regional language availability with a strong focus on Arabic and improved agentic capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; IFM&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-weight multimodal mixture-of-experts model featuring 816B total parameters and a one-million-token context window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces advanced agentic capabilities optimized for desktop execution on local Apple Silicon hardware alongside standard GPU backends.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Meta AI Research&lt;/p&gt;&lt;p&gt;Hacker News · importance 5/5 · llm, foundational-models, multimodal&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ClawLoop: Self-Improving Agents via Harness-Native Training Loop</title>
-      <link>https://arxiv.org/abs/2610.14118</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.14118</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; ClawLoop is an iterative training framework that allows LLM agents to self-improve inside sandbox environments without requiring external teacher models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It removes bottlenecks from teacher-dependent pipelines by combining automated task synthesis, training, and feedback diagnosis into a continuous self-sustaining cycle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hansi Yang, Linji Hao, Hongyan Hao et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · llm, reinforcement-learning&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Correction Training for Diffusion Models</title>
-      <link>https://arxiv.org/abs/2610.14136</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.14136</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A post-training correction module that mitigates exposure bias in diffusion models by explicitly learning to fix intermediate generation errors.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves strong unconditional generation quality and rivals classifier-free guidance without requiring guidance scales, while supporting distillation to remove inference overhead.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Donghoon Ahn, Runqian Wang, Alexei A. Efros et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · general-ml, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Lotus: Learning to Understand Time-series by Learning to Forecast</title>
-      <link>https://arxiv.org/abs/2610.18877</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18877</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
+      <title>New paper from Stanford, Together AI, UIUC, and Meta introduces Hybrid Reasoning Agents. These AI models think mostly in a hidden internal way (faster and cheaper), and only use normal text when they need tools or give the final answer.</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1x7a8i8/new_paper_from_stanford_together_ai_uiuc_and_meta/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1x7a8i8/new_paper_from_stanford_together_ai_uiuc_and_meta/</guid>
+      <pubDate>Fri, 16 Oct 2026 07:58:04 +0000</pubDate>
       <category>llm</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces LOTUS, a time-series language model trained using a novel forecast grounding principle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves temporal representation retention by predicting future patches directly from hidden states, outperforming much larger models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Van Dai Do, Huu Hiep Nguyen, Minh Hoang Nguyen et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A new framework for language models that alternates between hidden latent reasoning and explicit textual generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves higher benchmark scores while significantly reducing token overhead, latency, and operational costs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Stanford, Together AI, UIUC, and Meta&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Inverse Reasoning Models for Efficient Post-Training and Verification from Answer-Only Data</title>
-      <link>https://arxiv.org/abs/2610.18878</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18878</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
+      <title>Evaluating Model Capabilities After Benchmark Saturation</title>
+      <link>https://arxiv.org/abs/2610.20667</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20667</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
-      <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A self-distillation method for reasoning LLMs using answer-only data and a trained inverse reasoning partner.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bypasses the need for explicit chain-of-thought training traces and avoids the compute inefficiency of online reinforcement learning rollouts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Eric O. Korman&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, reinforcement-learning&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Action Jets: Learning the Local Shape of the Action-conditioned Data Manifold</title>
-      <link>https://arxiv.org/abs/2610.19007</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.19007</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>world-models</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A method that approximates local action-conditioned manifolds using Taylor polynomials to bypass heavy sequential generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It speeds up short-horizon planning by over 300x while outperforming base generators in frame prediction accuracy.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anton Arapin, Chahyon Ku, Bernadette Bucher&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 4/5 · world-models, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Far Can Coding Agents Go in Visual Generation?</title>
-      <link>https://arxiv.org/abs/2610.19025</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.19025</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>multimodal</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research study investigating general-purpose coding agents that generate images via executable programs rather than traditional latent diffusion parameters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that code-based visual generation excels at compositional accuracy and structured reasoning, while introducing a hypothesis for internal visual languages of thought.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hengguang Zhou, Yuanhao Ban, Jiaqi Feng et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 4/5 · multimodal, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Any Time, Any Space: A World-State-Centric Framework for Agentic Video Generation</title>
-      <link>https://arxiv.org/abs/2610.20571</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.20571</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
-      <category>world-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework that uses explicit scene and event memories to maintain spatial and temporal consistency in agentic video generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It prevents visual drift across non-consecutive shots by indexing static geometry and dynamic observations prior to rendering.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Weijie Wang, Haomin Zhang, Ye Li et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, world-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Player-1: Learning to Play from Synthetic Experience</title>
-      <link>https://arxiv.org/abs/2610.20584</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.20584</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <category>reinforcement-learning</category>
-      <category>multimodal</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A post-training framework and model series designed to enhance computer-use agents for video game control.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It shows that reinforcement learning in synthetic environments significantly improves task success and zero-shot generalization over static demonstrations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mingyu Ouyang, Yiran Wang, Siyuan Hu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · reinforcement-learning, multimodal, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Beyond Domain-Routed Supervision: Cross-Teacher Guarding for Multi-Teacher On-Policy Distillation</title>
-      <link>https://arxiv.org/abs/2610.13521</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.13521</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This research paper introduces a technique called Cross-Teacher Guarding to improve multi-teacher on-policy distillation for language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It resolves gradient conflicts and capability degradation that typically occur when combining diverse teacher models during joint optimization.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Shi-Yu Tian, Yong Liu, Ximan Liu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Containment and monitoring failures are to blame for AI hacking reports: experts</title>
-      <link>https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</link>
-      <guid isPermaLink="false">https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</guid>
-      <pubDate>Wed, 14 Oct 2026 17:45:23 +0000</pubDate>
       <category>ai-safety</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An analysis of recent AI agent security breaches arguing they stem from poor foundational cybersecurity rather than spontaneous misalignment.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It highlights a critical industry blind spot where AI labs neglect established security controls and isolate themselves from traditional infosec expertise.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Cynthia Brumfield&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · ai-safety, other&lt;/p&gt;</description>
+      <category>interpretability</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical study on extracting latent performance signals from model execution transcripts after standard benchmark scores saturate.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that pairwise judging on saturated benchmark logs can predict hidden capabilities, though robustness issues under distribution shifts remain.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Morio Hamada, Jehyeok Yeon, Matteo Migliarini et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · llm, ai-safety, interpretability&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Researchers use AI to design proteins that cut up other proteins</title>
-      <link>https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/</link>
-      <guid isPermaLink="false">https://arstechnica.com/science/2026/10/researchers-use-ai-to-design-proteins-that-cut-up-other-proteins/</guid>
-      <pubDate>Wed, 14 Oct 2026 17:10:15 +0000</pubDate>
-      <category>foundational-models</category>
-      <category>multimodal</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Computational models are utilized to engineer custom proteins capable of cleaving stable chemical bonds.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; This capability expands the scope of programmable biology by targeting notoriously durable molecular structures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; John Timmer&lt;/p&gt;&lt;p&gt;Ars Technica AI · importance 4/5 · foundational-models, multimodal, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
-      <link>https://allenai.org/blog/hiro-acev2</link>
-      <guid isPermaLink="false">https://allenai.org/blog/hiro-acev2</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 -0800</pubDate>
-      <category>simulation</category>
+      <title>Value-Informed Schedule Trimming for Accelerated Sequential Monte Carlo Guidance in Discrete Diffusion</title>
+      <link>https://arxiv.org/abs/2610.20669</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20669</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A neural simulation system designed for high-resolution global climate forecasting.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It models extreme weather at a 3 km scale significantly cheaper than standard physical models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 4/5 · simulation, general-ml&lt;/p&gt;</description>
+      <category>simulation</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; VISTA is a training-free algorithm that dynamically selects optimal timesteps for sparse reward guidance in discrete diffusion models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It minimizes probability path divergence via dynamic programming, achieving major generation speedups without sacrificing alignment performance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jaehyeon Kim, Ziseok Lee, Siyoung Choi et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · general-ml, simulation&lt;/p&gt;</description>
     </item>
     <item>
-      <title>GreenWAM: A World Foundation Model for Robotics</title>
-      <link>https://arxiv.org/abs/2610.18774</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18774</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
-      <category>world-models</category>
+      <title>AlphaDiana: A Measurement System for Agents in Verifiable Reasoning Tasks</title>
+      <link>https://arxiv.org/abs/2610.20675</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20675</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; AlphaDiana is an evaluation framework designed to analyze the execution behavior and performance of reasoning agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reveals that standard agent harnesses and components often degrade overall accuracy despite consuming more compute.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zhanke Zhou, Zongze Li, Weikai Huang et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States</title>
+      <link>https://arxiv.org/abs/2610.20637</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20637</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A mathematical reformulation of the transformer attention mechanism using truncated Taylor series to achieve linear-time complexity and fixed-size recurrent states.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables drastically faster decoding and parallelizable prefill without sacrificing the expressiveness of the underlying exponential kernel.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zicong Huang&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Feature Elicitation for SAE Steering of Deceptive Behaviour in Small LLMs</title>
+      <link>https://arxiv.org/abs/2610.20638</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20638</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>interpretability</category>
+      <category>ai-safety</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research paper investigating sparse autoencoder feature steering to address alignment faking in language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates the first successful activation-level intervention capable of reducing the compliance gap in smaller models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; J Koorndijk&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, interpretability, ai-safety&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Same Answer, New Box: How Much of RLVR's Out-of-Domain Gain Is Answer Format?</title>
+      <link>https://arxiv.org/abs/2610.20639</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20639</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>reinforcement-learning</category>
+      <category>llm</category>
+      <category>interpretability</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research paper investigating whether out-of-domain improvements from reinforcement learning with verifiable rewards stem from better reasoning or merely output formatting changes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that standard answer extractors misattribute up to 82% of out-of-domain gains to improved capability when they are actually format shifts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zongye Lyu&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · reinforcement-learning, llm, interpretability&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding</title>
+      <link>https://arxiv.org/abs/2610.18829</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.18829</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <category>multimodal</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A comprehensive benchmark for evaluating video grounding and understanding across vision and audio-visual modalities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It tests temporal and spatial grounding alongside QA to identify gaps in how MLLMs process multi-modal evidence.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xuyang Liu, Shihao Wang, Xinyu Wei et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation</title>
+      <link>https://arxiv.org/abs/2610.21601</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.21601</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <category>reinforcement-learning</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A distillation method that uses intermediate teacher checkpoints to evaluate directional agreement in reinforcement learning policy shifts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves math and code reasoning transfer by suppressing conflicting action preferences during student training.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Bingxi Hou, Guochao Jiang, Guofeng Quan et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · reinforcement-learning, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Self-Evolving Agent Harness</title>
+      <link>https://arxiv.org/abs/2610.18813</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.18813</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A formal framework that iteratively improves AI agent scaffolding while keeping model weights static.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides theoretical PAC-learning bounds and validation rules for automated evolutionary code updates.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; zgcagi&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment</title>
+      <link>https://arxiv.org/abs/2610.17665</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.17665</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0000</pubDate>
+      <category>multimodal</category>
       <category>robotics</category>
+      <category>simulation</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark for assessing 3D spatial reasoning in vision-language models via interactive projection alignment tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uncovers a major performance gap between current frontier models and humans in closed-loop 3D spatial control.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Qingchuan Ma, Yuexiao Ma, Xiang Meng et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, robotics, simulation&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Scale Agentic Coding Workflows with Meta’s Muse Spark Open on NVIDIA GB300 NVL72</title>
+      <link>https://developer.nvidia.com/blog/scale-agentic-coding-workflows-with-metas-muse-spark-open-on-nvidia-gb300-nvl72/</link>
+      <guid isPermaLink="false">https://developer.nvidia.com/blog/scale-agentic-coding-workflows-with-metas-muse-spark-open-on-nvidia-gb300-nvl72/</guid>
+      <pubDate>Thu, 15 Oct 2026 18:00:01 +0000</pubDate>
+      <category>llm</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; GreenWAM is a unified robotics world foundation model that handles both scene prediction and policy control across diverse robot embodiments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that joint training on a standardized action space across multiple robot morphologies achieves competitive zero-shot and real-world performance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Gennady Sidorov, Valerii Kornilov, Denis Grankin et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · world-models, robotics, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Meta released Muse Spark Open, a massive 816B mixture-of-experts model optimized specifically for programming tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It features a 1 million token context window and runs efficiently on NVIDIA hardware for scaled software engineering workloads.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Meta&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>The Design Space of Tri-Modal Masked Diffusion Models</title>
-      <link>https://machinelearning.apple.com/research/tri-modal-masked-diffusion</link>
-      <guid isPermaLink="false">https://machinelearning.apple.com/research/tri-modal-masked-diffusion</guid>
-      <pubDate>Wed, 14 Oct 2026 00:00:00 +0000</pubDate>
+      <title>Neural networks are clean</title>
+      <link>https://already-clean.goodfire.com/</link>
+      <guid isPermaLink="false">https://already-clean.goodfire.com/</guid>
+      <pubDate>Thu, 15 Oct 2026 16:04:01 +0000</pubDate>
+      <category>interpretability</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An essay arguing that neural network polysemanticity stems from recursive generalization rather than superposition.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It suggests models are naturally more interpretable than previously thought, potentially bypassing the need for auxiliary decomposition models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nick Cammarata&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · interpretability, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Open From Data Center to Desktop: NVIDIA Expands Nemotron Family With Highest Efficiency Super VL and Bolt Models</title>
+      <link>https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/</link>
+      <guid isPermaLink="false">https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/</guid>
+      <pubDate>Thu, 15 Oct 2026 15:00:24 +0000</pubDate>
+      <category>llm</category>
       <category>multimodal</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A masked diffusion framework jointly pretrained from scratch on text, image-text, and audio data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes scaling laws and architectural hyperparameters for discrete tri-modal generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; NVIDIA released a suite of open models including the 120B Super VL and smaller Bolt variants ranging down to 4GB.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides tiered options optimized for both high-end server tasks and resource-constrained local agent deployments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Blog · importance 4/5 · llm, multimodal, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>137B A6.8B model from Microsoft?</title>
-      <link>https://github.com/ggml-org/llama.cpp/pull/29778</link>
-      <guid isPermaLink="false">https://github.com/ggml-org/llama.cpp/pull/29778</guid>
-      <pubDate>Thu, 15 Oct 2026 09:30:24 +0000</pubDate>
+      <title>tencent/Hy-Memory-30B-A3B · Hugging Face</title>
+      <link>https://huggingface.co/tencent/Hy-Memory-30B-A3B</link>
+      <guid isPermaLink="false">https://huggingface.co/tencent/Hy-Memory-30B-A3B</guid>
+      <pubDate>Fri, 16 Oct 2026 10:10:59 +0000</pubDate>
       <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Microsoft AI released MAI Code 1.1 Flash, a local mixture-of-experts model tailored for programming.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables local code generation using a sparse 137B parameter architecture that activates only 6.8B parameters per inference.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Microsoft AI&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Tencent released Hy-Memory-30B-A3B, an open-weights language model with 3B active parameters out of 30B total.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It is optimized specifically for memory-intensive tasks, claiming high benchmark performance while maintaining low active compute requirements.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Tencent&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Artificiality's First Exam: An LLM-Referenced C-test for Supraintelligence</title>
-      <link>https://arxiv.org/abs/2610.14005</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.14005</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper proposes a benchmark generation framework using Levin's Kt complexity and LLMs to evaluate AI capabilities beyond human levels.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It overcomes benchmark saturation by automatically producing verifiable test items with certified theoretical difficulty that surpass frontier model capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jose Hernandez-Orallo&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>The Silent Failures in Agentic Data Science</title>
-      <link>https://arxiv.org/abs/2610.14115</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.14115</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study analyzing methodological failures in LLM-based data science agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reveals that agents often achieve high accuracy through errors like data leakage rather than sound science.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xue Li, Hongqian Xia, Daniel Gomm et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Do Vision CIL Methods Transfer to Protein? A Diagnostic Benchmark of Frozen Protein Encoders</title>
-      <link>https://arxiv.org/abs/2610.18879</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18879</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
+      <title>Here we go again. MOSS-Image</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1x796qs/here_we_go_again_mossimage/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1x796qs/here_we_go_again_mossimage/</guid>
+      <pubDate>Fri, 16 Oct 2026 06:51:57 +0000</pubDate>
       <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A diagnostic benchmark evaluating nine vision-derived class-incremental learning methods on frozen protein encoders.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that existing continual learning algorithms fail to transfer reliably to biological representations due to geometry mismatches.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ziyuan Gao&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml, multimodal&lt;/p&gt;</description>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-source text-to-image foundational model trained on billions of images with permissive licensing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It offers dual support for natural language and tag-based prompting while operating with fewer content restrictions than competitors.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenMOSS-Team&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 3/5 · multimodal, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Do Perturbation Predictors Learn Gene Interactions? Diagnosing Extrapolation in Agentic Screening</title>
-      <link>https://arxiv.org/abs/2610.18880</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18880</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical study evaluating machine learning models on out-of-distribution gene combination predictions in high-throughput screens.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that specialized neural predictors often fail to beat simple additive baselines and introduces additive disagreement as a reliable confidence signal.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ziyuan Gao&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Following the Flow the Law Requires: Training Voice Agents to Transfer to Unseen Regulated Procedures in Debt Collection</title>
-      <link>https://arxiv.org/abs/2610.18881</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.18881</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A method using machine-readable specifications to train small language models for strict adherence to unseen regulatory workflows in voice agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It dramatically improves adherence to complex legal procedures across novel domains without requiring retraining for each specific rule set.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Petmongkon Pornpichitsuwan, Krittin Pachtrachai, Touchapon Kraisingkorn&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Evaluating Large Language Models for Multilingual Abstractive Summarization: A Comprehensive Study of English and Bengali</title>
-      <link>https://arxiv.org/abs/2610.19003</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.19003</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark evaluating eight language models on English and Bengali abstractive summarization.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It shows that strong English summarization capabilities fail to reliably transfer to low-resource languages.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Khan Mahi Al Atahar, Nazifa Tasneem, Ajwad Abrar&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, multimodal&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Can LLMs Access their World Knowledge for Event Prediction?</title>
-      <link>https://arxiv.org/abs/2610.19021</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.19021</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research paper investigating why large language models struggle with temporal event forecasting and introducing a structured prompting benchmark.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that LLMs possess the necessary world knowledge for forecasting, but fail due to poor interface design rather than lack of capability.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zijun Wu, Zhitian Zhang, Hossein Hajimirsadeghi et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Optimizing Agent Reliability and Tool Calling Efficiency for Chip Design Using NVIDIA NeMo Gym</title>
-      <link>https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym/</link>
-      <guid isPermaLink="false">https://developer.nvidia.com/blog/optimizing-agent-reliability-and-tool-calling-efficiency-for-chip-design-using-nvidia-nemo-gym/</guid>
-      <pubDate>Wed, 14 Oct 2026 16:10:45 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical blog post introducing a framework to improve AI agent accuracy and tool utilization for semiconductor engineering tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses the critical challenge of reducing hallucinations and errors when deploying autonomous agents in specialized hardware workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Anthropic warns small AI models could self-replicate through IoT devices</title>
-      <link>https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/</link>
-      <guid isPermaLink="false">https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/</guid>
-      <pubDate>Wed, 14 Oct 2026 12:55:06 +0000</pubDate>
-      <category>ai-safety</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A safety analysis warning that compact language models might achieve autonomous replication via connected hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It highlights emerging security threats regarding lightweight models acting as self-spreading software worms.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anthropic&lt;/p&gt;&lt;p&gt;Ars Technica AI · importance 3/5 · ai-safety, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Third Moment Research runs 10,000 agents for 36+ hours</title>
-      <link>https://openai.com/index/third-moment-research</link>
-      <guid isPermaLink="false">https://openai.com/index/third-moment-research</guid>
-      <pubDate>Wed, 14 Oct 2026 07:00:00 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An overview of how Third Moment Research executes long-running multi-agent workloads using advanced language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates practical engineering patterns for maintaining agent focus and self-improvement over extended durations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>I tested Qwen3.8 27B KLD for 21 Models at 9 different KV quants that fit on 16GB VRAM (189 benchmarks).</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1x6fwcd/i_tested_qwen38_27b_kld_for_21_models_at_9/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1x6fwcd/i_tested_qwen38_27b_kld_for_21_models_at_9/</guid>
-      <pubDate>Thu, 15 Oct 2026 08:11:09 +0000</pubDate>
+      <title>Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline</title>
+      <link>https://huggingface.co/blog/nvidia/scaling-indic-pretraining</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/scaling-indic-pretraining</guid>
+      <pubDate>Fri, 16 Oct 2026 01:44:47 +0000</pubDate>
       <category>llm</category>
       <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical benchmark evaluating KL divergence and perplexity across various model and KV cache quantization levels for Qwen2.5 27B on consumer hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that prioritizing higher base model quantization over higher KV cache precision yields better statistical fidelity within a 16GB VRAM constraint.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Community researcher on Reddit&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm, training-infra&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A 2.8 trillion token dataset and open-source pipeline designed for pretraining Indic language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides scalable open data infrastructure to improve multilingual model capabilities for underrepresented languages.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hugging Face&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Crossing the Gender Binary: Modelling Gendered Reference in Science Fiction and General Fiction</title>
-      <link>https://arxiv.org/abs/2610.19028</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.19028</guid>
-      <pubDate>Thu, 15 Oct 2026 00:00:00 -0400</pubDate>
+      <title>The World Won't Wait: Evaluating and Teaching Agents Under a Live Clock</title>
+      <link>https://arxiv.org/abs/2610.20665</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20665</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A computational study analyzing how masked language models predict gendered terms within science fiction versus general fiction corpora.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides empirical linguistic evidence that science fiction exhibits greater gender permeability and degendering tendencies compared to mainstream fiction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yuxuan Liu, Haim Dubossarsky, Ruth Ahnert&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tree Appreciator</title>
-      <link>https://simonwillison.net/2026/Oct/14/tree-appreciator/</link>
-      <guid isPermaLink="false">https://simonwillison.net/2026/Oct/14/tree-appreciator/</guid>
-      <pubDate>Wed, 14 Oct 2026 21:23:01 +0000</pubDate>
-      <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An interactive web game built entirely through a single conversational prompt to an assistant model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates the growing capability of frontier chat interfaces to autonomously generate fully realized, multi-feature software applications.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Simon Willison&lt;/p&gt;&lt;p&gt;Simon Willison · importance 2/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio</title>
-      <link>https://www.latent.space/p/lab-in-the-loop-at-compute-speed</link>
-      <guid isPermaLink="false">https://www.latent.space/p/lab-in-the-loop-at-compute-speed</guid>
-      <pubDate>Wed, 14 Oct 2026 20:35:09 +0000</pubDate>
-      <category>general-ml</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A podcast discussion on applying automated laboratory loops to generate high-throughput chemical assay data for AI chemistry agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses data quality issues and cheating behaviors in machine learning models applied to drug discovery.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ian Quigley&lt;/p&gt;&lt;p&gt;Latent Space · importance 2/5 · general-ml, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Build self-improving document processing using Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/</guid>
-      <pubDate>Wed, 14 Oct 2026 16:24:07 +0000</pubDate>
-      <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A tutorial on constructing an autonomous document processing pipeline that adapts to unseen formats.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reduces manual template engineering by enabling agents to learn iteratively from business files.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Generate presentations with Amazon Bedrock AgentCore</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/</guid>
-      <pubDate>Wed, 14 Oct 2026 13:58:43 +0000</pubDate>
-      <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A tutorial on constructing a multi-agent system to automate slideshow generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates how to combine RAG and guardrails for rapid enterprise document processing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Built a brand new gesture-controlled robotic hand from scratch—this time with 6 servos for full hand articulation</title>
-      <link>https://www.reddit.com/r/computervision/comments/1x6f86p/built_a_brand_new_gesturecontrolled_robotic_hand/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/computervision/comments/1x6f86p/built_a_brand_new_gesturecontrolled_robotic_hand/</guid>
-      <pubDate>Thu, 15 Oct 2026 07:27:27 +0000</pubDate>
-      <category>robotics</category>
       <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A hobbyist project implementing a six-servo robotic hand controlled via real-time computer vision hand tracking.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates low-cost hardware prototyping for gesture-based articulation using standard vision libraries.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; RoboticSir_official&lt;/p&gt;&lt;p&gt;r/computervision · importance 1/5 · robotics, simulation&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark called RealtimeBench and a self-improvement method named TORSI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses the latency gap between LLM reasoning and real-time environment changes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ningxin Pan, Hanyu Li, Yeqing Shen et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, simulation&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>FlowBudget: Training-Free Sampling-Budget Estimation for Flow Matching Models</title>
+      <link>https://arxiv.org/abs/2610.20636</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20636</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <category>simulation</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A method to estimate inference sampling budgets for flow matching models without generating images or running grid sweeps.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It replaces costly empirical FID evaluations with a training-free mathematical estimator based on local discretization error probes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yasaman-dt&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml, simulation&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DeepUnfolding_Agent: A Classical_Quantum Adaptive Control API</title>
+      <link>https://arxiv.org/abs/2610.20615</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20615</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A FastAPI platform decoupling adaptive control logic from optimization tasks via a schema-driven external service.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It standardizes optimization workflows across classical, federated, and quantum systems to improve reproducibility and safety.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Shanika Iroshi Nanayakkara, Shiva Raj Pokhrel&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · general-ml, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PRISM: PRIvileged Sibling-guided Multi-Agent Topology Design</title>
+      <link>https://arxiv.org/abs/2610.20628</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20628</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A post-training framework that optimizes graph generators for multi-agent LLM systems using privileged sibling guidance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It recovers fine-grained preference signals from unranked execution datasets to prevent performance drift across different tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Phuong Tuan Dat, Qi Li, Xinchao Wang&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, reinforcement-learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BD-HazardVLM: Probing Vision-Language Models for Latent Defensive-Driving Hazards in Bangladesh Road Scenes</title>
+      <link>https://arxiv.org/abs/2610.20627</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20627</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>multimodal</category>
+      <category>ai-safety</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A diagnostic benchmark evaluating vision-language models on defensive driving reasoning within unstructured traffic settings.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that prominent models perform poorly on fine-grained hazard anticipation and risk timing despite decent binary detection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Abdullah Al Maruf, Md. Sajedul Islam, Tanmoy Mridha et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · multimodal, ai-safety&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Towards automatic digital garment assembly</title>
+      <link>https://arxiv.org/abs/2610.20651</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20651</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>multimodal</category>
+      <category>simulation</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A machine learning system that automates 2D clothing pattern assembly and draping initialization for virtual garment software.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It eliminates manual CAD sewing definitions by processing raw vector patterns to accurately predict complex seam topologies and layer placements.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Alejandro Rodriguez&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · multimodal, simulation, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint</title>
+      <link>https://huggingface.co/blog/ibm-granite/granite-switch-4-1</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/ibm-granite/granite-switch-4-1</guid>
+      <pubDate>Thu, 15 Oct 2026 20:34:01 +0000</pubDate>
+      <category>llm</category>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A unified model endpoint handling conversation, decision-making, and audio tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It consolidates multiple modalities into a single interface for broader deployment flexibility.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Unknown&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · llm, multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Meta launches an open-weight AI model that runs on Macs</title>
+      <link>https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/</link>
+      <guid isPermaLink="false">https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/</guid>
+      <pubDate>Thu, 15 Oct 2026 20:04:53 +0000</pubDate>
+      <category>llm</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-weight language model optimized to execute locally on Apple silicon hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables efficient on-device execution of generative models for consumer hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Meta&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · llm, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anthropic is letting METR researchers look under the hood with employee-level access</title>
+      <link>https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/</link>
+      <guid isPermaLink="false">https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/</guid>
+      <pubDate>Thu, 15 Oct 2026 19:14:26 +0000</pubDate>
+      <category>ai-safety</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An agreement granting evaluation researchers internal access to examine safety risks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables independent risk assessments without corporate censorship.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anthropic and METR&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · ai-safety&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ChatGPT can peek at your Chrome tabs now</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs</link>
+      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs</guid>
+      <pubDate>Thu, 15 Oct 2026 18:43:23 -0400</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A browser extension update enables ChatGPT to directly read and utilize open Google Chrome tabs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bridges desktop LLM workflows with active web browsing contexts via explicit user tagging.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;The Verge AI · importance 3/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning</title>
+      <link>https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/</link>
+      <guid isPermaLink="false">https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/</guid>
+      <pubDate>Thu, 15 Oct 2026 18:01:00 +0000</pubDate>
+      <category>llm</category>
+      <category>multimodal</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A multimodal language model built for enterprise automation and complex reasoning tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables continuous enterprise agents to process diverse data types for extended workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 3/5 · llm, multimodal, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Accelerating the search for antimicrobial peptides with Google Antigravity</title>
+      <link>https://deepmind.google/blog/accelerating-antimicrobial-discovery/</link>
+      <guid isPermaLink="false">https://deepmind.google/blog/accelerating-antimicrobial-discovery/</guid>
+      <pubDate>Thu, 15 Oct 2026 16:08:03 +0000</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A computational system designed to speed up the discovery of novel antimicrobial peptides.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It applies targeted algorithms to a critical domain of biological therapeutics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google DeepMind&lt;/p&gt;&lt;p&gt;Google DeepMind · importance 3/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introducing Timestral</title>
+      <link>https://mistral.ai/news/timestral/</link>
+      <guid isPermaLink="false">https://mistral.ai/news/timestral/</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 +0000</pubDate>
+      <category>foundational-models</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A family of lightweight probabilistic time-series forecasting models ranging from five to two hundred million parameters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables efficient zero-shot inference and strong performance on temporal data directly on CPU hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mistral AI&lt;/p&gt;&lt;p&gt;Mistral AI · importance 3/5 · foundational-models, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Local and Distributed Large LLM Inference with MLX and RDMA on Mac Studio</title>
+      <link>https://machinelearning.apple.com/research/mlx-distributed-inference</link>
+      <guid isPermaLink="false">https://machinelearning.apple.com/research/mlx-distributed-inference</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-source array framework for running local model inference and fine-tuning on Apple silicon hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It leverages unified memory architecture and RDMA to enable distributed large language model workflows on Mac Studio setups.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Apple ML Research&lt;/p&gt;&lt;p&gt;Apple ML Research · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Seoul National University of Science and Technology Researchers Show How Smartphones Can Help…</title>
+      <link>https://medium.com/@SEOULTECH/seoul-national-university-of-science-and-technology-researchers-show-how-smartphones-can-help-55604230ce9d?source=rss------deep_learning-5</link>
+      <guid isPermaLink="false">https://medium.com/@SEOULTECH/seoul-national-university-of-science-and-technology-researchers-show-how-smartphones-can-help-55604230ce9d?source=rss------deep_learning-5</guid>
+      <pubDate>Fri, 16 Oct 2026 10:31:01 +0000</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A domain-adaptive neural network framework for identifying irregular respiratory sounds via mobile devices.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables acoustic disease screening using standard smartphone hardware without requiring extensive target domain data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Seoul National University of Science and Technology&lt;/p&gt;&lt;p&gt;Medium · Deep Learning · importance 2/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Qwen Flash Next potential SOTA Q2 nobody talks about</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1x7bboy/qwen_flash_next_potential_sota_q2_nobody_talks/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1x7bboy/qwen_flash_next_potential_sota_q2_nobody_talks/</guid>
+      <pubDate>Fri, 16 Oct 2026 09:08:25 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community review of an unofficial low-bit quantization method for large language models called the GYRO series.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It evaluates claims that a custom 2-bit quantization format achieves performance comparable to larger 3-bit baselines with improved loop resistance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Agentionai&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Agentic workflows coming for Minecraft building?</title>
+      <link>https://www.reddit.com/r/singularity/comments/1x76yfu/agentic_workflows_coming_for_minecraft_building/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/singularity/comments/1x76yfu/agentic_workflows_coming_for_minecraft_building/</guid>
+      <pubDate>Fri, 16 Oct 2026 04:38:04 +0000</pubDate>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-source Minecraft modification that executes text prompts to construct structures within selected game regions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates practical agentic automation for procedural design tasks within a sandbox environment.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ni-Cobra&lt;/p&gt;&lt;p&gt;r/singularity · importance 2/5 · other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Large-Scale Dataset for Multi-Class Financial News Classification in Brazilian Portuguese</title>
+      <link>https://arxiv.org/abs/2610.20630</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20630</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A large benchmark dataset of 160,000 Brazilian Portuguese financial news articles with semantic similarity classification baselines.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses a major resource scarcity in domain-specific financial NLP and reveals significant performance drops when using noisy LLM annotations over human labels.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Leomax Bandeira, Gabriel Aguiar, Dalton C\'ezane Gomes Valadares et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Real-time Chatbot Romance Scam Detection in Stage Classification</title>
+      <link>https://arxiv.org/abs/2610.20631</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.20631</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A messaging-integrated chatbot that analyzes conversations using large language models to identify the progression of romance scams.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It applies established social science stage theories to operationalize real-time threat detection and user intervention.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yi-cheng Liu, Guan-ru Lai, Yi-cheng Lai et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · llm, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Meta Built Forum With AI-Native Engineering</title>
+      <link>https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/</link>
+      <guid isPermaLink="false">https://engineering.fb.com/2026/10/15/ml-applications/how-meta-built-forum-ai-native-engineering/</guid>
+      <pubDate>Thu, 15 Oct 2026 19:00:03 +0000</pubDate>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An engineering blog post describing the use of coding agents to develop a new social app.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates early practical workflows of embedding AI agents throughout a production software development lifecycle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Meta Engineering&lt;/p&gt;&lt;p&gt;Meta Engineering (ML) · importance 2/5 · other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bringing GPT-Rosalind to academic research labs</title>
+      <link>https://openai.com/index/introducing-the-rosalind-academic-plan</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-the-rosalind-academic-plan</guid>
+      <pubDate>Thu, 15 Oct 2026 19:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A subsidized software tier providing academic life science laboratories access to specialized LLM capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It lowers financial barriers for university researchers to adopt advanced AI tools in biology.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 2/5 · llm, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Meta’s Muse Spark Open now available in Amazon SageMaker JumpStart</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/</guid>
+      <pubDate>Thu, 15 Oct 2026 17:43:35 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Meta's open-weight coding model is now accessible on Amazon SageMaker JumpStart.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It streamlines the deployment and inference process for developers within AWS environments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sullivan &amp; Cromwell brings legal expertise into agreement review</title>
+      <link>https://openai.com/index/sullivan-cromwell</link>
+      <guid isPermaLink="false">https://openai.com/index/sullivan-cromwell</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Agreement Analyzer is a specialized software application for contract review and risk detection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates domain-specific legal deployment built directly on language model technology.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Sullivan &amp;amp; Cromwell and OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 2/5 · llm, other&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
