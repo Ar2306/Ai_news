@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-16T11:29:24.056813+00:00",
-  "duration_seconds": 1300.6,
+  "generated_at": "2026-10-17T10:38:08.403368+00:00",
+  "duration_seconds": 660.8,
   "counts": {
-    "fetched": 737,
-    "unique": 688,
-    "candidates": 84,
-    "kept": 41
+    "fetched": 431,
+    "unique": 368,
+    "candidates": 70,
+    "kept": 22
   },
   "summarized_by": {
-    "Ollama Cloud (gemma4:31b)": 5,
-    "Gemini (gemini-3.5-flash)": 3,
-    "Gemini (gemini-3.5-flash-lite)": 76
+    "Gemini (gemini-3.5-flash)": 14,
+    "Gemini (gemini-3.6-flash)": 3,
+    "Gemini (gemini-3.5-flash-lite)": 53
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -19,35 +19,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
@@ -96,7 +96,7 @@
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 8,
+      "items": 9,
       "error": ""
     },
     {
@@ -117,7 +117,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 13,
+      "items": 14,
       "error": ""
     },
     {
@@ -138,21 +138,21 @@
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 15,
+      "items": 14,
       "error": ""
     },
     {
       "name": "Allen AI",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 5,
       "error": ""
     },
     {
@@ -173,14 +173,14 @@
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 4,
       "error": ""
     },
     {
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 7,
       "error": ""
     },
     {
@@ -194,14 +194,14 @@
       "name": "Meta Engineering (ML)",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Microsoft Research",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 1,
       "error": ""
     },
     {
@@ -215,7 +215,7 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 10,
+      "items": 8,
       "error": ""
     },
     {
@@ -229,7 +229,7 @@
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 9,
+      "items": 12,
       "error": ""
     },
     {
@@ -250,7 +250,7 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 6,
+      "items": 1,
       "error": ""
     },
     {
@@ -313,14 +313,14 @@
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 20,
+      "items": 19,
       "error": ""
     },
     {
