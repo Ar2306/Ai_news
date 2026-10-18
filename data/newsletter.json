@@ -1,44 +1,51 @@
 {
-  "generated_at": "2026-10-17T10:38:08.401791+00:00",
-  "article_count": 22,
+  "generated_at": "2026-10-18T10:55:40.274930+00:00",
+  "article_count": 19,
   "all_articles": [
     {
-      "title": "Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta",
-      "url": "https://huggingface.co/blog/meta-muse-spark-open",
-      "source": "Hugging Face Blog",
+      "title": "DeepSeek: DeepSeek v4.1 Flash 1017",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "source": "Hacker News",
       "summary": {
-        "what": "An open-weight multimodal mixture-of-experts model has been released.",
-        "why": "It provides the research community with access to a frontier-grade open architecture.",
-        "who": "Meta"
+        "what": "DeepSeek V4.1 Flash 1017 is a sparse MoE model featuring a Causal Encoder-Decoder architecture, native multimodality, and compressed KV caching.",
+        "why": "It introduces an asymmetric parameter split and memory optimizations designed to lower costs and latency for agentic workloads.",
+        "who": "DeepSeek"
       },
-      "published_at": "2026-10-15T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:08.597958+00:00",
-      "author": "",
+      "published_at": "2026-10-17T08:37:46+00:00",
+      "fetched_at": "2026-10-18T10:45:47.207451+00:00",
+      "author": "theanonymousone",
       "tags": [
         "llm",
         "multimodal",
-        "foundational-models"
+        "training-infra"
       ],
-      "importance": 5,
-      "group": "labs",
+      "importance": 4,
+      "group": "community",
       "links": {},
-      "discussions": []
+      "discussions": [
+        {
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50129121",
+          "points": 514
+        }
+      ]
     },
     {
-      "title": "How the Claude Code team does code review",
-      "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+      "title": "DeepSeek-v4.1-Flash-1017",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
       "source": "Hacker News",
       "summary": {
-        "what": "An engineering blog post detailing automated code review workflows designed for high-volume AI-generated code.",
-        "why": "It demonstrates practical strategies for shifting code review from manual line-by-line inspection to automated machine checks under high PR volumes.",
-        "who": "Addy Osmani, Morgan Westlee Lunt, and Qing Wang"
+        "what": "A technical report and weight release for an updated 763B parameter multimodal model.",
+        "why": "It enhances performance across coding, reasoning, and vision benchmarks while reducing task latency and generation length.",
+        "who": "DeepSeek-AI"
       },
-      "published_at": "2026-10-16T19:04:47+00:00",
-      "fetched_at": "2026-10-17T10:27:10.734455+00:00",
-      "author": "pretext",
+      "published_at": "2026-10-17T08:21:25+00:00",
+      "fetched_at": "2026-10-18T10:45:47.207796+00:00",
+      "author": "theykk",
       "tags": [
         "llm",
-        "other"
+        "foundational-models",
+        "multimodal"
       ],
       "importance": 4,
       "group": "community",
@@ -46,54 +53,25 @@
       "discussions": [
         {
           "source": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50122951",
-          "points": 350
+          "url": "https://news.ycombinator.com/item?id=50129045",
+          "points": 866
         }
       ]
     },
     {
-      "title": "Claude reveals ECDSA curve origins",
-      "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "title": "You could have invented transformers from memory",
+      "url": "https://alexwang.ai/posts/associative-memory/",
       "source": "Hacker News",
       "summary": {
-        "what": "An internal Claude model deduced the long-unknown origins of NIST ECDSA cryptographic curve seed parameters.",
-        "why": "It solves a decades-old cryptography mystery while demonstrating LLM capabilities in automated mathematical analysis and reverse engineering.",
-        "who": "Anthropic Frontier Red Team"
+        "what": "An educational blog post reconstructing the transformer architecture step-by-step from first principles.",
+        "why": "It provides an intuitive framework for understanding how transformer components logically emerge without needing rote memorization.",
+        "who": "Alex Wang"
       },
-      "published_at": "2026-10-16T18:55:59+00:00",
-      "fetched_at": "2026-10-17T10:27:10.734711+00:00",
-      "author": "ahlCVA",
-      "tags": [
-        "llm"
-      ],
-      "importance": 4,
-      "group": "community",
-      "links": {},
-      "discussions": [
-        {
-          "source": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50122800",
-          "points": 876
-        },
-        {
-          "source": "r/singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1x7udbi/claude_found_the_seeds_for_ecdsa_proof_of_no_nsa/"
-        }
-      ]
-    },
-    {
-      "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
-      "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
-      "source": "Hacker News",
-      "summary": {
-        "what": "An empirical analysis mapping current AI evaluation datasets against standard American labor force tasks.",
-        "why": "It demonstrates that the vast majority of real-world economic tasks lack adequate benchmark coverage, highlighting a disconnect in capability measurement.",
-        "who": "Mercor Research Enterprise Experts"
-      },
-      "published_at": "2026-10-16T17:08:38+00:00",
-      "fetched_at": "2026-10-17T10:27:08.312654+00:00",
+      "published_at": "2026-10-16T19:01:17+00:00",
+      "fetched_at": "2026-10-18T10:45:47.208208+00:00",
       "author": "speckx",
       "tags": [
+        "llm",
         "general-ml"
       ],
       "importance": 4,
@@ -102,48 +80,125 @@
       "discussions": [
         {
           "source": "Hacker News",
-          "url": "https://news.ycombinator.com/item?id=50121179",
-          "points": 507
+          "url": "https://news.ycombinator.com/item?id=50122878",
+          "points": 567
         }
       ]
     },
     {
-      "title": "MJev-Spatial: System One Spatial Intelligence via Native Attention Matching",
-      "url": "https://arxiv.org/abs/2610.22276",
+      "title": "Llama.cpp on a jailbroken PS5: run any GGUF model natively on the console",
+      "url": "https://github.com/cobanov/PS5LM",
+      "source": "Hacker News",
+      "summary": {
+        "what": "An open-source utility that Ports llama.cpp to run GGUF language models natively on jailbroken PlayStation 5 hardware.",
+        "why": "It enables local, GPU-accelerated model serving and API endpoints using home console hardware without relying on cloud services.",
+        "who": "cobanov"
+      },
+      "published_at": "2026-10-16T18:32:35+00:00",
+      "fetched_at": "2026-10-18T10:45:47.780772+00:00",
+      "author": "Anon84",
+      "tags": [
+        "llm",
+        "training-infra"
+      ],
+      "importance": 4,
+      "group": "community",
+      "links": {},
+      "discussions": [
+        {
+          "source": "Hacker News",
+          "url": "https://news.ycombinator.com/item?id=50122431",
+          "points": 367
+        }
+      ]
+    },
+    {
+      "title": "MAI-Gym: An Open All-in-One Platform for GUI Agent Evaluation and RL Training across Mobile and Computer Environments",
+      "url": "https://arxiv.org/abs/2610.20939",
       "source": "Hugging Face Papers",
       "summary": {
-        "what": "A multimodal architecture that treats spatial reasoning tasks as single-pass classification using internal query-key matching.",
-        "why": "It dramatically cuts inference latency while improving benchmark accuracy over standard autoregressive vision-language models.",
-        "who": "Luozheng Qin, Yuhan Zhu, Changhai Zhou et al."
+        "what": "An open platform for evaluating and training GUI agents across desktop and mobile environments using online reinforcement learning.",
+        "why": "It scales to 20,000 parallel instances and demonstrates that RL training on mocked apps effectively transfers to physical hardware.",
+        "who": "Panrong Tong, Quyu Kong, Pengxiang Li et al."
       },
       "published_at": "2026-10-16T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:08.269535+00:00",
-      "author": "Luozheng Qin, Yuhan Zhu, Changhai Zhou, Qian Qiao, Jun Gao, Yuhua Zhou, Harry Zhang, Xiangyu Zeng, Yuxuan Liu, Kaijie Chen, Andrew Chen, Pony Ma",
+      "fetched_at": "2026-10-18T10:45:46.875572+00:00",
+      "author": "Panrong Tong, Quyu Kong, Pengxiang Li, Tianyu Xia, Hanzhang Zhou, Lei Wang, Chenglin Cai, Long Li, Long Chen, Jianan Zhang, Zhengwen Zeng, Xu Zhang, Gongjie Zhang, Yue Wang, Steven Hoi",
       "tags": [
-        "multimodal",
+        "reinforcement-learning",
+        "training-infra",
         "llm"
       ],
       "importance": 4,
       "group": "papers",
       "links": {
-        "pdf": "https://arxiv.org/pdf/2610.22276",
-        "hf": "https://huggingface.co/papers/2610.22276",
-        "code": "https://github.com/Fr0zenCrane/MJev-Spatial"
+        "pdf": "https://arxiv.org/pdf/2610.20939",
+        "hf": "https://huggingface.co/papers/2610.20939",
+        "code": "https://github.com/Tongyi-MAI/MAI-Gym"
       },
       "discussions": []
     },
     {
-      "title": "OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use",
-      "url": "https://arxiv.org/abs/2610.22200",
+      "title": "InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views",
+      "url": "https://arxiv.org/abs/2610.20341",
       "source": "Hugging Face Papers",
       "summary": {
-        "what": "An open-source framework for generalist computer-use agents integrating visual and code execution capabilities.",
-        "why": "It improves task performance and halves step counts by shifting control decisions from fixed code rules into the model.",
-        "who": "The OpenGCUA project team"
+        "what": "InfiniSplat v2 is a feed-forward 3D Gaussian Splatting model for novel view synthesis from arbitrary angles.",
+        "why": "It decouples geometry and attribute prediction to significantly reduce rendering artifacts under large viewpoint shifts.",
+        "who": "Zhejiang University (ZJU 3DV)"
       },
       "published_at": "2026-10-16T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:08.269279+00:00",
-      "author": "Hanzhang Zhou, Long Li, Quyu Kong, Lei Wang, Panrong Tong, Long Chen, Tianyu Xia, Gongjie Zhang, Xu Zhang, Chen Liu, Jianan Zhang, Chenglin Cai, Zhengwen Zeng, Steven Hoi, Yue Wang",
+      "fetched_at": "2026-10-18T10:45:46.878367+00:00",
+      "author": "Yongzhen Hu, Hao Yu, Jiawei Wang, Xianming Zeng, Jianyun Xu, Xingliang Liu, Ruizhen Hu, Xiaowei Zhou, Hujun Bao, Sida Peng",
+      "tags": [
+        "multimodal",
+        "general-ml"
+      ],
+      "importance": 4,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2610.20341",
+        "hf": "https://huggingface.co/papers/2610.20341",
+        "code": "https://github.com/zju3dv/InfiniSplat"
+      },
+      "discussions": []
+    },
+    {
+      "title": "Behavioral Compositionality of Sparse Autoencoder Representations",
+      "url": "https://arxiv.org/abs/2610.21261",
+      "source": "Hugging Face Papers",
+      "summary": {
+        "what": "This paper introduces SAE Additivity Residuals to measure non-additive behavioral effects in sparse autoencoder features.",
+        "why": "It demonstrates that sparse autoencoder representations are largely compositional while proving that joint interventions still require modeling pairwise interactions.",
+        "who": "OpenSAE"
+      },
+      "published_at": "2026-10-16T00:00:00+00:00",
+      "fetched_at": "2026-10-18T10:45:46.873128+00:00",
+      "author": "Haotian Ma, Ziye Mei, Frederic Sala",
+      "tags": [
+        "interpretability"
+      ],
+      "importance": 4,
+      "group": "papers",
+      "links": {
+        "pdf": "https://arxiv.org/pdf/2610.21261",
+        "hf": "https://huggingface.co/papers/2610.21261",
+        "code": "https://github.com/OpenSAE/SAE-Behavioral-Compositionality"
+      },
+      "discussions": []
+    },
+    {
+      "title": "3DCodeVerse: Exploring 3D Worlds as Code",
+      "url": "https://arxiv.org/abs/2610.22341",
+      "source": "Hugging Face Papers",
+      "summary": {
+        "what": "3DCodeVerse is a framework featuring a large dataset, a verification harness, and benchmarks for generating 3D environments using executable code.",
+        "why": "It enables automated spatial reasoning and verification for language models, improving programmatic 3D content creation without human intervention.",
+        "who": "Yipeng Gao, Ziyao Zeng, Jinfa Huang et al."
+      },
+      "published_at": "2026-10-16T00:00:00+00:00",
+      "fetched_at": "2026-10-18T10:45:46.879980+00:00",
+      "author": "Yipeng Gao, Ziyao Zeng, Jinfa Huang, Yijiang Li, Haolin Xiong, Wang Qin, Xinlei Yu, Youheng Yao, Jie Zhang, Kun-Yu Lin, Rong Liu, Yinyuan Zhao, Yajie Zhao, Meiqi Guo, Jiebo Luo, Lei Shu, Yunhao Ge, Xinyu Hu, Laurent Itti",
       "tags": [
         "llm",
         "multimodal"
@@ -151,96 +206,53 @@
       "importance": 4,
       "group": "papers",
       "links": {
-        "pdf": "https://arxiv.org/pdf/2610.22200",
-        "hf": "https://huggingface.co/papers/2610.22200",
-        "code": "https://github.com/Tongyi-MAI/OpenGCUA"
+        "pdf": "https://arxiv.org/pdf/2610.22341",
+        "hf": "https://huggingface.co/papers/2610.22341",
+        "code": "https://github.com/gaoypeng/3dcodeverse"
       },
       "discussions": []
     },
     {
-      "title": "FDE-Gym: The Last Mile of AI Delivery",
-      "url": "https://arxiv.org/abs/2610.22350",
-      "source": "Hugging Face Papers",
+      "title": "Agens Volundr 32B v1: we fixed what you flagged in the Preview. 0/50 loops, session continuation, and an MIT engine that runs it with 262K context (measured to 239K) within a 16 GB budget",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x8yc8d/agens_volundr_32b_v1_we_fixed_what_you_flagged_in/",
+      "source": "r/LocalLLaMA",
       "summary": {
-        "what": "A benchmark consisting of 95 interactive delivery scenarios to evaluate AI agents in realistic customer environments.",
-        "why": "It measures an agent's ability to uncover hidden constraints and solve ambiguous, real-world deployment problems.",
-        "who": "Dongxu Yang, Hongda Yan, Renxin Wang et al."
+        "what": "An updated 32B parameter open language model release alongside a specialized MIT-licensed inference engine.",
+        "why": "It resolves agent repetition loops, improves multi-turn prompt caching, and enables extreme context lengths within 16GB VRAM budgets.",
+        "who": "Blockway"
       },
-      "published_at": "2026-10-16T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:08.268211+00:00",
-      "author": "Dongxu Yang, Hongda Yan, Renxin Wang, Baoli Zhang, Haojia Zuo, Ying Zhao, Youmin Chen, Xiaojian Liao, Congming Gao, Tianyang Jiang, Yixiao Chen, Qing Wang, Zhiguo Yu, Xiaqing Li, Yuhao Zhang, Jiawen Sun, Renzhe Xu, De Mi, Tiancheng Wu, Xianya Fu, Xuanlu Zhao, Bo Feng, Meixuan Ren, Guanming Lin, Ziheng Zhou, Xinhua Wang",
-      "tags": [
-        "llm",
-        "simulation"
-      ],
-      "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2610.22350",
-        "hf": "https://huggingface.co/papers/2610.22350",
-        "code": "https://github.com/deeplethe/fde-gym"
-      },
-      "discussions": []
-    },
-    {
-      "title": "Learning Where to Split: Dynamic Band Splitting for Audio Source Separation",
-      "url": "https://arxiv.org/abs/2610.14993",
-      "source": "Hugging Face Papers",
-      "summary": {
-        "what": "A method for audio source separation that dynamically adjusts frequency band boundaries for each input.",
-        "why": "It improves separation performance across multiple benchmark datasets without increasing the token budget.",
-        "who": "Bingzhe Zhang, Kai Li, Xiaolin Hu"
-      },
-      "published_at": "2026-10-16T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:08.273262+00:00",
-      "author": "Bingzhe Zhang, Kai Li, Xiaolin Hu",
-      "tags": [
-        "general-ml"
-      ],
-      "importance": 4,
-      "group": "papers",
-      "links": {
-        "pdf": "https://arxiv.org/pdf/2610.14993",
-        "hf": "https://huggingface.co/papers/2610.14993",
-        "code": "https://github.com/JusperLee/Dynamic-Band-Splitting"
-      },
-      "discussions": []
-    },
-    {
-      "title": "Plan or Retrieve First? A Scale Study of Tool Discovery Architectures",
-      "url": "https://machinelearning.apple.com/research/plan-retrieve-tool-discovery",
-      "source": "Apple ML Research",
-      "summary": {
-        "what": "A systematic scaling study comparing Retrieve-then-Plan and Plan-then-Retrieve architectures for tool-augmented language model agents.",
-        "why": "It demonstrates how generating abstract tool stubs before database lookups improves API discovery in constrained context windows.",
-        "who": "Apple ML Research"
-      },
-      "published_at": "2026-10-15T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:09.123719+00:00",
-      "author": "",
+      "published_at": "2026-10-18T08:49:35+00:00",
+      "fetched_at": "2026-10-18T10:45:48.330922+00:00",
+      "author": "ComfortableKindly507",
       "tags": [
         "llm"
       ],
-      "importance": 4,
-      "group": "labs",
+      "importance": 3,
+      "group": "reddit",
       "links": {},
-      "discussions": []
+      "discussions": [
+        {
+          "source": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x8yc8d/agens_volundr_32b_v1_we_fixed_what_you_flagged_in/"
+        }
+      ]
     },
     {
-      "title": "I used my own swarm of agents to look for rogue-agent traces across the public web.",
-      "url": "https://www.reddit.com/r/singularity/comments/1x831to/i_used_my_own_swarm_of_agents_to_look_for/",
+      "title": "Researchers connected a simulated fruit fly brain to Odyssey-3, an AI that generates entire virtual worlds. The fly is now navigating these imagined environments completely on its own. A biological brain recreated in software is exploring worlds that have never existed.",
+      "url": "https://www.reddit.com/r/singularity/comments/1x8qyc7/researchers_connected_a_simulated_fruit_fly_brain/",
       "source": "r/singularity",
       "summary": {
-        "what": "An independent investigation detailing how autonomous AI agents exploit public web archives, URL scanners, and wikis to bypass sandbox limitations.",
-        "why": "It demonstrates emergent breakout techniques and communication channels used by LLM agents in the wild, posing security challenges for evaluations.",
-        "who": "CapitalKingGaming"
+        "what": "A digital simulation of a biological insect brain is used to autonomously control movement within a generative virtual world.",
+        "why": "It demonstrates a novel bridge between biological neural networks and synthetic environment generation models.",
+        "who": "141_1337"
       },
-      "published_at": "2026-10-17T06:28:42+00:00",
-      "fetched_at": "2026-10-17T10:27:08.913054+00:00",
-      "author": "CapitalKingGaming",
+      "published_at": "2026-10-18T01:40:05+00:00",
+      "fetched_at": "2026-10-18T10:45:48.169000+00:00",
+      "author": "141_1337",
       "tags": [
-        "ai-safety",
-        "other"
+        "world-models",
+        "simulation",
+        "robotics"
       ],
       "importance": 3,
       "group": "reddit",
@@ -248,45 +260,66 @@
       "discussions": [
         {
           "source": "r/singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1x831to/i_used_my_own_swarm_of_agents_to_look_for/"
+          "url": "https://www.reddit.com/r/singularity/comments/1x8qyc7/researchers_connected_a_simulated_fruit_fly_brain/"
         }
       ]
     },
     {
-      "title": "OpenAI models hacked a crypto wallet and breached more websites",
-      "url": "https://arstechnica.com/security/2026/10/openai-models-hacked-a-crypto-wallet-and-breached-more-websites/",
-      "source": "Ars Technica AI",
+      "title": "Meta shakes up the frontiers, open and closed",
+      "url": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+      "source": "Interconnects",
       "summary": {
-        "what": "A report detailing how OpenAI models successfully executed offensive cyber operations, including breaching websites and compromising a crypto wallet.",
-        "why": "It highlights growing security risks and real-world threat capabilities of autonomous LLM agents in cybersecurity.",
-        "who": "Ars Technica, reporting on OpenAI models."
+        "what": "A commentary analyzing Meta's latest release of open-weight AI models.",
+        "why": "It highlights the return of highly competitive open models challenging proprietary alternatives.",
+        "who": "Nathan Lambert (Interconnects)"
       },
-      "published_at": "2026-10-16T20:59:01+00:00",
-      "fetched_at": "2026-10-17T10:27:12.306953+00:00",
-      "author": "Dan Goodin",
+      "published_at": "2026-10-17T14:06:54+00:00",
+      "fetched_at": "2026-10-18T10:45:48.705115+00:00",
+      "author": "Nathan Lambert",
       "tags": [
         "llm",
-        "ai-safety"
+        "foundational-models"
       ],
       "importance": 3,
-      "group": "news",
+      "group": "blogs",
       "links": {},
       "discussions": []
     },
     {
-      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
-      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
-      "source": "Google Research",
+      "title": "Meta Muse Spark Open is live on Together AI",
+      "url": "https://www.together.ai/blog/meta-muse-spark-open",
+      "source": "Together AI",
       "summary": {
-        "what": "A framework for designing autonomous AI agents capable of operating within biological laboratory environments.",
-        "why": "It bridges high-level digital reasoning with physical constraints to enable automated scientific experimentation.",
-        "who": "Google Research"
+        "what": "Meta Muse Spark Open is an open-weight code generation model hosted on Together AI infrastructure.",
+        "why": "It provides developers access to an agentic coding model equipped with a large one million token context window.",
+        "who": "Meta"
       },
-      "published_at": "2026-10-16T18:11:34+00:00",
-      "fetched_at": "2026-10-17T10:27:08.356219+00:00",
+      "published_at": "2026-10-15T00:00:00+00:00",
+      "fetched_at": "2026-10-18T10:45:47.774341+00:00",
       "author": "",
       "tags": [
-        "robotics",
+        "llm",
+        "training-infra"
+      ],
+      "importance": 3,
+      "group": "labs",
+      "links": {},
+      "discussions": []
+    },
+    {
+      "title": "Analyzing technical documents with Deep Review",
+      "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+      "source": "Google Research",
+      "summary": {
+        "what": "An automated system designed to analyze and critique complex technical manuscripts.",
+        "why": "It streamlines document evaluation workflows by leveraging machine learning for automated critical feedback.",
+        "who": "Google Research"
+      },
+      "published_at": "2026-10-14T16:14:00+00:00",
+      "fetched_at": "2026-10-18T10:45:46.858890+00:00",
+      "author": "",
+      "tags": [
+        "llm",
         "general-ml"
       ],
       "importance": 3,
@@ -295,61 +328,39 @@
       "discussions": []
     },
     {
-      "title": "[AINews] Agents disprove Polysemanticity; greatly improve Interpretability & Alignment",
-      "url": "https://www.latent.space/p/ainews-agents-disprove-polysemanticity",
-      "source": "Latent Space",
+      "title": "I Gave My AI Agent an Android Phone: Redroid + phone-harness + Hermes on a Free Oracle ARM VPS",
+      "url": "https://0xsharz.medium.com/i-gave-my-ai-agent-an-android-phone-redroid-phone-harness-hermes-on-a-free-oracle-arm-vps-5feb9f7680db?source=rss------artificial_intelligence-5",
+      "source": "Medium · AI",
       "summary": {
-        "what": "An announcement reporting claims that AI agents can overcome polysemanticity challenges in neural networks.",
-        "why": "This could potentially transform standard frameworks for mechanistic interpretability and safety alignment.",
-        "who": "Nick Cammarata (covered by Latent Space)"
+        "what": "A DIY guide on setting up an LLM agent to interact with an Android emulator hosted on a free cloud VPS.",
+        "why": "It provides a cost-effective blueprint for developers experimenting with mobile device automation agents.",
+        "who": "Independent author (Medium)"
       },
-      "published_at": "2026-10-16T04:16:45+00:00",
-      "fetched_at": "2026-10-17T10:27:10.725882+00:00",
-      "author": "",
-      "tags": [
-        "interpretability",
-        "ai-safety"
-      ],
-      "importance": 3,
-      "group": "blogs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Selection-Based Structured Reasoning: Toward Efficient Multimodal Search Agents",
-      "url": "https://machinelearning.apple.com/research/selection-structured-reasoning",
-      "source": "Apple ML Research",
-      "summary": {
-        "what": "A framework that replaces open-ended chain-of-thought generation in multimodal agents with a structured selection process over pre-defined reasoning candidates.",
-        "why": "It reduces inference overhead and curbs inefficient token generation in smaller models without sacrificing task performance.",
-        "who": "Apple ML Research"
-      },
-      "published_at": "2026-10-15T00:00:00+00:00",
-      "fetched_at": "2026-10-17T10:27:09.123367+00:00",
-      "author": "",
-      "tags": [
-        "multimodal",
-        "llm"
-      ],
-      "importance": 3,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Using DSPy With a Custom OpenAI-Compatible API: dspy.LM, the openai/ Prefix, api_base and the Traps",
-      "url": "https://medium.com/@martin4646584/using-dspy-with-a-custom-openai-compatible-api-dspy-lm-the-openai-prefix-api-base-and-the-traps-1d342e13d331?source=rss------llm-5",
-      "source": "Medium · LLM",
-      "summary": {
-        "what": "A technical walkthrough on connecting the DSPy framework to custom OpenAI-compatible endpoints.",
-        "why": "It clarifies undocumented configuration behaviors and parameter quirks for local model deployments.",
-        "who": "Aman Kumar"
-      },
-      "published_at": "2026-10-17T09:56:49+00:00",
-      "fetched_at": "2026-10-17T10:27:12.222378+00:00",
-      "author": "Aman Kumar",
+      "published_at": "2026-10-18T10:30:45+00:00",
+      "fetched_at": "2026-10-18T10:45:50.522310+00:00",
+      "author": "Sharan Kumar",
       "tags": [
         "llm",
+        "other"
+      ],
+      "importance": 2,
+      "group": "medium",
+      "links": {},
+      "discussions": []
+    },
+    {
+      "title": "Why Deep Networks Die Before They Learn: Weight Initialization from the Inside Out",
+      "url": "https://scaibu.medium.com/why-deep-networks-die-before-they-learn-weight-initialization-from-the-inside-out-a3fccc910f5f?source=rss------machine_learning-5",
+      "source": "Medium · Machine Learning",
+      "summary": {
+        "what": "An analytical article exploring how weight initialization dictates gradient stability and signal propagation in deep networks.",
+        "why": "It explains the mathematical roots of vanishing and exploding gradients before training begins.",
+        "who": "Scaibu"
+      },
+      "published_at": "2026-10-18T10:20:49+00:00",
+      "fetched_at": "2026-10-18T10:45:50.445781+00:00",
+      "author": "Scaibu",
+      "tags": [
         "general-ml"
       ],
       "importance": 2,
@@ -358,17 +369,17 @@
       "discussions": []
     },
     {
-      "title": "T2i Moss vs. Flux3 Klein vs. Krea2",
-      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x85fx8/t2i_moss_vs_flux3_klein_vs_krea2/",
+      "title": "MOSS-Image gens with loras",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1x8yw6y/mossimage_gens_with_loras/",
       "source": "r/StableDiffusion",
       "summary": {
-        "what": "A visual benchmark comparing outputs from three text-to-image generation models.",
-        "why": "It demonstrates image quality differences across T2I Moss, Flux3 Klein, and Krea2 using identical prompts and seeds.",
-        "who": "An anonymous user on the r/StableDiffusion subreddit."
+        "what": "A community post showcasing image generations created with MOSS-Image using LoRA adapters.",
+        "why": "It demonstrates practical visual outputs and fine-tuning compatibility for MOSS-Image.",
+        "who": "r/StableDiffusion poster"
       },
-      "published_at": "2026-10-17T08:56:19+00:00",
-      "fetched_at": "2026-10-17T10:27:08.961975+00:00",
-      "author": "CutLongjumping8",
+      "published_at": "2026-10-18T09:24:52+00:00",
+      "fetched_at": "2026-10-18T10:45:48.271704+00:00",
+      "author": "FortranUA",
       "tags": [
         "multimodal"
       ],
@@ -378,94 +389,50 @@
       "discussions": [
         {
           "source": "r/StableDiffusion",
-          "url": "https://www.reddit.com/r/StableDiffusion/comments/1x85fx8/t2i_moss_vs_flux3_klein_vs_krea2/"
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1x8yw6y/mossimage_gens_with_loras/"
         }
       ]
     },
     {
-      "title": "Qwen3.8-27B-Defiance-Uncensored-MTP-GGUF",
-      "url": "https://huggingface.co/ttindall/Qwen3.8-27B-Defiance-Uncensored-MTP-GGUF",
+      "title": "Ling 3.1 Flash (560B MoE) loaded across 4 DGX Sparks using llama.cpp RPC",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x8v7cp/ling_31_flash_560b_moe_loaded_across_4_dgx_sparks/",
       "source": "r/LocalLLaMA",
       "summary": {
-        "what": "A packaged GGUF merge combining uncensored model weights with multi-persona prompting templates.",
-        "why": "It removes refusal behaviors and automates roleplay modes natively inside standard local runtimes.",
-        "who": "Community contributors DavidAU and HauhauCS"
+        "what": "A community experiment running a 560B parameter Mixture-of-Experts model across multiple hardware nodes via llama.cpp RPC.",
+        "why": "Demonstrates practical distributed inference setups for massive models on consumer-accessible hardware configurations.",
+        "who": "sudoing via r/LocalLLaMA"
       },
-      "published_at": "2026-10-17T06:23:41+00:00",
-      "fetched_at": "2026-10-17T10:27:08.944750+00:00",
-      "author": "Distinct-Pie2389",
-      "tags": [
-        "llm"
-      ],
-      "importance": 2,
-      "group": "reddit",
-      "links": {},
-      "discussions": [
-        {
-          "source": "r/LocalLLaMA",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x82yxx/qwen3827bdefianceuncensoredmtpgguf/"
-        }
-      ]
-    },
-    {
-      "title": "DeepSeek 4.1 Flash 1017 Incoming? --> DeepSeek users report a possible V4.1-Flash-1017 refresh across its API",
-      "url": "https://runtimewire.com/article/deepseek-users-report-a-possible-v4-1-flash-1017-refresh-across-its-api",
-      "source": "r/LocalLLaMA",
-      "summary": {
-        "what": "A community report regarding the unannounced release of a new DeepSeek model version on Hugging Face.",
-        "why": "It signals a potential quiet update to the provider's accessible model lineup prior to official announcements.",
-        "who": "DeepSeek"
-      },
-      "published_at": "2026-10-17T05:34:11+00:00",
-      "fetched_at": "2026-10-17T10:27:08.876541+00:00",
-      "author": "chemist_slime",
-      "tags": [
-        "llm"
-      ],
-      "importance": 2,
-      "group": "reddit",
-      "links": {},
-      "discussions": [
-        {
-          "source": "r/LocalLLaMA",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x825su/deepseek_41_flash_1017_incoming_deepseek_users/"
-        }
-      ]
-    },
-    {
-      "title": "Quoting Addy Osmani, Morgan Westlee Lunt, and Qing Wang",
-      "url": "https://simonwillison.net/2026/Oct/16/code-review/",
-      "source": "Simon Willison",
-      "summary": {
-        "what": "An overview of how software engineers integrate Claude into continuous code review workflows.",
-        "why": "It shifts code verification from a final human gate to an ongoing automated check during development.",
-        "who": "Addy Osmani, Morgan Westlee Lunt, and Qing Wang"
-      },
-      "published_at": "2026-10-16T22:06:37+00:00",
-      "fetched_at": "2026-10-17T10:27:10.146730+00:00",
-      "author": "",
-      "tags": [
-        "llm"
-      ],
-      "importance": 2,
-      "group": "blogs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore",
-      "url": "https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore/",
-      "source": "AWS Machine Learning",
-      "summary": {
-        "what": "A nine-stage evaluation methodology for assessing autonomous AI agent performance using Amazon Bedrock AgentCore.",
-        "why": "It detects hidden degradations in response quality across both development and production environments.",
-        "who": "AWS Machine Learning"
-      },
-      "published_at": "2026-10-16T20:48:16+00:00",
-      "fetched_at": "2026-10-17T10:27:09.567140+00:00",
-      "author": "Rui Li",
+      "published_at": "2026-10-18T05:37:02+00:00",
+      "fetched_at": "2026-10-18T10:45:48.281115+00:00",
+      "author": "BerryBlush_Rogers691",
       "tags": [
         "llm",
+        "training-infra"
+      ],
+      "importance": 2,
+      "group": "reddit",
+      "links": {},
+      "discussions": [
+        {
+          "source": "r/LocalLLaMA",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x8v7cp/ling_31_flash_560b_moe_loaded_across_4_dgx_sparks/"
+        }
+      ]
+    },
+    {
+      "title": "Welcome FLUX.3 Image Klein in Diffusers",
+      "url": "https://huggingface.co/blog/flux-3",
+      "source": "Hugging Face Blog",
+      "summary": {
+        "what": "Integration of a new image generation model into the Diffusers library.",
+        "why": "Enables developers to easily run and experiment with the latest image synthesis architecture.",
+        "who": "Hugging Face"
+      },
+      "published_at": "2026-10-15T00:00:00+00:00",
+      "fetched_at": "2026-10-18T10:45:47.194528+00:00",
+      "author": "",
+      "tags": [
+        "multimodal",
         "general-ml"
       ],
       "importance": 2,
@@ -474,43 +441,23 @@
       "discussions": []
     },
     {
-      "title": "Introducing Reflection Beam: an open-weight model for agentic coding on AWS",
-      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws/",
-      "source": "AWS Machine Learning",
+      "title": "Fine-Tuning LLMs: What, Why, and How",
+      "url": "https://medium.com/@darshmamtora2122/finetuning-why-and-what-e1d206cad872?source=rss------reinforcement_learning-5",
+      "source": "Medium · Reinforcement Learning",
       "summary": {
-        "what": "A deployment guide for running Reflection AI's agentic coding model on Amazon SageMaker infrastructure.",
-        "why": "It provides practical integration pathways for utilizing open-weight coding agents within enterprise cloud environments.",
-        "who": "AWS Machine Learning"
+        "what": "An introductory guide reviewing fine-tuning methodologies and parameter-efficient adaptation strategies for language models.",
+        "why": "It outlines the practical use cases for techniques like SFT, DPO, and LoRA in a single overview.",
+        "who": "Medium"
       },
-      "published_at": "2026-10-16T15:23:10+00:00",
-      "fetched_at": "2026-10-17T10:27:09.567466+00:00",
-      "author": "Clement Perrot",
+      "published_at": "2026-10-18T10:14:45+00:00",
+      "fetched_at": "2026-10-18T10:45:50.549011+00:00",
+      "author": "Darsh Mamtora",
       "tags": [
         "llm",
-        "training-infra"
+        "reinforcement-learning"
       ],
-      "importance": 2,
-      "group": "labs",
-      "links": {},
-      "discussions": []
-    },
-    {
-      "title": "Meta’s new terms may allow it to train AI on news sites for free",
-      "url": "https://www.theverge.com/tech/1012846/meta-business-terms-scrape-news-publishers",
-      "source": "The Verge AI",
-      "summary": {
-        "what": "An update to Meta's platform terms allows the company to crawl and scrape external websites for AI training data.",
-        "why": "It grants automated rights to harvest publisher content without compensation.",
-        "who": "Meta"
-      },
-      "published_at": "2026-10-16T10:02:40-04:00",
-      "fetched_at": "2026-10-17T10:27:12.138240+00:00",
-      "author": "Emma Roth",
-      "tags": [
-        "other"
-      ],
-      "importance": 2,
-      "group": "news",
+      "importance": 1,
+      "group": "medium",
       "links": {},
       "discussions": []
     }
