@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-18T10:55:40.278180+00:00",
-  "duration_seconds": 594.1,
+  "generated_at": "2026-10-19T12:57:52.919998+00:00",
+  "duration_seconds": 699.5,
   "counts": {
-    "fetched": 364,
-    "unique": 311,
-    "candidates": 68,
-    "kept": 19
+    "fetched": 601,
+    "unique": 562,
+    "candidates": 78,
+    "kept": 36
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 14,
-    "Gemini (gemini-3.5-flash-lite)": 54
+    "Gemini (gemini-3.5-flash)": 12,
+    "Gemini (gemini-3.5-flash-lite)": 66
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -18,35 +18,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 0,
+      "items": 60,
       "error": ""
     },
     {
@@ -95,7 +95,7 @@
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 7,
+      "items": 5,
       "error": ""
     },
     {
@@ -116,7 +116,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 11,
+      "items": 10,
       "error": ""
     },
     {
@@ -130,14 +130,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 31,
+      "items": 29,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 8,
+      "items": 4,
       "error": ""
     },
     {
@@ -151,7 +151,7 @@
       "name": "Apple ML Research",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 0,
       "error": ""
     },
     {
@@ -172,22 +172,22 @@
       "name": "Google Research",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 3,
       "error": ""
     },
     {
       "name": "MIT News (AI)",
       "group": "labs",
-      "ok": false,
-      "items": 0,
-      "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://news.mit.edu/rss/topic/artificial-intelligence2'\nFor more"
+      "ok": true,
+      "items": 4,
+      "error": ""
     },
     {
       "name": "Meta Engineering (ML)",
@@ -207,42 +207,42 @@
       "name": "Mistral AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 6,
+      "items": 4,
       "error": ""
     },
     {
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 3,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 8,
+      "items": 5,
       "error": ""
     },
     {
       "name": "Stanford AI Lab",
       "group": "labs",
-      "ok": true,
+      "ok": false,
       "items": 0,
-      "error": ""
+      "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c"
     },
     {
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
@@ -270,7 +270,7 @@
       "name": "Medium · Generative AI",
       "group": "medium",
       "ok": true,
-      "items": 10,
+      "items": 9,
       "error": ""
     },
     {
@@ -298,14 +298,14 @@
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 6,
+      "items": 5,
       "error": ""
     },
     {
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 1,
       "error": ""
     },
     {
@@ -319,7 +319,7 @@
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 11,
+      "items": 5,
       "error": ""
     },
     {
@@ -333,7 +333,7 @@
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 84,
+      "items": 54,
       "error": ""
     },
     {
