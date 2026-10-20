@@ -1,52 +1,52 @@
 {
-  "generated_at": "2026-10-19T12:57:52.919998+00:00",
-  "duration_seconds": 699.5,
+  "generated_at": "2026-10-20T11:29:09.236921+00:00",
+  "duration_seconds": 756.9,
   "counts": {
-    "fetched": 601,
-    "unique": 562,
-    "candidates": 78,
-    "kept": 36
+    "fetched": 382,
+    "unique": 350,
+    "candidates": 69,
+    "kept": 25
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 12,
-    "Gemini (gemini-3.5-flash-lite)": 66
+    "Gemini (gemini-3.5-flash)": 7,
+    "Gemini (gemini-3.5-flash-lite)": 62
   },
-  "sources_ok": 45,
-  "sources_failed": 2,
+  "sources_ok": 46,
+  "sources_failed": 1,
   "sources": [
     {
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
@@ -74,7 +74,7 @@
       "name": "Hamel Husain",
       "group": "blogs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
@@ -95,7 +95,7 @@
       "name": "Latent Space",
       "group": "blogs",
       "ok": true,
-      "items": 5,
+      "items": 3,
       "error": ""
     },
     {
@@ -116,7 +116,7 @@
       "name": "Simon Willison",
       "group": "blogs",
       "ok": true,
-      "items": 10,
+      "items": 8,
       "error": ""
     },
     {
@@ -130,14 +130,14 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 29,
+      "items": 42,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 9,
       "error": ""
     },
     {
@@ -165,7 +165,7 @@
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
@@ -179,28 +179,28 @@
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
       "name": "MIT News (AI)",
       "group": "labs",
       "ok": true,
-      "items": 4,
+      "items": 3,
       "error": ""
     },
     {
       "name": "Meta Engineering (ML)",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 3,
       "error": ""
     },
     {
       "name": "Microsoft Research",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
@@ -221,35 +221,35 @@
       "name": "NVIDIA Technical Blog",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 2,
       "error": ""
     },
     {
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 5,
+      "items": 2,
       "error": ""
     },
     {
       "name": "Stanford AI Lab",
       "group": "labs",
-      "ok": false,
+      "ok": true,
       "items": 0,
-      "error": "ConnectError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c"
+      "error": ""
     },
     {
       "name": "Together AI",
       "group": "labs",
       "ok": true,
-      "items": 0,
+      "items": 1,
       "error": ""
     },
     {
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 0,
+      "items": 5,
       "error": ""
     },
     {
@@ -270,7 +270,7 @@
       "name": "Medium · Generative AI",
       "group": "medium",
       "ok": true,
-      "items": 9,
+      "items": 10,
       "error": ""
     },
     {
@@ -291,49 +291,49 @@
       "name": "Medium · Reinforcement Learning",
       "group": "medium",
       "ok": true,
-      "items": 10,
+      "items": 9,
       "error": ""
     },
     {
       "name": "Towards Data Science",
       "group": "medium",
       "ok": true,
-      "items": 5,
+      "items": 7,
       "error": ""
     },
     {
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 1,
+      "items": 4,
       "error": ""
     },
     {
       "name": "MIT Technology Review AI",
       "group": "news",
       "ok": true,
-      "items": 1,
+      "items": 4,
       "error": ""
     },
     {
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 5,
+      "items": 15,
       "error": ""
     },
     {
       "name": "The Verge AI",
       "group": "news",
       "ok": true,
-      "items": 4,
+      "items": 6,
       "error": ""
     },
     {
       "name": "Hugging Face Papers",
       "group": "papers",
       "ok": true,
-      "items": 54,
+      "items": 100,
       "error": ""
     },
     {
