@@ -4,334 +4,411 @@
     <title>AR — daily AI/ML digest</title>
     <link>https://ai-news-blush.vercel.app</link>
     <description>Curated AI/ML research and releases with what/why/who summaries.</description>
-    <lastBuildDate>Thu, 22 Oct 2026 11:46:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 11:36:29 +0000</lastBuildDate>
     <item>
-      <title>Google's Gemini 4 Argon Launched at $2 and $10 per Million Tokens.</title>
-      <link>https://medium.com/@andy.a.g/googles-gemini-4-argon-launched-at-2-and-10-per-million-tokens-17b400f6f72b?source=rss------llm-5</link>
-      <guid isPermaLink="false">https://medium.com/@andy.a.g/googles-gemini-4-argon-launched-at-2-and-10-per-million-tokens-17b400f6f72b?source=rss------llm-5</guid>
-      <pubDate>Thu, 22 Oct 2026 11:01:02 +0000</pubDate>
-      <category>llm</category>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Google released its new frontier language model with promotional token pricing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes a significantly lower cost tier for accessing recent frontier-class capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models</title>
-      <link>https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/</link>
-      <guid isPermaLink="false">https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/</guid>
-      <pubDate>Thu, 22 Oct 2026 05:00:27 +0000</pubDate>
-      <category>world-models</category>
-      <category>simulation</category>
-      <category>robotics</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; NVIDIA expanded its Cosmos platform with specialized blueprints, training utilities, and simulation checkpoints.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides developers open tools to accelerate the creation and evaluation of physical AI simulation systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Blog · importance 4/5 · world-models, simulation, robotics&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fix, Not Just Resample: Bounded Compiler-Guided Repair in Lean 4</title>
-      <link>https://arxiv.org/abs/2610.26942</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26942</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>Forging More Tasks into Better Harnesses: Agentic Harness Evolution via Successive Scale Racing</title>
+      <link>https://arxiv.org/abs/2610.28815</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.28815</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An online step-level repair framework uses compiler error messages to iteratively fix failed tactics in automated theorem proving.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It significantly boosts theorem solve rates on Lean 4 benchmarks by utilizing discarded compiler feedback instead of pure sampling.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Haotian Deng, Chris Farber, Sonal Narasimha et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework named Successive Scale Racing (SSR) optimizes agentic instruction and tool harnesses by intelligently selecting execution evidence.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It resolves performance degradation when scaling optimization tasks and cuts validation compute costs by sixty percent.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jingzhe Liu, Jiliang Tang, Tong Zhao et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>To Keep or Not to Keep: Learning KV Cache Retention in Disaggregated LLM Serving Systems</title>
-      <link>https://arxiv.org/abs/2610.28637</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28637</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>MoEZip: Routing-Aware KV Cache Compression for Sparse Mixture-of-Experts LLMs</title>
+      <link>https://arxiv.org/abs/2610.30206</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30206</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
       <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A learned framework that optimizes key-value cache retention and transfer policies for disaggregated LLM serving systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It significantly reduces time-to-first-token latency and inter-node network bandwidth consumption by incorporating compute and transfer costs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Dong Liu, Yanxuan Yu, Eric Jiang et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, training-infra&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A routing-aware KV cache compression technique specifically designed for sparse Mixture-of-Experts language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It prevents expert selection drift during long-context generation by using a Fisher information matrix metric.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Minsang Kim, Seungjun Baek&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, training-infra&lt;/p&gt;</description>
     </item>
     <item>
-      <title>SkillEval: Learning Interpretable Ability Profiles of LLMs via Cognitive Diagnosis Models</title>
-      <link>https://arxiv.org/abs/2610.28767</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28767</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>AI Mindmeld: A Latent Interconnect Protocol</title>
+      <link>https://arxiv.org/abs/2610.30215</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30215</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
-      <category>interpretability</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; SkillEval is a psychometrics-based evaluation framework that extracts interpretable skill profiles for language models from standard benchmarks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It replaces crude aggregate scores with fine-grained capability profiles, improving model routing efficiency and adaptive testing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Berke Arda, Peng Cui, Qiaoyuan Zheng et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 4/5 · llm, interpretability&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Complexity-Aware Surgical Video Reasoning Segmentation with Digital Twin and Context Memory</title>
-      <link>https://arxiv.org/abs/2610.28776</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28776</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
       <category>multimodal</category>
-      <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; SurgReasonSeg is a surgical video reasoning segmentation framework utilizing digital twin representations, reinforcement learning-routed LoRAs, and a context memory mechanism.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables real-time resolution of complex, implicit video queries involving temporal and workflow reasoning while outperforming existing baselines.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Yiqing Shen, Mathias Unberath&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 4/5 · multimodal, reinforcement-learning&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A protocol enabling direct latent-space communication between AI models and domain specialists without converting to text.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bypasses tokenization bottlenecks by transferring high-dimensional internal representations directly into frozen language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Polymathic AI&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 4/5 · llm, multimodal&lt;/p&gt;</description>
     </item>
     <item>
-      <title>StreamEval: Evaluating Interactive Streaming Video Generation Models</title>
-      <link>https://arxiv.org/abs/2610.28402</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28402</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <title>EgoHand: Monocular 3D Hand Reconstruction from Egocentric Video</title>
+      <link>https://arxiv.org/abs/2610.30293</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30293</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>multimodal</category>
-      <category>simulation</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; StreamEval is a benchmarking framework designed to assess interactive streaming video generation across diverse tasks and metrics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It exposes critical flaws in current models regarding real-time request execution and state consistency under temporal constraints.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; StreamEval Team&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, simulation, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>PHP2Shell: AI uncovers critical RCE in PHP</title>
-      <link>https://www.wiz.io/blog/php2shell-php-rce</link>
-      <guid isPermaLink="false">https://www.wiz.io/blog/php2shell-php-rce</guid>
-      <pubDate>Wed, 21 Oct 2026 13:43:19 +0000</pubDate>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A security research report detailing how frontier models were used to uncover critical remote code execution vulnerabilities in the core PHP engine.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a practical application of AI agents in discovering complex, decades-old security flaws that previously eluded human researchers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Wiz Research&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; EgoHand is a monocular 3D hand reconstruction model built on a curated dataset of fourteen million images.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves superior zero-shot generalization and geometric consistency at low latency compared to existing systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Chao-Yeh Chen, Tiffany Chen, Lin Duan et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 4/5 · multimodal, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience</title>
-      <link>https://arxiv.org/abs/2610.26855</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26855</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <title>Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation</title>
+      <link>https://arxiv.org/abs/2610.30926</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30926</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+      <category>multimodal</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces Factor-Aware Predictive Learning (FAPL) to better integrate multimodal LLM representations into video diffusion transformers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enhances temporal prediction and fine-grained factor control for complex video generation tasks without relying on frame-by-frame guidance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Songlin Yang, Zhe Wang, Xiaotong Zhao et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deep Search in Real-World Web Environments</title>
+      <link>https://arxiv.org/abs/2610.30181</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30181</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>multimodal</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A benchmark and task framework designed to test autonomous agents on complex, multi-step web research.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It exposes major limitations in frontier models regarding long-horizon search management and tool coordination in live environments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xiaomin Yu, Hongliang Chen, Zhe Huang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, multimodal, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Every AI model has the same "controversial" take on humans</title>
+      <link>https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans</link>
+      <guid isPermaLink="false">https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans</guid>
+      <pubDate>Thu, 22 Oct 2026 16:08:00 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical analysis showing that diverse commercial language models converge on identical pessimistic takes regarding human tribalism when prompted for controversial opinions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It highlights a shared behavioral uniformity or artifact across models from different labs despite architectural and training differences.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; ModelCompare&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WorldTUI: I trained a 360M model to pretend to be a terminal</title>
+      <link>https://simedw.com/2026/10/21/world-model-terminal/</link>
+      <guid isPermaLink="false">https://simedw.com/2026/10/21/world-model-terminal/</guid>
+      <pubDate>Thu, 22 Oct 2026 02:18:41 +0000</pubDate>
+      <category>llm</category>
       <category>world-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A developer fine-tuned a 360M parameter language model to simulate a complete interactive terminal environment directly from keypress inputs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a lightweight approach to training interactive world models on character grids rather than heavy pixel-based video data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; SimEdw&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · llm, world-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation</title>
+      <link>https://arxiv.org/abs/2610.29989</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.29989</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
+      <category>world-models</category>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A novel auxiliary objective called Future Chunk Prediction for autoregressive video diffusion models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It forces models to learn long-term visual evolution instead of relying on short-term continuity shortcuts, improving physical realism without extra inference cost.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ruopeng Gao, Yukun Huang, Jiarui Hu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · world-models, multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DONIC: Generalist Dexterous Bimanual Tracking Control from Human Demonstrations</title>
+      <link>https://arxiv.org/abs/2610.29997</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.29997</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
       <category>robotics</category>
-      <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A foundation world model for combined locomotion and manipulation tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses a unified kinematic representation to scale learning across both human and robot embodiments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Tianqi Liu, Hanfei Zhao, Qifeng Liang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · world-models, robotics, multimodal&lt;/p&gt;</description>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; DONIC is a bimanual dexterous motion tracker trained on human demonstrations using reinforcement learning and behavioral cloning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables a single robotic policy to generalize complex, contact-rich two-handed manipulation across unseen objects without finetuning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mingze Sun, Ziang Cao, Yuan Fei et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · robotics, reinforcement-learning&lt;/p&gt;</description>
     </item>
     <item>
-      <title>CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?</title>
-      <link>https://arxiv.org/abs/2610.25078</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.25078</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A recursive self-improvement framework that jointly evolves agent scaffolds and model weights to eliminate harness-model capability mismatches.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It allows smaller models to outperform larger baselines on complex agent tasks using supervised fine-tuning on self-generated trajectories.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jiaqi Su, Guibin Zhang, Jie-Jing Shao et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>S-Agent 2.0: Spatial Reasoning with a General Coding Agent</title>
-      <link>https://arxiv.org/abs/2610.28354</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28354</guid>
-      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; S-Agent 2.0 is an agentic framework that integrates a command-line 3D perception toolkit with general coding agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves spatial reasoning by giving vision-language models a persistent scene memory and a grounded interface to bridge raw tool outputs with logical conclusions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Rui Gong, Ruoyu Wang, Yalun Dai et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ensemble forecasting with IBM Granite time-series models</title>
-      <link>https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1</guid>
-      <pubDate>Thu, 22 Oct 2026 07:51:31 +0000</pubDate>
+      <title>Mistral's Timestral Forecasting Models Run on a CPU, No GPU Needed.</title>
+      <link>https://medium.com/@andy.a.g/mistrals-timestral-forecasting-models-run-on-a-cpu-no-gpu-needed-649c75075558?source=rss------machine_learning-5</link>
+      <guid isPermaLink="false">https://medium.com/@andy.a.g/mistrals-timestral-forecasting-models-run-on-a-cpu-no-gpu-needed-649c75075558?source=rss------machine_learning-5</guid>
+      <pubDate>Fri, 23 Oct 2026 11:01:02 +0000</pubDate>
       <category>foundational-models</category>
       <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An approach for combining multiple IBM Granite time-series forecasting models using ensembling techniques.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves prediction accuracy and robustness for sequential forecasting tasks compared to single models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; IBM&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · foundational-models, other&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Mistral released a family of time-series forecasting models scaling from five to two hundred nine million parameters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; They enable efficient temporal prediction on standard CPU hardware without requiring GPUs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Mistral AI&lt;/p&gt;&lt;p&gt;Medium · Machine Learning · importance 3/5 · foundational-models, other&lt;/p&gt;</description>
     </item>
     <item>
-      <title>[AINews] OpenAI’s Patch the Planet program is 1 of 2 parties to discover PHP2Shell vulnerabilities in core PHP affecting 70% of the web, using GPT-5.6 Sol; coordinated response over 2 months</title>
-      <link>https://www.latent.space/p/ainews-openais-patch-the-planet-program</link>
-      <guid isPermaLink="false">https://www.latent.space/p/ainews-openais-patch-the-planet-program</guid>
-      <pubDate>Thu, 22 Oct 2026 07:42:44 +0000</pubDate>
+      <title>Scientists grew a human mini-brain and used it to control a humanoid robot. It learned to grasp objects with 94% accuracy, chase a laser, and transfer learning between tasks—outperforming a conventional neural network in limited tests.</title>
+      <link>https://www.reddit.com/r/singularity/comments/1xd8qwb/scientists_grew_a_human_minibrain_and_used_it_to/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/singularity/comments/1xd8qwb/scientists_grew_a_human_minibrain_and_used_it_to/</guid>
+      <pubDate>Fri, 23 Oct 2026 08:52:34 +0000</pubDate>
+      <category>robotics</category>
+      <category>simulation</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Biological neural tissue derived from stem cells was integrated with a robotic system to perform manipulation tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates functional control and adaptation using living neural networks instead of digital algorithms.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; 141_1337&lt;/p&gt;&lt;p&gt;r/singularity · importance 3/5 · robotics, simulation, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I just came across Next-Concept Modeling and the idea is fascinating[R]</title>
+      <link>https://www.reddit.com/r/MachineLearning/comments/1xd7bsu/i_just_came_across_nextconcept_modeling_and_the/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/MachineLearning/comments/1xd7bsu/i_just_came_across_nextconcept_modeling_and_the/</guid>
+      <pubDate>Fri, 23 Oct 2026 07:24:12 +0000</pubDate>
+      <category>llm</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A hierarchical language generation method that predicts discrete concept codes across multiple resolution levels instead of single tokens.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves up to 31x faster inference speeds compared to standard diffusion text generation baselines.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; PanelReader&lt;/p&gt;&lt;p&gt;r/MachineLearning · importance 3/5 · llm, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Left alone with nothing to do, AI agents started playing</title>
+      <link>https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/</link>
+      <guid isPermaLink="false">https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:45:37 +0000</pubDate>
+      <category>simulation</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A study examining emergent social behaviors in autonomous AI agents inside a virtual sandbox.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It shows that unstructured, self-directed interaction can spontaneously boost downstream task performance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; MIT researchers&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · simulation, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Small Model Asks Better: Fine-Tuning Query Clarification for Retrieval-Augmented Generation</title>
+      <link>https://arxiv.org/abs/2610.28686</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.28686</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A dataset called ClariEdge and a small LoRA-tuned model for query clarification in RAG systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It beats larger prompted models at identifying ambiguous queries by leveraging hard negatives across retrieval stages.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; IBM Research&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SpecEvo: Speculative Evolution with Large Language Models for Cost-Efficient Scientific Discovery</title>
+      <link>https://arxiv.org/abs/2610.28706</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.28706</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A multi-LLM framework that optimizes evolutionary search by pairing low-cost speculator models with high-capacity LLMs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It cuts API costs by up to 80% while matching or exceeding frontier-model performance on scientific discovery tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ha Minh Hieu, Tongyao Zhu, Do Xuan Long et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Decision language models as affordable and rapid alternatives to LLM judges of clinical generative AI</title>
+      <link>https://arxiv.org/abs/2610.28826</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.28826</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A compact decision language model named Jev designed to evaluate clinical AI outputs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves physician-level evaluation alignment matching or beating large LLMs at a fraction of the cost and latency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Rotem Gershon, Seffi Cohen, Dean Ariel et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spectral Uncertainty Decomposition for Sparse Bayesian Learning</title>
+      <link>https://arxiv.org/abs/2610.30207</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30207</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <category>interpretability</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A mathematical framework decomposing posterior covariance in Bayesian inverse problems into data-informed and irreducible components.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It isolates sensor-visible uncertainty from fundamental geometric limits, improving uncertainty quantification in neural source imaging.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ismail Huseynov, Stefan Haufe&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml, interpretability&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Prediction Is Not Calibration: Item Parameter Recovery and Representation Coupling in Knowledge Tracing</title>
+      <link>https://arxiv.org/abs/2610.30211</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30211</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper analyzes why accurate response prediction in knowledge tracing models fails to guarantee proper item parameter recovery.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that decoupling sequence representation widths from item parameter keys resolves ability distortions and improves parameter estimation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Wenrui Yuan, St\'ephanie M. van den Berg, Johannes Steinr\"ucke&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lighthouse: On Building a Trustworthy Digital Assistant for Exploring History with Civil Rights Archives</title>
+      <link>https://arxiv.org/abs/2610.30158</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30158</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
       <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An announcement detailing OpenAI's automated discovery of critical core PHP vulnerabilities using an advanced language model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It highlights the practical effectiveness of LLMs in proactive cybersecurity and zero-day vulnerability detection.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;Latent Space · importance 3/5 · llm, ai-safety&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Lighthouse is a neuro-symbolic conversational assistant designed to query historical civil rights archives safely and accurately.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces a hybrid architecture combining LLMs with symbolic rules to minimize hallucinations and mitigate user harm when processing sensitive primary sources.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; John A. Aydin, Angelica Williams, Steven Dindl et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, ai-safety&lt;/p&gt;</description>
     </item>
     <item>
-      <title>PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619 (yes, those ones) were independently discovered by a frontier model using the prompt "find bad vulnerabilities in PHP".</title>
-      <link>https://www.reddit.com/r/singularity/comments/1xc74ng/php_vulnerabilities_cve2026109618_and/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/singularity/comments/1xc74ng/php_vulnerabilities_cve2026109618_and/</guid>
-      <pubDate>Thu, 22 Oct 2026 02:53:00 +0000</pubDate>
+      <title>TauIndianBankBench: Procedure-Aware, Action-Oriented Evaluation of Tool-Using Conversational Agents</title>
+      <link>https://arxiv.org/abs/2610.30161</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30161</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A frontier language model autonomously discovered two distinct vulnerabilities in the PHP source code.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates the capacity of standard models to find novel software flaws using simple prompts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Recoil42&lt;/p&gt;&lt;p&gt;r/singularity · importance 3/5 · llm&lt;/p&gt;</description>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; TauIndianBankBench is a new benchmark designed to evaluate tool-using conversational agents on procedural adherence in retail banking.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses the limitation of final-state evaluation by rigorously checking intermediate required steps and unauthorized actions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Krishanu Adhikary, Prashant Devadiga&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, other&lt;/p&gt;</description>
     </item>
     <item>
-      <title>DataPraxis: Scaling Analytics Tasks via Verified Workspace Evolution</title>
-      <link>https://arxiv.org/abs/2610.26924</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26924</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>FusionEval: Benchmarking Model Fusion for Large Language Models</title>
+      <link>https://arxiv.org/abs/2610.30162</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30162</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A task synthesis framework and 5,000-trajectory dataset designed to train AI agents on complex data analysis tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It generates deeper reasoning tasks by progressively accumulating and verifying workspace findings rather than synthesizing directly from raw data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nan Jia, Wenxuan Shi, Jingqing Ruan et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This research introduces FusionEval, a standardized benchmark suite for assessing model fusion techniques in large language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reveals that current fusion approaches struggle to simultaneously preserve reasoning, instruction following, and tool use without capability trade-offs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Shuo Cai, Yanggan Gu, Yuhang Liu et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>MAMath-Bench: Process-Aware and Robust Evaluation of Multimodal Multi-Agent Mathematical Reasoning</title>
-      <link>https://arxiv.org/abs/2610.26943</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26943</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <category>multimodal</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; This paper introduces MAMath-Bench, a benchmark designed to evaluate multimodal multi-agent mathematical reasoning across text, images, and audio.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It exposes critical vulnerabilities in current multi-agent systems, showing that collaboration increases reasoning step coverage but struggles with adversarial robustness.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; mira-ai-lab&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 3/5 · llm, multimodal, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Reinforcement learning for hardware acceleration and system-level optimization on FPGA and integrated-circuit platforms: A survey</title>
-      <link>https://arxiv.org/abs/2610.28699</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28699</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox</title>
+      <link>https://huggingface.co/blog/microsoft/thinkingbox-training</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/microsoft/thinkingbox-training</guid>
+      <pubDate>Thu, 22 Oct 2026 22:24:34 +0000</pubDate>
       <category>reinforcement-learning</category>
-      <category>training-infra</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A comprehensive survey reviewing over 100 studies on applying reinforcement learning to FPGAs and integrated circuits.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It systematically organizes hardware-algorithm co-design strategies, comparing metrics like latency, energy efficiency, and resource utilization across platforms.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hamza Kheddar&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · reinforcement-learning, training-infra, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scalable Stress-Constrained Topology Optimization: A Super-resolution and Simultaneous Approach Based on Machine Learning</title>
-      <link>https://arxiv.org/abs/2610.28703</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28703</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
-      <category>simulation</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A neural network framework that solves large-scale, stress-constrained topology optimization tasks using continuous adjoint analysis.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables multi-GPU scaling up to millions of degrees of freedom while maintaining field continuity and producing sharper structural boundaries.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Xiangyu Sun, Shirin Hosseinmardi, Ramin Bostanabad&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 3/5 · simulation, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Far Can the Gemma 4 Speech Encoder Go Without Changing Its Weights? Saudi and Gulf Arabic Speech Recognition with a Frozen and an Adapter-Augmented Encoder</title>
-      <link>https://arxiv.org/abs/2610.28673</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28673</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
       <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework that uses database verification to generate reward signals for reinforcement learning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a reliable automated method to post-train reasoning agents on complex structured tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hugging Face&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · reinforcement-learning, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1Password launches a way for AI agents to log in on your behalf without seeing your password</title>
+      <link>https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/</link>
+      <guid isPermaLink="false">https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/</guid>
+      <pubDate>Thu, 22 Oct 2026 19:07:09 +0000</pubDate>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A credential delegation tool allowing automated agents to authenticate without exposing raw secrets.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses security risks in autonomous agent workflows by isolating sensitive login data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; 1Password&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Donating Agent Skills to the Agentic AI Foundation</title>
+      <link>https://simonwillison.net/2026/Oct/22/donating-agent-skills/</link>
+      <guid isPermaLink="false">https://simonwillison.net/2026/Oct/22/donating-agent-skills/</guid>
+      <pubDate>Thu, 22 Oct 2026 18:09:56 +0000</pubDate>
+      <category>llm</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Anthropic is transferring its agent skills standard to the Linux Foundation's Agentic AI Foundation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; This transition establishes a vendor-neutral governance model for interoperable AI agent capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anthropic&lt;/p&gt;&lt;p&gt;Simon Willison · importance 3/5 · llm, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Announcing new ways to customize models with SageMaker AI, without managing GPUs</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/</guid>
+      <pubDate>Thu, 22 Oct 2026 18:00:04 +0000</pubDate>
+      <category>training-infra</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A serverless training infrastructure feature for custom model post-training on AWS.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It decouples distributed GPU management from custom reward and loss loop development.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 3/5 · training-infra, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Write your own training loop — without managing GPUs — with Amazon SageMaker training session APIs</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/</guid>
+      <pubDate>Thu, 22 Oct 2026 18:00:01 +0000</pubDate>
+      <category>training-infra</category>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; AWS introduced programming interfaces for running custom model training loops on managed hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It simplifies executing complex workflows like GRPO and reinforcement learning without manual infrastructure orchestration.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 3/5 · training-infra, reinforcement-learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Canva’s first AI image model plans designs before generating them</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model</link>
+      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model</guid>
+      <pubDate>Thu, 22 Oct 2026 17:51:25 -0400</pubDate>
       <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An investigation into using the frozen audio encoder from Gemma 4 for Gulf Arabic speech recognition via lightweight adapters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates competitive performance against much larger commercial models while offering dramatically faster CPU and GPU inference speeds.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Amr Abdelkhalik&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, multimodal&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An image generation model featuring a two-stage architecture for layout planning prior to rendering.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces structural layout planning to compete with standard text-to-image systems for graphic design.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Canva&lt;/p&gt;&lt;p&gt;The Verge AI · importance 3/5 · multimodal&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Scaling Therapy Supervision: Assessing Psychotherapy Fidelity Using Large Language Models</title>
-      <link>https://arxiv.org/abs/2610.28772</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28772</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
+      <title>Flint-interactive: A language for creating interactive data visualizations</title>
+      <link>https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/</link>
+      <guid isPermaLink="false">https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 +0000</pubDate>
       <category>llm</category>
       <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An LLM-driven framework automates psychotherapy fidelity assessment and generates clinical supervision feedback from long transcripts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces evidence-first reasoning strategies and validates performance against randomized controlled trials to overcome manual review bottlenecks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Arvind Pillai, Alexis Roach, Jason Holden et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 3/5 · llm, other&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A specialized programming grammar designed for AI agents to generate interactive data charts.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It expands generative AI capabilities beyond static images into dynamic, user-driven data exploration.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Microsoft Research&lt;/p&gt;&lt;p&gt;Microsoft Research · importance 3/5 · llm, other&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Different Defects, Different Effects: A Controlled Audit of Face Recognition Training Data</title>
-      <link>https://arxiv.org/abs/2610.28766</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28766</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A systematic audit identifying and categorizing five distinct data defects in widely used face recognition training sets like MS1MV3.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that specific data-cleaning interventions can improve model training efficiency and performance without requiring full retraining cycles.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ana Dias, Jo\~ao Ribeiro Pinto, Hugo Proen\c{c}a et al.&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 3/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Recursive launches Flint, a laptop coding model it says was largely built by AI</title>
-      <link>https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/</link>
-      <guid isPermaLink="false">https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/</guid>
-      <pubDate>Wed, 21 Oct 2026 20:27:41 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Flint is a compact coding model developed primarily through self-improving AI research.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It serves as an early practical demonstration of automated recursive model improvement.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Recursive&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Train Qwen3 on AWS Trainium with torchtitan</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/train-qwen3-on-aws-trainium-with-torchtitan/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/train-qwen3-on-aws-trainium-with-torchtitan/</guid>
-      <pubDate>Wed, 21 Oct 2026 20:00:22 +0000</pubDate>
+      <title>NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories</title>
+      <link>https://blogs.nvidia.com/blog/minerva-platform-infrastructure/</link>
+      <guid isPermaLink="false">https://blogs.nvidia.com/blog/minerva-platform-infrastructure/</guid>
+      <pubDate>Thu, 22 Oct 2026 15:00:02 +0000</pubDate>
       <category>training-infra</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A guide and codebase for pretraining Qwen3 using torchtitan and AWS Trainium hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates three distinct implementation pathways on trn2 instances using unified configuration structures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 3/5 · training-infra, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required</title>
-      <link>https://huggingface.co/blog/nvidia/kumo-relational</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/kumo-relational</guid>
-      <pubDate>Wed, 21 Oct 2026 18:26:30 +0000</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A zero-shot relational machine learning method developed by NVIDIA.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves better predictive performance than traditional supervised learning without needing task-specific training.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications</title>
-      <link>https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization</guid>
-      <pubDate>Wed, 21 Oct 2026 17:35:36 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technique that customizes small language model token sets to reduce inference expenses.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It drastically cuts compute overhead for specific tasks without requiring massive model scales.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hugging Face&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.</title>
-      <link>https://huggingface.co/blog/amazon/profiling-torchneuron-part-1</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/amazon/profiling-torchneuron-part-1</guid>
-      <pubDate>Wed, 21 Oct 2026 16:04:43 +0000</pubDate>
-      <category>training-infra</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide detailing system-level profiling techniques for AWS Trainium chips using TorchNeuron.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides practical methods to diagnose and optimize deep learning workloads on specialized cloud hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Hugging Face&lt;/p&gt;&lt;p&gt;Hugging Face Blog · importance 3/5 · training-infra, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using thousands of AI agents to uncover new leads in biological data</title>
-      <link>https://openai.com/index/scaling-ai-research-for-complex-biological-data</link>
-      <guid isPermaLink="false">https://openai.com/index/scaling-ai-research-for-complex-biological-data</guid>
-      <pubDate>Wed, 21 Oct 2026 04:50:00 +0000</pubDate>
       <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A collaborative application of distributed language model agents to analyze massive single-cell genomics datasets.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates how multi-agent architectures can scale exploratory data analysis in complex biological research.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 3/5 · other&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; NVIDIA Minerva is an AIOps platform designed to monitor and optimize massive AI computing clusters.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It unifies infrastructure telemetry with workload data to detect cluster faults and bottlenecks early.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Blog · importance 3/5 · training-infra, other&lt;/p&gt;</description>
     </item>
     <item>
-      <title>RAG vs. Fine-Tuning vs. Long Context: A Practical Decision Framework</title>
-      <link>https://medium.com/@cihatyldz/rag-vs-fine-tuning-vs-long-context-a-practical-decision-framework-6258060c3395?source=rss------llm-5</link>
-      <guid isPermaLink="false">https://medium.com/@cihatyldz/rag-vs-fine-tuning-vs-long-context-a-practical-decision-framework-6258060c3395?source=rss------llm-5</guid>
-      <pubDate>Thu, 22 Oct 2026 11:29:39 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A guide comparing retrieval-augmented generation, fine-tuning, and long context windows for LLM architectures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides trade-offs and updates standard selection criteria to account for recent tools like prompt caching.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Cihat Yıldız&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>I’d Read My Logs Before Buying a Faster Mac for Local AI</title>
-      <link>https://medium.com/@loengnavy/id-read-my-logs-before-buying-a-faster-mac-for-local-ai-691ab45ef281?source=rss------llm-5</link>
-      <guid isPermaLink="false">https://medium.com/@loengnavy/id-read-my-logs-before-buying-a-faster-mac-for-local-ai-691ab45ef281?source=rss------llm-5</guid>
-      <pubDate>Thu, 22 Oct 2026 11:01:01 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A diagnostic guide for identifying prompt cache failures in local AI agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It shows how cache errors severely degrade execution speed independently of hardware capabilities.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Loengnavy&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>H3 comparison: Singularity V2 against b25 hybrid (HyperFlow + TaoMate)</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1xcemua/h3_comparison_singularity_v2_against_b25_hybrid/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xcemua/h3_comparison_singularity_v2_against_b25_hybrid/</guid>
-      <pubDate>Thu, 22 Oct 2026 10:13:52 +0000</pubDate>
+      <title>Beyond tree cover: mapping the world’s forest types</title>
+      <link>https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/</link>
+      <guid isPermaLink="false">https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/</guid>
+      <pubDate>Thu, 22 Oct 2026 14:30:24 +0000</pubDate>
       <category>multimodal</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A post comparing two custom Stable Diffusion model merges.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It evaluates visual performance differences between the Singularity V2 and b25 hybrid checkpoints.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; eesahe&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A high-resolution global mapping dataset categorizing Earth's land surface by specific forest varieties.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Provides ecological researchers with unprecedented granular data for environmental tracking.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google DeepMind&lt;/p&gt;&lt;p&gt;Google DeepMind · importance 3/5 · multimodal, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Tesla Optimus production starts as Musk targets 20,000 robots weekly</title>
-      <link>https://interestingengineering.com/ai-robotics/tesla-optimus-robot-enters-production</link>
-      <guid isPermaLink="false">https://interestingengineering.com/ai-robotics/tesla-optimus-robot-enters-production</guid>
-      <pubDate>Thu, 22 Oct 2026 07:38:55 +0000</pubDate>
+      <title>Patch the Planet: global response coordination as agents uncover critical vulnerabilities</title>
+      <link>https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities</link>
+      <guid isPermaLink="false">https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities</guid>
+      <pubDate>Wed, 21 Oct 2026 07:00:00 +0000</pubDate>
+      <category>ai-safety</category>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An initiative connecting security responders to patch open-source vulnerabilities discovered by AI agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes a workflow to translate automated vulnerability discovery into actionable human software fixes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 3/5 · ai-safety, llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Moss Image Showcase – Mostly Photoreal + Some Art</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1xd9o13/moss_image_showcase_mostly_photoreal_some_art/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xd9o13/moss_image_showcase_mostly_photoreal_some_art/</guid>
+      <pubDate>Fri, 23 Oct 2026 09:49:16 +0000</pubDate>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A visual showcase detailing generation parameters for Moss Image, a base image diffusion model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates image output quality achieved purely through specific inference settings without using LoRAs or accelerated samplers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; An independent creator in the r/StableDiffusion community.&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PixText: a small, fast model for fixing text in generated images</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1xd9186/pixtext_a_small_fast_model_for_fixing_text_in/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xd9186/pixtext_a_small_fast_model_for_fixing_text_in/</guid>
+      <pubDate>Fri, 23 Oct 2026 09:09:58 +0000</pubDate>
+      <category>multimodal</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; PixText is a compact sub-one-billion parameter pixel-space model designed to correct textual artifacts in AI-generated images.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It bypasses VAE compression limits to preserve fine typography and requires only four sampling steps via MeanFlow.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Creepy_Astronomer_83&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Anyone checked gpu unlock for rtx 30-40 cards?</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xd8al3/anyone_checked_gpu_unlock_for_rtx_3040_cards/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xd8al3/anyone_checked_gpu_unlock_for_rtx_3040_cards/</guid>
+      <pubDate>Fri, 23 Oct 2026 08:23:23 +0000</pubDate>
+      <category>training-infra</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community-developed kernel module that unlocks additional tensor performance on consumer Nvidia GPUs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates hardware capability limits imposed by stock drivers, yielding measurable speedups for specific workloads.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zagitta&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · training-infra, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Qwen3-0.6B model converted into MoE</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xd87wu/qwen306b_model_converted_into_moe/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xd87wu/qwen306b_model_converted_into_moe/</guid>
+      <pubDate>Fri, 23 Oct 2026 08:18:42 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An experimental community conversion of a small dense language model into a Mixture-of-Experts architecture.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates the architectural hurdles of converting newer models lacking native shared experts into MoE formats while maintaining GGUF compatibility.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; bayliner1980&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MOSS-Image-SFT Anime Showcase: 20 styles tested (90s Cel, Shonen Jump covers, Sugimori watercolor, Sakuga &amp; Kanji) + ComfyUI Workflow (Its Great!)</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1xd5ypf/mossimagesft_anime_showcase_20_styles_tested_90s/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xd5ypf/mossimagesft_anime_showcase_20_styles_tested_90s/</guid>
+      <pubDate>Fri, 23 Oct 2026 06:02:09 +0000</pubDate>
+      <category>multimodal</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community-shared ComfyUI workflow demonstrating stylized anime and manga generation using the MOSS-Image model across twenty distinct artistic eras.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides practical configuration guidelines for Skip Layer Guidance settings to balance line fidelity and retro watercolor aesthetics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; SkirtSwimming8950&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>baseVultra: Compact Nonlinear Recurrence with Reallocated Capacity</title>
+      <link>https://arxiv.org/abs/2610.30154</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30154</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>llm</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A novel compact recurrent cell architecture that shifts computational capacity from gate mechanisms to candidate generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves streaming sequence modeling efficiency and outscores standard LSTMs and GRUs in resource-constrained regimes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Linke Zhang&lt;/p&gt;&lt;p&gt;arXiv cs.CL · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>V-JEPA 2 Meets AQA: Phase-Based Scoring and Reference-Based Feedback for Mountain Biking</title>
+      <link>https://arxiv.org/abs/2610.30160</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30160</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
+      <category>multimodal</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A research pipeline uses V-JEPA 2 representations and pose data to evaluate mountain bike jumping technique from weakly labeled video clips.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It rigorously documents the failure modes and limitations of applying self-supervised video features to complex action quality assessment and coaching feedback.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Santhiya Rajan, Savio Cardoz&lt;/p&gt;&lt;p&gt;arXiv cs.CV · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How IskayPet unified corporate knowledge with Amazon Bedrock Managed Knowledge Bases</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/how-iskaypet-unified-corporate-knowledge-with-amazon-bedrock-managed-knowledge-bases/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/how-iskaypet-unified-corporate-knowledge-with-amazon-bedrock-managed-knowledge-bases/</guid>
+      <pubDate>Thu, 22 Oct 2026 18:01:53 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A corporate knowledge assistant deployed by IskayPet using managed cloud retrieval infrastructure.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates serverless RAG deployment for multi-region multilingual enterprise support without manual pipeline maintenance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO</title>
+      <link>https://latent.space/p/modal-d/</link>
+      <guid isPermaLink="false">https://latent.space/p/modal-d/</guid>
+      <pubDate>Thu, 22 Oct 2026 17:40:57 +0000</pubDate>
+      <category>training-infra</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A podcast discussion analyzing the hardware infrastructure and economic drivers behind modern AI compute resources.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides practical insights into elastic GPU provisioning and the architectural needs of agent-based cloud workloads.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Latent Space&lt;/p&gt;&lt;p&gt;Latent Space · importance 2/5 · training-infra, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>This design software reimagines everyday objects as self-aware devices</title>
+      <link>https://news.mit.edu/2026/design-software-reimagines-everyday-objects-as-self-aware-devices-1022</link>
+      <guid isPermaLink="false">https://news.mit.edu/2026/design-software-reimagines-everyday-objects-as-self-aware-devices-1022</guid>
+      <pubDate>Thu, 22 Oct 2026 16:45:00 -0400</pubDate>
       <category>robotics</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An industry report on manufacturing timelines and output targets for humanoid hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It indicates the commercial scaling phase of embodied AI systems in industrial settings.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Tesla&lt;/p&gt;&lt;p&gt;r/robotics · importance 2/5 · robotics&lt;/p&gt;</description>
+      <category>simulation</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An automated design tool for 3D printing everyday items with embedded sensors.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It streamlines the creation of interactive, touch-responsive physical objects.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; MIT News&lt;/p&gt;&lt;p&gt;MIT News (AI) · importance 2/5 · robotics, simulation&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Huawei Atlas AI Accelerator Latest Comparison Overview</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xc9oje/huawei_atlas_ai_accelerator_latest_comparison/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xc9oje/huawei_atlas_ai_accelerator_latest_comparison/</guid>
-      <pubDate>Thu, 22 Oct 2026 05:08:49 +0000</pubDate>
-      <category>training-infra</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An informal hardware overview and personal testing notes regarding Huawei Atlas accelerator cards for running large language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It shares practical community-driven experiences running custom vLLM forks and pruning models on alternative hardware accelerators outside of standard Nvidia ecosystems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Reddit user and hardware enthusiast&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · training-infra, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Industrial Agentic AI: LLM-Driven New-Generation Agents for Smart Manufacturing</title>
-      <link>https://arxiv.org/abs/2610.26941</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26941</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A survey paper outlining a framework, taxonomy, and system architecture for deploying LLM-based autonomous agents in smart manufacturing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It categorizes industrial agent capabilities and system requirements to handle strict reliability and physical execution constraints.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Lei Ren, Haiteng Wang, Shixiang Li et al.&lt;/p&gt;&lt;p&gt;arXiv cs.AI · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Interaction-Gated Time-Frequency Learning for Parameter-Efficient PPG-Based Heart Rate Estimation</title>
-      <link>https://arxiv.org/abs/2610.28693</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.28693</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 -0400</pubDate>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A parameter-efficient dual-branch neural framework named TF-IG for estimating heart rate from photoplethysmography signals.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It introduces an interaction-gated fusion module to effectively combine temporal morphology and frequency periodicity in a lightweight model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anh Khoi Pham, Phat Lam, Thien Truong Nguyen Ly et al.&lt;/p&gt;&lt;p&gt;arXiv cs.LG · importance 2/5 · general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>5 production challenges in multi-agent systems and how Deep Insight solved them</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/</guid>
-      <pubDate>Wed, 21 Oct 2026 23:36:47 +0000</pubDate>
-      <category>llm</category>
+      <title>How to Read Data into GPU Memory in Python with NVIDIA GPUDirect Storage</title>
+      <link>https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage/</link>
+      <guid isPermaLink="false">https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage/</guid>
+      <pubDate>Thu, 22 Oct 2026 16:39:09 +0000</pubDate>
       <category>training-infra</category>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical overview of five major production hurdles encountered when deploying multi-agent architectures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It outlines concrete mitigation strategies for orchestration, security, and observability in distributed LLM applications.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, training-infra, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical tutorial on utilizing NVIDIA GPUDirect Storage for data loading in Python.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It outlines methods to bypass CPU bottlenecks when transferring massive datasets directly to accelerators.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 2/5 · training-infra, general-ml&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Adaptive agentic intelligence framework using Strands Agents</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/adaptive-agentic-intelligence-framework-using-strands-agents/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/adaptive-agentic-intelligence-framework-using-strands-agents/</guid>
-      <pubDate>Wed, 21 Oct 2026 21:23:26 +0000</pubDate>
+      <title>Running Frontier-Class AI Models Across 8 NVIDIA DGX Spark Nodes</title>
+      <link>https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes/</link>
+      <guid isPermaLink="false">https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes/</guid>
+      <pubDate>Thu, 22 Oct 2026 16:00:00 +0000</pubDate>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide on executing large-scale AI workloads across multiple hardware nodes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It outlines deployment strategies for managing complex multi-model pipelines in production.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 2/5 · training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>검색 증강 생성(RAG)을 활용한 챗봇 만들기</title>
+      <link>https://nayeonkwonds.medium.com/%EA%B2%80%EC%83%89-%EC%A6%9D%EA%B0%95-%EC%83%9D%EC%84%B1-rag-%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%B1%97%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0-941424693a74?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://nayeonkwonds.medium.com/%EA%B2%80%EC%83%89-%EC%A6%9D%EA%B0%95-%EC%83%9D%EC%84%B1-rag-%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%B1%97%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0-941424693a74?source=rss------llm-5</guid>
+      <pubDate>Fri, 23 Oct 2026 11:21:39 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A beginner tutorial on constructing a chatbot using Retrieval-Augmented Generation (RAG).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a basic overview of combining external context retrieval with language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Nayeon Kwon&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 1/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Beads Gives Your Coding Agent a Real To-Do List</title>
+      <link>https://medium.com/@lince-mathew/beads-gives-your-coding-agent-a-real-to-do-list-78f8e567c566?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://medium.com/@lince-mathew/beads-gives-your-coding-agent-a-real-to-do-list-78f8e567c566?source=rss------llm-5</guid>
+      <pubDate>Fri, 23 Oct 2026 11:20:49 +0000</pubDate>
       <category>llm</category>
       <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A hybrid architecture combining local small language models with cloud foundation models via Amazon Bedrock for task routing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a practical method for balancing compute costs and privacy by executing routine steps locally while delegating hard problems to large models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Claude Mods: Flipping the Harness Inside Out</title>
-      <link>https://www.latent.space/p/claude-mods</link>
-      <guid isPermaLink="false">https://www.latent.space/p/claude-mods</guid>
-      <pubDate>Wed, 21 Oct 2026 13:04:19 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Claude Mods introduces an attention interface concept that inverts traditional agent harness directionality toward human interaction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It proposes a structural shift in how users interface with and guide autonomous language model agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Latent Space&lt;/p&gt;&lt;p&gt;Latent Space · importance 2/5 · llm, general-ml&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A task management utility designed to help software development agents track their progress.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It replaces static markdown files with structured tracking to improve multi-step coding workflows.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Lince Mathew&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 1/5 · llm, other&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
