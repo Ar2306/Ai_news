@@ -1,6 +1,401 @@
 {
-  "generated_at": "2026-10-24T10:53:13.202499+00:00",
+  "generated_at": "2026-10-25T11:16:33.630733+00:00",
   "archive": [
+    {
+      "date": "2026-10-25",
+      "total": 17,
+      "tags": {
+        "llm": 7,
+        "reinforcement-learning": 3,
+        "foundational-models": 3,
+        "multimodal": 6,
+        "robotics": 1,
+        "ai-safety": 2,
+        "training-infra": 4,
+        "general-ml": 3,
+        "other": 2
+      },
+      "articles": [
+        {
+          "title": "Dessa: Conversation Model trained only on speech",
+          "url": "https://block.xyz/dessa",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A full-duplex speech-to-speech model trained exclusively on raw audio without text transcriptions or text-based pretraining.",
+            "why": "It enables direct learning of spoken nuances like emotion, pitch, and timing without passing through intermediate text representations.",
+            "who": "Block"
+          },
+          "published_at": "2026-10-23T19:09:54+00:00",
+          "author": "dsr12",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50213925",
+              "points": 513
+            }
+          ]
+        },
+        {
+          "title": "Editing Images into Reusable Layers via Compositional Edit-Prior Distillation",
+          "url": "https://arxiv.org/abs/2610.24738",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A unified generative framework for instruction-guided image editing that outputs structured, editable RGBA layers.",
+            "why": "It combines compositional distillation with joint token modeling to enable precise local manipulations and explicit layer reuse.",
+            "who": "Wen Xue, Yong Liu, Xueheng Li et al."
+          },
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "author": "Wen Xue, Yong Liu, Xueheng Li, Si Wu, Yong Xu, Yipeng Sun, Yan Li, Simiu Gu",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.24738",
+            "hf": "https://huggingface.co/papers/2610.24738"
+          },
+          "discussions": []
+        },
+        {
+          "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+          "url": "https://arxiv.org/abs/2610.30949",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "An open-weights 320B parameter sparse MoE model optimized for command-line agentic tasks.",
+            "why": "It combines stable pre-training, multi-scaffold post-training with domain RL, and expert merging to boost CLI and coding performance.",
+            "who": "IQuest"
+          },
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "author": "A. Jian Yang, An Huang, Bo Dan, Chen Mu, Chengran Yang, Chuan Shi, Feng Chang, Hongxin Li, Hongyuan Tao, Jinxing Zhang, Jujie He, Kun Wang, Lin Jing, Ming Yang, Qicheng Hu, Renyuan Li, Shark Liu, Shawn Guo, Shi Qing, Shi Zhong, Tianyu Zheng, Wei Liu, Wei Zhang, Wenrui Cai, Wenxiao Chen, Xuxing Chen, Yan Xing, Yi Xing, Yifan Luo, Yiran Xing, Yizhi Li, Yongsheng Kang, Yucheng Ding, Yue Song, Yun Qing, Yunqi Liu, Zelong Huang, Zhengmao Ye, Zhentao Fan, Zhiteng Li, Ziling Huang, Bihong Tang, Bingli Wang, Ce Jun, Changhao Chen, Chen Hu, Chen Xiao, Chi Liu, Chunjiang Ge, Danyang Li, Deyang Kong, Dian Qi, Ding Tan, Evan Yang, Fanglin Xu, Fei Bai, Gang Liu, Guochang Li, Hao Tang, Haoran Feng, Haowen Wang, Huahao Hu, Huanjin Yao, Huatong Song, Jia Deng, Jiajun Wu, Jialiang Cheng, Jiayi Liang, Jiayi Wu, Jie Deng, Jiejun Tan, Jing Yang, Jingda Xu, Junhang Cheng, Junxiao Liu, Kai Lv, Kaixiang Pan, Kecheng Lu, Kun Zeng, Kun Zheng, Kunbo Ding, Liang Qiu, Lingyi Sun, Luan Zhang, Mengxiao Lv, Ning Dong, Pei Wang, Peng Zhang, Qingsong Cai, Qixiang Yin, Qiyao Wang, Renbiao Liu, Renfei Dang, Ruihang Li, Ruirui Huang, Shanhui Yin, Shen Jian, Shengjie Fang, Shikai Li, Shinan Zhang, Shiqi Chen, Shuai Liu, Shuangqi Li, Shuo Tang, Shuqing Deng, Sijin Hao, Siwei Wu, Siyue Wang, Tao Hai, Tao Ren, TingYang Chen, Wei Shao, Weicheng Gu, Weihan Peng, Wenlong Miao, Xavier Yu, Xiangyuan Ji, Xiaocheng Li, Xiaodong Huang, Xiaohan Ge, Xiaoxiang Shi, Xiaoyang Zhang, Xiaoyu Yang, Xidong Wang, Xin Li, Xinyu Tang, Xiyuan Yang, Xudong Ma, Ya Tong, Yachao Wang, Yang Tian, Yaxin Du, Yeli Ruan, Yi Wang, Yi Yu, Yibin Feng, Yibo Tan, Yihang Wang, Yiming Ju, Yinda Chen, Yinda Chen, Yingjie Du, Yiwei Liu, Yizhi Zhou, Yuan Wei, Yuli Chen, Yuqi Zhu, Yuwen Li, Yuxi Dong, Yuxuan Zhang, Yuyang Song, Zhange Zhang, Zhaohan Zhang, Zhaoyi Li, Zhen Zhang, Zhengbo Zhang, Zhihang Hu, Zhiwei Yu, Zhixin Xie, Zhiyu Chen, Zhizhao Luo, Zhongyuan Wu, Zhou Fang, Zhu Lin, Zhuocheng Gong, Zixi Zhao, Ziyang Zeng, Ziyi Wang, Ziyu Zhao, Ran Tao, Mingjie Tang, Chuan Hao, Peihao Wu, Jianzhou Wang, Nan Jiang, Yuan Zhi, Bryan Dai",
+          "tags": [
+            "llm",
+            "foundational-models",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.30949",
+            "hf": "https://huggingface.co/papers/2610.30949"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Toward Recursive Self-Improvement in Physical AI",
+          "url": "https://arxiv.org/abs/2610.29677",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A position paper evaluating recursive self-improvement frameworks within physical robot learning.",
+            "why": "It defines necessary conditions and safety constraints for embodied systems to iteratively enhance their own learning mechanisms.",
+            "who": "Meng Luo, Zechen Bai, Shanqing Xu et al."
+          },
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "author": "Meng Luo, Zechen Bai, Shanqing Xu, Yanlin Li, Kaixin Li, Mengchen Qian, Weifeng Lu, Ran Zhang, Yingtian Zou, Ziyang Luo, Wei Chen, Hongzhan Lin",
+          "tags": [
+            "robotics",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.29677",
+            "hf": "https://huggingface.co/papers/2610.29677",
+            "code": "https://github.com/Physical2RSI/Awesome-Physical2RSI"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks",
+          "url": "https://arxiv.org/abs/2610.28889",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "Policy-Mask is a budget-aware policy for extracting and selecting intermediate features from frozen diffusion models for downstream discriminative tasks.",
+            "why": "It jointly optimizes timesteps, network depth, and channel selection under strict compute budgets, outperforming static feature extraction heuristics.",
+            "who": "Ivan Listopadov, Maksim Nakhodnov, Aibek Alanov"
+          },
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "author": "Ivan Listopadov, Maksim Nakhodnov, Aibek Alanov",
+          "tags": [
+            "general-ml",
+            "multimodal"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.28889",
+            "hf": "https://huggingface.co/papers/2610.28889"
+          },
+          "discussions": []
+        },
+        {
+          "title": "CUDA: fuse FFN gate/up matmuls and GLU in MMQ with interleaved gate/up rows by anujj · Pull Request #29948 · ggml-org/llama.cpp",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/29948",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A pull request for llama.cpp that fuses CUDA kernels for FFN gate/up matrix multiplications and GLU.",
+            "why": "It increases prompt processing speeds by 2% to 10% for quantized models on NVIDIA GPUs.",
+            "who": "Anujj via ggml-org (llama.cpp)"
+          },
+          "published_at": "2026-10-25T09:35:12+00:00",
+          "author": "jacek2023",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xey0uw/cuda_fuse_ffn_gateup_matmuls_and_glu_in_mmq_with/"
+            }
+          ]
+        },
+        {
+          "title": "Lean-QwenFlash: Qwen3.8-Flash-Next (125B) running at ~20 tok/s on 16gb vram and 8gb ram via direct nvme SSD offloading",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xev6bo/leanqwenflash_qwen38flashnext_125b_running_at_20/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An open-source software project enabling efficient local execution of large language models on consumer hardware.",
+            "why": "It achieves high token generation speeds with low memory footprints by implementing direct NVMe SSD offloading.",
+            "who": "MaxDevv"
+          },
+          "published_at": "2026-10-25T06:41:28+00:00",
+          "author": "MaxDev0",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/sybil-solutions/glm-flash-lite"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xev6bo/leanqwenflash_qwen38flashnext_125b_running_at_20/"
+            }
+          ]
+        },
+        {
+          "title": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
+          "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+          "source": "TechCrunch AI",
+          "summary": {
+            "what": "An empirical analysis reveals divergent political biases between conversational models from xAI and OpenAI.",
+            "why": "It demonstrates systematic partisan skew in electoral recommendations across major language architectures.",
+            "who": "TechCrunch AI"
+          },
+          "published_at": "2026-10-24T15:00:00+00:00",
+          "author": "Rebecca Bellan",
+          "tags": [
+            "llm",
+            "ai-safety",
+            "other"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
+          "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+          "source": "Sebastian Raschka",
+          "summary": {
+            "what": "An 11-hour hands-on video course on implementing reasoning LLMs using PyTorch.",
+            "why": "It provides practical code demonstrations for core techniques like inference scaling, distillation, and reinforcement learning.",
+            "who": "Sebastian Raschka"
+          },
+          "published_at": "2026-10-24T11:14:32+00:00",
+          "author": "Sebastian Raschka, PhD",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "OlmoEarth v1.3: State-of-the-art embeddings for the whole planet",
+          "url": "https://allenai.org/blog/olmoearth-v1-3",
+          "source": "Allen AI",
+          "summary": {
+            "what": "OlmoEarth v1.3 is a collection of precomputed satellite embeddings and visualization tools for global geographic analysis.",
+            "why": "It offers accessible, high-performance geospatial representation learning without requiring raw model training.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-10-22T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "A crop-mapping benchmark for the tropics",
+          "url": "https://allenai.org/blog/planteur",
+          "source": "Allen AI",
+          "summary": {
+            "what": "A geospatial benchmark evaluating agricultural models across six distinct tropical regions.",
+            "why": "It addresses data scarcity and diversity gaps in tropical agricultural monitoring systems.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-10-22T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "A 4B coding model that can generate 3D scenes",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xeuo7t/a_4b_coding_model_that_can_generate_3d_scenes/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An experimental four billion parameter language model fine-tuned for software writing and three-dimensional environment creation.",
+            "why": "Demonstrates that compact open architectures can be adapted for specialized spatial output formats.",
+            "who": "ConfidentDinner6648"
+          },
+          "published_at": "2026-10-25T06:10:59+00:00",
+          "author": "ConfidentDinner6648",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xeuo7t/a_4b_coding_model_that_can_generate_3d_scenes/"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+          "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A strategic collaboration focused on AI safety and technical security research.",
+            "why": "It establishes a formal partnership to develop enhanced security safeguards for digital ecosystems.",
+            "who": "OpenAI and NASK"
+          },
+          "published_at": "2026-10-23T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI",
+          "url": "https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A technical guide for reducing voice agent latency by streaming text to the Kokoro-82M model on SageMaker.",
+            "why": "It demonstrates a practical pipeline to deliver real-time sentence-level audio synthesis to web clients.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-22T17:45:58+00:00",
+          "author": "Joseph Cottingham",
+          "tags": [
+            "training-infra",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Did Claude Opus 5.5 Really Get Dumber? What the Data Says (and How to Test It Yourself)",
+          "url": "https://medium.com/@loengnavy/did-claude-opus-5-5-really-get-dumber-what-the-data-says-and-how-to-test-it-yourself-95dda4456a60?source=rss------llm-5",
+          "source": "Medium · LLM",
+          "summary": {
+            "what": "An informal article examining claims of silent performance degradation in Claude models.",
+            "why": "It addresses community reports of model downgrades and suggests simple strategies for users to test output consistency.",
+            "who": "Loengnavy"
+          },
+          "published_at": "2026-10-25T11:01:01+00:00",
+          "author": "Loengnavy",
+          "tags": [
+            "llm"
+          ],
+          "importance": 1,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "I Looked at Kaggle’s Free GPU Pair So You Don’t Overspend on Hardware",
+          "url": "https://medium.com/@naro7217/i-looked-at-kaggles-free-gpu-pair-so-you-don-t-overspend-on-hardware-26b4c383d055?source=rss------llm-5",
+          "source": "Medium · LLM",
+          "summary": {
+            "what": "A guide analyzing the capabilities and limits of Kaggle's free dual Nvidia T4 GPU offering.",
+            "why": "It explains which machine learning models can fit into memory and offers practical advice on maximizing free cloud compute.",
+            "who": "Naro"
+          },
+          "published_at": "2026-10-25T11:01:01+00:00",
+          "author": "Naro",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 1,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "No way!!! Apparently Flux 3 Image is #1 model",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xeykcw/no_way_apparently_flux_3_image_is_1_model/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A social media post pointing to a tweet about a Flux image generation model taking the top spot on a benchmark.",
+            "why": "It reflects community tracking of state-of-the-art text-to-image model rankings, though lacks technical detail.",
+            "who": "Black Forest Labs"
+          },
+          "published_at": "2026-10-25T10:08:07+00:00",
+          "author": "devilish-lavanya",
+          "tags": [
+            "multimodal"
+          ],
+          "importance": 1,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xeykcw/no_way_apparently_flux_3_image_is_1_model/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-24",
       "total": 32,

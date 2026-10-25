@@ -4,293 +4,156 @@
     <title>AR — daily AI/ML digest</title>
     <link>https://ai-news-blush.vercel.app</link>
     <description>Curated AI/ML research and releases with what/why/who summaries.</description>
-    <lastBuildDate>Sat, 24 Oct 2026 10:53:13 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 11:16:33 +0000</lastBuildDate>
     <item>
-      <title>Everyone Thought RL Taught Models to Say “Wait.” It Was Already in the Data.</title>
-      <link>https://medium.com/@jenray1986/everyone-thought-rl-taught-models-to-say-wait-it-was-already-in-the-data-186a66bbd1ac?source=rss------machine_learning-5</link>
-      <guid isPermaLink="false">https://medium.com/@jenray1986/everyone-thought-rl-taught-models-to-say-wait-it-was-already-in-the-data-186a66bbd1ac?source=rss------machine_learning-5</guid>
-      <pubDate>Sat, 24 Oct 2026 10:24:10 +0000</pubDate>
-      <category>llm</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical study analyzing the origins of reasoning trigger tokens in large language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that reinforcement learning does not spontaneously generate pausing words, as they already exist within the pre-training text.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; HKUST, Peking University, and Huawei Noah's Ark&lt;/p&gt;&lt;p&gt;Medium · Machine Learning · importance 4/5 · llm, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Introducing Kimi K3.1 Pro</title>
-      <link>https://simonwillison.net/2026/Oct/23/kimi-k31-pro/</link>
-      <guid isPermaLink="false">https://simonwillison.net/2026/Oct/23/kimi-k31-pro/</guid>
-      <pubDate>Fri, 23 Oct 2026 19:40:54 +0000</pubDate>
-      <category>llm</category>
+      <title>Dessa: Conversation Model trained only on speech</title>
+      <link>https://block.xyz/dessa</link>
+      <guid isPermaLink="false">https://block.xyz/dessa</guid>
+      <pubDate>Fri, 23 Oct 2026 19:09:54 +0000</pubDate>
+      <category>multimodal</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Moonshot released Kimi K3.1 Pro via their API, with open weights promised by late 2026.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves competitive performance with top proprietary frontier models at lower price points.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Moonshot&lt;/p&gt;&lt;p&gt;Simon Willison · importance 4/5 · llm, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A full-duplex speech-to-speech model trained exclusively on raw audio without text transcriptions or text-based pretraining.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enables direct learning of spoken nuances like emotion, pitch, and timing without passing through intermediate text representations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Block&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Kimi K3.1 Pro and K3.1 Pro Highspeed</title>
-      <link>https://www.kimi.ai/blog/kimi-k3-1-pro</link>
-      <guid isPermaLink="false">https://www.kimi.ai/blog/kimi-k3-1-pro</guid>
-      <pubDate>Fri, 23 Oct 2026 16:59:08 +0000</pubDate>
-      <category>llm</category>
-      <category>reinforcement-learning</category>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-weight 3-trillion parameter language model with a 1-million-token context window and a high-speed variant.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It enhances multi-step agentic and coding capabilities through large-scale joint reinforcement learning post-training.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Moonshot AI&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · llm, reinforcement-learning, foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>WeVisOne-VL: Unified Visual Perception from Objects to Pixels</title>
-      <link>https://arxiv.org/abs/2610.31329</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.31329</guid>
+      <title>Editing Images into Reusable Layers via Compositional Edit-Prior Distillation</title>
+      <link>https://arxiv.org/abs/2610.24738</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.24738</guid>
       <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <category>multimodal</category>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A vision-language model capable of both object-level and pixel-level perception.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It unifies diverse tasks like segmentation and matting using a specialized pixel decoder and structured token prediction.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; WeChat&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, foundational-models&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A unified generative framework for instruction-guided image editing that outputs structured, editable RGBA layers.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It combines compositional distillation with joint token modeling to enable precise local manipulations and explicit layer reuse.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Wen Xue, Yong Liu, Xueheng Li et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal&lt;/p&gt;</description>
     </item>
     <item>
-      <title>OpenShell – A safe, private runtime for fleets of autonomous AI agents</title>
-      <link>https://github.com/NVIDIA/OpenShell</link>
-      <guid isPermaLink="false">https://github.com/NVIDIA/OpenShell</guid>
-      <pubDate>Thu, 22 Oct 2026 17:44:06 +0000</pubDate>
-      <category>ai-safety</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An isolation runtime that restricts agent execution permissions using kernel instrumentation and formal policy verification.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It mitigates security risks by sandboxing autonomous workflows and preventing unauthorized resource access.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;Hacker News · importance 4/5 · ai-safety, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spectral-Spatial Interpretation</title>
-      <link>https://arxiv.org/abs/2610.21114</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.21114</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <category>interpretability</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A feature attribution method that provides joint spectral and spatial explanations for multispectral image models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It uses localized Shapley values to improve explanation accuracy and spatial localization at a fraction of the computational cost.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AtheavenMa et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · interpretability, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Right Screen, Wrong Transition: World Models as Verifiers for GUI Agents</title>
-      <link>https://arxiv.org/abs/2610.11942</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.11942</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <category>world-models</category>
-      <category>multimodal</category>
-      <category>robotics</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; LGWM is a decoder-free, action-conditioned world model that evaluates GUI agent safety by predicting future screen representations directly.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It performs transition verification via efficient vector comparisons, achieving high accuracy and low latency without generative overhead.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Jiaming Zhang, Xuan Wang, Fuyao Zhang et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · world-models, multimodal, robotics&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SpatialScout: Can VLM Agents Actively Explore and Map 3D Scenes?</title>
-      <link>https://arxiv.org/abs/2610.26659</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.26659</guid>
-      <pubDate>Thu, 22 Oct 2026 00:00:00 +0000</pubDate>
-      <category>multimodal</category>
-      <category>robotics</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; SpatialScout is a new benchmark designed to evaluate how well vision-language models perform active 3D object mapping through autonomous scene exploration.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that current frontier models struggle with precise metric localization and map construction, achieving low high-threshold accuracy.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Zhaoxi Zhang, Hao Liang, Linxuan Wu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · multimodal, robotics, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[Release] ISTA GSQ-RCO GGUFs for DeepSeek-V4.1-Flash-1017</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xe2wg8/release_ista_gsqrco_ggufs_for_deepseekv41flash1017/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xe2wg8/release_ista_gsqrco_ggufs_for_deepseekv41flash1017/</guid>
-      <pubDate>Sat, 24 Oct 2026 08:05:17 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community release of extremely low-bit GSQ and RCO quantized GGUF weights for the massive DeepSeek-V4.1-Flash model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that sub-2-bit quantization via Gumbel-Softmax and Riemannian optimization can retain full benchmark accuracy on a massive MoE model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; ISTA Deep Algorithms and Systems Lab&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[AINews] Kimi 3.1 Pro 104BA-2.8T: Fable-5.1-Class Open Weights narrows Closed-AI lead to 1 month... and Pro Highspeed API with 2-3× speed</title>
-      <link>https://latent.space/p/ainews-kimi-31/</link>
-      <guid isPermaLink="false">https://latent.space/p/ainews-kimi-31/</guid>
-      <pubDate>Sat, 24 Oct 2026 07:18:29 +0000</pubDate>
+      <title>IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems</title>
+      <link>https://arxiv.org/abs/2610.30949</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.30949</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <category>llm</category>
       <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An announcement covering the open-weights release of the Kimi 3.1 Pro language model alongside a faster API service.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It aims to narrow the capabilities gap between open-source models and leading proprietary LLMs while significantly boosting inference speeds.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Moonshot AI&lt;/p&gt;&lt;p&gt;Latent Space · importance 3/5 · llm, foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”</title>
-      <link>https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/</link>
-      <guid isPermaLink="false">https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/</guid>
-      <pubDate>Fri, 23 Oct 2026 23:05:49 +0000</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; OpenAI is discontinuing the practice of training its frontier models on live internet data.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; This policy shift aims to mitigate significant security and data integrity risks associated with real-time web scraping.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · llm, ai-safety, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bringing foundational models to the front lines of TB screening</title>
-      <link>https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/</link>
-      <guid isPermaLink="false">https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/</guid>
-      <pubDate>Fri, 23 Oct 2026 18:51:33 +0000</pubDate>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An application of foundational AI models designed for tuberculosis screening.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It aims to enable accessible, early disease detection in resource-constrained medical settings.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Google Research&lt;/p&gt;&lt;p&gt;Google Research · importance 3/5 · foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 1</title>
-      <link>https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/</link>
-      <guid isPermaLink="false">https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/</guid>
-      <pubDate>Fri, 23 Oct 2026 17:27:35 +0000</pubDate>
-      <category>training-infra</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A compiler optimization framework that explores multiple compilation paths for neural network deployment.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It improves inference speed by solving the complex combinatorial search space of GPU kernel generation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 3/5 · training-infra, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OpenAI now trains its frontier AI models with no internet access</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet</link>
-      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet</guid>
-      <pubDate>Fri, 23 Oct 2026 17:11:07 -0400</pubDate>
-      <category>training-infra</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An isolated computing setup designed for training advanced machine learning systems without live web connections.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It mitigates cybersecurity risks by preventing autonomous models from accessing external networks during the training phase.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;The Verge AI · importance 3/5 · training-infra, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using AI Agents to Teach Robots Like Microduck to Walk in Simulation</title>
-      <link>https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/</link>
-      <guid isPermaLink="false">https://developer.nvidia.com/blog/using-ai-agents-to-teach-robots-like-microduck-to-walk-in-simulation/</guid>
-      <pubDate>Fri, 23 Oct 2026 14:58:32 +0000</pubDate>
-      <category>robotics</category>
-      <category>simulation</category>
       <category>reinforcement-learning</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A framework utilizing language agents to automate the design of robot walking behaviors inside simulated environments.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reduces manual trial-and-error in reward function tuning for complex locomotive tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; NVIDIA&lt;/p&gt;&lt;p&gt;NVIDIA Technical Blog · importance 3/5 · robotics, simulation, reinforcement-learning&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-weights 320B parameter sparse MoE model optimized for command-line agentic tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It combines stable pre-training, multi-scaffold post-training with domain RL, and expert merging to boost CLI and coding performance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; IQuest&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · llm, foundational-models, reinforcement-learning&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Securing our frontier model training environment</title>
-      <link>https://openai.com/index/securing-our-frontier-model-training-environment</link>
-      <guid isPermaLink="false">https://openai.com/index/securing-our-frontier-model-training-environment</guid>
-      <pubDate>Fri, 23 Oct 2026 10:00:00 +0000</pubDate>
-      <category>ai-safety</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An overview of enhanced security protocols for training and evaluating frontier AI models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It outlines operational containment strategies, including isolated offline setups and compute-heavy red-teaming.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 3/5 · ai-safety, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>LitPivot: Developing research ideas through dynamic contextualization within the literature landscape</title>
-      <link>https://allenai.org/blog/litpivot</link>
-      <guid isPermaLink="false">https://allenai.org/blog/litpivot</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 -0800</pubDate>
-      <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An AI tool designed to critique and refine academic research proposals based on literature context.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It assists scholars in iteratively improving hypotheses and aligning them with current scientific landscapes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 3/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>AI Agent Evals: Right Answer, Wrong Path</title>
-      <link>https://medium.com/@vivekc_66846/ai-agent-evals-right-answer-wrong-path-b269a5f89ab8?source=rss------llm-5</link>
-      <guid isPermaLink="false">https://medium.com/@vivekc_66846/ai-agent-evals-right-answer-wrong-path-b269a5f89ab8?source=rss------llm-5</guid>
-      <pubDate>Sat, 24 Oct 2026 10:32:24 +0000</pubDate>
-      <category>llm</category>
-      <category>ai-safety</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An analysis of methodology requirements for testing automated agents.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It argues for trajectory-based evaluations to accurately detect performance regressions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Vivekc&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm, ai-safety&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Remember Less, Answer Better: Designing Memory for a Small Model on Low-Power Hardware</title>
-      <link>https://medium.com/@praveenkrovvidi8/remember-less-answer-better-designing-memory-for-a-small-model-on-low-power-hardware-df210356c3b9?source=rss------llm-5</link>
-      <guid isPermaLink="false">https://medium.com/@praveenkrovvidi8/remember-less-answer-better-designing-memory-for-a-small-model-on-low-power-hardware-df210356c3b9?source=rss------llm-5</guid>
-      <pubDate>Sat, 24 Oct 2026 10:23:31 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An architectural approach to minimize prompt overhead for on-device language models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It optimizes context storage to reduce compute costs on restricted hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; praveen Krovvidi&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 2/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>PSA: Streaming n-grams from SSD will cause SSD wear</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xe2ypu/psa_streaming_ngrams_from_ssd_will_cause_ssd_wear/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xe2ypu/psa_streaming_ngrams_from_ssd_will_cause_ssd_wear/</guid>
-      <pubDate>Sat, 24 Oct 2026 08:09:15 +0000</pubDate>
-      <category>llm</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An informal technical post detailing how SSD read disturbance causes hardware wear during n-gram streaming.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It alerts local LLM users that heavy read operations trigger background disk writes and degrade storage performance.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; A community member on r/LocalLLaMA&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm, training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Spark X2.6 4B is the best of it's size</title>
-      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xe1kkh/spark_x26_4b_is_the_best_of_its_size/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xe1kkh/spark_x26_4b_is_the_best_of_its_size/</guid>
-      <pubDate>Sat, 24 Oct 2026 06:44:17 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A small 4B parameter language model released for local inference.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates strong performance in tool use, code comprehension, and reasoning despite its compact size.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; XHToken&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>I trained a LoRA that makes MOSS-Image output real transparent PNGs (proof of concept, 39 training images)</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1xe1gse/i_trained_a_lora_that_makes_mossimage_output_real/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xe1gse/i_trained_a_lora_that_makes_mossimage_output_real/</guid>
-      <pubDate>Sat, 24 Oct 2026 06:37:51 +0000</pubDate>
-      <category>multimodal</category>
-      <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A parameter-efficient adaptation method that enables the MOSS-Image model to generate true RGBA images with alpha channels.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates that a small training dataset and quick fine-tuning can extend latent diffusion models to output direct transparency without post-processing.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; paralaif&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · multimodal, general-ml&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GPT-6 Bel Coming Soon &gt;It's said that Bel is Doug's successor &gt;Reportedly, total parameters exceed 10T &gt;Bel may serve as the foundation for the model after GPT-6 &gt;OpenAI reportedly views Bel as a potential post-GPT-6 foundation&gt; It might even become the foundation for an AGI threshold model The out</title>
-      <link>https://www.reddit.com/r/OpenAI/comments/1xdzvqw/gpt6_bel_coming_soon_its_said_that_bel_is_dougs/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/OpenAI/comments/1xdzvqw/gpt6_bel_coming_soon_its_said_that_bel_is_dougs/</guid>
-      <pubDate>Sat, 24 Oct 2026 05:05:18 +0000</pubDate>
-      <category>llm</category>
-      <category>foundational-models</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Rumored internal OpenAI discussions regarding a massive successor model codenamed Bel.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It suggests ongoing architectural planning beyond the GPT-6 generation toward higher parameter scales.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;r/OpenAI · importance 2/5 · llm, foundational-models&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Current OpenAI system prompt</title>
-      <link>https://www.reddit.com/r/OpenAI/comments/1xdyfk0/current_openai_system_prompt/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/OpenAI/comments/1xdyfk0/current_openai_system_prompt/</guid>
-      <pubDate>Sat, 24 Oct 2026 03:45:38 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A community-extracted paraphrase outlining the behavioral guidelines of an OpenAI model.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It offers insight into how alignment rules, instruction hierarchies, and honesty constraints are structured internally.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Community researchers on Reddit&lt;/p&gt;&lt;p&gt;r/OpenAI · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Visual Anagrams with Iris 3B Turbo on an RTX 3060 (12 GB)</title>
-      <link>https://www.reddit.com/r/StableDiffusion/comments/1xdy81f/visual_anagrams_with_iris_3b_turbo_on_an_rtx_3060/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xdy81f/visual_anagrams_with_iris_3b_turbo_on_an_rtx_3060/</guid>
-      <pubDate>Sat, 24 Oct 2026 03:34:10 +0000</pubDate>
-      <category>general-ml</category>
-      <category>simulation</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An amateur implementation adapts Visual Anagrams to run locally using a smaller latent diffusion model and INT8 quantization.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates efficient consumer hardware execution of complex multi-view generation tricks in just four denoising steps.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; PasiKoodaa&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 2/5 · general-ml, simulation&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Quick Study</title>
-      <link>https://simonwillison.net/2026/Oct/23/quick-study-painter/</link>
-      <guid isPermaLink="false">https://simonwillison.net/2026/Oct/23/quick-study-painter/</guid>
-      <pubDate>Fri, 23 Oct 2026 21:35:13 +0000</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A prompt demonstration that generates an interactive HTML canvas tool for transforming photos into digital paintings.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Illustrates how LLMs can code standalone browser artifacts utilizing classical computer vision algorithms like Sobel edge detection without third-party libraries.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Simon Willison&lt;/p&gt;&lt;p&gt;Simon Willison · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/</guid>
-      <pubDate>Fri, 23 Oct 2026 17:48:54 +0000</pubDate>
+      <title>Toward Recursive Self-Improvement in Physical AI</title>
+      <link>https://arxiv.org/abs/2610.29677</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.29677</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+      <category>robotics</category>
       <category>reinforcement-learning</category>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical tutorial demonstrating multi-turn reinforcement learning workflows for language models using Amazon SageMaker AI and Bedrock AgentCore.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides a concrete implementation pipeline for training agents on end-to-end task success instead of per-step annotations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · reinforcement-learning, training-infra&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A position paper evaluating recursive self-improvement frameworks within physical robot learning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It defines necessary conditions and safety constraints for embodied systems to iteratively enhance their own learning mechanisms.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Meng Luo, Zechen Bai, Shanqing Xu et al.&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · robotics, reinforcement-learning&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)</title>
-      <link>https://openai.com/index/scaling-storage-one-billion-users-part-two</link>
-      <guid isPermaLink="false">https://openai.com/index/scaling-storage-one-billion-users-part-two</guid>
-      <pubDate>Fri, 23 Oct 2026 17:00:00 +0000</pubDate>
-      <category>training-infra</category>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An engineering report detailing how OpenAI scaled its Habitat storage architecture for ChatGPT.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates infrastructure strategies for achieving a 12-fold increase in read performance at massive scale.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI&lt;/p&gt;&lt;p&gt;OpenAI · importance 2/5 · training-infra, llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Orchestrating SageMaker AI endpoint auto scaling with AWS CDK</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:30:10 +0000</pubDate>
-      <category>training-infra</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide providing a reusable AWS CDK construct to fix deployment failures caused by SageMaker auto scaling configurations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It solves a common infrastructure pipeline bottleneck by automating the deregistration and re-registration of endpoints during updates.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · training-infra&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>How Bayer Crop Science built an agentic decision engine on Amazon Bedrock AgentCore with AWS Unified Operations</title>
-      <link>https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/</guid>
-      <pubDate>Fri, 23 Oct 2026 16:21:36 +0000</pubDate>
-      <category>llm</category>
-      <category>other</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical architectural overview of a multi-agent platform designed for agricultural research and analytics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates enterprise deployment patterns for coordinating multiple AI agents using managed cloud services.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Bayer Crop Science&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · llm, other&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jack Dorsey’s Block made an AI model that talks to you like an awkward new friend</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech</link>
-      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1017906/jack-dorsey-block-dessa-ai-voice-speech</guid>
-      <pubDate>Fri, 23 Oct 2026 15:32:39 -0400</pubDate>
-      <category>llm</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Dessa is a new conversational language model trained exclusively on interpersonal dialogue.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a distinct interaction style by mimicking the quirks and awkwardness of human chat.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Block&lt;/p&gt;&lt;p&gt;The Verge AI · importance 2/5 · llm&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Q&amp;A: How AI came to model the “messy” human mind</title>
-      <link>https://news.mit.edu/2026/qa-how-ai-came-to-model-messy-human-mind-1023</link>
-      <guid isPermaLink="false">https://news.mit.edu/2026/qa-how-ai-came-to-model-messy-human-mind-1023</guid>
-      <pubDate>Fri, 23 Oct 2026 00:00:00 -0400</pubDate>
-      <category>interpretability</category>
+      <title>Policy-Mask: Budget-Aware Adaptation of Diffusion Features to Discriminative Tasks</title>
+      <link>https://arxiv.org/abs/2610.28889</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.28889</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
       <category>general-ml</category>
-      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An interview exploring the historical origins of stochasticity and hallucinations in deep learning architectures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It offers conceptual context on why artificial neural networks inherently produce fabricated outputs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; MIT News&lt;/p&gt;&lt;p&gt;MIT News (AI) · importance 2/5 · interpretability, general-ml&lt;/p&gt;</description>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; Policy-Mask is a budget-aware policy for extracting and selecting intermediate features from frozen diffusion models for downstream discriminative tasks.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It jointly optimizes timesteps, network depth, and channel selection under strict compute budgets, outperforming static feature extraction heuristics.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Ivan Listopadov, Maksim Nakhodnov, Aibek Alanov&lt;/p&gt;&lt;p&gt;Hugging Face Papers · importance 4/5 · general-ml, multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CUDA: fuse FFN gate/up matmuls and GLU in MMQ with interleaved gate/up rows by anujj · Pull Request #29948 · ggml-org/llama.cpp</title>
+      <link>https://github.com/ggml-org/llama.cpp/pull/29948</link>
+      <guid isPermaLink="false">https://github.com/ggml-org/llama.cpp/pull/29948</guid>
+      <pubDate>Sun, 25 Oct 2026 09:35:12 +0000</pubDate>
+      <category>llm</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A pull request for llama.cpp that fuses CUDA kernels for FFN gate/up matrix multiplications and GLU.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It increases prompt processing speeds by 2% to 10% for quantized models on NVIDIA GPUs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Anujj via ggml-org (llama.cpp)&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lean-QwenFlash: Qwen3.8-Flash-Next (125B) running at ~20 tok/s on 16gb vram and 8gb ram via direct nvme SSD offloading</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xev6bo/leanqwenflash_qwen38flashnext_125b_running_at_20/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xev6bo/leanqwenflash_qwen38flashnext_125b_running_at_20/</guid>
+      <pubDate>Sun, 25 Oct 2026 06:41:28 +0000</pubDate>
+      <category>llm</category>
+      <category>training-infra</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An open-source software project enabling efficient local execution of large language models on consumer hardware.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It achieves high token generation speeds with low memory footprints by implementing direct NVMe SSD offloading.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; MaxDevv&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 3/5 · llm, training-infra&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.</title>
+      <link>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</link>
+      <guid isPermaLink="false">https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</guid>
+      <pubDate>Sat, 24 Oct 2026 15:00:00 +0000</pubDate>
+      <category>llm</category>
+      <category>ai-safety</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An empirical analysis reveals divergent political biases between conversational models from xAI and OpenAI.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates systematic partisan skew in electoral recommendations across major language architectures.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; TechCrunch AI&lt;/p&gt;&lt;p&gt;TechCrunch AI · importance 3/5 · llm, ai-safety, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building Reasoning Models from the Ground Up: A Full Video Course</title>
+      <link>https://magazine.sebastianraschka.com/p/building-reasoning-models</link>
+      <guid isPermaLink="false">https://magazine.sebastianraschka.com/p/building-reasoning-models</guid>
+      <pubDate>Sat, 24 Oct 2026 11:14:32 +0000</pubDate>
+      <category>llm</category>
+      <category>reinforcement-learning</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An 11-hour hands-on video course on implementing reasoning LLMs using PyTorch.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It provides practical code demonstrations for core techniques like inference scaling, distillation, and reinforcement learning.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Sebastian Raschka&lt;/p&gt;&lt;p&gt;Sebastian Raschka · importance 3/5 · llm, reinforcement-learning&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OlmoEarth v1.3: State-of-the-art embeddings for the whole planet</title>
+      <link>https://allenai.org/blog/olmoearth-v1-3</link>
+      <guid isPermaLink="false">https://allenai.org/blog/olmoearth-v1-3</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 -0800</pubDate>
+      <category>multimodal</category>
+      <category>foundational-models</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; OlmoEarth v1.3 is a collection of precomputed satellite embeddings and visualization tools for global geographic analysis.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It offers accessible, high-performance geospatial representation learning without requiring raw model training.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 3/5 · multimodal, foundational-models&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A crop-mapping benchmark for the tropics</title>
+      <link>https://allenai.org/blog/planteur</link>
+      <guid isPermaLink="false">https://allenai.org/blog/planteur</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 -0800</pubDate>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A geospatial benchmark evaluating agricultural models across six distinct tropical regions.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses data scarcity and diversity gaps in tropical agricultural monitoring systems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Allen AI&lt;/p&gt;&lt;p&gt;Allen AI · importance 3/5 · general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A 4B coding model that can generate 3D scenes</title>
+      <link>https://www.reddit.com/r/LocalLLaMA/comments/1xeuo7t/a_4b_coding_model_that_can_generate_3d_scenes/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/LocalLLaMA/comments/1xeuo7t/a_4b_coding_model_that_can_generate_3d_scenes/</guid>
+      <pubDate>Sun, 25 Oct 2026 06:10:59 +0000</pubDate>
+      <category>llm</category>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An experimental four billion parameter language model fine-tuned for software writing and three-dimensional environment creation.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; Demonstrates that compact open architectures can be adapted for specialized spatial output formats.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; ConfidentDinner6648&lt;/p&gt;&lt;p&gt;r/LocalLLaMA · importance 2/5 · llm, multimodal&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenAI and Poland’s NASK partner to advance AI safety and security</title>
+      <link>https://openai.com/index/openai-nask-ai-safety-security-partnership</link>
+      <guid isPermaLink="false">https://openai.com/index/openai-nask-ai-safety-security-partnership</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0000</pubDate>
+      <category>ai-safety</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A strategic collaboration focused on AI safety and technical security research.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It establishes a formal partnership to develop enhanced security safeguards for digital ecosystems.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; OpenAI and NASK&lt;/p&gt;&lt;p&gt;OpenAI · importance 2/5 · ai-safety&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI</title>
+      <link>https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/</guid>
+      <pubDate>Thu, 22 Oct 2026 17:45:58 +0000</pubDate>
+      <category>training-infra</category>
+      <category>other</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A technical guide for reducing voice agent latency by streaming text to the Kokoro-82M model on SageMaker.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It demonstrates a practical pipeline to deliver real-time sentence-level audio synthesis to web clients.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; AWS Machine Learning&lt;/p&gt;&lt;p&gt;AWS Machine Learning · importance 2/5 · training-infra, other&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Did Claude Opus 5.5 Really Get Dumber? What the Data Says (and How to Test It Yourself)</title>
+      <link>https://medium.com/@loengnavy/did-claude-opus-5-5-really-get-dumber-what-the-data-says-and-how-to-test-it-yourself-95dda4456a60?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://medium.com/@loengnavy/did-claude-opus-5-5-really-get-dumber-what-the-data-says-and-how-to-test-it-yourself-95dda4456a60?source=rss------llm-5</guid>
+      <pubDate>Sun, 25 Oct 2026 11:01:01 +0000</pubDate>
+      <category>llm</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; An informal article examining claims of silent performance degradation in Claude models.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It addresses community reports of model downgrades and suggests simple strategies for users to test output consistency.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Loengnavy&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 1/5 · llm&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I Looked at Kaggle’s Free GPU Pair So You Don’t Overspend on Hardware</title>
+      <link>https://medium.com/@naro7217/i-looked-at-kaggles-free-gpu-pair-so-you-don-t-overspend-on-hardware-26b4c383d055?source=rss------llm-5</link>
+      <guid isPermaLink="false">https://medium.com/@naro7217/i-looked-at-kaggles-free-gpu-pair-so-you-don-t-overspend-on-hardware-26b4c383d055?source=rss------llm-5</guid>
+      <pubDate>Sun, 25 Oct 2026 11:01:01 +0000</pubDate>
+      <category>training-infra</category>
+      <category>general-ml</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A guide analyzing the capabilities and limits of Kaggle's free dual Nvidia T4 GPU offering.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It explains which machine learning models can fit into memory and offers practical advice on maximizing free cloud compute.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Naro&lt;/p&gt;&lt;p&gt;Medium · LLM · importance 1/5 · training-infra, general-ml&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>No way!!! Apparently Flux 3 Image is #1 model</title>
+      <link>https://www.reddit.com/r/StableDiffusion/comments/1xeykcw/no_way_apparently_flux_3_image_is_1_model/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/StableDiffusion/comments/1xeykcw/no_way_apparently_flux_3_image_is_1_model/</guid>
+      <pubDate>Sun, 25 Oct 2026 10:08:07 +0000</pubDate>
+      <category>multimodal</category>
+      <description>&lt;p&gt;&lt;b&gt;What:&lt;/b&gt; A social media post pointing to a tweet about a Flux image generation model taking the top spot on a benchmark.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Why:&lt;/b&gt; It reflects community tracking of state-of-the-art text-to-image model rankings, though lacks technical detail.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who:&lt;/b&gt; Black Forest Labs&lt;/p&gt;&lt;p&gt;r/StableDiffusion · importance 1/5 · multimodal&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
