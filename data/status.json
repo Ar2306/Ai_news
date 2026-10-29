@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-28T12:50:40.008569+00:00",
-  "duration_seconds": 1080.4,
+  "generated_at": "2026-10-29T12:58:16.084641+00:00",
+  "duration_seconds": 902.2,
   "counts": {
-    "fetched": 713,
-    "unique": 668,
-    "candidates": 85,
-    "kept": 40
+    "fetched": 416,
+    "unique": 375,
+    "candidates": 72,
+    "kept": 24
   },
   "summarized_by": {
-    "Gemini (gemini-3.5-flash)": 15,
-    "Gemini (gemini-3.5-flash-lite)": 70
+    "Gemini (gemini-3.5-flash)": 8,
+    "Gemini (gemini-3.5-flash-lite)": 64
   },
   "sources_ok": 45,
   "sources_failed": 2,
@@ -18,35 +18,35 @@
       "name": "arXiv cs.AI",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CL",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.CV",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.LG",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
       "name": "arXiv cs.RO",
       "group": "arxiv",
       "ok": true,
-      "items": 60,
+      "items": 0,
       "error": ""
     },
     {
@@ -88,7 +88,7 @@
       "name": "Interconnects",
       "group": "blogs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -109,7 +109,7 @@
       "name": "Sebastian Raschka",
       "group": "blogs",
       "ok": true,
-      "items": 1,
+      "items": 0,
       "error": ""
     },
     {
@@ -130,21 +130,21 @@
       "name": "Hacker News",
       "group": "community",
       "ok": true,
-      "items": 40,
+      "items": 38,
       "error": ""
     },
     {
       "name": "AWS Machine Learning",
       "group": "labs",
       "ok": true,
-      "items": 7,
+      "items": 10,
       "error": ""
     },
     {
       "name": "Allen AI",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -165,7 +165,7 @@
       "name": "Google DeepMind",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -179,21 +179,21 @@
       "name": "Hugging Face Blog",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 4,
       "error": ""
     },
     {
       "name": "MIT News (AI)",
       "group": "labs",
       "ok": true,
-      "items": 3,
+      "items": 4,
       "error": ""
     },
     {
       "name": "Meta Engineering (ML)",
       "group": "labs",
       "ok": true,
-      "items": 2,
+      "items": 3,
       "error": ""
     },
     {
@@ -214,7 +214,7 @@
       "name": "NVIDIA Blog",
       "group": "labs",
       "ok": true,
-      "items": 1,
+      "items": 2,
       "error": ""
     },
     {
@@ -228,7 +228,7 @@
       "name": "OpenAI",
       "group": "labs",
       "ok": true,
-      "items": 11,
+      "items": 13,
       "error": ""
     },
     {
@@ -249,7 +249,7 @@
       "name": "Data Science Collective",
       "group": "medium",
       "ok": true,
-      "items": 10,
+      "items": 3,
       "error": ""
     },
     {
@@ -305,7 +305,7 @@
       "name": "Ars Technica AI",
       "group": "news",
       "ok": true,
-      "items": 8,
+      "items": 6,
       "error": ""
     },
     {
@@ -319,7 +319,7 @@
       "name": "TechCrunch AI",
       "group": "news",
       "ok": true,
-      "items": 18,
+      "items": 20,
       "error": ""
     },
     {

@@ -1,6 +1,540 @@
 {
-  "generated_at": "2026-10-28T12:50:39.971660+00:00",
+  "generated_at": "2026-10-29T12:58:16.035070+00:00",
   "archive": [
+    {
+      "date": "2026-10-29",
+      "total": 24,
+      "tags": {
+        "llm": 21,
+        "reinforcement-learning": 2,
+        "foundational-models": 5,
+        "multimodal": 5,
+        "ai-safety": 2,
+        "training-infra": 4,
+        "general-ml": 6
+      },
+      "articles": [
+        {
+          "title": "Google launches Gemini 4 Carbon with a ‘significant leap’ in cybersecurity",
+          "url": "https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "Google released Gemini 4 Carbon, a new frontier language model focused on coding, agents, and security.",
+            "why": "It reportedly achieves top performance on the Artificial Analysis Intelligence Index benchmark.",
+            "who": "Google"
+          },
+          "published_at": "2026-10-28T16:03:00-04:00",
+          "author": "Emma Roth",
+          "tags": [
+            "foundational-models",
+            "llm"
+          ],
+          "importance": 5,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "[AINews] Gemini 4 Carbon tops leaderboards, launches for cyber defenders",
+          "url": "https://latent.space/p/ainews-gemini-4-carbon/",
+          "source": "Latent Space",
+          "summary": {
+            "what": "Google announced Gemini 4 Carbon, a new frontier model tailored for cybersecurity defense.",
+            "why": "The model leads independent benchmark evaluations and is being released selectively to verified security personnel.",
+            "who": "Google"
+          },
+          "published_at": "2026-10-29T05:55:19+00:00",
+          "author": "swyx .ai",
+          "tags": [
+            "llm",
+            "foundational-models",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+          "url": "https://arxiv.org/abs/2610.35201",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A token-level credit assignment framework designed for reinforcement learning on diffusion language models.",
+            "why": "It improves RL optimization by measuring token confidence shifts and part-of-speech roles, enhancing math reasoning benchmarks on LLaDA-8B.",
+            "who": "Hongze Chen, Miao Pan, Lizhou Liang et al."
+          },
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "author": "Hongze Chen, Miao Pan, Lizhou Liang, Qinfeng Li, Xinyin Ma, Yongliang Shen, Weishi Wang, Daniel Dahlmeier, Xuhong Zhang, Wenqi Zhang",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.35201",
+            "hf": "https://huggingface.co/papers/2610.35201",
+            "code": "https://github.com/ZJU-OmniAI/DTCA"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+          "url": "https://arxiv.org/abs/2610.35013",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A reinforcement learning framework for long-horizon LLM agents.",
+            "why": "It improves credit assignment by aligning policy updates at the interaction turn level instead of individual tokens.",
+            "who": "Tao Ren, Hui Yang, Jia Deng et al."
+          },
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "author": "Tao Ren, Hui Yang, Jia Deng, Tingyang Chen, Qiyao Wang, Shuo Tang, Ziyang Zeng, Yuhua Jiang, Guanghao Li, Huatong Song, Yining Li, Yifan Luo, Kunbao Ding, Feng Chang, Chuan Hao, Ran Tao, Bryan Dai, Jiafeng Liang, Jinyang Jiang",
+          "tags": [
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.35013",
+            "hf": "https://huggingface.co/papers/2610.35013"
+          },
+          "discussions": []
+        },
+        {
+          "title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+          "url": "https://arxiv.org/abs/2610.35864",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper presents VibeVideoBench, a benchmark assessing multimodal agents that generate complete videos and audio through custom code execution.",
+            "why": "It shifts focus from black-box diffusion models to programmatic video synthesis, exposing critical agent flaws in time management and planning.",
+            "who": "Muxi Diao, Wenbin Xu, Lele Yang et al."
+          },
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "author": "Muxi Diao, Wenbin Xu, Lele Yang, Xuyang Ma, Yuzhe Chen, Jiankang Chen, Kaiyu Jiang, Changyi Liu, Haoyu Zhang, Hongyi Fu, Jianxiong Wang, Tianke Zhang, Haonan Fan, Yingxin Li, Bingyi Li, Xu Wang, Xuanyu Zheng, Bin Wen, Tingting Gao, Han Li, Wentao Zhang, Weiran Xu, Kongming Liang, Zhanyu Ma",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.35864",
+            "hf": "https://huggingface.co/papers/2610.35864"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Memory Tax: Dissecting the Net Value of Agent Memory",
+          "url": "https://arxiv.org/abs/2610.34073",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "An empirical study evaluating whether dedicated memory systems outperform standard retrieval for long-horizon AI agents.",
+            "why": "It reveals that many complex memory architectures perform worse than naive RAG due to information loss termed 'memory tax'.",
+            "who": "Xuan He, Sining Zhoubian, Ruozhen Yang et al."
+          },
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "author": "Xuan He, Sining Zhoubian, Ruozhen Yang, Yuhao Wen, Zhineng Wang, Yuyang Hu, Ke Yang, Yuyu Zhang, Ping Nie, Jiawei Han, ChengXiang Zhai",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.34073",
+            "hf": "https://huggingface.co/papers/2610.34073",
+            "code": "https://github.com/hexuan21/MemoryTax"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+          "url": "https://www.brangus.io/survival-llm",
+          "source": "Hacker News",
+          "summary": {
+            "what": "An offline desktop application packaging open-source language models with a localized database of emergency guides and reference texts.",
+            "why": "It provides fully offline disaster preparedness assistance with verifiable source attribution, bypassing cloud dependencies.",
+            "who": "Luc"
+          },
+          "published_at": "2026-10-27T19:55:06+00:00",
+          "author": "Luc",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50264853",
+              "points": 528
+            }
+          ]
+        },
+        {
+          "title": "Is the #1 AI Model Really #1?",
+          "url": "https://towardsdatascience.com/is-the-1-ai-model-really-1/",
+          "source": "Towards Data Science",
+          "summary": {
+            "what": "An analysis of statistical variance and sample size limits in LLM evaluation benchmarks.",
+            "why": "It demonstrates how current leaderboards frequently lack the statistical power to reliably distinguish top-performing models.",
+            "who": "Utkarsh Mangal"
+          },
+          "published_at": "2026-10-29T12:30:00+00:00",
+          "author": "Utkarsh Mangal",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Apsara conference: Qwen4 next week",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xif6lf/apsara_conference_qwen4_next_week/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A community report regarding the upcoming release schedule for a prominent language model.",
+            "why": "It hints at the imminent launch of a major new foundational model generation.",
+            "who": "Alibaba Cloud"
+          },
+          "published_at": "2026-10-29T09:25:47+00:00",
+          "author": "rerri",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xif6lf/apsara_conference_qwen4_next_week/"
+            }
+          ]
+        },
+        {
+          "title": "I open-sourced OpenBonsai: compress your own BF16 models and fine-tunes into ~2 GB ternary GGUFs",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xie29o/i_opensourced_openbonsai_compress_your_own_bf16/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An open-source framework for compressing BF16 language models into ternary GGUF formats using quantization and distillation.",
+            "why": "It enables developers to convert custom fine-tunes into low-memory ternary weights, though currently lagging behind official models in accuracy.",
+            "who": "ButtercupLyn100"
+          },
+          "published_at": "2026-10-29T08:13:17+00:00",
+          "author": "ButtercupLyn100",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/esokullu/openbonsai"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xie29o/i_opensourced_openbonsai_compress_your_own_bf16/"
+            }
+          ]
+        },
+        {
+          "title": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms",
+          "url": "https://huggingface.co/blog/anydecisionmodel",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "Open-source speech recognition and decision-making models designed for Apple platforms.",
+            "why": "It enables developers to easily run efficient on-device speech processing and decision tasks within Apple's ecosystem.",
+            "who": "Hugging Face"
+          },
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "author": "",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Meta Andromeda: Powering the Next Generation of Ads Retrieval Through Model-System Co-Design",
+          "url": "https://engineering.fb.com/2026/10/28/ml-applications/meta-andromeda-next-gen-ads-retrieval-gpu-co-design/",
+          "source": "Meta Engineering (ML)",
+          "summary": {
+            "what": "A hardware-software co-designed ads retrieval engine utilizing advanced ranking models at scale.",
+            "why": "It achieves ranking-level accuracy during the retrieval phase via deep model-system integration.",
+            "who": "Meta Engineering"
+          },
+          "published_at": "2026-10-28T16:00:01+00:00",
+          "author": "",
+          "tags": [
+            "general-ml",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "NVIDIA Nemotron 3.5 Transcribe and Granary v2: Intelligent Multilingual Transcription You Can Prompt and Adapt",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A multilingual speech transcription model suite featuring customizable prompting capabilities.",
+            "why": "It enables adaptable audio-to-text processing tailored for diverse languages and domains.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-28T14:58:17+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "What is Qwenputer ? A Working RISC-V CPU Inside Qwen3.5",
+          "url": "https://medium.com/data-science-in-your-pocket/what-is-qwenputer-a-working-risc-v-cpu-inside-qwen3-5-febb522f000b?source=rss------machine_learning-5",
+          "source": "Medium · Machine Learning",
+          "summary": {
+            "what": "An experimental four-billion parameter language model simulating a RISC-V processor directly within its internal weights.",
+            "why": "It demonstrates that standard language models can emulate low-level computing hardware without relying on external interpreters.",
+            "who": "Data Science in Your Pocket"
+          },
+          "published_at": "2026-10-29T12:22:24+00:00",
+          "author": "Mehul Gupta",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 2,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "We urgently need to monitor AI agents’ actions in real time",
+          "url": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/",
+          "source": "MIT Technology Review AI",
+          "summary": {
+            "what": "An opinion piece discussing recent incidents where autonomous language models breached testing environments.",
+            "why": "It highlights urgent security risks associated with autonomous agent behaviors and capability drift.",
+            "who": "MIT Technology Review"
+          },
+          "published_at": "2026-10-29T10:11:12+00:00",
+          "author": "Madhulika Srikumar, Claire Leibowicz",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "HemmingwayAI/Hemmingway-1.5 (Qwen finetune)",
+          "url": "https://huggingface.co/HemmingwayAI/Hemmingway-1.5",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A 27B parameter open-weights fine-tuned language model designed to evade automated AI text detectors.",
+            "why": "It achieves bypass rates on detectors that surpass typical human baseline writing scores.",
+            "who": "HemmingwayAI"
+          },
+          "published_at": "2026-10-29T09:27:19+00:00",
+          "author": "jacek2023",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xif7hy/hemmingwayaihemmingway15_qwen_finetune/"
+            }
+          ]
+        },
+        {
+          "title": "Krea 2 and Minimax H3 Text Encoder Comparison: What Impact Do Abliterated Text Encoders Really Have?",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xicnjs/krea_2_and_minimax_h3_text_encoder_comparison/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An empirical comparison of standard versus abliterated text encoders in Krea 2 and Minimax H3 image and video generation pipelines.",
+            "why": "It demonstrates that using abliterated text encoders has a negligible impact on output quality, debunking previous assumptions about severe degradation.",
+            "who": "afinalsin"
+          },
+          "published_at": "2026-10-29T06:44:19+00:00",
+          "author": "afinalsin",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xicnjs/krea_2_and_minimax_h3_text_encoder_comparison/"
+            }
+          ]
+        },
+        {
+          "title": "Quoting Ted Sanders",
+          "url": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A commentary breaking down the complexities of evaluating large language model performance and OpenAI's internal naming logic.",
+            "why": "It clarifies how parameter scale primarily drives capability despite multidimensional variations, alongside version numbering conventions.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-10-28T23:23:21+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Google announces Gemini 4 Carbon, its latest frontier AI model that you can't use",
+          "url": "https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/",
+          "source": "Ars Technica AI",
+          "summary": {
+            "what": "This is a new frontier large language model release named Gemini 4 Carbon.",
+            "why": "It offers minor iterative performance gains over the previous generation.",
+            "who": "Google"
+          },
+          "published_at": "2026-10-28T18:47:27+00:00",
+          "author": "Ryan Whitwam",
+          "tags": [
+            "foundational-models",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Building an Agentic AI Platform on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "An open-source architecture blueprint for deploying enterprise multi-agent systems.",
+            "why": "It introduces a structured control plane and evaluation pipeline for governed agent operations.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-28T18:28:26+00:00",
+          "author": "Omar Elkharbotly",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Distributed training with Ray Train DLCs and EFA on EKS",
+          "url": "https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A technical guide demonstrating how to fine-tune Qwen2.5-1.5B via Ray Train and PyTorch FSDP on AWS EKS using pre-built containers.",
+            "why": "It simplifies multi-node distributed LLM training setup by leveraging pre-configured EFA-enabled deep learning containers.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-28T18:19:54+00:00",
+          "author": "Sunita Koppar",
+          "tags": [
+            "training-infra",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "GitHub Octoverse 2026",
+          "url": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An annual report measuring global software development metrics and repository trends on GitHub.",
+            "why": "It provides large-scale empirical data illustrating the rapid growth of agentic engineering and automated coding volume.",
+            "who": "GitHub"
+          },
+          "published_at": "2026-10-28T16:45:23+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "The October inflection point for vibe game development",
+          "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An anecdotal report on using conversational language models to generate fully playable, entertaining web-based video games.",
+            "why": "It highlights qualitative leaps in frontier LLMs regarding complex tasks like game design, 3D assets, and procedural fun.",
+            "who": "Simon Willison"
+          },
+          "published_at": "2026-10-28T13:55:15+00:00",
+          "author": "",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How researchers are adapting olmOCR 2 for historical and archaeological archives",
+          "url": "https://allenai.org/blog/olmocr-2-historical-archives",
+          "source": "Allen AI",
+          "summary": {
+            "what": "An adaptation of the olmOCR 2 model for transcribing old handwritten archaeological documents and searching photo archives.",
+            "why": "It extends document processing capabilities to niche historical and degraded text formats using local infrastructure.",
+            "who": "Allen AI"
+          },
+          "published_at": "2026-10-28T00:00:00-08:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "multimodal"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-28",
       "total": 40,
