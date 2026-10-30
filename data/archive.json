@@ -1,6 +1,566 @@
 {
-  "generated_at": "2026-10-29T12:58:16.035070+00:00",
+  "generated_at": "2026-10-30T12:45:53.425295+00:00",
   "archive": [
+    {
+      "date": "2026-10-30",
+      "total": 24,
+      "tags": {
+        "llm": 14,
+        "foundational-models": 4,
+        "multimodal": 7,
+        "robotics": 2,
+        "interpretability": 1,
+        "ai-safety": 2,
+        "simulation": 3,
+        "training-infra": 4,
+        "general-ml": 9,
+        "other": 2
+      },
+      "articles": [
+        {
+          "title": "Le Chonk: Built for Coders, Trusted by Defenders.",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "source": "Mistral AI",
+          "summary": {
+            "what": "Mistral AI has released open weights for Mistral Large 4, a 1-trillion parameter multimodal model.",
+            "why": "It provides a massive open-weight option engineered specifically for advanced coding capabilities.",
+            "who": "Mistral AI"
+          },
+          "published_at": "2026-10-29T12:00:07+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 5,
+          "group": "labs",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50289418",
+              "points": 1546
+            },
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xil3qy/mistral_large_4_le_chonk_is_now_open_weight/"
+            }
+          ]
+        },
+        {
+          "title": "Gemini 4 Carbon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A new frontier model focused on cybersecurity and long-horizon agentic tasks.",
+            "why": "It demonstrates improved performance in vulnerability discovery, patching, and sustained multi-day engineering workflows.",
+            "who": "Google DeepMind"
+          },
+          "published_at": "2026-10-28T17:01:23+00:00",
+          "author": "acossta",
+          "tags": [
+            "foundational-models",
+            "llm",
+            "multimodal"
+          ],
+          "importance": 5,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50276792",
+              "points": 1007
+            }
+          ]
+        },
+        {
+          "title": "Gemini 4 Carbon: Our next frontier model",
+          "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+          "source": "Google DeepMind",
+          "summary": {
+            "what": "This is an announcement regarding an upcoming flagship AI system.",
+            "why": "It represents the next iteration in the developer's primary model family.",
+            "who": "Google DeepMind"
+          },
+          "published_at": "2026-10-28T17:00:58+00:00",
+          "author": "",
+          "tags": [
+            "foundational-models",
+            "multimodal"
+          ],
+          "importance": 5,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "[Paper] Multi-Token Prediction Done Right - Soft-MTP",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xjc8q3/paper_multitoken_prediction_done_right_softmtp/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "This research introduces Soft-MTP, an optimized training technique for multi-token prediction in language models.",
+            "why": "It isolates the useful KL self-distillation signal from noisy gradients without adding computational overhead or extra parameters.",
+            "who": "Jayden Teoh"
+          },
+          "published_at": "2026-10-30T10:59:11+00:00",
+          "author": "pmttyji",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/JaydenTeoh/Soft-MTP"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xjc8q3/paper_multitoken_prediction_done_right_softmtp/"
+            }
+          ]
+        },
+        {
+          "title": "Metatron v1: NVIDIA's Unified Humanoid Control Policy for the Unitree G1",
+          "url": "https://huggingface.co/nvidia/Metatron-v1",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A single transformer policy controlling walking and fall recovery for the Unitree G1 humanoid.",
+            "why": "It provides open-weights deployment pipelines for both simulation and physical hardware using ONNX and PyTorch.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-30T07:09:48+00:00",
+          "author": "Balance-",
+          "tags": [
+            "robotics",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xj8kzn/metatron_v1_nvidias_unified_humanoid_control/"
+            }
+          ]
+        },
+        {
+          "title": "Intrinsic Distribution Matching",
+          "url": "https://arxiv.org/abs/2610.39633",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A distillation method that enables high-quality text-to-image generation in very few inference steps.",
+            "why": "It enhances distribution matching by explicitly constraining feature statistics using internal EMA weights rather than external feature encoders.",
+            "who": "inclusionAI"
+          },
+          "published_at": "2026-10-30T00:00:00+00:00",
+          "author": "Deyuan Liu, Yansen Han, Kaiwen Zheng, Jun Xie, Jiacheng Liu, Zhenglin Cheng, Peng Sun, Jintao Zhang, Jianguo Li, Tao Lin",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.39633",
+            "hf": "https://huggingface.co/papers/2610.39633",
+            "code": "https://github.com/inclusionAI/IDM"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Your Benchmark Is an Empirical Measure Over Difficulty",
+          "url": "https://arxiv.org/abs/2610.29927",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A theoretical framework for evaluating benchmark difficulty distributions in machine learning.",
+            "why": "It introduces metrics to detect coverage gaps and measure mismatches, showing standard leaderboards can be misleading.",
+            "who": "Yifan Sun, Naicheng Yu, Jiawen Gong et al."
+          },
+          "published_at": "2026-10-30T00:00:00+00:00",
+          "author": "Yifan Sun, Naicheng Yu, Jiawen Gong, Jingyan Shen, Huan Zhang",
+          "tags": [
+            "general-ml",
+            "interpretability"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.29927",
+            "hf": "https://huggingface.co/papers/2610.29927",
+            "code": "https://github.com/ASTRAL-Group/benchmark-difficulty-measure"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Claude Code regularly sends each background agent’s transcript to its model",
+          "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A Bun preload utility that disables redundant background transcript transmissions in Claude Code.",
+            "why": "It prevents unnecessary token consumption caused by periodic status updates for background agents.",
+            "who": "Flamerix AI"
+          },
+          "published_at": "2026-10-29T03:33:42+00:00",
+          "author": "NikZaal",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50284255",
+              "points": 569
+            }
+          ]
+        },
+        {
+          "title": "Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes",
+          "url": "https://arxiv.org/abs/2610.32749",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A new causal audio-visual speaker extraction method called Falcon and a corresponding benchmark called RealSSA.",
+            "why": "It significantly reduces parameter count and latency for edge deployment while handling complex, multi-speaker acoustic environments.",
+            "who": "Wendi Sang, Kai Li, Yifan Li et al."
+          },
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "author": "Wendi Sang, Kai Li, Yifan Li, Jianqiang Huang, Xiaolin Hu",
+          "tags": [
+            "multimodal",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.32749",
+            "hf": "https://huggingface.co/papers/2610.32749",
+            "code": "https://github.com/JusperLee/Falcon"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+          "url": "https://arxiv.org/abs/2610.32046",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "This paper introduces Test-Time Memory Evolution (TTME), an external memory adaptation technique for LLMs during inference.",
+            "why": "It surpasses test-time training performance on scientific tasks while cutting computational FLOPs and runtime significantly.",
+            "who": "Yepeng Liu, Shengmai Chen, Xuandong Zhao et al."
+          },
+          "published_at": "2026-10-28T00:00:00+00:00",
+          "author": "Yepeng Liu, Shengmai Chen, Xuandong Zhao, Chengzhi Liu, Dawn Song, Xin Eric Wang, Yuheng Bu",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.32046",
+            "hf": "https://huggingface.co/papers/2610.32046",
+            "code": "https://github.com/yepengliu/TTME"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Building a multiplayer game world with autonomous Fable-class models",
+          "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "A case study detailing a massively multiplayer game built and maintained entirely by autonomous coding agents.",
+            "why": "It demonstrates an extreme continuous deployment loop where AI agents push production updates hourly based on telemetry and bug reports.",
+            "who": "Jacob Sansbury"
+          },
+          "published_at": "2026-10-29T17:00:26+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "An updated Model Spec for more capable and beneficial AI",
+          "url": "https://openai.com/index/updated-model-spec",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A revised set of ethical guidelines designed to steer artificial intelligence behavior.",
+            "why": "It establishes standardized principles for aligning model outputs with human intentions and safety.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-29T17:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs",
+          "url": "https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A scheduling tool for managing GPU quotas and resource sharing across machine learning teams.",
+            "why": "It automates capacity lending and job preemption to improve hardware utilization without manual intervention.",
+            "who": "Amazon Web Services"
+          },
+          "published_at": "2026-10-29T16:58:57+00:00",
+          "author": "Michelle Goodstein",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale",
+          "url": "https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/",
+          "source": "Meta Engineering (ML)",
+          "summary": {
+            "what": "A production deployment of LLMs at Meta that automatically generates tests to catch code bugs just-in-time.",
+            "why": "It demonstrates large-scale industrial effectiveness for LLM-assisted software engineering with human validation.",
+            "who": "Meta"
+          },
+          "published_at": "2026-10-29T16:00:12+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+          "url": "https://latent.space/p/elorian/",
+          "source": "Latent Space",
+          "summary": {
+            "what": "A visual reasoning benchmark and system designed to evaluate decoy counting in frontier vision models.",
+            "why": "It demonstrates a notable gap between mere visual perception and actual logical reasoning in current architectures.",
+            "who": "Elorian"
+          },
+          "published_at": "2026-10-29T16:00:00+00:00",
+          "author": "Richard MacManus",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Unlocking Tensor Core Performance for Machine Learning Interatomic Potentials",
+          "url": "https://developer.nvidia.com/blog/unlocking-tensor-core-performance-for-machine-learning-interatomic-potentials/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A technical guide optimizing tensor core utilization specifically for machine learning interatomic potentials.",
+            "why": "It significantly accelerates atomistic simulation workloads on modern GPU hardware.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-29T15:00:00+00:00",
+          "author": "Anoushka Bhutani",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Granite Switch 4.1.1 — Update models like you update software",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+          "source": "Hugging Face Blog",
+          "summary": {
+            "what": "A model series enabling modular updates similar to software patching.",
+            "why": "It introduces a mechanism to modify specific model behaviors without retraining from scratch.",
+            "who": "IBM"
+          },
+          "published_at": "2026-10-29T13:37:07+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How we detect frontier model misalignment",
+          "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+          "source": "OpenAI",
+          "summary": {
+            "what": "A multi-layered surveillance system designed to identify unaligned models and rogue autonomous agents.",
+            "why": "It enables rapid human intervention prior to safety incidents scaling out of control.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-29T09:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "I created the First diffusion AI model for the Game Boy.",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xj9w8d/i_created_the_first_diffusion_ai_model_for_the/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A developer implemented a quantized diffusion model running natively on original Game Boy hardware using lookup tables for multiplication.",
+            "why": "It demonstrates extreme model quantization and optimization to execute generative inference on severely constrained retro microprocessors.",
+            "who": "ready-eddy"
+          },
+          "published_at": "2026-10-30T08:35:42+00:00",
+          "author": "ready-eddy",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xj9w8d/i_created_the_first_diffusion_ai_model_for_the/"
+            }
+          ]
+        },
+        {
+          "title": "[AINews] Building AIE CODE: The top Coding Agent Conference",
+          "url": "https://latent.space/p/ainews-building-aie-code-the-top-coding-agent-conference/",
+          "source": "Latent Space",
+          "summary": {
+            "what": "A daily AI newsletter recap covering an upcoming coding agent conference and recent industry news.",
+            "why": "It provides a high-level overview of open-weight model releases, frontier monitoring, and AI developer trends.",
+            "who": "Latent Space"
+          },
+          "published_at": "2026-10-30T08:24:29+00:00",
+          "author": "swyx .ai",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "You can now use 'Relight' in openjutsu",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xj9obu/you_can_now_use_relight_in_openjutsu/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An open-source video editing tool integration that adds relighting presets and vision-language model prompting.",
+            "why": "It bridges video generation models with automated vision descriptions to preserve narrative context during character swaps.",
+            "who": "D3voz"
+          },
+          "published_at": "2026-10-30T08:21:11+00:00",
+          "author": "Devajyoti1231",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/D3voz/openjutsu"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xj9obu/you_can_now_use_relight_in_openjutsu/"
+            }
+          ]
+        },
+        {
+          "title": "Building intent-driven UI testing with Amazon Nova Act",
+          "url": "https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A managed service for intent-driven UI testing powered by foundation models.",
+            "why": "It enables product teams to execute natural language tests without managing underlying infrastructure.",
+            "who": "AWS"
+          },
+          "published_at": "2026-10-29T18:20:27+00:00",
+          "author": "Sakthi Chellapparimanam",
+          "tags": [
+            "llm",
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+          "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+          "source": "NVIDIA Blog",
+          "summary": {
+            "what": "A technical workflow utilizing frontier AI agents alongside NVIDIA Omniverse tools to automate the generation of interactive simulation environments.",
+            "why": "It streamlines the labor-intensive process of combining 3D assets, physics, and rendering for environment testing.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-29T16:00:35+00:00",
+          "author": "NVIDIA Writers",
+          "tags": [
+            "simulation",
+            "robotics"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Graph RAG Series:8/15 [Graph-Aware Retrieval and Context Assembly]",
+          "url": "https://medium.com/models-to-systems/graph-rag-series-8-15-graph-aware-retrieval-and-context-assembly-6deab7c7ed98?source=rss------llm-5",
+          "source": "Medium · LLM",
+          "summary": {
+            "what": "An educational guide on selecting, sequencing, and formatting graph evidence for language model context windows.",
+            "why": "It addresses the context bottleneck in graph-based retrieval systems by optimizing how structured data feeds into language models.",
+            "who": "Models to Systems"
+          },
+          "published_at": "2026-10-30T12:26:00+00:00",
+          "author": "Deepak Mishra",
+          "tags": [
+            "llm",
+            "general-ml"
+          ],
+          "importance": 1,
+          "group": "medium",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-29",
       "total": 24,
