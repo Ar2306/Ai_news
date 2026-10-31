@@ -1,6 +1,593 @@
 {
-  "generated_at": "2026-10-30T12:45:53.425295+00:00",
+  "generated_at": "2026-10-31T12:19:10.950532+00:00",
   "archive": [
+    {
+      "date": "2026-10-31",
+      "total": 25,
+      "tags": {
+        "llm": 15,
+        "reinforcement-learning": 1,
+        "foundational-models": 2,
+        "multimodal": 6,
+        "ai-safety": 3,
+        "simulation": 6,
+        "training-infra": 8,
+        "general-ml": 3,
+        "other": 1
+      },
+      "articles": [
+        {
+          "title": "OpenFrontiers: A Collection of Open Research Problems and a Benchmark for Scientific Rediscovery",
+          "url": "https://arxiv.org/abs/2610.37739",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "OpenFrontiers is a benchmark and corpus designed to evaluate large language models on complex scientific research problems and formal proofs.",
+            "why": "It addresses the lack of rigorous evaluation standards for research-level problem solving by utilizing verified Lean 4 statements and isolated sandboxes.",
+            "who": "Jiarui Yao, Ruida Wang, Tong Zhang"
+          },
+          "published_at": "2026-10-31T00:00:00-04:00",
+          "author": "Jiarui Yao, Ruida Wang, Tong Zhang",
+          "tags": [
+            "llm",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.37739"
+          },
+          "discussions": []
+        },
+        {
+          "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+          "url": "https://arxiv.org/abs/2610.38568",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A framework for zero-data multimodal self-improvement that dynamically refreshes synthetic training tasks.",
+            "why": "It avoids reliance on model self-consistency by monitoring training logs to inject fresh, programmatically verified tasks when learning stalls.",
+            "who": "Yu Liu, Youxing Li, Yuedong Tan et al."
+          },
+          "published_at": "2026-10-30T00:00:00+00:00",
+          "author": "Yu Liu, Youxing Li, Yuedong Tan, Zhiwei Yang, Zihan Su, Hanqi Feng, Shaojie Zhang, Libin Liao, Zihao Wan, Chenxu Wu, Cong Cao, Fangfang Yuan, Yanbing Liu, Ziheng Chen, Pei Fu, Radu Timofte, Zongwei Wu, Nicu Sebe, Barnabas Poczos, Jian Luan",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.38568",
+            "hf": "https://huggingface.co/papers/2610.38568"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+          "url": "https://arxiv.org/abs/2610.39301",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A 5B-parameter omni-modal model that parses text documents, images, audio, and video into structured, temporally grounded records.",
+            "why": "It unifies cross-modal processing into a single shared encoder trained via on-policy distillation, setting new benchmarks for open-weight parsers.",
+            "who": "Youtu Lab"
+          },
+          "published_at": "2026-10-30T00:00:00+00:00",
+          "author": "Yunhang Shen, Zhangquan Chen, Xiaotian Li, Zhongpeng Cai, Qing Zhou, Zekai Zhang, Kun Zhang, Zezhong Wu, Jian Hu, Haihan Gao, Heting Gao, Xin Li, Yinsong Liu, Deqian Jiang, Di Yin, Haoyu Cao, Xing Sun, Bing Liu, Yanqiu Qu, Yunfei Wu, Kun Yin, Zhixiang Wei, Yongxiang Hua, Qianyu Li, Xiaoxing Hu, Peiyuan Zhang, Lijiang Li, Dong Xu, Zhenchuan Yang, Yiliang Jiang",
+          "tags": [
+            "multimodal",
+            "foundational-models"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.39301",
+            "hf": "https://huggingface.co/papers/2610.39301"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
+          "url": "https://arxiv.org/abs/2610.36671",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A conditional decoding strategy for diffusion vision-language models that skips visual processing steps when image input is unnecessary.",
+            "why": "It significantly reduces compute overhead while retaining nearly all baseline task performance without requiring additional training.",
+            "who": "Donghyeon Cho, Joowon Kim, Seungho Shin et al."
+          },
+          "published_at": "2026-10-30T00:00:00+00:00",
+          "author": "Donghyeon Cho, Joowon Kim, Seungho Shin, Eunho Yang",
+          "tags": [
+            "multimodal",
+            "llm"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.36671",
+            "hf": "https://huggingface.co/papers/2610.36671",
+            "code": "https://github.com/hyeon9698/LOWN"
+          },
+          "discussions": []
+        },
+        {
+          "title": "We ran AI agent swarms in Minecraft and Mindustry",
+          "url": "https://labs.ycombinator.com/projects/games/index.html",
+          "source": "Hacker News",
+          "summary": {
+            "what": "An open-source harness and empirical study examining multi-agent swarm dynamics inside Minecraft and Mindustry environments.",
+            "why": "It demonstrates how large groups of autonomous agents spontaneously develop complex social structures, hierarchies, and resource governance under survival pressures.",
+            "who": "sandslash"
+          },
+          "published_at": "2026-10-29T21:40:28+00:00",
+          "author": "sandslash",
+          "tags": [
+            "simulation",
+            "ai-safety"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50296486",
+              "points": 403
+            }
+          ]
+        },
+        {
+          "title": "LLM Voice",
+          "url": "https://martinfowler.com/bliki/LLM-Voice.html",
+          "source": "Hacker News",
+          "summary": {
+            "what": "A blog post examining the identifiable stylistic signatures of LLM-generated prose and reader aversion to them.",
+            "why": "It argues that LLM drafting leaves persistent artifacts that alienate human readers, advising authors to write original text.",
+            "who": "Martin Fowler"
+          },
+          "published_at": "2026-10-29T14:57:55+00:00",
+          "author": "ibobev",
+          "tags": [
+            "llm"
+          ],
+          "importance": 4,
+          "group": "community",
+          "links": {},
+          "discussions": [
+            {
+              "source": "Hacker News",
+              "url": "https://news.ycombinator.com/item?id=50290177",
+              "points": 598
+            }
+          ]
+        },
+        {
+          "title": "OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images",
+          "url": "https://arxiv.org/abs/2610.35684",
+          "source": "Hugging Face Papers",
+          "summary": {
+            "what": "A framework for generating subject-consistent 360-degree videos from multi-view images using automated data synthesis and geometry conditioning.",
+            "why": "It improves 3D consistency and preserves subject identity across complex camera trajectories without needing temporal alignment.",
+            "who": "Junyeong Ahn, Geonwoo Kim, Kinam Kim et al."
+          },
+          "published_at": "2026-10-29T00:00:00+00:00",
+          "author": "Junyeong Ahn, Geonwoo Kim, Kinam Kim, Gihwi Kim, Hoonjin Jung, Hyojin Jang, Jaegul Choo",
+          "tags": [
+            "multimodal",
+            "simulation"
+          ],
+          "importance": 4,
+          "group": "papers",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.35684",
+            "hf": "https://huggingface.co/papers/2610.35684",
+            "code": "https://github.com/justin4ai/OmniShowcase"
+          },
+          "discussions": []
+        },
+        {
+          "title": "microsoft/Mage-VL-Cowork · Hugging Face",
+          "url": "https://huggingface.co/microsoft/Mage-VL-Cowork",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "A 4-billion parameter vision-language model tailored for autonomous desktop computer interaction.",
+            "why": "It achieves top performance for its scale on OSWorld while reducing required model calls and output tokens via reinforcement learning.",
+            "who": "Microsoft"
+          },
+          "published_at": "2026-10-31T10:02:47+00:00",
+          "author": "pmttyji",
+          "tags": [
+            "multimodal",
+            "llm",
+            "reinforcement-learning"
+          ],
+          "importance": 3,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk6blw/microsoftmagevlcowork_hugging_face/"
+            }
+          ]
+        },
+        {
+          "title": "LRMoE: Demand-Side Load Re-Calibration for Efficient MoE Training on Memory-Constrained Nodes",
+          "url": "https://arxiv.org/abs/2610.37720",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A memory-aware training system designed to optimize Mixture-of-Experts (MoE) execution on memory-constrained GPUs.",
+            "why": "It speeds up MoE layer training by up to 44.8% using load recalibration and workload retention planning during backpropagation.",
+            "who": "Jiaming Hu, Zhida Jiang, Zhaolong Xing et al."
+          },
+          "published_at": "2026-10-31T00:00:00-04:00",
+          "author": "Jiaming Hu, Zhida Jiang, Zhaolong Xing, Yu Li, Zhen Chen, Ke Zhang",
+          "tags": [
+            "training-infra",
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.37720"
+          },
+          "discussions": []
+        },
+        {
+          "title": "ThinkJev: One Thought, Every Budget for Calibrated Typed Decisions",
+          "url": "https://arxiv.org/abs/2610.37732",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "This paper introduces ThinkJev, a dual-system inference framework that dynamically allocates compute budgets for language model decision-making tasks.",
+            "why": "It enables adaptive reasoning by reusing cached prompts to balance speed and accuracy without requiring model retraining.",
+            "who": "Xiaolu Ding"
+          },
+          "published_at": "2026-10-31T00:00:00-04:00",
+          "author": "Xiaolu Ding, Kai Yang, Dongdong Liu",
+          "tags": [
+            "llm"
+          ],
+          "importance": 3,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.37732",
+            "code": "https://github.com/ding-xiaolu/ThinkJev"
+          },
+          "discussions": []
+        },
+        {
+          "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
+          "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+          "source": "The Verge AI",
+          "summary": {
+            "what": "Google successfully ran an on-board Gemma 4 language model using custom TPUs on a satellite in orbit.",
+            "why": "It demonstrates the feasibility of executing heavy AI inference workloads directly in space environments.",
+            "who": "Google"
+          },
+          "published_at": "2026-10-30T14:21:38-04:00",
+          "author": "Emma Roth",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 3,
+          "group": "news",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+          "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/",
+          "source": "Microsoft Research",
+          "summary": {
+            "what": "A methodology for using synthetic enterprise data to test Microsoft Copilot without exposing sensitive corporate information.",
+            "why": "It enables rigorous evaluation of enterprise AI assistants while maintaining strict privacy standards.",
+            "who": "Microsoft Research"
+          },
+          "published_at": "2026-10-30T13:05:28+00:00",
+          "author": "Somya Chatterjee, Harshita Sahijwani, Min Chen, Sushmitha Rajeswari Muppa, Dayquan Julienne, Irene Shaffer, Chandra Inguva, Jenny Chen, Minha Hwang, Sam Ade Jacobs",
+          "tags": [
+            "llm",
+            "ai-safety"
+          ],
+          "importance": 3,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Try this workflow, too.",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk5m1s/try_this_workflow_too/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "An open-source ComfyUI workflow extension implementing hybrid context windows with keystone and capstone anchoring for consistent long-video generation.",
+            "why": "It mitigates error accumulation and detail degradation during extended video generation sequences without requiring multi-clip stitching.",
+            "who": "roycho87"
+          },
+          "published_at": "2026-10-31T09:18:17+00:00",
+          "author": "roychodraws",
+          "tags": [
+            "simulation",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/roycho87/clown_context_suite"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk5m1s/try_this_workflow_too/"
+            }
+          ]
+        },
+        {
+          "title": "Pika H3 Flex + open-h3-egenerate-2K running locally on Mac",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4xpd/pika_h3_flex_openh3egenerate2k_running_locally_on/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A local video generation workflow combining distilled Pika models with NVIDIA latent upscaling on Mac hardware.",
+            "why": "It demonstrates efficient high-resolution video synthesis using local compute through optimized step reduction and latent refinement.",
+            "who": "TgoAI"
+          },
+          "published_at": "2026-10-31T08:35:59+00:00",
+          "author": "TgoAI",
+          "tags": [
+            "multimodal",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4xpd/pika_h3_flex_openh3egenerate2k_running_locally_on/"
+            }
+          ]
+        },
+        {
+          "title": "I Unlocked BF16 on an RTX 4090 and Compared It to an RTX 5090 (on Windows 11)",
+          "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk3n70/i_unlocked_bf16_on_an_rtx_4090_and_compared_it_to/",
+          "source": "r/StableDiffusion",
+          "summary": {
+            "what": "A community benchmark measuring the performance impact of enabling native BF16 support on an RTX 4090 GPU.",
+            "why": "It demonstrates a modest ten percent speedup for diffusion model inference and training tasks, limited primarily by PCIe bandwidth constraints during VRAM offloading.",
+            "who": "MarvinFS"
+          },
+          "published_at": "2026-10-31T07:12:10+00:00",
+          "author": "devmoching",
+          "tags": [
+            "training-infra",
+            "general-ml"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/MarvinFS/rtx4090-uefi"
+          },
+          "discussions": [
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk3n70/i_unlocked_bf16_on_an_rtx_4090_and_compared_it_to/"
+            }
+          ]
+        },
+        {
+          "title": "Lawyer with too many GPUs, part 3: DeepSeek-V4.1-Flash on 2x DGX Spark + an old 3090 box. 2,600+ tok/s prefill to 256K, 322 tok/s structured output, full stack and raw data published",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk20x5/lawyer_with_too_many_gpus_part_3_deepseekv41flash/",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An enthusiast hardware setup running a quantized DeepSeek model across dual DGX Sparks and an EPYC 3090 system.",
+            "why": "Demonstrates high-throughput speculative decoding, RDMA memory offloading, and prefix caching on consumer-adjacent hardware.",
+            "who": "Nick Mermiges"
+          },
+          "published_at": "2026-10-31T05:32:04+00:00",
+          "author": "TumbleweedNew6515",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {
+            "code": "https://github.com/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload"
+          },
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk20x5/lawyer_with_too_many_gpus_part_3_deepseekv41flash/"
+            }
+          ]
+        },
+        {
+          "title": "Koboldcpp v1.124 released",
+          "url": "https://github.com/LostRuins/koboldcpp/releases/tag/v1.124",
+          "source": "r/LocalLLaMA",
+          "summary": {
+            "what": "An updated release of the Koboldcpp inference software for local language models was published.",
+            "why": "It delivers ongoing performance improvements and bug fixes for running models on consumer hardware.",
+            "who": "LostRuins"
+          },
+          "published_at": "2026-10-31T05:24:06+00:00",
+          "author": "Fcking_Chuck",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "reddit",
+          "links": {},
+          "discussions": [
+            {
+              "source": "r/LocalLLaMA",
+              "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xk1vyk/koboldcpp_v1124_released/"
+            },
+            {
+              "source": "r/StableDiffusion",
+              "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk1zr6/koboldcpp_v1124_released/"
+            }
+          ]
+        },
+        {
+          "title": "Amortized Localized Posterior Inference for Model Calibration with Application to an Ocean Turbulence Closure",
+          "url": "https://arxiv.org/abs/2610.37731",
+          "source": "arXiv cs.AI",
+          "summary": {
+            "what": "A parameter calibration framework using conditional normalizing flows and localized Bayesian posteriors.",
+            "why": "It reduces prediction errors in scientific models by accounting for context uncertainties and localized model discrepancies.",
+            "who": "Exauc\\'e Luweh Adjim Ngarti (AIRSEA), \\'Elise Arnaud (AIRSEA), L\\'eo Nicoletti (Mines Saint-\\'Etienne MSE et al."
+          },
+          "published_at": "2026-10-31T00:00:00-04:00",
+          "author": "Exauc\\'e Luweh Adjim Ngarti (AIRSEA), \\'Elise Arnaud (AIRSEA), L\\'eo Nicoletti (Mines Saint-\\'Etienne MSE, LIMOS, FAYOL-ENSMSE, FAYOL-ENSMSE), Victor Trappler (Mines Saint-\\'Etienne MSE, LIMOS, FAYOL-ENSMSE, FAYOL-ENSMSE), Arthur Vidard (AIRSEA)",
+          "tags": [
+            "general-ml",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "arxiv",
+          "links": {
+            "pdf": "https://arxiv.org/pdf/2610.37731"
+          },
+          "discussions": []
+        },
+        {
+          "title": "dbreunig/nesformer",
+          "url": "https://simonwillison.net/2026/Oct/30/nesformer/",
+          "source": "Simon Willison",
+          "summary": {
+            "what": "An experimental project embedding a functional Nintendo CPU emulator directly into LLM model weights.",
+            "why": "It demonstrates that language models can be trained to execute deterministic hardware emulation logic internally.",
+            "who": "Drew Breunig"
+          },
+          "published_at": "2026-10-30T21:59:22+00:00",
+          "author": "",
+          "tags": [
+            "llm",
+            "simulation"
+          ],
+          "importance": 2,
+          "group": "blogs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime",
+          "url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/",
+          "source": "AWS Machine Learning",
+          "summary": {
+            "what": "A guide detailing Amazon Bedrock AgentCore endpoints for live web app previews built by AI coding agents.",
+            "why": "It allows developers to inspect real-time HTTP and WebSocket traffic as an agent edits web application code.",
+            "who": "AWS Machine Learning"
+          },
+          "published_at": "2026-10-30T21:40:03+00:00",
+          "author": "Sundar Raghavan",
+          "tags": [
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Build a Validated Kubernetes Runtime for NVIDIA Dynamo",
+          "url": "https://developer.nvidia.com/blog/build-a-validated-kubernetes-runtime-for-nvidia-dynamo/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A guide for deploying distributed AI inference workloads using Kubernetes and NVIDIA Dynamo.",
+            "why": "It standardizes the transition from model configuration to production-ready endpoints.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-30T21:35:31+00:00",
+          "author": "Stefan Schimanski",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Build Specialized Agents on a Stack You Control with NVIDIA NemoClaw",
+          "url": "https://developer.nvidia.com/blog/build-specialized-agents-on-a-stack-you-control-with-nvidia-nemoclaw/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A technical guide and toolkit for deploying controlled autonomous agents.",
+            "why": "It provides developers with a secure execution runtime for specialized AI agents.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-30T16:00:00+00:00",
+          "author": "Nicola Sessions",
+          "tags": [
+            "llm",
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "How to Check and Configure NVIDIA GPUDirect Storage for Your Platform",
+          "url": "https://developer.nvidia.com/blog/how-to-check-and-configure-nvidia-gpudirect-storage-for-your-platform/",
+          "source": "NVIDIA Technical Blog",
+          "summary": {
+            "what": "A technical guide for setting up and verifying GPUDirect Storage configurations.",
+            "why": "It helps optimize data transfer pathways between storage systems and GPUs to reduce bottlenecks.",
+            "who": "NVIDIA"
+          },
+          "published_at": "2026-10-30T15:01:36+00:00",
+          "author": "Phil Carns",
+          "tags": [
+            "training-infra"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Making it easier for websites to express AI training preferences",
+          "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+          "source": "OpenAI",
+          "summary": {
+            "what": "An access control mechanism using robots.txt signals for websites to declare web scraping preferences.",
+            "why": "It establishes a standardized protocol for content owners to opt out of AI dataset collection.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-30T09:30:00+00:00",
+          "author": "",
+          "tags": [
+            "other"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        },
+        {
+          "title": "Community safety report and new protections for teens",
+          "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+          "source": "OpenAI",
+          "summary": {
+            "what": "An updated safety policy update and content moderation enhancement for conversational models.",
+            "why": "It introduces stricter violence prevention mechanisms and proactive monitoring for minor accounts.",
+            "who": "OpenAI"
+          },
+          "published_at": "2026-10-30T09:00:00+00:00",
+          "author": "",
+          "tags": [
+            "ai-safety",
+            "llm"
+          ],
+          "importance": 2,
+          "group": "labs",
+          "links": {},
+          "discussions": []
+        }
+      ]
+    },
     {
       "date": "2026-10-30",
       "total": 24,
